@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<?include ..\Udm_inc.wxi ?>
+<Fragment>
+  <DirectoryRef Id="bin$(sys.BUILDARCH)" />
+</Fragment>
+<Fragment>
+<ComponentGroup Id="MetaGME2Uml$(sys.BUILDARCH)">
+  <Component Id="MetaGME2Uml.dll$(sys.BUILDARCH)" Directory="bin$(sys.BUILDARCH)">
+    <File Source="$(var.Great_bin)\MetaGME2Uml.dll" Id="MetaGME2Uml.dll$(sys.BUILDARCH)">
+      <TypeLib Id="18213F2B-8BA4-451D-831C-C3FAB10AA4B7" Description="MGA Interpreter TypeLibrary (MetaGME2Uml)" Language="0" MajorVersion="1" MinorVersion="0">
+        <Class Id="{2FB04482-C9BC-4574-B933-51A007FFB07C}" Context="InprocServer32" Description="MGA.Interpreter.MetaGME2Uml">
+          <ProgId Id="MGA.Interpreter.MetaGME2Uml" Description="MGA.Interpreter.MetaGME2Uml" />
+        </Class>
+      </TypeLib>
+    </File>
+    <RegistryKey Root='HKLM' Key='Software\GME\Components\MGA.Interpreter.MetaGME2Uml'>
+      <RegistryValue Name='Description' Type='string' Value='MetaGME2Uml'/>
+      <RegistryValue Name='Icon' Type='string' Value=',IDI_COMPICON'/>
+      <RegistryValue Name='Paradigm' Type='string' Value='MetaGME'/>
+      <RegistryValue Name='Tooltip' Type='string' Value='Converts GME metamodel to equivalent UML class diagram'/>
+      <RegistryValue Name='Type' Type='integer' Value='1'/>
+
+      <RegistryKey Key='Associated'>
+        <RegistryValue Name='MetaGME' Type='string' Value=''/>
+      </RegistryKey>
+
+    </RegistryKey>
+  </Component>
+</ComponentGroup>
+</Fragment>
+</Wix>

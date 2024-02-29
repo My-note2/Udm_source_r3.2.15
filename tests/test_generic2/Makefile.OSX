@@ -1,0 +1,20 @@
+include ../../Makefile.OSX.incl
+
+SOURCES=genericTest.cpp	test_generic.cpp LampDiagram.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS) test_generic
+
+LampDiagram.cpp:../../samples/LampDiagram_udm.xml ../../bin/Udm
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -v -d ../../etc -T --leesa
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) -I $(CPPUNIT)/include $< -o $@
+
+test_generic: $(OBJECTS)
+	$(CC) $(BCFLAGS) $(OBJECTS) -o test_generic  -lUdm -L../../lib -lcppunit -L $(CPPUNITLIBS)
+
+test:test_generic
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ./test_generic
+
+clean: 
+	rm -f *.o  test_generic LampDiagram.cpp LampDiagram.h LampDiagram.xsd *.mem *.xml

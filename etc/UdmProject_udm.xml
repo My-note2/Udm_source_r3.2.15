@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Diagram name="UdmProject" version="1.00" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Uml.xsd">
+
+  <Class _id="id5" isAbstract="false" name="Project" parentRoles="id6 id8 idA">
+    <Attribute max="1" min="1" name="name" nonpersistent="false" ordered="false" registry="false" type="String" visibility="public"/>
+  </Class>
+
+  <Class _id="id3" childRoles="id4 id7 id9" isAbstract="false" name="Datanetwork">
+    <Attribute max="1" min="1" name="systemname" nonpersistent="false" ordered="false" registry="false" type="String" visibility="public"/>
+    <Attribute max="1" min="1" name="metaDgr" nonpersistent="false" ordered="false" registry="false" type="String" visibility="public"/>
+    <Attribute max="1" min="0" name="metalocator" nonpersistent="false" ordered="false" registry="false" type="String" visibility="public"/>
+  </Class>
+
+  <Composition name="Composition" nonpersistent="false">
+    <CompositionChildRole _id="id4" isNavigable="true" max="1" min="0" name="cross_associations" target="id3"/>
+    <CompositionParentRole _id="id6" isNavigable="true" target="id5"/>
+  </Composition>
+
+  <Composition name="Composition" nonpersistent="false">
+    <CompositionChildRole _id="id7" isNavigable="true" max="-1" min="0" name="instances" target="id3"/>
+    <CompositionParentRole _id="id8" isNavigable="true" target="id5"/>
+  </Composition>
+
+  <Composition name="Composition" nonpersistent="false">
+    <CompositionChildRole _id="id9" isNavigable="true" max="1" min="0" name="crosslinks" target="id3"/>
+    <CompositionParentRole _id="idA" isNavigable="true" target="id5"/>
+  </Composition>
+
+</Diagram>

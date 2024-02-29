@@ -1,0 +1,11 @@
+ComHelp.h
+ComHelp.cpp
+ComponentDll.h
+ComponentDll.cpp
+ComponentObj.h
+ComponentObj.cpp
+ComponentLib.idl
+GMECOM.H
+targetver.h
+Exceptions.h
+Exceptions.cpp

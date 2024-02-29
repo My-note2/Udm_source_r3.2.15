@@ -1,0 +1,20 @@
+<sbml level="2" xmlns="http://www.sbml.org/sbml/level2" version="1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level2">
+	<model name="New Mechanism">
+		<listOfFunctionDefinitions>
+			<functionDefinition id="Mass_Action_1_222" name="Mass_Action_1">
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<apply>
+					<cn type="a">
+					a
+					<foo > b </foo>
+					c
+					</cn>
+					</apply>
+				
+				</math>
+			</functionDefinition>
+		</listOfFunctionDefinitions>
+	</model>
+</sbml>
+
+

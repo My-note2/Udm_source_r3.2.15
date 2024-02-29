@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?udm interface="UdmProject" version="1.00"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ elementFormDefault="qualified" 
+>
+<!-- generated on Thu Nov 05 17:19:40 2015 -->
+
+
+	<xsd:complexType name="DatanetworkType">
+		<xsd:attribute name="__child_as">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="cross_associations"/>
+					<xsd:enumeration value="instances"/>
+					<xsd:enumeration value="crosslinks"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="metaDgr" type="xsd:string" use="required"/>
+		<xsd:attribute name="systemname" type="xsd:string" use="required"/>
+		<xsd:attribute name="metalocator" type="xsd:string"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="ProjectType">
+		<xsd:sequence>
+			<xsd:element name="Datanetwork" type="DatanetworkType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Project" type="ProjectType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+		<xsd:attribute name="_libname" type="xsd:string"/>
+	</xsd:complexType>
+
+ <xsd:element name="Project" type="ProjectType"/>
+
+</xsd:schema>

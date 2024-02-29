@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<?define GeneTRE=..\..\judm\build\build_win\GeneTRE?>
+<!-- generated with ../../../../Documents/META/deploy/gen_dir_wxi.py ..\..\judm\build\build_win\GeneTRE -->
+    <Fragment>
+        <DirectoryRef Id="GeneTRE">
+            <Directory Id="dir2294E565B7CEE286AA62EB9429EFDC79" Name="meta" />
+            <Directory Id="dir30A3379CD42F37F40B60A0F847848ED5" Name="samples" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="GeneTRE">
+            <Component Id="cmpC8C731E9AB0DAF5A6A6901F60E847727" Directory="GeneTRE" Guid="*">
+                <File Id="fil5848D755F4E99A8494507E9EE5580598" KeyPath="yes" Source="$(var.GeneTRE)\GeneTRE-test.jar" />
+            </Component>
+            <Component Id="cmpAA0ACE3489CB78B4F4F21B861F79AD40" Directory="GeneTRE" Guid="*">
+                <File Id="fil37BE102AA3D95EAE811869DC3A0E66CF" KeyPath="yes" Source="$(var.GeneTRE)\GeneTRE.jar" />
+            </Component>
+            <Component Id="cmpCB9448D9737D6F80D00251171A3497D9" Directory="GeneTRE" Guid="*">
+                <File Id="fil2861F0B7FDB089FF458183A94EE794EB" KeyPath="yes" Source="$(var.GeneTRE)\runtests.cmd" />
+            </Component>
+            <Component Id="cmp212299A7B1DB12957C67E15739D8D0D1" Directory="dir2294E565B7CEE286AA62EB9429EFDC79" Guid="*">
+                <File Id="filCE512D3AFDC509FB50B41C9D617466D7" KeyPath="yes" Source="$(var.GeneTRE)\meta\GeneTRE.JPG" />
+            </Component>
+            <Component Id="cmpF9A7C88A1BBE2F9C464B30CBAF558484" Directory="dir2294E565B7CEE286AA62EB9429EFDC79" Guid="*">
+                <File Id="fil23301C3BDD7A0404DA55B8122DE4BFD2" KeyPath="yes" Source="$(var.GeneTRE)\meta\GeneTRE.xsd" />
+            </Component>
+            <Component Id="cmpDE1782170EFA05ABA81C8A29C8F10449" Directory="dir2294E565B7CEE286AA62EB9429EFDC79" Guid="*">
+                <File Id="fil0455E3715F831F6D5DA373C37FCA3F2F" KeyPath="yes" Source="$(var.GeneTRE)\meta\GeneTRE_udm.xml" />
+            </Component>
+            <Component Id="cmp1E4F4A1BD09D2CA4753BE8F0DAEE9316" Directory="dir2294E565B7CEE286AA62EB9429EFDC79" Guid="*">
+                <File Id="filCCA58B138FECD94799BE05D1C33B7EC8" KeyPath="yes" Source="$(var.GeneTRE)\meta\GeneTRE_uml.xme" />
+            </Component>
+            <Component Id="cmp3ECD3AAA7E8CECE56D62460FF5E0ACA4" Directory="dir30A3379CD42F37F40B60A0F847848ED5" Guid="*">
+                <File Id="fil266DACC14FA7FD38242376B9F60879A8" KeyPath="yes" Source="$(var.GeneTRE)\samples\test.xml" />
+            </Component>
+            <Component Id="cmp3C81AE3CD6FA85D8062159BEDB515895" Directory="dir30A3379CD42F37F40B60A0F847848ED5" Guid="*">
+                <File Id="filAFE7798246EEE0CE2D350C59B12397DB" KeyPath="yes" Source="$(var.GeneTRE)\samples\test2.xml" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir2294E565B7CEE286AA62EB9429EFDC79" />
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir30A3379CD42F37F40B60A0F847848ED5" />
+    </Fragment>
+</Wix>

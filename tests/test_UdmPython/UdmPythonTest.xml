@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<RootFolder name="RootFolder" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="UdmPythonTestMeta.xsd">
+
+  <Container _id="id27" name="NewContainer" position="">
+    <AtomA _id="id28" boolattr="true" intattr="42" name="AtomA1" position="(68,299)" stringattr="teststring"/>
+    <AtomB __child_as="cmproleA" _id="id2B" name="cmproleA2" position="(194,411)" srcConnection="id29"/>
+    <AtomB __child_as="cmproleA" _id="id2C" dstConnection="id29" name="cmproleA1" position="(68,411)"/>
+    <AtomB __child_as="cmproleB" _id="id2D" name="cmproleB1" position="(285,411)"/>
+    <Connection _id="id29" dstConnection_end_="id2B" name="Connection" position="(-1,-1)" srcConnection_end_="id2C"/>
+    <Container _id="id2A" name="Container" position="(70,154)"/>
+  </Container>
+
+</RootFolder>

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<?define SBML2Ex=..\..\judm\build\build_win\SBML2Ex?>
+<!-- generated with ../../../../Documents/META/deploy/gen_dir_wxi.py ..\..\judm\build\build_win\SBML2Ex -->
+    <Fragment>
+        <DirectoryRef Id="SBML2Ex">
+            <Directory Id="dir219518735E441AECFD42DEA7AF8D9B96" Name="meta" />
+            <Directory Id="dir3683F7580EA3EC6030A48FFE787BD379" Name="samples" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="SBML2Ex">
+            <Component Id="cmpFE241266BE9EFFFF68CD6B8F9B159A8F" Directory="SBML2Ex" Guid="*">
+                <File Id="filA6B6D2BB871DA488E1870D88F74AF45C" KeyPath="yes" Source="$(var.SBML2Ex)\runtests.cmd" />
+            </Component>
+            <Component Id="cmp2E76CD120036D1B86F3B2D14FF7992A2" Directory="SBML2Ex" Guid="*">
+                <File Id="filEEE65F00A6E4EA10257E86433FF20619" KeyPath="yes" Source="$(var.SBML2Ex)\SBML2Ex-test.jar" />
+            </Component>
+            <Component Id="cmpBC9695EC523DAC92DDF623F798205C9A" Directory="SBML2Ex" Guid="*">
+                <File Id="filE1D89C0CC4158B0E94740425D98C2711" KeyPath="yes" Source="$(var.SBML2Ex)\SBML2Ex.jar" />
+            </Component>
+            <Component Id="cmpB3913EE45C64799F61D4900FB11289C1" Directory="dir219518735E441AECFD42DEA7AF8D9B96" Guid="*">
+                <File Id="fil4931161CE4D165255D84EBB07704337C" KeyPath="yes" Source="$(var.SBML2Ex)\meta\SBML2Ex.xsd" />
+            </Component>
+            <Component Id="cmp47DD33BECF41602F1CF8E98D8B824AB0" Directory="dir219518735E441AECFD42DEA7AF8D9B96" Guid="*">
+                <File Id="filDC458803704A58C8FEAAF1C8B5F14743" KeyPath="yes" Source="$(var.SBML2Ex)\meta\SBML2Ex_udm.xml" />
+            </Component>
+            <Component Id="cmpB78E3548E21FEB5BC6F4C67CDB6879F5" Directory="dir219518735E441AECFD42DEA7AF8D9B96" Guid="*">
+                <File Id="filD9EB83A74260B1EEFB376442B4F9008B" KeyPath="yes" Source="$(var.SBML2Ex)\meta\SBML2Ex_uml.xme" />
+            </Component>
+            <Component Id="cmpB6394679C97D4C44C1C8861FD8A7B84D" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filD2277841B8D5ED8CEE903BE26B81E1ED" KeyPath="yes" Source="$(var.SBML2Ex)\samples\compOutRef.xml" />
+            </Component>
+            <Component Id="cmpCD0CDB7BD8F2DEAA58093616A9C3B2B8" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil3BCA534D07ECB98EC24A900CDB6A7A79" KeyPath="yes" Source="$(var.SBML2Ex)\samples\compUnitRef.xml" />
+            </Component>
+            <Component Id="cmp42C9D7019188250D109013B1D29B838A" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil4DB371D483574E045C685C659D15F9AD" KeyPath="yes" Source="$(var.SBML2Ex)\samples\delayLabelRef.xml" />
+            </Component>
+            <Component Id="cmpD6C0565C39C6520390AAEAB0B99BD36E" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil4074A0C4F420BAA056DDE22E93F585E5" KeyPath="yes" Source="$(var.SBML2Ex)\samples\demo_30_paintfb_out.xml" />
+            </Component>
+            <Component Id="cmpE2AB07CD7A21B6A5EF11D364A851822A" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil552014B1EE8DF6D809B09C21CE05D2D4" KeyPath="yes" Source="$(var.SBML2Ex)\samples\eventUnitRef.xml" />
+            </Component>
+            <Component Id="cmpD9A5BF86433F36EFBC87DF892F8BFCD7" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil61D77FAF64DC8FEF0EE46761C7CC618D" KeyPath="yes" Source="$(var.SBML2Ex)\samples\eventVariableRef.xml" />
+            </Component>
+            <Component Id="cmp0F0AF3892ADEC11C5AF636952783DE00" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil2CA1274830AD3F39A62C419D4EBE01C0" KeyPath="yes" Source="$(var.SBML2Ex)\samples\frogegg.xml" />
+            </Component>
+            <Component Id="cmp5ADD45E44EF65F9EC5891602F5BD5C56" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil1F38D8809EBA65A6D4BF35F4D16928BD" KeyPath="yes" Source="$(var.SBML2Ex)\samples\functionLabelRef.xml" />
+            </Component>
+            <Component Id="cmpDE87EC3BF9D2FA8C27D438F6470386EC" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filDC88E12D1CE3EE9BA61EF9F455C0FA4E" KeyPath="yes" Source="$(var.SBML2Ex)\samples\invGlobalId.xml" />
+            </Component>
+            <Component Id="cmpCE6B56BEC4B3CFD1AD3DFA262D9F3BBD" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil43B4B6CF559F61DF6C7FAC2748A1DC23" KeyPath="yes" Source="$(var.SBML2Ex)\samples\invParameterUnitRef.xml" />
+            </Component>
+            <Component Id="cmp11B86D35EFEEBD4C219995804218753D" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filF56473ABBB4A1BA8A915982D4CE703E2" KeyPath="yes" Source="$(var.SBML2Ex)\samples\invReactParam.xml" />
+            </Component>
+            <Component Id="cmp500E725E63523CD53D3DC01B658CFF72" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filAE58F9DAF8EC71E30540AD9C2D6EECA6" KeyPath="yes" Source="$(var.SBML2Ex)\samples\invReactRef.xml" />
+            </Component>
+            <Component Id="cmpF83DB5FE9C4E9698FC874D8E859AB800" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filE5770A1516194DAC4B144D581AD76125" KeyPath="yes" Source="$(var.SBML2Ex)\samples\invSpCompartment.xml" />
+            </Component>
+            <Component Id="cmpF15C5D9A64F09EF875D314AE3E97EEBF" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil99BB86C465E4A9AA621123179838F186" KeyPath="yes" Source="$(var.SBML2Ex)\samples\invSpeciesIC.xml" />
+            </Component>
+            <Component Id="cmpA1A9230B3241344B88945156346AE6BD" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil1B3859093ED77A466222D6B9CE027AA8" KeyPath="yes" Source="$(var.SBML2Ex)\samples\invSpeciesUnitRef.xml" />
+            </Component>
+            <Component Id="cmp98BF87755DFD1A270A50B9C125D9CF7F" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil35336226452778A4FFC9C969BFAE4513" KeyPath="yes" Source="$(var.SBML2Ex)\samples\invUnitDef.xml" />
+            </Component>
+            <Component Id="cmp0AED3D3A356A45A35747F4488DDFA296" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil8E0FDF6CAE98F7C97460035638CF0B11" KeyPath="yes" Source="$(var.SBML2Ex)\samples\JR904.xml" />
+            </Component>
+            <Component Id="cmp1625D06BEE42ACE604769314F6CEA46B" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filF37ED9B9EDFEAD61BBEB586AED5AC887" KeyPath="yes" Source="$(var.SBML2Ex)\samples\klawLabelRef.xml" />
+            </Component>
+            <Component Id="cmp048EFE5F8009E90AD7FA90BD866AEC30" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filA597F9D5AA622A3B490D63F76962E11D" KeyPath="yes" Source="$(var.SBML2Ex)\samples\klawUnitRef.xml" />
+            </Component>
+            <Component Id="cmp1769E5EE0B4EB52A11C4A1101ADD40C1" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filAB5C0E63DC095CE33F1A68EFCD890122" KeyPath="yes" Source="$(var.SBML2Ex)\samples\l2v1-2D-compartments.xml" />
+            </Component>
+            <Component Id="cmp4E07D4CF7EE3B16870EEA552D13B7558" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil28E7D38F375958D4FA9F64FB289078D0" KeyPath="yes" Source="$(var.SBML2Ex)\samples\l2v1-algebraic.xml" />
+            </Component>
+            <Component Id="cmp496A5114D0EC04FE19DFFBC76B241BF6" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil10D56FA446E1C3A97F3CCF50EC53EAA9" KeyPath="yes" Source="$(var.SBML2Ex)\samples\l2v1-assignment.xml" />
+            </Component>
+            <Component Id="cmpE3F49B11872EE5EF0C0CD34428BE3EE0" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil94962C4ADDFA382AC9E36F274457B1B5" KeyPath="yes" Source="$(var.SBML2Ex)\samples\l2v1-boundary.xml" />
+            </Component>
+            <Component Id="cmp4F070B1F181E81BF04A2E56FC04C0B1B" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil50C2C88281FF4D1ABC61787375D04A02" KeyPath="yes" Source="$(var.SBML2Ex)\samples\l2v1-branch.xml" />
+            </Component>
+            <Component Id="cmpF8FE8088AA927950AFE3960DB145B272" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filD2B84319E0B5526CA181A676A3C621E0" KeyPath="yes" Source="$(var.SBML2Ex)\samples\l2v1-delay.xml" />
+            </Component>
+            <Component Id="cmp0F12F471FED1D86724CAD22819E39823" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filBB84A2B1B07987343CBBA335CA9AE4CF" KeyPath="yes" Source="$(var.SBML2Ex)\samples\l2v1-events.xml" />
+            </Component>
+            <Component Id="cmp0D352763FBAB11E2C8F9443DDB96C3DE" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filC74E896B15D460287A4AA2FF7DE71EF0" KeyPath="yes" Source="$(var.SBML2Ex)\samples\l2v1-functions.xml" />
+            </Component>
+            <Component Id="cmpE26178D44FD84D7F63F37154D78B47E0" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil1A7C5FA006C2BDBFD64B976FF8D306E3" KeyPath="yes" Source="$(var.SBML2Ex)\samples\l2v1-mc-ode.xml" />
+            </Component>
+            <Component Id="cmp91F76653032884550E19E314443CA65D" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil3B734CB42C99DCF0AC2CA3E00303E6A5" KeyPath="yes" Source="$(var.SBML2Ex)\samples\l2v1-units.xml" />
+            </Component>
+            <Component Id="cmpECE35BF34091426B35332DEB8E99802C" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filAE376B71651D8BB0CF59C70ACDBE3E07" KeyPath="yes" Source="$(var.SBML2Ex)\samples\Lac_v1.2.2.xml" />
+            </Component>
+            <Component Id="cmp61BF2AA9CAA4E52BFAD0AD4DC7623E9D" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filB03D724584660DBC7EDF69EBBB77754B" KeyPath="yes" Source="$(var.SBML2Ex)\samples\levelCheck.xml" />
+            </Component>
+            <Component Id="cmp2E03857F7D9D319E6DBEA72942209830" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filC4A98733F66568982035701B35B79EA7" KeyPath="yes" Source="$(var.SBML2Ex)\samples\NCAout-refv0.85.xml" />
+            </Component>
+            <Component Id="cmpC809DC4F543818D85BAD4624080B9E81" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil55A358F690979A3F344E881D07038140" KeyPath="yes" Source="$(var.SBML2Ex)\samples\ruleLabelRef.xml" />
+            </Component>
+            <Component Id="cmp899A537B786D68F6D6419E413F51A8CE" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil9CB17E480F8F461A98FD8C175BA37D02" KeyPath="yes" Source="$(var.SBML2Ex)\samples\ruleVariableRef.xml" />
+            </Component>
+            <Component Id="cmpC7D8965D61FBB53E19A7E51F3B8A2E82" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil4745C2BA1EE48DAE78C0C3EF018D8B21" KeyPath="yes" Source="$(var.SBML2Ex)\samples\test.xml" />
+            </Component>
+            <Component Id="cmpA49C9540FD249BBD6B5F52D0E19179B6" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil8A5131AD1CACBA7C4C29CF9276CDF234" KeyPath="yes" Source="$(var.SBML2Ex)\samples\test_SBML2Ex.xml" />
+            </Component>
+            <Component Id="cmpB4CCAD44356F68560E286EFA6D820BC2" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil6E99260FCB290434A90841C89ABA8CB2" KeyPath="yes" Source="$(var.SBML2Ex)\samples\triggerLabelRef.xml" />
+            </Component>
+            <Component Id="cmp1F3CE4413B37175DDA59811C00F8CC80" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil46EE3D61D01F786A21C040F87458A48F" KeyPath="yes" Source="$(var.SBML2Ex)\samples\uniqueRuleRef.xml" />
+            </Component>
+            <Component Id="cmpE3DB64ADF04FFEEA830C5687526171D7" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil117CCB4F0313C9DF74E3AE38D7123BFB" KeyPath="yes" Source="$(var.SBML2Ex)\samples\unitDefs.xml" />
+            </Component>
+            <Component Id="cmp05143E410A727FF585F022C69A3AC209" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="filAA2F60530BC171DB8CCD0F89A74E9BBC" KeyPath="yes" Source="$(var.SBML2Ex)\samples\validation_test_sbml.xml" />
+            </Component>
+            <Component Id="cmpFC4CC04F84BFED11207759C2FD3509A3" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil328D45333EE5D48A022E82F8490DA4F0" KeyPath="yes" Source="$(var.SBML2Ex)\samples\versionCheck.xml" />
+            </Component>
+            <Component Id="cmp43DA3BFCB1FA686103651D3935EC2959" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil9118E81418DA3307B25DF415751707D4" KeyPath="yes" Source="$(var.SBML2Ex)\samples\versionCheck_test.xml" />
+            </Component>
+            <Component Id="cmp3AA6A34FD73D4B216918450B0616AF81" Directory="dir3683F7580EA3EC6030A48FFE787BD379" Guid="*">
+                <File Id="fil3ECA80761200554C38BDED80AEA873A5" KeyPath="yes" Source="$(var.SBML2Ex)\samples\yeastnew2_core.xml" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir219518735E441AECFD42DEA7AF8D9B96" />
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir3683F7580EA3EC6030A48FFE787BD379" />
+    </Fragment>
+</Wix>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="eventVariableRef" name="eventVariableRef">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Event Variable Reference</title>
+</head>
+<body>
+<h1>Event Variable Reference</h1>
+<p>
+Event variable assignments must be defined and can't reference
+parameters defined locally to a reaction kinetic law.
+</p>
+</body>
+</sbml:notes>
+
+<listOfCompartments>
+  <compartment id="global" />
+  <compartment id="ec0" />
+</listOfCompartments>
+
+<listOfSpecies>
+  <species id="es0" compartment="global" />
+  <species id="A" compartment="global" />
+  <species id="B" compartment="global" />
+  <species id="C" compartment="global" />
+  <species id="D" compartment="global" />
+</listOfSpecies>
+
+<listOfParameters>
+  <parameter id="ep0" />
+</listOfParameters>
+
+<listOfReactions>
+  <reaction id="r1" reversible="false">
+    <listOfReactants>
+      <speciesReference species="A" stoichiometry="1" />
+      <speciesReference species="B" stoichiometry="1" />
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="C" stoichiometry="1" />
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference species="D" />
+    </listOfModifiers>
+    <kineticLaw>
+      <math:math xmlns="http://www.w3.org/1998/Math/MathML" />
+      <listOfParameters>
+        <parameter id="rp0" />
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+
+<listOfEvents>
+  <event id="e0">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ec0">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e1">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="es0">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e2">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep0">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e3">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="rp0">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e4">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="es0">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e5">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="foo">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+</listOfEvents>
+</model>
+</sbml>

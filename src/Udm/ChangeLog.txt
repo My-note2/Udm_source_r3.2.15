@@ -1,0 +1,299 @@
+02/08/08 - endre
+ClassGen.cpp, DiagramGen.cpp, NamespaceGen.cpp, Udm.cpp, UdmCpp.cpp,
+Udm.h, UdmUtil.cpp:
+	- new C++ code generator
+UdmCorbaCppH.cpp, UdmH.cpp, UdmMetaCpp.cpp:
+	- deleted, the code has been integrated into the new code generator
+
+07/02/07 - endre
+UdmH.cpp:
+	- Make Archetype() method object-const. UDM-45
+
+06/14/07 - endre
+UdmCpp.cpp, UdmH.cpp:
+	- Associations may span different namespaces, like
+	  compositions. Create and initialize cross-namespace
+	  associations after the meta objects have been created.
+
+06/03/07 - endre
+UdmCpp.cpp, UdmH.cpp:
+	- Make initialization from another diagram work when that
+	  diagram contains namespaces. Now all meta objects are
+	  initialized first and only after that initialization the
+	  composition and association roles are created.
+
+04/15/07 - endre
+UdmCppH.cpp, UdmH.cpp:
+	- Children role names and children kind method names use only
+	  the name of the child target if both parent and child belong
+	  to the same namespace. In the other case, the full path of
+	  child target is used.
+
+10/28/06 - endre
+Udm.cpp, Udm.h, UdmCpp.cpp, UdmCppH.cpp, UdmH.cpp, UdmMetaCpp.cpp,
+UdmUtil.cpp:
+	- nested UML namespaces
+
+01/11/06 - endre
+UdmCpp.cpp:
+	- setup associations roles to cross diagram in
+	  InitializeDgr(dgr) and InitializeNS(ns)
+
+11/24/05 - endre
+UdmH.cpp:
+	- fix GenerateHCrossForwardDeclarations() to not generate a
+	  namespace declaration when the namespace is empty
+	- add GetCPPNamefromFromStr()
+	- in InheritenceSolver constructor sort classes by namespace
+	  only when needed
+
+11/23/05 - endre
+UdmCpp.cpp:
+	- remove redundant call to SingleCPPNamespace from UmlClassCPPName
+
+11/13/05 - endre
+UdmH.cpp:
+	- declare static members individually, to prevent VC++
+	  compiler error C2487
+
+05/17/05 - kalmar
+UdmCpp.cpp:
+	- changed in generation "Uml::SetClass" to ::Uml::SetClass
+
+04/22/05 - kalmar
+Udm.cpp:
+	- added -q switch - all the contained elements in a namespace
+	  enlisted here will be ignored during parsing, see udm.exe -i
+	  switch
+	- added -i switch - all the contained elements in a namespace
+	  enlisted here will be ignored during parsing, see udm.exe -i
+	  switch
+
+12/20/04 - endre
+UdmH.cpp, UdmMeta.cpp:
+	- took the functions from UdmCppH.cpp. Also separated the
+	  huge generator function into a bunch of smaller functions
+	  to increase readability.
+UdmCS.cpp:
+	- took the functions from UdmCppH.cpp; no other modifications
+	  on the functions have been made.
+UdmCppH.cpp:
+	- Finally splitted this file:
+	  CS Generators:		UdmCS.cpp
+	  .H Generator:			UdmH.cpp
+	  .CPP Generator(normal):	UdmCpp.cpp	(generates code which assumes that meta-meta objects are already created)
+	  .CPP Generator(meta):		UdmMetaCpp.cpp	(generates Uml.cpp)
+	- This file is kept because of the various comments.
+	  Some utility functions are also left here.
+	  Probably this is the last changelog information entered here.
+
+12/12/04 - endre
+Udm.cpp:
+	- small bugfix, for bug a which appeared only on Linux
+	  platforms. Filenames are case sensitive
+
+12/01/04 - endre
+UdmCppH.cpp:
+	- Minor vc7x porting issues.
+
+11/26/04 - kalmar
+UdmCorbaCppH.cpp:
+	- Fixed some syntax errors in the generated code
+
+11/07/04 - endre
+UdmCppH.cpp:
+	- Removed the constraint which denied for a class to have both
+	  text attributes and children
+
+10/24/04 - endre
+UdmCppH.cpp:
+	- slight modification because of introducing a new type
+	  "Text", which is the same as "String", but it gets persisted
+	  differently in DOM backend.
+	- updated the code generator and CheckClass(), which now
+	  checks that a class either is a parent class or has text
+	  attributes
+
+11/20/04 - endre
+UdmCorbaCppH.cpp:
+	- Changed the code generator to split the generated code in
+	  more functions to avoid C1509 compiler limit errors.
+
+07/14/04 - endre
+UdmCppH.cpp:
+	- Changed the code generator to include both rolenames when
+	  generating the SetChildRole, SetParentRole calls.
+
+06/20/04 - endre
+UdmCppH.cpp:
+	- Fixed Code generator bug in case of multiple inheritence,
+	  when having an immediate and an indirect inheritence
+	  relationship between two classes.
+
+06/17/04 - kalmar
+UdmCorbaCppH.cpp:
+	- Changed the GenerateCORBACPP to generate cross link related
+	  code
+
+06/17/04 - kalmar
+Udm.cpp:
+	- separated GenerateCORBACPP method into UdmCorbaCppH.cpp
+ 	- in presence of cross links the -c switch generates regular
+	  code for cross link meta and corba compliant Initialize method
+	  for other metas
+
+06/16/04 - endre
+Udm.cpp:
+	- Using the XSD/DTD generator from the UdmBase.
+	- -c switch works with UDM Projects as well.
+UdmCppH.cpp:
+	- Changed the signature of GenerateCORBACPP to also include
+	  macro and cross-diagram arguments
+
+06/15/04 - endre
+UdmCppH.cpp:
+	- Fixed bug UDM-7
+	  http://escher.isis.vanderbilt.edu/JIRA/browse/UDM-7
+	- Removed DTD/XSD generator functions and using thise defined
+	  in DTDGen.h
+
+06/15/04 - endre
+UdmCppH.cpp:
+	- Fixed bug UDM-8
+	  http://escher.isis.vanderbilt.edu/JIRA/browse/UDM-8
+
+06/04/04 - endre
+UdmCppH.cpp:
+	- Workaround for the previous compiler bug. Typedef removed
+	  from the code generator.
+
+05/24/04 - endre
+Udm.cpp:
+	- when using a macro definition, Udm.exe also generates an
+	  export file which make easier the DLL export/import
+	  of the generated classes
+UdmCppH.cpp:
+	- unfortunately compiler fails in generated code if the
+	  Udm::Object typedef is not present
+	- redesigned the new Initialize(const Uml::Diagram&) function
+	  generator such that unique rolenames are no more required.
+	- removed the typedef namespace::Object Udm::Object, thus
+	  there can be a class named 'Object' in custom namespaces
+	  without conflicting with Udm::Object
+	- when using a macro definition, Udm.exe also generates an
+	  export file which make easier the DLL export/import of the
+	  generated classes
+
+05/06/04 - endre
+UdmCppH.cpp:
+	- added Initialize(const Uml::Diagram& dgr) function which can
+	  initialize the static meta pointers in the API from an
+	  existing UML diagram
+
+04/22/04 - endre
+UdmCppH.cpp:
+	- added _sorted() templated versions for functions returning
+	  instances of instantiated template classes:
+		CrossAssocAttr, AssocAttr, AClassCrossAssocAttr, 
+		AClassAssocAttr, ChildrenAttr, DerivedAttr, InstantiatedAttr
+	  The *_sorted(const Pred &) versions accept a templae class
+	  parameter which is supposed to order the resulting
+	  set<CLASS>
+
+04/03/04 - endre
+UdmCppH.cpp:
+	- changed the generator to generate virtual destructor for
+	  Visitor classes
+
+03/15/04 - endre
+UdmCppH.cpp:
+	- changed the internal dom attributes from using literal
+	  strings to constants defined in UdmDom namespace
+
+02/24/04 - endre
+UdmCppH.cpp:
+	- changed the DTD/XSD generators to generate version
+	  information as processing instructions
+
+02/02/04 - endre
+UdmCppH.cpp:
+	- Changed the new CPP generator - splitted  the Initialize()
+	  function in three smaller functions because it created
+	  problems with MSVC' limitations.
+
+01/26/04 - endre
+Udm.cpp:
+	- Mainly porting issues to g++ 2.96, specially the
+	  compress/decompress stuff.
+	- void type had to be add to all the functions declared with
+	  no return type
+
+01/15/04 - endre
+UdmCppH.cpp:
+	- Changed XSD Schema generator's root element selection
+	  condition: All classes, which have no container classes but
+	  self are allowed to be root elements.
+
+01/10/04 - endre
+Udm.cpp:
+	- inputfile is checked by content and not by extension. .udm
+	  files containing XML format is OK and vice-versa.
+
+12/12/03 - endre
+UdmCppH.cpp:
+	- Changed the cross class - cross diagram delimitator
+	  character from "_" to string "_cross_ph_". This allows '_'
+	  characters in classnames.
+
+11/17/02 - endre
+UdmCppH.cpp:
+	- Added constraints that prevent the generation of invalid
+	  code because of using reserved or duplicate attribute/role names
+
+11/05/02 - endre
+UdmCppH.cpp:
+	- DTD generator changed; subelements
+
+10/25/02 - endre
+UdmCppH.cpp:
+	- Added support for array defvalues and new attribute notation
+Udm.cpp:
+	- removed support for temporary diagram. We use a new syntax
+	  for specifying nonpersistent attributes.
+
+07/31/02 -
+Udm.cpp:
+	- C# and Corba generators added, meaning of switches:
+	  -s	generate C# API, normal format
+	  -s -m	generate C# API, meta format
+	  -c	 generate CORBA init .cpp file
+
+09/23/02 -
+Udm.cpp:
+	- print usage if there are no arguments
+
+07/31/02 - endre
+UdmCppH.cpp:
+	- C#, CORBA  code generators added
+
+06/20/02 - endre
+UdmCppH.cpp:
+	- changed .h code generator to support array attributes in
+	  case of non-persistent attributes as well
+
+06/17/02 - endre
+UdmCppH.cpp:
+	- changed code generators to support attribute arrays:
+	  .h:	when max is not equal to 1 or 0 for an attribute,
+		the generated functions returns a AttrArr type
+		attribute object, which contains a vector
+	  .dtd:	in case of boolean vectors, the DTD attrib definition
+		is not <true;false> but CDATA. (Parsing is done by the
+		DOM backend)
+						
+04/22/02 - endre
+UdmCppH.cpp:
+	- changed the attribute generation code to generate the
+	  __child_as composition child role attribute in the DTD as an
+	  enum of all possible childroles instead of an open
+	  NMTOKENS. As requested by Jonathan.

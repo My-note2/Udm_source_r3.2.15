@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="klawUnitRef" name="klawUnitRef">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Invalid Reaction Component References</title>
+</head>
+<body>
+<h1>Invalid Reaction Component References</h1>
+<p>
+Reaction elements reference undefined species.
+</p>
+</body>
+</sbml:notes>
+
+<listOfUnitDefinitions>
+  <unitDefinition id="msec">
+    <listOfUnits>
+      <unit kind="second" scale="-3" />
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition id="mmole">
+    <listOfUnits>
+      <unit kind="mole" scale="-3" />
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions>
+
+<listOfCompartments>
+  <compartment id="global" />
+</listOfCompartments>
+
+<listOfSpecies>
+  <species id="A" compartment="global" />
+  <species id="B" compartment="global" />
+  <species id="C" compartment="global" />
+</listOfSpecies>
+
+<listOfReactions>
+<reaction id="r1">
+  <listOfReactants>
+    <speciesReference species="A" stoichiometry="1" />
+  </listOfReactants>
+  <listOfProducts>
+    <speciesReference species="B" stoichiometry="1" />
+  </listOfProducts>
+  <listOfModifiers>
+    <modifierSpeciesReference species="C" />
+  </listOfModifiers>
+  <kineticLaw timeUnits="second" substanceUnits="mole">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML" />
+  </kineticLaw>
+</reaction>
+<reaction id="r2">
+  <listOfReactants>
+    <speciesReference species="A" stoichiometry="1" />
+  </listOfReactants>
+  <listOfProducts>
+    <speciesReference species="B" stoichiometry="1" />
+  </listOfProducts>
+  <listOfModifiers>
+    <modifierSpeciesReference species="C" />
+  </listOfModifiers>
+  <kineticLaw timeUnits="msec" substanceUnits="mmole">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML" />
+  </kineticLaw>
+</reaction>
+<reaction id="r3">
+  <listOfReactants>
+    <speciesReference species="A" stoichiometry="1" />
+  </listOfReactants>
+  <listOfProducts>
+    <speciesReference species="B" stoichiometry="1" />
+  </listOfProducts>
+  <listOfModifiers>
+    <modifierSpeciesReference species="C" />
+  </listOfModifiers>
+  <kineticLaw timeUnits="foo" substanceUnits="mmole">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML" />
+  </kineticLaw>
+</reaction>
+<reaction id="r4">
+  <listOfReactants>
+    <speciesReference species="A" stoichiometry="1" />
+  </listOfReactants>
+  <listOfProducts>
+    <speciesReference species="B" stoichiometry="1" />
+  </listOfProducts>
+  <listOfModifiers>
+    <modifierSpeciesReference species="C" />
+  </listOfModifiers>
+  <kineticLaw timeUnits="msec" substanceUnits="foo">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML" />
+  </kineticLaw>
+</reaction>
+<reaction id="r5">
+  <listOfReactants>
+    <speciesReference species="A" stoichiometry="1" />
+  </listOfReactants>
+  <listOfProducts>
+    <speciesReference species="B" stoichiometry="1" />
+  </listOfProducts>
+  <listOfModifiers>
+    <modifierSpeciesReference species="C" />
+  </listOfModifiers>
+  <kineticLaw timeUnits="foo" substanceUnits="bar">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML" />
+  </kineticLaw>
+</reaction>
+</listOfReactions>
+
+</model>
+</sbml>

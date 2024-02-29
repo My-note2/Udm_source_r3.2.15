@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<?define include=..\..\include?>
+<!-- generated with ../../../../Documents/META/deploy/gen_dir_wxi.py ../../include/ -->
+    <Fragment>
+        <DirectoryRef Id="include" />
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="include">
+            <Component Id="cmp2264B82A44F0A04D630E38121861F083" Directory="include" Guid="*">
+                <File Id="fil0CA9FD87616FFC2CB596E7E1B9B5A93B" KeyPath="yes" Source="$(var.include)\cint_string.h" />
+            </Component>
+            <Component Id="cmp5E0781E68EC00E6651F32533084289B4" Directory="include" Guid="*">
+                <File Id="filDF65A82E443C97D65806690AEA733F5A" KeyPath="yes" Source="$(var.include)\ErrHand.h" />
+            </Component>
+            <Component Id="cmpC09A6839759DE79FABE75857DF2B6933" Directory="include" Guid="*">
+                <File Id="filF8932AE03BD36A3669F7945EECC534BD" KeyPath="yes" Source="$(var.include)\Makefile.am" />
+            </Component>
+            <Component Id="cmpC3F6E3FABF4231384AFD6BAC3DC04FCE" Directory="include" Guid="*">
+                <File Id="fil7186D7BCFC27A2654698AB5966072146" KeyPath="yes" Source="$(var.include)\readme.txt" />
+            </Component>
+            <Component Id="cmpB67559FFDC4198F809027083E7C57226" Directory="include" Guid="*">
+                <File Id="filA0149958EC7481A5ED49F96CFE226046" KeyPath="yes" Source="$(var.include)\UdmBase.h" />
+            </Component>
+            <Component Id="cmpB3C52B88037DF74748A0C39B249480EB" Directory="include" Guid="*">
+                <File Id="filA3C7FBE3DD06903218613CE57760DB1B" KeyPath="yes" Source="$(var.include)\UdmCintSwig.h" />
+            </Component>
+            <Component Id="cmp28060717991A30FCA7243CA4D65BF3B2" Directory="include" Guid="*">
+                <File Id="fil6C6455D969830AB9BD94895BDEB6B1AD" KeyPath="yes" Source="$(var.include)\UdmDom.h" />
+            </Component>
+            <Component Id="cmp8B6E23324ED17403329926BC91AA4BBD" Directory="include" Guid="*">
+                <File Id="fil4A1F708F0BF013C7FE2C08915719B8CE" KeyPath="yes" Source="$(var.include)\UdmGme.h" />
+            </Component>
+            <Component Id="cmpE5749FF1CE48F200E796117D397C2031" Directory="include" Guid="*">
+                <File Id="fil3C6D5D91DCAF67B31555D1BE62EEE71A" KeyPath="yes" Source="$(var.include)\UdmMPL.h" />
+            </Component>
+            <Component Id="cmp14DA4A30A7482CC5614E0B3D46E03DA9" Directory="include" Guid="*">
+                <File Id="filA1C0574E864F1CEC44F0AE71A7572F78" KeyPath="yes" Source="$(var.include)\UdmOcl.h" />
+            </Component>
+            <Component Id="cmp34D232AFD8BAF17381D2A22DA23AAD47" Directory="include" Guid="*">
+                <File Id="filEA0954D56F952C24058EE35F854805A2" KeyPath="yes" Source="$(var.include)\UdmProject.h" />
+            </Component>
+            <Component Id="cmp85A325ACC52C0AF6F013A993E5207CD6" Directory="include" Guid="*">
+                <File Id="fil057596B86E5EC890D7D2FB94B100A5D1" KeyPath="yes" Source="$(var.include)\UdmStatic.h" />
+            </Component>
+            <Component Id="cmpE7E327435FB258F5E12DC60B07716D80" Directory="include" Guid="*">
+                <File Id="filD0DFC9F1C6FDFFEA552572588C686DDF" KeyPath="yes" Source="$(var.include)\UdmUtil.h" />
+            </Component>
+            <Component Id="cmpF99122177E37DDB32D3EB7B7B3CA9F76" Directory="include" Guid="*">
+                <File Id="fil9F712ED4A5ABA260675F9E1C0A0B1771" KeyPath="yes" Source="$(var.include)\UdmXmi.h" />
+            </Component>
+            <Component Id="cmp7A01CDD020E2CEF6C08C8B44903B11A0" Directory="include" Guid="*">
+                <File Id="fil2733EBCB5957875DB01EFB79B3C7117E" KeyPath="yes" Source="$(var.include)\Uml.h" />
+            </Component>
+            <Component Id="cmpE7890F8D3B879536BF56438D1AA91DDE" Directory="include" Guid="*">
+                <File Id="fil1C34AEC3EDC5C0E03203FB96F1EFAEE7" KeyPath="yes" Source="$(var.include)\UmlExt.h" />
+            </Component>
+            <Component Id="cmpF1FD72D8A6DC0EE759B27D6C3EFE1ECB" Directory="include" Guid="*">
+                <File Id="filDA823A7A192DF25011835B750376ECC5" KeyPath="yes" Source="$(var.include)\Uml_export.h" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

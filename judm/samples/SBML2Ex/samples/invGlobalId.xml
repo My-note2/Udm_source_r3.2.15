@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="invGlobalId" name="invGlobalIdf">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Invalid Global Identifiers</title>
+</head>
+<body>
+<h1>Invalid Global Identifiers</h1>
+<p>
+Multiple duplicate identifiers in the notional global namespace are
+defined.  This includes multiple definitions of the same identifier in
+the same element type as well as duplicated definitions across different
+element types.
+</p>
+</body>
+</sbml:notes>
+
+<listOfFunctionDefinitions>
+  <functionDefinition id="f0">
+    <math:math />
+  </functionDefinition>
+  <functionDefinition id="f1">
+    <math:math />
+  </functionDefinition>
+  <functionDefinition id="f2">
+    <math:math />
+  </functionDefinition>
+  <functionDefinition id="f3">
+    <math:math />
+  </functionDefinition>
+  <functionDefinition id="f4">
+    <math:math />
+  </functionDefinition>
+  <functionDefinition id="f5">
+    <math:math />
+  </functionDefinition>
+  <functionDefinition id="f6">
+    <math:math />
+  </functionDefinition>
+
+  <functionDefinition id="f1">
+    <math:math />
+  </functionDefinition>
+  <functionDefinition id="c1">
+    <math:math />
+  </functionDefinition>
+  <functionDefinition id="s1">
+    <math:math />
+  </functionDefinition>
+  <functionDefinition id="p1">
+    <math:math />
+  </functionDefinition>
+  <functionDefinition id="r1">
+    <math:math />
+  </functionDefinition>
+  <functionDefinition id="e1">
+    <math:math />
+  </functionDefinition>
+</listOfFunctionDefinitions>
+
+<listOfCompartments>
+  <compartment id="global" />
+  <compartment id="c0" />
+  <compartment id="c1" />
+  <compartment id="c2" />
+  <compartment id="c3" />
+  <compartment id="c4" />
+  <compartment id="c5" />
+  <compartment id="c6" />
+
+  <compartment id="f2" />
+  <compartment id="c2" />
+  <compartment id="s2" />
+  <compartment id="p2" />
+  <compartment id="r2" />
+  <compartment id="e2" />
+</listOfCompartments>
+
+<listOfSpecies>
+  <species id="s0" compartment="global" />
+  <species id="s1" compartment="global" />
+  <species id="s2" compartment="global" />
+  <species id="s3" compartment="global" />
+  <species id="s4" compartment="global" />
+  <species id="s5" compartment="global" />
+  <species id="s6" compartment="global" />
+
+  <species id="f3" compartment="global" />
+  <species id="c3" compartment="global" />
+  <species id="s3" compartment="global" />
+  <species id="p3" compartment="global" />
+  <species id="r3" compartment="global" />
+  <species id="e3" compartment="global" />
+</listOfSpecies>
+
+<listOfParameters>
+  <parameter id="p0" />
+  <parameter id="p1" />
+  <parameter id="p2" />
+  <parameter id="p3" />
+  <parameter id="p4" />
+  <parameter id="p5" />
+  <parameter id="p6" />
+
+  <parameter id="f4" />
+  <parameter id="c4" />
+  <parameter id="s4" />
+  <parameter id="p4" />
+  <parameter id="r4" />
+  <parameter id="e4" />
+
+  <parameter id="ep0" />
+  <parameter id="ep1" />
+  <parameter id="ep2" />
+  <parameter id="ep3" />
+  <parameter id="ep4" />
+  <parameter id="ep5" />
+  <parameter id="ep6" />
+
+  <parameter id="ep7" />
+  <parameter id="ep8" />
+  <parameter id="ep9" />
+  <parameter id="ep10" />
+  <parameter id="ep11" />
+  <parameter id="ep12" />
+</listOfParameters>
+
+<listOfReactions>
+  <reaction id="r0" />
+  <reaction id="r1" />
+  <reaction id="r2" />
+  <reaction id="r3" />
+  <reaction id="r4" />
+  <reaction id="r5" />
+  <reaction id="r6" />
+
+  <reaction id="f5" />
+  <reaction id="c5" />
+  <reaction id="s5" />
+  <reaction id="p5" />
+  <reaction id="r5" />
+  <reaction id="e5" />
+</listOfReactions>
+
+<listOfEvents>
+  <event id="e0">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep0">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e1">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep1">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e2">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep2">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e3">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep3">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e4">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep4">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e5">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep5">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e6">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep6">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+
+  <event id="f6">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep7">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="c6">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep8">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="s6">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep9">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="p6">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep10">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="r6">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep11">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e6">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep12">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+</listOfEvents>
+
+</model>
+</sbml>

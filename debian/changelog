@@ -1,0 +1,47 @@
+udm (3.2.14-ubuntu1) trusty; urgency=medium
+
+  * Udm 3.2.14
+
+ -- Kevin Smyth <kevin.m.smyth@gmail.com>  Tue, 05 Apr 2016 14:12:01 -0500
+
+udm (3.2.13-1ubuntu1) precise; urgency=low
+
+  * Udm 3.2.13
+
+ -- Kevin Smyth <ksmyth@isis.vanderbilt.edu>  Wed, 19 Mar 2014 10:58:21 -0500
+
+udm (3.2.11-1) lucid; urgency=low
+
+  * Udm 3.2.12
+
+ -- Kevin Smyth <ksmyth@isis.vanderbilt.edu>  Mon, 29 Jul 2013 18:52:51 +0000
+
+udm (3.2.11-2) lucid; urgency=low
+
+  * Include judm.jar
+
+ -- Kevin Smyth <ksmyth@isis.vanderbilt.edu>  Fri, 10 Aug 2012 10:34:02 -0500
+
+udm (3.2.11-1) lucid; urgency=low
+
+  * Udm 3.2.11
+
+ -- Kevin Smyth <ksmyth@isis.vanderbilt.edu>  Fri, 29 Jun 2012 11:44:35 -0500
+
+udm (3.2.10-1) unstable; urgency=low
+
+  * Udm 3.2.10
+
+ -- Kevin Smyth <ksmyth@isis.vanderbilt.edu>  Thu, 02 Feb 2012 16:27:51 -0600
+
+udm (3.2.9-1) unstable; urgency=low
+
+  * Udm 3.2.9
+
+ -- Kevin Smyth <ksmyth@isis.vanderbilt.edu>  Wed, 14 Jul 2010 11:32:39 -0500
+
+udm (3.2.4-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Kevin Smyth <ksmyth@isis.vanderbilt.edu>  Wed, 14 Jul 2010 11:32:39 -0500

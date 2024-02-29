@@ -1,0 +1,8 @@
+// -*- MPC -*-
+// $Id: boost_base.mpb 923 2006-02-15 16:03:44Z elliott_c $
+
+project {
+  requires += boost
+  includes += $(BOOST_ROOT)/include/$(BOOST_VERSION) $(BOOST_ROOT)/.
+  libpaths += $(BOOST_ROOT)/lib
+}

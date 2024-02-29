@@ -1,0 +1,29 @@
+include ../../Makefile.OSX.incl
+
+UDM_SOURCES=../../samples/LampDiagram_udm.xml ../../Uml_udm.xml
+PYTHON_OBJECTS=LampDiagram.py Uml.py
+
+all:$(PYTHON_OBJECTS) Lamp
+
+
+Uml.py:../../etc/Uml_udm.xml
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -p -d ../../etc -T 
+LampDiagram.py:../../samples/LampDiagram_udm.xml
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -p -d ../../etc -T 
+#Use the sample CreateLampModel to create some models in Lamp.xml / Lamp.mem
+Lamp:../../samples/CreateLampModel/CreateLampModel
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) $< $@.mem $@.xml
+
+test:test.py Uml.py LampDiagram.py ../../lib/udm.so
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) VERSIONER_PYTHON_PREFER_32_BIT=$(VERSIONER_PYTHON_PREFER_32_BIT) python test.py
+
+test_console:
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) VERSIONER_PYTHON_PREFER_32_BIT=$(VERSIONER_PYTHON_PREFER_32_BIT) python 
+
+
+
+
+clean: 
+	rm -f $(PYTHON_OBJECTS) LampDiagram.xsd Uml.xsd Lamp.mem Lamp.xml *.pyc
+
+

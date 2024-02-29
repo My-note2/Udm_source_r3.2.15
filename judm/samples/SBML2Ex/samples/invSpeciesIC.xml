@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="invSpeciesIC" name="invSpeciesIC">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Invalid Species Initial Condition</title>
+</head>
+<body>
+<h1>Invalid Species Initial Condition</h1>
+<p>
+A species can't define both <em>initialAmount</em> and
+<em>initialConcentration</em>.
+</p>
+</body>
+</sbml:notes>
+
+<listOfCompartments>
+<compartment id="global" />
+</listOfCompartments>
+
+<listOfSpecies>
+<species id="A" compartment="global" initialAmount="1.0" />
+<species id="B" compartment="global" initialConcentration="1.0" />
+<species id="C" compartment="global" initialAmount="1.0"
+  initialConcentration="1.0" />
+</listOfSpecies>
+
+</model>
+</sbml>

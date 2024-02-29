@@ -1,0 +1,21 @@
+Source: udm
+Priority: extra
+Maintainer: Kevin Smyth <ksmyth@isis.vanderbilt.edu>
+Build-Depends: debhelper (>= 7), autoconf, libtool, autotools-dev, ccache, libcppunit-dev, libxalan110-dev, ant, junit, libxerces-c2-dev, openjdk-6-jdk, ant-optional, pccts, libboost-dev, zlib1g-dev, swig, wget, unzip, libjson-spirit-dev
+Standards-Version: 3.8.1
+Section: libs
+Homepage: http://repo.isis.vanderbilt.edu/UDM
+
+Package: udm-dev
+Section: libdevel
+Architecture: any
+Depends: udm (= ${binary:Version}), ${misc:Depends}, libxerces-c2-dev
+Description: Universal Data Model client development headers
+ Udm provides an API for accessing and modifying models.
+
+Package: udm
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libxerces-c28
+Description: Universal Data Model libraries
+ Udm provides an API for accessing and modifying models.

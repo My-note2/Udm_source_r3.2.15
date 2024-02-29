@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="functionLabelRef" name="functionLabelRef">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Label Reference in Function Definitions</title>
+</head>
+<body>
+<h1>Label Reference in Function Definitions</h1>
+<p>
+The <em>ci</em> elements in a <em>functionDefinition</em> element
+may only refer to lexically preceding <em>functionDefinition</em>
+labels or bound variables associated with the function body.
+</p>
+</body>
+</sbml:notes>
+
+<listOfFunctionDefinitions>
+  <functionDefinition id="f1">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar><ci>x</ci></bvar>
+        <bvar><ci>y</ci></bvar>
+        <apply><plus /><ci>x</ci><ci>y</ci></apply>
+      </lambda>
+    </math:math>
+  </functionDefinition>
+  <functionDefinition id="f2">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar><ci>x</ci></bvar>
+        <apply><ci>f1</ci><ci>x</ci><cn>2</cn></apply>
+      </lambda>
+    </math:math>
+  </functionDefinition>
+  <functionDefinition id="f3">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar><ci>x</ci></bvar>
+        <apply>
+          <ci>f1</ci>
+          <apply>
+            <ci>f2</ci>
+            <ci>c0</ci>
+          </apply>
+          <ci>x</ci>
+        </apply>
+      </lambda>
+    </math:math>
+  </functionDefinition>
+  <functionDefinition id="f4">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar><ci>x</ci></bvar>
+        <apply>
+          <ci>f5</ci>
+          <ci>x</ci>
+          <apply><ci>f2</ci><ci>x</ci></apply>
+        </apply>
+      </lambda>
+    </math:math>
+  </functionDefinition>
+  <functionDefinition id="f5">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar><ci>x</ci></bvar>
+        <bvar><ci>y</ci></bvar>
+        <apply><times /><ci>x</ci><ci>y</ci></apply>
+      </lambda>
+    </math:math>
+  </functionDefinition>
+</listOfFunctionDefinitions>
+
+<listOfCompartments>
+  <compartment id="c0" />
+</listOfCompartments>
+
+</model>
+</sbml>

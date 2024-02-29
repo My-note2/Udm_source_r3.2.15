@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9FBA3BBE-2FAD-4E8A-B766-7067EC217617}</ProjectGuid>
+    <RootNamespace>testGetAdjacentObjects</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\..\..\common-scripts\build_customization\udm.props" />
+    <Import Project="..\..\..\..\..\common-scripts\build_customization\mga2udmxml.props" />
+    <Import Project="..\..\..\..\..\common-scripts\build_customization\xme2mga.props" />
+    <Import Project="..\..\..\..\..\common-scripts\build_customization\mga2udmudm.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="..\cppunit.props" />
+    <Import Project="..\UdmTests.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="..\cppunit.props" />
+    <Import Project="..\UdmTests.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="..\cppunit.props" />
+    <Import Project="..\UdmTests.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="..\cppunit.props" />
+    <Import Project="..\UdmTests.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.21006.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)D</TargetName>
+    <udm_RuleAfterTargets Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mga2udmudm</udm_RuleAfterTargets>
+    <udm_RuleAfterTargets Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mga2udmudm</udm_RuleAfterTargets>
+    <udm_RuleAfterTargets Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mga2udmudm</udm_RuleAfterTargets>
+    <udm_RuleAfterTargets Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mga2udmudm</udm_RuleAfterTargets>
+    <xme2mga_RuleBeforeTargets Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mga2udmudm</xme2mga_RuleBeforeTargets>
+    <xme2mga_RuleBeforeTargets Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mga2udmudm</xme2mga_RuleBeforeTargets>
+    <xme2mga_RuleBeforeTargets Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mga2udmudm</xme2mga_RuleBeforeTargets>
+    <xme2mga_RuleBeforeTargets Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mga2udmudm</xme2mga_RuleBeforeTargets>
+    <mga2udmudm_RuleBeforeTargets Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">udm</mga2udmudm_RuleBeforeTargets>
+    <mga2udmudm_RuleBeforeTargets Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">udm</mga2udmudm_RuleBeforeTargets>
+    <mga2udmudm_RuleBeforeTargets Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">udm</mga2udmudm_RuleBeforeTargets>
+    <mga2udmudm_RuleBeforeTargets Condition="'$(Configuration)|$(Platform)'=='Release|x64'">udm</mga2udmudm_RuleBeforeTargets>
+    <mga2udmudm_RuleAfterTargets Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xme2mga</mga2udmudm_RuleAfterTargets>
+    <mga2udmudm_RuleAfterTargets Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xme2mga</mga2udmudm_RuleAfterTargets>
+    <mga2udmudm_RuleAfterTargets Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">xme2mga</mga2udmudm_RuleAfterTargets>
+    <mga2udmudm_RuleAfterTargets Condition="'$(Configuration)|$(Platform)'=='Release|x64'">xme2mga</mga2udmudm_RuleAfterTargets>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Message>Create directory for generated files</Message>
+      <Command>mkdir "$(OutDir)Gen\tests\testGetAdjacentObjects"
+exit 0
+</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\..\include;$(OutDir)Gen\tests\testGetAdjacentObjects;$(OutDir)\Gen\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UDM_DYNAMIC_LINKING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppunitd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)testGetAdjacentObjects.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>cd "$(OutDir)Gen\tests\testGetAdjacentObjects"
+"$(TargetPath)"
+</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Running $(TargetName)</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>NONE</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PreBuildEvent>
+      <Message>Create directory for generated files</Message>
+      <Command>mkdir "$(OutDir)Gen\tests\testGetAdjacentObjects"
+exit 0
+</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\..\include;$(OutDir)Gen\tests\testGetAdjacentObjects;$(OutDir)\Gen\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UDM_DYNAMIC_LINKING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppunitd_dllx64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)testGetAdjacentObjects.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>cd "$(OutDir)Gen\tests\testGetAdjacentObjects"
+"$(TargetPath)"
+</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Running $(TargetName)</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>NONE</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Message>Create directory for generated files</Message>
+      <Command>mkdir "$(OutDir)Gen\tests\testGetAdjacentObjects"
+exit 0
+</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\..\..\include;$(OutDir)Gen\tests\testGetAdjacentObjects;$(OutDir)\Gen\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UDM_DYNAMIC_LINKING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppunit.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)testGetAdjacentObjects.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>cd "$(OutDir)Gen\tests\testGetAdjacentObjects"
+"$(TargetPath)"
+</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Running $(TargetName)</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>NONE</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PreBuildEvent>
+      <Message>Create directory for generated files</Message>
+      <Command>mkdir "$(OutDir)Gen\tests\testGetAdjacentObjects"
+exit 0
+</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\..\..\include;$(OutDir)Gen\tests\testGetAdjacentObjects;$(OutDir)\Gen\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UDM_DYNAMIC_LINKING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppunit_dllx64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)testGetAdjacentObjects.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>cd "$(OutDir)Gen\tests\testGetAdjacentObjects"
+"$(TargetPath)"
+</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Running $(TargetName)</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>NONE</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\tests\testGetAdjacentObjects\main.cpp" />
+    <ClCompile Include="..\..\..\..\..\tests\testGetAdjacentObjects\PackageA.cpp" />
+    <ClCompile Include="..\..\..\..\..\tests\testGetAdjacentObjects\PackageB.cpp" />
+    <ClCompile Include="..\..\..\..\..\tests\testGetAdjacentObjects\testAssociationScenarios.cpp" />
+    <ClCompile Include="..\..\..\..\..\tests\testGetAdjacentObjects\TestGetAdjacentObjects.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\tests\testGetAdjacentObjects\PackageA.h" />
+    <ClInclude Include="..\..\..\..\..\tests\testGetAdjacentObjects\PackageB.h" />
+    <ClInclude Include="..\..\..\..\..\tests\testGetAdjacentObjects\testAssociationScenarios.h" />
+    <ClInclude Include="..\..\..\..\..\tests\testGetAdjacentObjects\testGetAdjacentObjects.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <xme2mga Include="..\..\..\..\..\tests\testGetAdjacentObjects\testAssociationScenarios.xme">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Converting %(FullPath) to $(OutDir)Gen\tests\testGetAdjacentObjects\%(FileName)_udm.udm</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Converting %(FullPath) to $(OutDir)Gen\tests\testGetAdjacentObjects\%(FileName)_udm.udm</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd "$(TargetDir)\Gen\tests\testGetAdjacentObjects"
+"$(UDM_PATH)\etc\Xme2UdmXml" "%(FullPath)" "%(FileName).mga"
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd "$(TargetDir)\Gen\tests\testGetAdjacentObjects"
+"$(UDM_PATH)\etc\Xme2UdmXml" "%(FullPath)" "%(FileName).mga"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)Gen\tests\testGetAdjacentObjects\%(FileName).mga;$(OutDir)Gen\tests\testGetAdjacentObjects\%(FileName)_udm.udm;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)Gen\tests\testGetAdjacentObjects\%(FileName).mga;$(OutDir)Gen\tests\testGetAdjacentObjects\%(FileName)_udm.udm;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Converting %(FullPath) to $(OutDir)Gen\tests\testGetAdjacentObjects\%(FileName)_udm.udm</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Converting %(FullPath) to $(OutDir)Gen\tests\testGetAdjacentObjects\%(FileName)_udm.udm</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd "$(TargetDir)\Gen\tests\testGetAdjacentObjects"
+"$(UDM_PATH)\etc\Xme2UdmXml" "%(FullPath)" "%(FileName).mga"
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd "$(TargetDir)\Gen\tests\testGetAdjacentObjects"
+"$(UDM_PATH)\etc\Xme2UdmXml" "%(FullPath)" "%(FileName).mga"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)Gen\tests\testGetAdjacentObjects\%(FileName).mga;$(OutDir)Gen\tests\testGetAdjacentObjects\%(FileName)_udm.udm;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)Gen\tests\testGetAdjacentObjects\%(FileName).mga;$(OutDir)Gen\tests\testGetAdjacentObjects\%(FileName)_udm.udm;%(Outputs)</Outputs>
+      <FileType>Document</FileType>
+    </xme2mga>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CreateLampDiagram\CreateLampDiagram.vcxproj">
+      <Project>{3fb0a5a6-8815-45a3-8d68-777c708410fb}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <mga2udmudm Include="..\..\..\..\..\tests\testGetAdjacentObjects\testAssociationScenarios.mga">
+      <FileType>Document</FileType>
+      <MetaName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">testAssociationScenarios</MetaName>
+      <MetaName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">testAssociationScenarios</MetaName>
+      <MetaName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">testAssociationScenarios</MetaName>
+      <MetaName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">testAssociationScenarios</MetaName>
+    </mga2udmudm>
+  </ItemGroup>
+  <ItemGroup>
+    <udm Include="..\..\..\..\..\tests\testGetAdjacentObjects\testAssociationScenarios_udm.udm">
+      <FileType>Document</FileType>
+      <MetaName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">testAssociationScenarios</MetaName>
+      <MetaName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">testAssociationScenarios</MetaName>
+      <MetaName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">testAssociationScenarios</MetaName>
+      <MetaName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">testAssociationScenarios</MetaName>
+    </udm>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\..\..\common-scripts\build_customization\udm.targets" />
+    <Import Project="..\..\..\..\..\common-scripts\build_customization\mga2udmxml.targets" />
+    <Import Project="..\..\..\..\..\common-scripts\build_customization\xme2mga.targets" />
+    <Import Project="..\..\..\..\..\common-scripts\build_customization\mga2udmudm.targets" />
+  </ImportGroup>
+</Project>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="ruleLabelRef" name="ruleLabelRef">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Label Reference in Rule Definitions</title>
+</head>
+<body>
+<h1>Label Reference in Rule Definitions</h1>
+<p>
+The <em>ci</em> elements in any of the rule elements
+may only refer to lexically preceding rule elements
+labels or global identifiers associated with element types
+allowed to vary.
+</p>
+</body>
+</sbml:notes>
+
+<listOfFunctionDefinitions>
+  <functionDefinition id="f0">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar><ci>x</ci></bvar>
+        <bvar><ci>y</ci></bvar>
+        <apply><plus /><ci>x</ci><ci>y</ci></apply>
+      </lambda>
+    </math:math>
+  </functionDefinition>
+</listOfFunctionDefinitions>
+
+<listOfUnitDefinitions>
+  <unitDefinition id="u0">
+    <listOfUnits>
+      <unit kind="mole" />
+      <unit kind="litre" exponent="-1" />
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions>
+
+<listOfCompartments>
+  <compartment id="global" />
+  <compartment id="c0" />
+</listOfCompartments>
+
+<listOfSpecies>
+  <species id="A" compartment="global" />
+  <species id="B" compartment="global" />
+  <species id="C" compartment="global" />
+  <species id="D" compartment="global" />
+  <species id="E" compartment="global" />
+</listOfSpecies>
+
+<listOfParameters>
+  <parameter id="ep0" />
+  <parameter id="p0" />
+</listOfParameters>
+
+<listOfReactions>
+  <reaction id="r0" reversible="true">
+    <listOfReactants>
+      <speciesReference species="A" stoichiometry="1" />
+      <speciesReference species="B" stoichiometry="1" />
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="C" stoichiometry="1" />
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference species="D" />
+    </listOfModifiers>
+    <kineticLaw>
+      <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times />
+          <ci>p0</ci>
+          <ci>global</ci>
+          <ci>u0</ci>
+          <ci>e0</ci>
+          <apply><ci>f0</ci><ci>D</ci><ci>E</ci></apply>
+          <apply>
+            <minus />
+            <apply>
+              <times />
+              <ci>kf</ci>
+              <ci>A</ci>
+              <ci>B</ci>
+            </apply>
+            <apply>
+              <times />
+              <ci>kr</ci>
+              <ci>C</ci>
+            </apply>
+          </apply>
+        </apply>
+      </math:math>
+      <listOfParameters>
+        <parameter id="kf" />
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+
+<listOfEvents>
+  <event id="e0">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep0">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+</listOfEvents>
+
+</model>
+</sbml>

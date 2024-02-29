@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='windows-1252'?>
+
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi' RequiredVersion='3.0.4813.0'>
+
+  <?include ..\Udm_inc.wxi?>
+  <Fragment>
+    <DirectoryRef Id='$(var.SystemFolderNative)'/>
+
+    <ComponentGroup Id='xerces_c$(sys.BUILDARCH)'>
+      <Component Directory='$(var.SystemFolderNative)'>
+        <File Source='..\bin\$(var.XercesC)' />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

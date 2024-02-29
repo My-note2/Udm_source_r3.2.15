@@ -1,0 +1,237 @@
+<?xml version="1.0" ?>
+
+<project name="judm" basedir="${basedir}"  default="lib-zip">
+	<description> Java Wrapper for UDM API </description>
+
+	<!-- Build domain-specific jar -->
+	<target name="lib" depends="init,clean,dirs,compile,meta" description="Build domain-specific jar.">
+
+    <!-- Condition -->
+		<fail unless="dspackage" message="Missing parameter: dspackage" />
+
+		<!-- Create domain specific jar file -->
+		<copy todir="${out.dir}">
+			<fileset dir="${dist.dir}">
+				<include name="*${dspackage}.jar" />
+			</fileset>
+		</copy>
+
+		<!-- Delete src dir -->
+		<delete dir="${src.dir}/edu" />
+
+		<!-- Delete build directory  -->
+		<delete dir="${dist.dir}" />
+
+		<!-- Delete test directory  -->
+		<delete dir="test" />
+
+  </target>
+
+	<!-- Build domain-specific library package  -->
+	<target name="lib-zip" depends="init,clean,dirs,compile,doc,meta" description="Build domain-specific library package.">
+
+    <!-- Condition -->
+		<fail unless="dspackage" message="Missing parameter: dspackage" />
+
+		<!-- Delete src dir -->
+		<delete dir="${src.dir}/edu" />
+
+		<!-- Create zip -->
+		<zip destfile="${out.dir}/${dspackage}.zip">
+			<fileset dir="">
+				<include name="${dspackage}/**/*.*" />
+			</fileset>
+		</zip>
+
+		<!-- Delete build directory  -->
+		<delete dir="${dist.dir}" />
+
+		<!-- Delete test directory  -->
+		<delete dir="test" />
+
+  </target>
+
+	<!-- Build domain-specific eclipse project -->
+	<target name="eclipse" depends="init,clean,dirs,compile,doc,meta,test" description="Build domain-specific eclipse project.">
+
+    <!-- Condition -->
+		<fail unless="dspackage" message="Missing parameter: dspackage" />
+
+		<!-- Create eclipse project -->
+		<copy todir="${dist.dir}">
+			<fileset dir="${etc.dir}">
+				<include name="**/*.classpath" />
+				<include name="**/*.project" />
+			</fileset>
+		</copy>
+		<replace file="${dist.dir}/.classpath" token="@DSPACKAGE@" value="${dspackage}" />
+		<replace file="${dist.dir}/.project" token="@DSPACKAGE@" value="${dspackage}" />
+
+		<!-- Make lib dir -->
+		<mkdir dir="${lib.dir}" />
+		<copy todir="${lib.dir}">
+			<fileset dir="${dist.dir}">
+				<include name="${dspackage}.jar" />
+			</fileset>
+		</copy>
+		<copy todir="${lib.dir}">
+			<fileset dir="${judm.dir}">
+				<include name="judm.jar" />
+			</fileset>
+		</copy>
+		<delete>
+			<fileset dir="${dist.dir}">
+				<filename name="${dspackage}.jar" />
+			</fileset>
+		</delete>
+
+		<!-- Create eclipse zip -->
+		<zip destfile="${out.dir}/${dspackage}_eclipse.zip">
+			<fileset dir="">
+				<include name="${dspackage}/**/*.*" />
+			</fileset>
+		</zip>
+		
+		<!-- Delete build directory  -->
+		<delete dir="${dist.dir}" />
+
+  </target>
+
+	<!-- Set properties, classpath -->
+	<target name="init" description="Initialize properties and classpath variable.">
+
+    <!-- Condition -->
+		<fail unless="dspackage" message="Missing parameter: dspackage" />
+		
+		<!-- Directory of the judm.jar  -->
+		<property environment="env" />
+		<property name="udm.dir" location="${env.UDM_PATH}" />
+		<property name="judm.dir" location="${udm.dir}\bin" />
+		
+		<!-- Directory of the eclipse-specific project files -->
+		<property name="etc.dir" location="${udm.dir}\etc\java" />
+		
+		<!-- Directory where the distribution goes -->
+		<property name="dist.dir" location="${dspackage}" />
+		
+		<!-- Directory of the generated Java source code -->
+		<property name="src.dir" location="${dist.dir}/src" />
+		
+		<!-- Directory of the compilation -->
+		<property name="classes.dir" location="${dist.dir}/classes" />
+		
+		<!-- Directory of the UDML XML and the generated XSD files -->
+		<property name="meta.dir" location="${dist.dir}/meta" />
+
+		<!-- Directory of the libraries -->
+		<property name="lib.dir" location="${dist.dir}/lib" />
+		
+		<!-- Directory of the API documentation -->
+		<property name="apidoc.dir" location="${dist.dir}/apidoc" />
+
+		<!-- Directory of the API documentation -->
+		<property name="test.dir" location="${src.dir}/test" />
+
+  		<!-- Classpath -->
+		<path id="compile.classpath">
+			<fileset dir="${judm.dir}">
+				<include name="judm.jar" />
+			</fileset>
+		</path>
+		
+  </target>
+  
+	<!-- Create library structure -->
+	<target name="dirs" description="Create library structure.">
+
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${apidoc.dir}" />
+		<mkdir dir="${src.dir}" />
+		<mkdir dir="${meta.dir}" />
+		<mkdir dir="${classes.dir}" />
+		
+  </target>
+  
+	<!-- Delete previous build -->
+	<target name="clean" description="Delete previous build and generated compressed libraries.">
+
+		<!--delete dir="${dist.dir}" />
+		<delete>
+			<fileset dir="">
+				<filename name="*.zip" />
+			</fileset>
+		</delete-->
+		
+  </target>
+  
+	<!-- Copy and compile domain-specific sources  -->
+	<target name="compile" description="Copy and compile domain-specific sources.">
+
+		<!-- Copy sources to the src directory -->
+		<copy todir="${src.dir}/edu">
+			<fileset dir="edu">
+				<include name="**/*.java" />
+				<include name="**/*.html" />
+			</fileset>
+		</copy>
+		<delete dir="edu" />
+
+		<!-- Compile source files -->
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" deprecation="false" debug="true" classpathref="compile.classpath" />
+		
+		<!-- Create domain specific jar file -->
+		<jar destfile="${dist.dir}/${dspackage}.jar">
+			<fileset dir="${classes.dir}" />
+		</jar>
+		<delete dir="${classes.dir}" />
+
+   </target>
+ 
+ 	<!-- Generate Java UDM API documentation -->
+	<target name="doc" description="Generate Java UDM API documentation.">
+
+		<javadoc defaultexcludes="yes" classpathref="compile.classpath" Verbose="no" destdir="${apidoc.dir}" windowtitle="${dspackage} UDM API">
+			<packageset  dir="${src.dir}" defaultexcludes="yes">
+        <include name="edu/vanderbilt/isis/**"/>
+        <exclude name="edu/vanderbilt/isis/meta/**"/>
+      </packageset>
+		</javadoc>
+		
+		<!-- Delete src dir -->
+		<delete dir="${src.dir}/edu" />
+
+   </target>
+   
+ 	<!-- Copy UDM XML and generated XSD to the meta library -->
+	<target name="meta" description="Copy UDM XML and generated XSD to the meta library.">
+
+		<copy todir="${meta.dir}">
+			<fileset dir=".">
+				<include name="*.xml" />
+				<include name="*.xsd" />
+				<exclude name="build*.xml" />
+			</fileset>
+		</copy>
+		
+		<delete>
+			<fileset dir="">
+				<filename name="*.xsd" />
+			</fileset>
+		</delete>
+
+  </target>
+
+	<!-- Create test dir -->
+	<target name="test" description="Create test dir.">
+
+		<mkdir dir="${test.dir}" />
+		<copy todir="${test.dir}">
+			<fileset dir="test">
+				<include name="*.java" />
+			</fileset>
+		</copy>
+		<delete dir="test" />
+		
+  </target>
+
+</project>

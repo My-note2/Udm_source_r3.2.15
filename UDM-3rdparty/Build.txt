@@ -1,0 +1,79 @@
+1. xerces-c 2.8.0
+
+Download sources.
+
+Copy Projects/Win32/VC8 to Projects/Win32/VC9.
+
+Change VC8 in directory names to VC9:
+
+  find Projects/Win32/VC9 -name \*.vcproj -print0 | xargs -0r sed -i 's,\\VC8\\,\\VC9\\,g'
+
+Upgrade solution from VS2005 to VS2008, build the solution.
+Copy headers: either from a binary distribution, or from the sources with:
+
+  cd src
+  find . -name \*.hpp -o -name \*.c | xargs tar cf - | (cd %udm_3rdparty_path%/xerces-c_2_8_0/include && tar xf -)
+  find %udm_3rdparty_path%/xerces-c_2_8_0/include -name impl | xargs -r rm -rf
+
+Download binary and extract the files needed.
+
+
+2. build xalan-c 1.11.tobe:
+
+- get sources from svn
+- set XERCESCROOT environment variable to point to the directory containing xerces-c binaries (subdirectories: bin, include and lib)
+- set PATH to include %XERCESCROOT%/bin
+- change .vcproj  projects to link with xerces-c 2.x:
+
+   find Projects/Win32/VC9 -name \*.vcproj -print0 | xargs -0r sed -i 's/xerces-c_3/xerces-c_2/g'
+
+- open solution and build AllInOne projects, debug and release configurations, without ICU
+
+- copy .dll and .lib files
+- Xalan-C_1D.lib is not created in the Build directory, but in the Projects/Win32/VC9/AllInOne directory
+
+- copy headers:
+
+  cd src
+  find . -name \*.hpp | xargs tar cf - | (cd %udm_3rdparty_path%/xalan-c_1_11_0/include && tar xf -)
+
+3. ant-1.6.2
+
+Copy from previous version
+
+4. zlib
+
+Copy from previous version
+TODO: rebuild lib or link with the current zlib dll due to security problems in old versions
+
+5. swig
+
+Download last version for Windows.
+
+6. sed
+
+Copy from previous version.
+
+7. info-zip
+
+Copy from previous version.
+
+8. cppunit
+
+Download latest version, build Debug and Release, copy files.
+
+9. junit
+
+Copy from a previous version.
+
+10. MPC
+
+Needed ?
+
+11. antlr
+
+Download antlr-2.7.7.msi and antlr-2.7.7 source.
+Install .msi and copy into the destination antlr.jar.
+Unpack sources, create project as described in lib/cpp/README. Add $ProjectDir to the include search path. Compile.
+Copy libraries into the target. Copy lib/cpp/antlr into the target.
+

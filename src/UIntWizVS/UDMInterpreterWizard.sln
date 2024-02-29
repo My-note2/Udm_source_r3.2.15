@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{41489397-18B0-411b-97A3-4C44C1689D21}") = "UDMInterpreterWizard", "UDMInterpreterWizard.vcproj", "{CD416692-3F21-4454-87EC-B981CAEBED12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD416692-3F21-4454-87EC-B981CAEBED12}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CD416692-3F21-4454-87EC-B981CAEBED12}.Debug|Win32.Build.0 = Debug|Win32
+		{CD416692-3F21-4454-87EC-B981CAEBED12}.Release|Win32.ActiveCfg = Release|Win32
+		{CD416692-3F21-4454-87EC-B981CAEBED12}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

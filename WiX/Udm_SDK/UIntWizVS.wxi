@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <?define UIntWizVS=..\..\src\UIntWizVS?><!--generated with gen_dir_wxi.py ../../src/UIntWizVS
+--><Fragment>
+        <DirectoryRef Id="UIntWizVS">
+            <Directory Id="dirC16E207D89DA407AFD38D9AA861BD40D" Name="1033" />
+            <Directory Id="dirDF52C26D4939CAECD0273E4CB7B13F74" Name="HTML" />
+            <Directory Id="dirECFEB7F62F71C6A35C7533381C41A5EE" Name="Images" />
+            <Directory Id="dir786918B26A4EE4279332F7B6DADAF9FF" Name="Scripts" />
+            <Directory Id="dir4F8B976F53E743CB390FF3E42C6DC476" Name="Templates" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="UIntWizVS">
+            <Component Directory="UIntWizVS" Guid="*" Id="cmpCC26FFDEF423CE0563AF7F6922EF5038">
+                <File Id="fil8EA1863D8DAA590E8B73C93A3A2FC77D" KeyPath="yes" Source="$(var.UIntWizVS)\default.vcproj" />
+            </Component>
+            <Component Directory="UIntWizVS" Guid="*" Id="cmpD221EA092661DEFB0997244281E27599">
+                <File Id="fil435BFE537115BF49C3354ED84F142666" KeyPath="yes" Source="$(var.UIntWizVS)\setup100.js" />
+            </Component>
+            <Component Directory="UIntWizVS" Guid="*" Id="setup150">
+                <File Id="setup150" KeyPath="yes" Source="$(var.UIntWizVS)\setup150.js" />
+            </Component>
+            <Component Directory="UIntWizVS" Guid="*" Id="cmp142F705866E119EC6441C7CF1F6B23A7">
+                <File Id="fil7D13611CF9E23B3F08C21E73361A3BE2" KeyPath="yes" Source="$(var.UIntWizVS)\setup120.js" />
+            </Component>
+            <Component Directory="UIntWizVS" Guid="*" Id="cmp4EEB579E016BE563EBD24F1231349829">
+                <File Id="fil7182D75C7AEA424E7F3167C7913D425F" KeyPath="yes" Source="$(var.UIntWizVS)\setup90.js" />
+            </Component>
+            <Component Directory="UIntWizVS" Guid="*" Id="cmp495C25F5BEC7FCD7C1209B045CE3D0EA">
+                <File Id="fil5222D2C5E2468A0DC4F633A02608D0D7" KeyPath="yes" Source="$(var.UIntWizVS)\UDMInterpreter.ico" />
+            </Component>
+            <Component Directory="UIntWizVS" Guid="*" Id="cmp5C751AD3F9E29DE9B1D501DDFDCC87C5">
+                <File Id="fil5D28C834F5330D8A6014269A36FE19D5" KeyPath="yes" Source="$(var.UIntWizVS)\UDMInterpreter.vsz" />
+            </Component>
+            <Component Directory="UIntWizVS" Guid="*" Id="cmpAB4A6528986B0C2C8946493A9C5C80CA">
+                <File Id="filC90D8089DA8C554855511E4C7705BE31" KeyPath="yes" Source="$(var.UIntWizVS)\UDMInterpreterWizard.sln" />
+            </Component>
+            <Component Directory="UIntWizVS" Guid="*" Id="cmp3E081B4A1F05B91E52C7C0AD5ADFC406">
+                <File Id="filC5337BAB3546629A1A0C7A6D2C108183" KeyPath="yes" Source="$(var.UIntWizVS)\UDMInterpreterWizard.vcproj" />
+            </Component>
+            <Component Directory="UIntWizVS" Guid="*" Id="cmpDB0E494969C913A557109477A49CF7BA">
+                <File Id="fil668DCCE947EB30035A15ADD624D52394" KeyPath="yes" Source="$(var.UIntWizVS)\UDMInterpreterWizard.vsdir" />
+            </Component>
+            <Component Directory="dirC16E207D89DA407AFD38D9AA861BD40D" Guid="*" Id="cmp80823CDA0D46C0BF7AA3453C1592F06C">
+                <File Id="fil59547751C9D27B1EF7512CFC5A0CE383" KeyPath="yes" Source="$(var.UIntWizVS)\1033\UDMInterpreterWizard.css" />
+            </Component>
+            <Component Directory="dirAF1E0DC74DB11A287B7CB3B3FFF086AE" Guid="*" Id="cmpADEB8A477F2EA3024128390C658B427D">
+                <File Id="fil6538F1990C80C62D27A88DC72BB4689D" KeyPath="yes" Source="$(var.UIntWizVS)\1033\Images\DottedHori.gif" />
+            </Component>
+            <Component Directory="dirAF1E0DC74DB11A287B7CB3B3FFF086AE" Guid="*" Id="cmpDC43755C27640525C523B3009660FEB4">
+                <File Id="filF10B1541C89F5E340D7E5CA7E74507E7" KeyPath="yes" Source="$(var.UIntWizVS)\1033\Images\DottedVert.gif" />
+            </Component>
+            <Component Directory="dirAF1E0DC74DB11A287B7CB3B3FFF086AE" Guid="*" Id="cmpF50D0FF05D0844ED297413668BEEEFDC">
+                <File Id="fil88A89A7B3B76574FE7C8B5ACEC6A309D" KeyPath="yes" Source="$(var.UIntWizVS)\1033\Images\spacer.gif" />
+            </Component>
+            <Component Directory="dir140C57D27A5C8E39F62FF222E227F69D" Guid="*" Id="cmpDE5CB89E11A4291758161604436CDB24">
+                <File Id="filBFBBA5627D560A395B339070A7B74909" KeyPath="yes" Source="$(var.UIntWizVS)\HTML\1033\Advanced.htm" />
+            </Component>
+            <Component Directory="dir140C57D27A5C8E39F62FF222E227F69D" Guid="*" Id="cmpD613AF359FC9B492F694929905E2AEFE">
+                <File Id="filFA14826E23D4BF3A03C4C260026DF402" KeyPath="yes" Source="$(var.UIntWizVS)\HTML\1033\Basic.htm" />
+            </Component>
+            <Component Directory="dir140C57D27A5C8E39F62FF222E227F69D" Guid="*" Id="cmpFB2E353AB9649CA82413D95E6C961B4D">
+                <File Id="fil5B3C93535223EBBF16614271C0F55290" KeyPath="yes" Source="$(var.UIntWizVS)\HTML\1033\default.htm" />
+            </Component>
+            <Component Directory="dir140C57D27A5C8E39F62FF222E227F69D" Guid="*" Id="cmp2CB8D196F2BF2A5AD936C66D93E7DFC5">
+                <File Id="fil8948465C7C67FF5A9BEE5AB853A9EC24" KeyPath="yes" Source="$(var.UIntWizVS)\HTML\1033\Settings.htm" />
+            </Component>
+            <Component Directory="dirECFEB7F62F71C6A35C7533381C41A5EE" Guid="*" Id="cmp2D05B8C14FABD44E78CB0352A6B2F41B">
+                <File Id="fil5532450024611BD13D77EC4A34E3508E" KeyPath="yes" Source="$(var.UIntWizVS)\Images\UDMInterpreterWizard.gif" />
+            </Component>
+            <Component Directory="dirECFEB7F62F71C6A35C7533381C41A5EE" Guid="*" Id="cmpFD19BF5E7290827185CF196223961417">
+                <File Id="fil1C714833CD86B08A9C530AA8DC96F42B" KeyPath="yes" Source="$(var.UIntWizVS)\Images\UDMInterpreterWizard_Background.gif" />
+            </Component>
+            <Component Directory="dirC08F7B1CD5F44A3E760F5A9193CAA5DA" Guid="*" Id="cmp64526E025FF8873E82099BBEE74ECC3C">
+                <File Id="fil1828905511A6DE21AFA7A3B9C9B740B5" KeyPath="yes" Source="$(var.UIntWizVS)\Scripts\1033\default.js" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmp19E9193DC27A79F72CAE8F20DD8D575D">
+                <File Id="fil6D4EDC84552A694AD82BDE1DB1FBE0C6" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\Common.inf" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmpB4C2B59F6355F3620586A9548CF7C109">
+                <File Id="filE3C94961C37CCB49066B14FFECD56D22" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\CompIcon.ico" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmpCE2748054C07A50B3EF04CE995D5E2B6">
+                <File Id="filCC62E5B0E74255E78724F11648AA725A" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\Component.def" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmpFF11A79C23B305630E1B02B7A5518A2A">
+                <File Id="fil6BFF4FF8B8AFDB68E23B90922EA8EC24" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\Component.rc" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmp11D8E277F21727D7911424DA1BFB778A">
+                <File Id="fil730D1D38B200C58ED36647A752BBE383" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\ComponentConfig.h" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmp82F74E4C796B7B59E0F9763C7AD36075">
+                <File Id="filBBEC49215CA22ACDB7893AD8FA69E6E7" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\RawComponent.cpp" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmp20AB924A2BE48BF66F286C11BB2980EB">
+                <File Id="fil1EF79DC842A4B2C62B36B17C1CF8F94D" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\RawComponent.h" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmp3F9AF27494D53DB49E44798DDC0C5E57">
+                <File Id="fil945525EFD7CC5C179DB0C032102C8FA6" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\Resource.h" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmp2C3557A21B378359DAECB181D8ED599B">
+                <File Id="fil4A1F497072A1C34E8E9020990B06CC18" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\StdAfx.cpp" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmpD56B99372CC09E16BF755788401BCEA3">
+                <File Id="filBC9607D9F27834E93962D58DB52A6EF8" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\StdAfx.h" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmp6377A0C4F5F12CD13FDDF352BB199197">
+                <File Id="filC95DDCAB12971149316DE7F6ED2F7F4E" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\string_utils.h" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmpCEF128799B3CD93E11160BAF26000ED5">
+                <File Id="fil65DFB07FFFD5B5CB57CD7F7C0C25116B" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\Templates.inf" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmpE0DC199E64A42F15615527C6453667F7">
+                <File Id="fil9B44167AF59AE539C35F56082D31CFC5" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\UdmApp.cpp" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmp1A918526266D1FCFD310C0ED14A8C344">
+                <File Id="filDF9CAEE5B49439B486648F0ED1BA040F" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\UdmApp.h" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmpF3E0EAF44DEEA319CD66A7B04EF9DBCB">
+                <File Id="filEC94D978841758E7CBF40F4E0958BB5F" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\UdmConfig.h" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmp6DAA8A53C9D0C0BD08704233A4A24B35">
+                <File Id="fil536355D102E917DFE13E59C3189924A9" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\UdmConsole.cpp" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmp06E031C94FB77230B78ED4970E445E78">
+                <File Id="fil49685B9344180FE518C42BB05FD6F61B" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\UdmConsole.h" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmp31CE5E39EAA400515E19401E1F6AFEEF">
+                <File Id="fil49868DD5B0CDAFD0189258E05DE2FB01" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\UdmFormatter.cpp" />
+            </Component>
+            <Component Directory="dir4A3995E74FE8AC729741DD6890FEC1B3" Guid="*" Id="cmpE35CE5FE784328DE26DE75C094A46E14">
+                <File Id="fil80E16AD87BE338C0575AC554F93025C3" KeyPath="yes" Source="$(var.UIntWizVS)\Templates\1033\UdmFormatter.h" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirDF52C26D4939CAECD0273E4CB7B13F74">
+            <Directory Id="dir140C57D27A5C8E39F62FF222E227F69D" Name="1033" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir4F8B976F53E743CB390FF3E42C6DC476">
+            <Directory Id="dir4A3995E74FE8AC729741DD6890FEC1B3" Name="1033" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirC16E207D89DA407AFD38D9AA861BD40D">
+            <Directory Id="dirAF1E0DC74DB11A287B7CB3B3FFF086AE" Name="Images" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir786918B26A4EE4279332F7B6DADAF9FF">
+            <Directory Id="dirC08F7B1CD5F44A3E760F5A9193CAA5DA" Name="1033" />
+        </DirectoryRef>
+    </Fragment>
+</Wix>

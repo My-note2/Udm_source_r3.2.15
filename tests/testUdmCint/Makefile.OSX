@@ -1,0 +1,36 @@
+include ../../Makefile.OSX.incl
+
+BUILT_SOURCES_A=GeneTF.cpp
+BUILT_SOURCES_B=SBML2Ex.cpp
+BUILT_SOURCES=$(BUILT_SOURCES_A) $(BUILT_SOURCES_B)
+CLEANFILES=$(BUILT_SOURCES) SBML2Ex.h SBML2Ex_xsd.h SBML2Ex_bc_xsd.h SBML2Ex_dbi_xsd.h SBML2Ex_flux_xsd.h SBML2Ex_jd_xsd.h SBML2Ex_jigcell_xsd.h SBML2Ex_math_xsd.h SBML2Ex_sbml_xsd.h SBML2Ex_unigene_xsd.h SBML2Ex_xhtml_xsd.h SBML2Ex_bc.xsd SBML2Ex_dbi.xsd SBML2Ex_flux.xsd SBML2Ex_jd.xsd SBML2Ex_jigcell.xsd SBML2Ex_math.xsd SBML2Ex_sbml.xsd SBML2Ex_unigene.xsd SBML2Ex_xhtml.xsd SBML2Ex.xsd
+
+SOURCES=$(BUILT_SOURCES) main.cpp testReadSBML2Ex.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS) testUdmCint
+
+$(BUILT_SOURCES_B):SBML2Ex_udm.xml ../../bin/Udm
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -v -d ../../etc -g -v -e -T -q jigcell -i xhtml \
+	-u math=http://www.w3.org/1998/Math/MathML \
+	-u sbml=http://www.sbml.org/sbml/level2 \
+	-u dbi=http://www.dbi.tju.edu/xmlns/dbi \
+	-u unigene=http://www.dbi.tju.edu/xmlns/unigene \
+	-u xhtml=http://www.w3.org/1999/xhtml \
+	-u jigcell=http://mpf.biol.vt.edu/ns \
+	-u bc=http://www.sbml.org/2001/ns/biocharon \
+	-u flux=http://arep.med.harvard.edu/fluxns
+
+$(BUILT_SOURCES_A):GeneTF_udm.xml ../../bin/Udm
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -v -d ../../etc -T -t -v -g -u GeneTF=http://kutykuruty.khm.edu
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) -I $(CPPUNIT)/include $< -o $@
+
+testUdmCint: $(OBJECTS)
+	$(CC) $(BCFLAGS) main.o testReadSBML2Ex.o -o testUdmCint -lUdm -L../../lib -lcppunit -L $(CPPUNITLIBS)
+
+test:testUdmCint
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ./testUdmCint
+
+clean: 
+	rm -f *.o  testUdmCint $(CLEANFILES) 

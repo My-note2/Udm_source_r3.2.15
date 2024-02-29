@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" xmlns:sbml="http://www.sbml.org/sbml/level2" version="1" level="2" xmlns:math="http://www.w3.org/1998/Math/MathML"
+xmlns:html="http://www.w3.org/1999/xhtml">
+<model name="New Mechanism" >
+<notes >
+</notes>
+<listOfFunctionDefinitions>
+<functionDefinition id="MichaelisMenten_44" name="Michaelis-Menten">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<math:lambda>
+<math:bvar><math:ci>M1</math:ci></math:bvar>
+<math:bvar><math:ci>J1</math:ci></math:bvar>
+<math:bvar><math:ci>k1</math:ci></math:bvar>
+<math:bvar><math:ci>S1</math:ci></math:bvar>
+<math:apply>
+ <math:divide/>
+  <math:apply>
+   <math:times/>
+    <math:apply>
+     <math:times/>
+      <math:ci>k1</math:ci>
+      <math:ci>S1</math:ci>
+    </math:apply>
+    <math:ci>M1</math:ci>
+  </math:apply>
+  <math:apply>
+   <math:plus/>
+    <math:ci>J1</math:ci>
+    <math:ci>S1</math:ci>
+  </math:apply>
+</math:apply>
+</math:lambda>
+</math>
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:ratelaw jigcell:name="Michaelis-Menten"/>
+</annotation>
+</functionDefinition>
+<functionDefinition id="Mass_Action_0_45" name="Mass_Action_0">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<math:lambda>
+<math:bvar><math:ci>kf</math:ci></math:bvar>
+<math:ci>kf</math:ci>
+</math:lambda>
+</math>
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:ratelaw jigcell:name="Mass_Action_0"/>
+</annotation>
+</functionDefinition>
+<functionDefinition id="Michaelis_Menten_46" name="Michaelis_Menten">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<math:lambda>
+<math:bvar><math:ci>M1</math:ci></math:bvar>
+<math:bvar><math:ci>J1</math:ci></math:bvar>
+<math:bvar><math:ci>k1</math:ci></math:bvar>
+<math:bvar><math:ci>S1</math:ci></math:bvar>
+<math:apply>
+ <math:divide/>
+  <math:apply>
+   <math:times/>
+    <math:apply>
+     <math:times/>
+      <math:ci>k1</math:ci>
+      <math:ci>S1</math:ci>
+    </math:apply>
+    <math:ci>M1</math:ci>
+  </math:apply>
+  <math:apply>
+   <math:plus/>
+    <math:ci>J1</math:ci>
+    <math:ci>S1</math:ci>
+  </math:apply>
+</math:apply>
+</math:lambda>
+</math>
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:ratelaw jigcell:name="Michaelis_Menten"/>
+</annotation>
+</functionDefinition>
+<functionDefinition id="Mass_Action_1_47" name="Mass_Action_1">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<math:lambda>
+<math:bvar><math:ci>kf</math:ci></math:bvar>
+<math:bvar><math:ci>S1</math:ci></math:bvar>
+<math:apply>
+ <math:times/>
+  <math:ci>kf</math:ci>
+  <math:ci>S1</math:ci>
+</math:apply>
+</math:lambda>
+</math>
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:ratelaw jigcell:name="Mass_Action_1"/>
+</annotation>
+</functionDefinition>
+</listOfFunctionDefinitions>
+<listOfCompartments>
+<notes >
+</notes>
+<compartment id="cell_0" spatialDimensions="3" size="1" name="cell" />
+</listOfCompartments>
+<listOfSpecies>
+<notes >
+</notes>
+<species id="Ca_1" compartment="cell_0" initialAmount="0.0" name="Ca" />
+<species id="Ci_2" compartment="cell_0" initialAmount="1.0" name="Ci" />
+<species id="L_3" compartment="cell_0" initialAmount="1.0" name="L" />
+<species id="L2_4" compartment="cell_0" initialAmount="0.0" name="L2" />
+<species id="Ma_5" compartment="cell_0" initialAmount="0.0" name="Ma" />
+<species id="Mi_6" compartment="cell_0" initialAmount="1.0" name="Mi" />
+<species id="Wa_7" compartment="cell_0" initialAmount="1.0" name="Wa" />
+<species id="Wi_8" compartment="cell_0" initialAmount="0.0" name="Wi" />
+<species id="kc_9" compartment="cell_0" initialAmount="NaN" name="kc" />
+<species id="kw_10" compartment="cell_0" initialAmount="NaN" name="kw" />
+<species id="vcp__11" compartment="cell_0" initialAmount="NaN" name="vcp_" />
+<species id="vcpp__12" compartment="cell_0" initialAmount="NaN" name="vcpp_" />
+<species id="vcppp__13" compartment="cell_0" initialAmount="NaN" name="vcppp_" />
+<species id="vwp__14" compartment="cell_0" initialAmount="NaN" name="vwp_" />
+<species id="vwpp__15" compartment="cell_0" initialAmount="NaN" name="vwpp_" />
+<species id="vwppp__16" compartment="cell_0" initialAmount="NaN" name="vwppp_" />
+<species id="kmc__17" compartment="cell_0" initialAmount="NaN" name="kmc_" />
+<species id="kmcr__18" compartment="cell_0" initialAmount="NaN" name="kmcr_" />
+<species id="kmw__19" compartment="cell_0" initialAmount="NaN" name="kmw_" />
+<species id="kmwr__20" compartment="cell_0" initialAmount="NaN" name="kmwr_" />
+<species id="vc__21" compartment="cell_0" initialAmount="NaN" name="vc_" />
+<species id="vw__22" compartment="cell_0" initialAmount="NaN" name="vw_" />
+<species id="Cdc25Total__23" compartment="cell_0" initialAmount="NaN" name="Cdc25Total_" />
+<species id="Wee1Total__24" compartment="cell_0" initialAmount="NaN" name="Wee1Total_" />
+<species id="Cdc2Total__25" compartment="cell_0" initialAmount="NaN" name="Cdc2Total_" />
+</listOfSpecies>
+<listOfParameters>
+<notes >
+</notes>
+<parameter id="Cdc25Total_26" value="1.0" name="Cdc25Total" />
+<parameter id="CTotal_27" value="1.0" name="CTotal" />
+<parameter id="Dilution_28" value="1.0" name="Dilution" />
+<parameter id="kmc_29" value="0.1" name="kmc" />
+<parameter id="kmcr_30" value="1.0" name="kmcr" />
+<parameter id="kmw_31" value="0.1" name="kmw" />
+<parameter id="kmwr_32" value="1.0" name="kmwr" />
+<parameter id="TotalCyclin_33" value="1.0" name="TotalCyclin" />
+<parameter id="vc_34" value="1.0" name="vc" />
+<parameter id="vcp_35" value="0.0165" name="vcp" />
+<parameter id="vcpp_36" value="0.182" name="vcpp" />
+<parameter id="vcppp_37" value="0.0709" name="vcppp" />
+<parameter id="vw_38" value="1.0" name="vw" />
+<parameter id="vwp_39" value="3.0E-7" name="vwp" />
+<parameter id="vwpp_40" value="0.763" name="vwpp" />
+<parameter id="vwppp_41" value="0.0709" name="vwppp" />
+<parameter id="Wee1Total_42" value="1.0" name="Wee1Total" />
+<parameter id="WTotal_43" value="1.0" name="WTotal" />
+</listOfParameters>
+<listOfRules>
+<notes></notes><assignmentRule variable="Cdc25Total__23">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="Cdc25Total" jigcell:constmods="Cdc25Total=Cdc25Total*Dilution"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:times/>
+  <math:ci>Cdc25Total_26</math:ci>
+  <math:ci>Dilution_28</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="Wee1Total__24">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="Wee1Total" jigcell:constmods="Wee1Total=Wee1Total*Dilution"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:times/>
+  <math:ci>Wee1Total_42</math:ci>
+  <math:ci>Dilution_28</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="Cdc2Total__25">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="Cdc2Total" jigcell:constmods="Cdc2Total=Dilution"/>
+</annotation>
+<math:math>
+<math:ci>Dilution_28</math:ci>
+</math:math>
+</assignmentRule>
+<algebraicRule>
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:conservationlaw jigcell:dependent="Wi_8"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:minus/>
+  <math:apply>
+   <math:plus/>
+    <math:ci>Wi_8</math:ci>
+    <math:ci>Wa_7</math:ci>
+  </math:apply>
+  <math:ci>WTotal_43</math:ci>
+</math:apply>
+</math:math>
+</algebraicRule>
+<algebraicRule>
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:conservationlaw jigcell:dependent="Ci_2"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:minus/>
+  <math:apply>
+   <math:plus/>
+    <math:ci>Ci_2</math:ci>
+    <math:ci>Ca_1</math:ci>
+  </math:apply>
+  <math:ci>CTotal_27</math:ci>
+</math:apply>
+</math:math>
+</algebraicRule>
+<algebraicRule>
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:conservationlaw jigcell:dependent="Mi_6"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:minus/>
+  <math:apply>
+   <math:plus/>
+    <math:ci>Mi_6</math:ci>
+    <math:ci>Ma_5</math:ci>
+  </math:apply>
+  <math:ci>TotalCyclin_33</math:ci>
+</math:apply>
+</math:math>
+</algebraicRule>
+<assignmentRule variable="vcp__11">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="vcp*Cdc25Total" jigcell:constmods="Cdc25Total=Cdc25Total_; vcp=vcp"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:times/>
+  <math:ci>vcp_35</math:ci>
+  <math:ci>Cdc25Total__23</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="vcpp__12">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="vcpp*Cdc25Total" jigcell:constmods="Cdc25Total=Cdc25Total_; vcpp=vcpp"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:times/>
+  <math:ci>vcpp_36</math:ci>
+  <math:ci>Cdc25Total__23</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="vcppp__13">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="vcppp/Cdc25Total" jigcell:constmods="Cdc25Total=Cdc25Total_; vcppp=vcppp"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:divide/>
+  <math:ci>vcppp_37</math:ci>
+  <math:ci>Cdc25Total__23</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="vwp__14">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="vwp*Wee1Total" jigcell:constmods="vwp=vwp; Wee1Total=Wee1Total_"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:times/>
+  <math:ci>vwp_39</math:ci>
+  <math:ci>Wee1Total__24</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="vwpp__15">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="vwpp*Wee1Total" jigcell:constmods="vwpp=vwpp; Wee1Total=Wee1Total_"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:times/>
+  <math:ci>vwpp_40</math:ci>
+  <math:ci>Wee1Total__24</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="vwppp__16">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="vwppp/Wee1Total" jigcell:constmods="vwppp=vwppp; Wee1Total=Wee1Total_"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:divide/>
+  <math:ci>vwppp_41</math:ci>
+  <math:ci>Wee1Total__24</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="kmc__17">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="kmc/Cdc25Total" jigcell:constmods="Cdc25Total=Cdc25Total_; kmc=kmc"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:divide/>
+  <math:ci>kmc_29</math:ci>
+  <math:ci>Cdc25Total__23</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="kmcr__18">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="kmcr/Cdc25Total" jigcell:constmods="Cdc25Total=Cdc25Total_; kmcr=kmcr"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:divide/>
+  <math:ci>kmcr_30</math:ci>
+  <math:ci>Cdc25Total__23</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="kmw__19">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="kmw/Wee1Total" jigcell:constmods="kmw=kmw; Wee1Total=Wee1Total_"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:divide/>
+  <math:ci>kmw_31</math:ci>
+  <math:ci>Wee1Total__24</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="kmwr__20">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="kmwr/Wee1Total" jigcell:constmods="kmwr=kmwr; Wee1Total=Wee1Total_"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:divide/>
+  <math:ci>kmwr_32</math:ci>
+  <math:ci>Wee1Total__24</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="vc__21">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="vc*Cdc2Total/Cdc25Total" jigcell:constmods="vc=vc; Cdc2Total=Cdc2Total_; Cdc25Total=Cdc25Total_"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:divide/>
+  <math:apply>
+   <math:times/>
+    <math:ci>vc_34</math:ci>
+    <math:ci>Cdc2Total__25</math:ci>
+  </math:apply>
+  <math:ci>Cdc25Total__23</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="vw__22">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="vw*Cdc2Total/Wee1Total" jigcell:constmods="Cdc2Total=Cdc2Total_; vw=vw; Wee1Total=Wee1Total_"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:divide/>
+  <math:apply>
+   <math:times/>
+    <math:ci>vw_38</math:ci>
+    <math:ci>Cdc2Total__25</math:ci>
+  </math:apply>
+  <math:ci>Wee1Total__24</math:ci>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="kc_9">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="vcp*Ci+vcpp*Ca" jigcell:constmods="vcp=vcp_; vcpp=vcpp_"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:plus/>
+  <math:apply>
+   <math:times/>
+    <math:ci>vcp__11</math:ci>
+    <math:ci>Ci_2</math:ci>
+  </math:apply>
+  <math:apply>
+   <math:times/>
+    <math:ci>vcpp__12</math:ci>
+    <math:ci>Ca_1</math:ci>
+  </math:apply>
+</math:apply>
+</math:math>
+</assignmentRule>
+<assignmentRule variable="kw_10">
+<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+<jigcell:species jigcell:equation="vwp*Wi+vwpp*Wa" jigcell:constmods="vwp=vwp_; vwpp=vwpp_"/>
+</annotation>
+<math:math>
+<math:apply>
+ <math:plus/>
+  <math:apply>
+   <math:times/>
+    <math:ci>vwp__14</math:ci>
+    <math:ci>Wi_8</math:ci>
+  </math:apply>
+  <math:apply>
+   <math:times/>
+    <math:ci>vwpp__15</math:ci>
+    <math:ci>Wa_7</math:ci>
+  </math:apply>
+</math:apply>
+</math:math>
+</assignmentRule>
+</listOfRules>
+<listOfReactions>
+<reaction id="MPFinactivation_49" reversible="false" name="MPF inactivation" >
+<listOfReactants>
+<speciesReference species="Ma_5" >
+</speciesReference>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species="Mi_6" >
+</speciesReference>
+</listOfProducts>
+<listOfModifiers>
+<modifierSpeciesReference species="kw_10" >
+</modifierSpeciesReference>
+</listOfModifiers>
+<kineticLaw >
+<math:math>
+<math:apply>
+<math:ci>Mass_Action_1_47</math:ci>
+  <math:ci>kw_10</math:ci>
+  <math:ci>Ma_5</math:ci>
+</math:apply>
+</math:math>
+</kineticLaw>
+</reaction>
+<reaction id="MPFactivation_50" reversible="false" name="MPF activation" >
+<listOfReactants>
+<speciesReference species="Mi_6" >
+</speciesReference>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species="Ma_5" >
+</speciesReference>
+</listOfProducts>
+<listOfModifiers>
+<modifierSpeciesReference species="kc_9" >
+</modifierSpeciesReference>
+</listOfModifiers>
+<kineticLaw >
+<math:math>
+<math:apply>
+<math:ci>Mass_Action_1_47</math:ci>
+  <math:ci>kc_9</math:ci>
+  <math:ci>Mi_6</math:ci>
+</math:apply>
+</math:math>
+</kineticLaw>
+</reaction>
+<reaction id="Cdcinactivation_51" reversible="false" name="Cdc25 inactivation" >
+<listOfReactants>
+<speciesReference species="Ca_1" >
+</speciesReference>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species="Ci_2" >
+</speciesReference>
+</listOfProducts>
+<listOfModifiers>
+<modifierSpeciesReference species="kmcr__18" >
+</modifierSpeciesReference>
+<modifierSpeciesReference species="vc__21" >
+</modifierSpeciesReference>
+<modifierSpeciesReference species="vcppp__13" >
+</modifierSpeciesReference>
+</listOfModifiers>
+<kineticLaw >
+<math:math>
+<math:apply>
+<math:ci>Michaelis_Menten_46</math:ci>
+  <math:cn>1.0</math:cn>
+  <math:ci>kmcr__18</math:ci>
+  <math:apply>
+   <math:times/>
+    <math:ci>vcppp__13</math:ci>
+    <math:ci>vc__21</math:ci>
+  </math:apply>
+  <math:ci>Ca_1</math:ci>
+</math:apply>
+</math:math>
+</kineticLaw>
+</reaction>
+<reaction id="Cdcactivation_52" reversible="false" name="Cdc25 activation" >
+<listOfReactants>
+<speciesReference species="Ci_2" >
+</speciesReference>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species="Ca_1" >
+</speciesReference>
+</listOfProducts>
+<listOfModifiers>
+<modifierSpeciesReference species="Ma_5" >
+</modifierSpeciesReference>
+<modifierSpeciesReference species="kmc__17" >
+</modifierSpeciesReference>
+<modifierSpeciesReference species="vc__21" >
+</modifierSpeciesReference>
+</listOfModifiers>
+<kineticLaw >
+<math:math>
+<math:apply>
+<math:ci>Michaelis_Menten_46</math:ci>
+  <math:ci>Ma_5</math:ci>
+  <math:ci>kmc__17</math:ci>
+  <math:ci>vc__21</math:ci>
+  <math:ci>Ci_2</math:ci>
+</math:apply>
+</math:math>
+</kineticLaw>
+</reaction>
+<reaction id="Weeinactivation_53" reversible="false" name="Wee1 inactivation" >
+<listOfReactants>
+<speciesReference species="Wa_7" >
+</speciesReference>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species="Wi_8" >
+</speciesReference>
+</listOfProducts>
+<listOfModifiers>
+<modifierSpeciesReference species="Ma_5" >
+</modifierSpeciesReference>
+<modifierSpeciesReference species="kmw__19" >
+</modifierSpeciesReference>
+<modifierSpeciesReference species="vw__22" >
+</modifierSpeciesReference>
+</listOfModifiers>
+<kineticLaw >
+<math:math>
+<math:apply>
+<math:ci>Michaelis_Menten_46</math:ci>
+  <math:ci>Ma_5</math:ci>
+  <math:ci>kmw__19</math:ci>
+  <math:ci>vw__22</math:ci>
+  <math:ci>Wa_7</math:ci>
+</math:apply>
+</math:math>
+</kineticLaw>
+</reaction>
+<reaction id="Weeactivation_54" reversible="false" name="Wee1 activation" >
+<listOfReactants>
+<speciesReference species="Wi_8" >
+</speciesReference>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species="Wa_7" >
+</speciesReference>
+</listOfProducts>
+<listOfModifiers>
+<modifierSpeciesReference species="kmwr__20" >
+</modifierSpeciesReference>
+<modifierSpeciesReference species="vw__22" >
+</modifierSpeciesReference>
+<modifierSpeciesReference species="vwppp__16" >
+</modifierSpeciesReference>
+</listOfModifiers>
+<kineticLaw >
+<math:math>
+<math:apply>
+<math:ci>Michaelis_Menten_46</math:ci>
+  <math:cn>1.0</math:cn>
+  <math:ci>kmwr__20</math:ci>
+  <math:apply>
+   <math:times/>
+    <math:ci>vw__22</math:ci>
+    <math:ci>vwppp__16</math:ci>
+  </math:apply>
+  <math:ci>Wi_8</math:ci>
+</math:apply>
+</math:math>
+</kineticLaw>
+</reaction>
+<reaction id="LabelledinactiveMPFaffectedbyCdc_55" reversible="false" name="Labelled inactive MPF affected by Cdc25" >
+<listOfReactants>
+<speciesReference species="L_3" >
+</speciesReference>
+</listOfReactants>
+<listOfModifiers>
+<modifierSpeciesReference species="kc_9" >
+</modifierSpeciesReference>
+</listOfModifiers>
+<kineticLaw >
+<math:math>
+<math:apply>
+<math:ci>Mass_Action_1_47</math:ci>
+  <math:ci>kc_9</math:ci>
+  <math:ci>L_3</math:ci>
+</math:apply>
+</math:math>
+</kineticLaw>
+</reaction>
+<reaction id="LabelledinactiveMPFaffectedbyWee_56" reversible="false" name="Labelled inactive MPF affected by Wee1" >
+<listOfProducts>
+<speciesReference species="L2_4" >
+</speciesReference>
+</listOfProducts>
+<listOfModifiers>
+<modifierSpeciesReference species="kw_10" >
+</modifierSpeciesReference>
+</listOfModifiers>
+<kineticLaw >
+<math:math>
+<math:apply>
+ <math:times/>
+  <math:ci>kw_10</math:ci>
+  <math:apply>
+   <math:minus/>
+    <math:cn>1.0</math:cn>
+    <math:ci>L2_4</math:ci>
+  </math:apply>
+</math:apply>
+</math:math>
+</kineticLaw>
+</reaction>
+</listOfReactions>
+</model>
+</sbml>

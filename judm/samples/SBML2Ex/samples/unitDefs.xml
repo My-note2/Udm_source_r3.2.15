@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="unitDefs" name="unitDefs">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Invalid Unit Definitions</title>
+</head>
+<body>
+<h1>Invalid Unit Definitions</h1>
+<p>
+An assortment of invalid definitions for unit related model components.
+</p>
+<ul>
+<li>A compartment with <em>spatialDimension</em> 0 must not have a
+  unit defintion not resolving to <em>dimensionless</em>.
+</li>
+</ul>
+</body>
+</sbml:notes>
+
+<listOfUnitDefinitions>
+  <unitDefinition id="c">
+    <listOfUnits>
+      <unit kind="mole" exponent="1" />
+      <unit kind="litre" exponent="-1" />
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition id="s">
+    <listOfUnits>
+      <unit kind="mole" scale="-3" />
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition id="ml">
+    <listOfUnits>
+      <unit kind="litre" scale="-3" />
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition id="nondim">
+    <listOfUnits>
+      <unit kind="dimensionless" />
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions>
+
+<listOfCompartments>
+<compartment id="global" />
+<compartment id="badDim" spatialDimensions="0" units="length" />
+<compartment id="altBadDim" spatialDimensions="0" units="ml" />
+<compartment id="okNonDim" spatialDimensions="0" units="nondim" />
+<compartment id="okAltNonDim" spatialDimensions="0" units="dimensionless" />
+</listOfCompartments>
+
+<listOfSpecies>
+<species id="A" compartment="global" />
+<species id="B" compartment="global" />
+</listOfSpecies>
+
+</model>
+</sbml>

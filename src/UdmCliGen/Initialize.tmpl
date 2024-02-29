@@ -1,0 +1,90 @@
+#from common import *
+
+namespace ${impl_namespace[0:-1]} {
+public class ${root.name}Initialize {
+
+##public void ${root.name}(string metaFilename) {
+##    Udm.Native.Udm.Initialize();
+##    // Open MSL meta
+##    Udm.Native.SmartDataNetwork meta = new Udm.Native.SmartDataNetwork(Udm.Native.Uml.Uml.diagram);
+##    meta.OpenExisting(metaFilename);
+##    Udm.Impl.MSLInitialize.Initialize(meta);
+##}
+
+
+public delegate T castDelegate<T>(Udm.Native.UdmCliObject o) where T : Udm.Native.UdmCliObject;
+public static System.Collections.Generic.Dictionary<Udm.Native.Uml.Class, castDelegate<Udm.Native.UdmCliObject>> downcasts;
+
+public static void Initialize(Udm.Native.DataNetwork meta)
+{
+downcasts = new System.Collections.Generic.Dictionary<Udm.Native.Uml.Class, castDelegate<Udm.Native.UdmCliObject>>();
+System.Collections.Generic.Dictionary<string, Udm.Native.Uml.Class> classes = new System.Collections.Generic.Dictionary<string,Udm.Native.Uml.Class>();
+foreach (Udm.Native.UdmObject o in meta.GetAllInstancesOf(Udm.Native.Uml.Class.meta)) {
+    classes.Add(o.getPath2("/"), Udm.Native.Uml.Class.Cast(o));
+}
+System.Collections.Generic.Dictionary<string, Udm.Native.Uml.Attribute> attributes = new System.Collections.Generic.Dictionary<string,Udm.Native.Uml.Attribute>();
+foreach (Udm.Native.UdmObject o in meta.GetAllInstancesOf(Udm.Native.Uml.Attribute.meta)) {
+    attributes.Add(o.getPath2("/"), Udm.Native.Uml.Attribute.Cast(o));
+}
+
+#for $o in get_descendants($root)
+#if $o.type.name == "Class"
+${fq_name($o)}.meta = classes["${get_path($o, "/")}"];
+downcasts.Add(${fq_name($o)}.meta, ${fq_name($o)}.Cast);
+#else if $o.type.name == "Attribute"
+// FIXME: if not found, say what
+${fq_name($o.parent)}.$role_metaname($o) = attributes["${get_path($o, "/")}"];
+#end if
+#end for
+
+
+#for $o in get_descendants($root)
+#if $o.type.name == "Association"
+#set role1 = $o.children()[0]
+#set role2 = $o.children()[1]
+${fq_name(role1.target)}.$role_metaname(role2) = Udm.Native.Uml.AssociationRole.Cast(Udm.Native.Udm._null);
+Udm.Native.Uml.Uml.SetAssocRole(${fq_name(role1.target)}.$role_metaname(role2), classes["${get_path($role1.target, "/")}"], classes["${get_path($role2.target, "/")}"], "$role1.name");
+#set (role2, role1) = (role1, role2)
+${fq_name(role1.target)}.$role_metaname(role2) = Udm.Native.Uml.AssociationRole.Cast(Udm.Native.Udm._null);
+Udm.Native.Uml.Uml.SetAssocRole(${fq_name(role1.target)}.$role_metaname(role2), classes["${get_path($role1.target, "/")}"], classes["${get_path($role2.target, "/")}"], "$role1.name");
+#else if $o.type.name == "Composition"
+#set crole = $o.childRole_role_children[0]
+#set prole = $o.parentRole_role_children[0]
+${fq_name(prole.target)}.$role_metaname(crole) = Udm.Native.Uml.CompositionChildRole.Cast(Udm.Native.Udm._null);
+Udm.Native.Uml.Uml.SetChildRole (${fq_name(prole.target)}.$role_metaname(crole), classes["${get_path($prole.target, "/")}"], classes["${get_path($crole.target, "/")}"], "$prole.name", "$crole.name");
+${fq_name(crole.target)}.$role_metaname(prole) = Udm.Native.Uml.CompositionParentRole.Cast(Udm.Native.Udm._null);
+Udm.Native.Uml.Uml.SetParentRole(${fq_name(crole.target)}.$role_metaname(prole), classes["${get_path($crole.target, "/")}"], classes["${get_path($prole.target, "/")}"], "$crole.name", "$prole.name");
+#end if
+#end for
+}
+
+public static void Uninitialize()
+{
+downcasts = null;
+
+#for $o in get_descendants($root)
+#if $o.type.name == "Class"
+${fq_name($o)}.meta = null;
+#else if $o.type.name == "Attribute"
+${fq_name($o.parent)}.$role_metaname($o) = null;
+#end if
+#end for
+
+
+#for $o in get_descendants($root)
+#if $o.type.name == "Association"
+#set role1 = $o.children()[0]
+#set role2 = $o.children()[1]
+${fq_name(role1.target)}.$role_metaname(role2) = null;
+#set (role2, role1) = (role1, role2)
+${fq_name(role1.target)}.$role_metaname(role2) = null;
+#else if $o.type.name == "Composition"
+#set crole = $o.childRole_role_children[0]
+#set prole = $o.parentRole_role_children[0]
+${fq_name(prole.target)}.$role_metaname(crole) = null;
+${fq_name(crole.target)}.$role_metaname(prole) = null;
+#end if
+#end for
+}
+}
+}

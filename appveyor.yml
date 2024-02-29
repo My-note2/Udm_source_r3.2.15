@@ -1,0 +1,58 @@
+clone_folder: c:\projects\UDM
+environment:
+  UDM_PATH: c:\projects\UDM
+  UDM_3RDPARTY_PATH: c:\projects\UDM-3rdparty
+  GME_ROOT: c:\Program Files (x86)\GME
+
+install:
+#  - choco install -y wixtoolset -version 3.9.1208.0
+#  - ps: (new-object net.webclient).DownloadFile('https://wix.codeplex.com/downloads/get/1421696', 'c:\wix39.exe')
+#  - c:\wix39.exe -silent
+#  - type C:\ProgramData\chocolatey\logs\chocolatey.log
+#  - dir /b/s \ | %windir%\system32\find "WiX Toolset"
+#  - dir /b/s C:\MinGW
+  - reg query "HKLM\SOFTWARE\Microsoft\Windows Installer XML" /reg:32
+  - reg query "HKLM\SOFTWARE\Microsoft\Windows Installer XML\3.11" /reg:32
+  - ps: (new-object net.webclient).DownloadFile('https://github.com/ksmyth/UDM/tarball/3rdparty', 'c:\3rdparty.tar.gz')
+  - mkdir c:\projects\UDM-3rdparty && C:\MinGW\msys\1.0\bin\tar.exe xzf /c/3rdparty.tar.gz -C /c/projects/UDM-3rdparty --strip-components=1
+  - dir c:\projects\UDM-3rdparty\GME_x64-15.5.8.msi
+  - msiexec /i c:\projects\UDM-3rdparty\GME_x64-15.5.8.msi /quiet /qn /norestart /log GME_install.log
+  - type GME_install.log
+#  - ps: (new-object net.webclient).DownloadFile('https://github.com/ksmyth/pywin32/releases/download/b219/pywin32-219.win32-py2.7.exe', 'c:\pywin32-219.win32-py2.7.exe')
+#  - python -m easy_install c:\pywin32-219.win32-py2.7.exe
+  - ps: (new-object net.webclient).DownloadFile('https://nuget-packages.metamorphsoftware.com/CoApp.Tools.Powershell.msi', 'C:\CoApp.Tools.Powershell.msi')
+  - ps: Start-Process -FilePath msiexec -ArgumentList /i, 'C:\CoApp.Tools.Powershell.msi', /quiet -Wait
+  - ps: $env:PSModulePath = $env:PSModulePath + ';C:\Program Files (x86)\Outercurve Foundation\Modules'
+  - ps: Import-Module CoApp
+
+build_script:
+  - msbuild make.msbuild /fl /m /t:BuildVS9
+  - pushd WiX && python build_msi.py -a x86 UdmDll UdmSDK_VC9 && popd
+  - msbuild make.msbuild /fl /m /t:BuildVS11;BuildVS11_x64 /p:"VCTargetsPath=C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110";PlatformToolset=v110
+  - pushd WiX && python build_msi.py UdmDll_VC11 UdmSDK_VC11 && popd
+  - msbuild make.msbuild /fl /m /t:BuildVS12;BuildVS12_x64 /p:"VCTargetsPath=C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120";PlatformToolset=v120
+  - pushd WiX && python build_msi.py UdmDll_VC12 UdmSDK_VC12 && popd
+  - msbuild make.msbuild /fl /m /t:BuildVC14;BuildVC14_x64 /p:"VCTargetsPath=C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140";PlatformToolset=v140
+  - pushd WiX && python build_msi.py UdmDll_VC14 UdmSDK_VC14 && popd
+
+  - msbuild Projects\Win32\VC10\src\Udm.sln /p:Configuration=Release;Platform=Win32 /fl /m /t:UdmDll
+
+  - pushd src\UdmPython
+  - c:\Python27\python -m pip install wheel
+  - c:\Python27\python setup.py bdist_wheel
+  - c:\Python35\python -m pip install wheel
+  - c:\Python35\python setup.py bdist_wheel
+  - c:\Python36\python -m pip install wheel
+  - c:\Python36\python setup.py bdist_wheel
+  - popd
+ 
+  - ps: 'Import-Module CoApp; Write-NuGetPackage .\Udm.autopkg'
+  - ps: 'Import-Module CoApp; Write-NuGetPackage .\Udm-vc140.autopkg'
+  # need "image: Visual Studio 2017"
+  # - '"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" make.msbuild /m /t:BuildVC15;BuildVC15_x64 /p:"VCTargetsPath=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets";PlatformToolset=v141'
+  # - ps: 'Import-Module CoApp; Write-NuGetPackage .\Udm-vc141.autopkg'
+
+artifacts:
+  - path: "*.log"
+  - path: "WiX/*/*.wixlib"
+  - path: src/UdmPython/dist/*.whl

@@ -1,0 +1,111 @@
+HOWTO make a Windows Udm release (for Udm maintainers only)
+Currently only Kevin Smyth <kevin.m.smyth@gmail.com> makes Udm releases
+First see UDM_compile_guideVS2008.txt
+
+Update with new version, info:
+ WiX/Udm_inc.wxi
+ Projects/Win32/VC10/src/UdmDll/UdmDll.rc
+ Projects/Win32/VC9/src/UdmDll/UdmDll.rc
+ Projects/Win32/VC10/src/UdmSwig/UdmSwig.rc
+ include/UdmBase.h
+ releaseinfo.txt (+GME version)
+ Projects/Win32/VC10/src/UdmCli/Properties/AssemblyInfo.cs
+ configure.ac
+ debian/changelog (`DEBEMAIL='kevin.m.smyth@gmail.com' DEBFULLNAME='Kevin Smyth' dch --release-heuristic log -v 3.2.15-ubuntu1`)
+ci -m "Prepare for release 3.2.15"
+
+# wait for jenkins build to complete
+
+#!/bin/bash
+svn cp -m 'Tag release 3.2.15' https://svn.isis.vanderbilt.edu/MoBIES/UDM/trunk/ https://svn.isis.vanderbilt.edu/MoBIES/UDM/tags/3.2.15
+
+export build_isis=http://build.isis
+# export build_isis="-u user:pass https://build.isis"
+
+IDs=$(for url in "$build_isis.vanderbilt.edu/job/UDM/label=UDM_x86/lastSuccessfulBuild/consoleText" "$build_isis.vanderbilt.edu/job/UDM_x64/label=build-slave6/lastSuccessfulBuild/consoleText" "$build_isis.vanderbilt.edu/job/UDM_vc11/label=build-slave11/lastBuild/consoleText" \
+  "$build_isis.vanderbilt.edu/job/UDM_vc12/label=build-slave11/lastSuccessfulBuild/consoleText" "$build_isis.vanderbilt.edu/job/UDM_vc14/label=build-slave9/lastSuccessfulBuild/consoleText"
+do
+ curl -s $url | grep "Finding ID" | sed 's/.*Finding ID.....//; s/'$'\r'//
+done)
+for file in $IDs; do ssh build@kms1.isis.vanderbilt.edu 'perl -pli -e '"'"'foreach $f (qw/Udm.exe UdmSwig.dll MetaGME2UML.pdb MetaGME2Uml.dll Udmd.pdb UDMOclPat.exe UDMOclPat.pdb Test_CrossLinksD.exe/) { s/$f/$f/ig; }'"'"' symbolstmp/000Admin/'$file; done
+ssh build@kms1.isis.vanderbilt.edu cd symbolstmp '&&' python \~/bin/pdb_promote.py $IDs
+curl -sS -o UDM_x64-3.2.15.msi $build_isis.vanderbilt.edu/job/UDM_x64_msi/label=build-slave6/lastSuccessfulBuild/artifact/trunk/WiX/Udm_x64.msi &&
+curl -sS -o UDM-3.2.15.msi $build_isis.vanderbilt.edu/job/UDM_msi/label=build-slave6/lastSuccessfulBuild/artifact/trunk/WiX/Udm.msi
+for file in $build_isis.vanderbilt.edu/job/UDM/label=UDM_x86/lastSuccessfulBuild/artifact/trunk/WiX/{Udm_bin/Udm_bin.msm,Udm_SDK/Udm_SDK.msm,UdmDll/UdmDll.msm,UdmDll_VS10/UdmDll_VS10.msm,xerces_c/xerces_c.msm} $build_isis.vanderbilt.edu/job/UDM_x64/label=build-slave6/lastSuccessfulBuild/artifact/trunk/WiX/{Udm_bin/Udm_bin_x64.msm,Udm_SDK/Udm_SDK_x64.msm,UdmDll_VS10/UdmDll_VS10_x64.msm,xerces_c/xerces_c_x64.msm}; do curl -O "$file"; done
+(mkdir ubuntu12.04 && cd ubuntu12.04 &&
+curl -O -sS $build_isis.vanderbilt.edu/job/Udm_Linux/label=ubuntu12.04/lastSuccessfulBuild/artifact/udm_3.2.15-1_i386.deb &&
+curl -O -sS $build_isis.vanderbilt.edu/job/Udm_Linux/label=ubuntu12.04/lastSuccessfulBuild/artifact/udm-dev_3.2.15-1_i386.deb
+curl -O -sS $build_isis.vanderbilt.edu/job/Udm_Linux/label=ubuntu12.04_x64/lastSuccessfulBuild/artifact/udm_3.2.15-1_amd64.deb &&
+curl -O -sS $build_isis.vanderbilt.edu/job/Udm_Linux/label=ubuntu12.04_x64/lastSuccessfulBuild/artifact/udm-dev_3.2.15-1_amd64.deb )
+
+svn export https://svn.isis.vanderbilt.edu/MoBIES/UDM/tags/3.2.15 Udm_source_r3.2.15 && \
+PATH="$PATH":'/cygdrive/c/Program Files/7-Zip/':'/c/Program Files/7-Zip/' 7z a Udm_source_r3.2.15.zip Udm_source_r3.2.15/ && \
+cp Udm_source_r3.2.15/releaseinfo.txt UDM_Release_Notes.txt
+
+ssh repo@repo.isis.vanderbilt.edu mkdir -p UDM/3.2.15/ && \
+ssh -A build@kms1.isis.vanderbilt.edu scp UDM_Release_Notes.txt UDM-3.2.15.msi UDM_x64-3.2.15.msi Udm_source_r3.2.15.zip repo@repo.isis.vanderbilt.edu:UDM/3.2.15/ && \
+ssh repo@repo.isis.vanderbilt.edu chmod -R a+r UDM/3.2.15/
+
+scp ubuntu12.04/* repo@repo.isis.vanderbilt.edu:UDM/3.2.15/ubuntu12.04
+
+
+# For GReAT release:
+Bump Jenkins GReAT release number
+Modify:
+ Etc/GReATVersion.h
+ releaseinfo.txt
+ InnoSetup/GReAT_innosetupVS2010.iss
+svn ci -m 'Prepare for release 1.7.8'
+
+svn cp -m 'Tag release 1.7.8' https://svn.isis.vanderbilt.edu/MoBIES/GReAT/trunk/ https://svn.isis.vanderbilt.edu/MoBIES/GReAT/tags/1.7.8
+
+
+curl -s -S $build_isis.vanderbilt.edu/job/GReAT/label=build-slave9/lastBuild/consoleText | grep Finding\ ID
+
+perl -pli -e 's/grcc.pdb/GRCC.pdb/g; s/metagme2uml.pdb/MetaGME2UML.pdb/g; s/codegenerator.pdb/CodeGenerator.pdb/g; s/grd_interpreter.pdb/GRD_interpreter.pdb/g; s/generatecfgmodel.pdb/GenerateCfgModel.pdb/g; s/generateconfig.pdb/GenerateConfig.pdb/g; s/generategr.pdb/GenerateGR.pdb/g; s/generategrc.pdb/GenerateGRC.pdb/g; s/great master interpreter.pdb/GReAT Master Interpreter.pdb/g; s/libraryupdate.pdb/LibraryUpdate.pdb/g; s/umtdecorator.pdb/UMTDecorator.pdb/g; s/umthelper.pdb/UMTHelper.pdb/g; s/legacyupdate.pdb/LegacyUpdate.pdb/g; s/blockify.pdb/Blockify.pdb/g; s/createrule.pdb/CreateRule.pdb/g; '  symbolstmp/000Admin/0000011732
+ssh kms1 'cd symbolstmp && python ~/bin/pdb_promote.py 0000011732' # "Finding ID"
+
+wget -O GReAT-1.7.8.exe $build_isis.vanderbilt.edu/job/GReAT/label=build-slave9/lastSuccessfulBuild/artifact/trunk/InnoSetup/GReAT_setup.exe
+
+svn export https://svn.isis.vanderbilt.edu/MoBIES/GReAT/tags/1.7.8 GReAT_source_r1.7.8 && \
+/cygdrive/c/Program\ Files/7-Zip/7z.exe a -r GReAT_source_r1.7.8{.zip,} && \
+cp GReAT_source_r1.7.8/releaseinfo.txt  GReAT_Release_Notes.txt
+ssh repo@repo.isis.vanderbilt.edu mkdir GReAT/1.7.8 && \
+scp GReAT_Release_Notes.txt GReAT-1.7.8.exe GReAT_source_r1.7.8.zip repo@repo.isis.vanderbilt.edu:GReAT/1.7.8 && \
+ssh repo@repo.isis.vanderbilt.edu chmod -R a+r GReAT/1.7.8
+
+# For Udm and GReAT
+# JIRA: make release
+# email announcement
+# change https://svn.isis.vanderbilt.edu/isis-common/installs/install.py sync to installs/install.exe, https://svn.isis.vanderbilt.edu/isis-common/trunk/common-scripts/install.exe
+#  c:\Python27\python.exe install_setup.py py2exe && move /y dist\install.exe .\install.exe
+# upgrade on build machines
+
+Check for missing symbols:
+Method 1: use 7zip to extract files from msi
+
+SetLocal EnableDelayedExpansion
+cd %userprofile%\Downloads
+curl -sS -O http://repo.isis.vanderbilt.edu/UDM/3.2.15/UDM_x64-3.2.15.msi || exit /b !ERRORLEVEL!
+set _NT_SYMBOL_PATH=srv*%userprofile%\Downloads\UDM_3.2.15_symbols*http://symbols.isis.vanderbilt.edu/
+"C:\Program Files\7-Zip\7z.exe" x UDM_x64-3.2.15.msi -oUDM_x64-3.2.15 || exit /b !ERRORLEVEL!
+del UDM_x64-3.2.15\fil* UDM_x64-3.2.15\F_CENTRAL*
+"c:\Program Files (x86)\Debugging Tools for Windows (x86)\symchk.exe" /r "%userprofile%\Downloads\UDM_x64-3.2.15"
+@rem pause
+"C:\Program Files\7-Zip\7z.exe" a UDM_3.2.15_symbols.7z UDM_3.2.15_symbols || exit /b !ERRORLEVEL!
+"C:\Program Files\7-Zip\7z.exe" l UDM_3.2.15_symbols.7z
+scp -v UDM_3.2.15_symbols.7z repo@repo.isis.vanderbilt.edu:UDM/3.2.15/
+ssh repo@repo.isis.vanderbilt.edu chmod -R a+r UDM/3.2.15/
+
+Method 2: install Udm_x64.msi:
+start /wait msiexec /I UDM_x64-3.2.15.msi /qb /Lv* UDM_x64-3.2.15.log ALLUSERS=1
+set _NT_SYMBOL_PATH=C:\Windows\symbols\dll;C:\Windows\system32;srv*c:\symbols*http://symbols.isis.vanderbilt.edu/;srv*c:\symbols*http://msdl.microsoft.com/download/symbols
+"c:\Program Files (x86)\Debugging Tools for Windows (x86)\symchk.exe" /r "C:\Program Files\ISIS\Udm"
+"c:\Program Files (x86)\Debugging Tools for Windows (x86)\symchk.exe" /r "C:\Program Files (x86)\ISIS\Udm"
+"c:\Program Files (x86)\Debugging Tools for Windows (x86)\symchk.exe" c:\Windows\SysWOW64\UdmDll_3_2_VS10.dll
+"c:\Program Files (x86)\Debugging Tools for Windows (x86)\symchk.exe" c:\Windows\SysWOW64\UdmDll_3_2_v110_Win32.dll
+"c:\Program Files (x86)\Debugging Tools for Windows (x86)\symchk.exe" c:\Windows\SysWOW64\UdmDll_3_2.dll
+Normal:
+ SYMCHK: python27.dll         FAILED  - python27.pdb mismatched or not found
+ SYMCHK: UdmCliGen.exe        FAILED  - Built without debugging information.
+ Xalan

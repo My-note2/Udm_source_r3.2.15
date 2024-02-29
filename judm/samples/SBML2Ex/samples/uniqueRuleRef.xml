@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="uniqueRuleRef" name="uniqueRuleRef">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Unique Rule Variable Reference</title>
+</head>
+<body>
+<h1>Unique Rule Variable Reference</h1>
+<p>
+The variable referenced by a rule must not be referenced as the variable
+for any other rule.
+</p>
+</body>
+</sbml:notes>
+
+<listOfCompartments>
+  <compartment id="variableCompartment" />
+  <compartment id="rateCompartment" />
+  <compartment id="duplicateCompartment" />
+</listOfCompartments>
+
+<listOfRules>
+  <assignmentRule variable="variableCompartment">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times />
+        <cn>0.01</cn>
+        <csymbol encoding="text"
+                 definitionURL="http://www.sbml.org/sbml/symbols/time"
+                 >t</csymbol>
+      </apply>
+    </math:math>
+  </assignmentRule>
+
+  <assignmentRule variable="variableCompartment">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times />
+        <cn>0.01</cn>
+        <csymbol encoding="text"
+                 definitionURL="http://www.sbml.org/sbml/symbols/time"
+                 >t</csymbol>
+      </apply>
+    </math:math>
+  </assignmentRule>
+
+  <rateRule variable="rateCompartment">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times />
+        <cn>0.01</cn>
+        <csymbol encoding="text"
+                 definitionURL="http://www.sbml.org/sbml/symbols/time"
+                 >t</csymbol>
+      </apply>
+    </math:math>
+  </rateRule>
+
+  <rateRule variable="rateCompartment">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times />
+        <cn>0.01</cn>
+        <csymbol encoding="text"
+                 definitionURL="http://www.sbml.org/sbml/symbols/time"
+                 >t</csymbol>
+      </apply>
+    </math:math>
+  </rateRule>
+
+  <assignmentRule variable="duplicateCompartment">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times />
+        <cn>0.01</cn>
+        <csymbol encoding="text"
+                 definitionURL="http://www.sbml.org/sbml/symbols/time"
+                 >t</csymbol>
+      </apply>
+    </math:math>
+  </assignmentRule>
+
+  <rateRule variable="duplicateCompartment">
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times />
+        <cn>0.01</cn>
+        <csymbol encoding="text"
+                 definitionURL="http://www.sbml.org/sbml/symbols/time"
+                 >t</csymbol>
+      </apply>
+    </math:math>
+  </rateRule>
+</listOfRules>
+</model>
+</sbml>

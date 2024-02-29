@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="UdmTests"
+	OutputDirectory="..\..\..\..\..\Build\Win32\VC9\$(ConfigurationName)"
+	IntermediateDirectory="$(OutDir)\obj\tests\$(ProjectName)"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="..\..\..\..\..\include;&quot;$(UDM_3RDPARTY_PATH)\xerces-c_2_8_0\include&quot;;&quot;$(UDM_3RDPARTY_PATH)\cppunit-1.12.1\include&quot;;&quot;$(UDM_3RDPARTY_PATH)\boost_1_44_0&quot;;&quot;$(OutDir)\Gen\tests\$(ProjectName)&quot;"
+		DebugInformationFormat="3"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		LinkIncremental="1"
+		AdditionalLibraryDirectories="&quot;$(OutDir)&quot;;&quot;$(UDM_3RDPARTY_PATH)\xerces-c_2_8_0\lib&quot;;&quot;$(UDM_3RDPARTY_PATH)\cppunit-1.12.1\lib&quot;;&quot;$(UDM_3RDPARTY_PATH)\Xalan-C_1_11_0\lib&quot;;&quot;$(UDM_3RDPARTY_PATH)\boost_1_44_0&quot;;&quot;$(UDM_3RDPARTY_PATH)\zlib&quot;;&quot;$(UDM_3RDPARTY_PATH)\pccts\lib&quot;"
+		GenerateDebugInformation="true"
+		SubSystem="1"
+	/>
+</VisualStudioPropertySheet>

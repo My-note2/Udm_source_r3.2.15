@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='windows-1252'?>
+
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi' RequiredVersion='3.0.4813.0'>
+
+  <?include ..\Udm_inc.wxi ?>
+  <Fragment>
+    <DirectoryRef Id='bin$(sys.BUILDARCH)'/>
+    <DirectoryRef Id='lib$(sys.BUILDARCH)'/>
+
+    <ComponentGroup Id='UdmSDK_VC9$(sys.BUILDARCH)'>
+      <?if $(sys.BUILDARCH)=x86 ?>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\VC9\Debug\UdmDll_3_2D.dll" />
+      </Component>
+      <Component Directory="lib$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\VC9\Release\UdmDll.lib" />
+      </Component>
+      <Component Directory="lib$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\VC9\Debug\UdmDllD.lib" />
+      </Component>
+      <?endif?>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

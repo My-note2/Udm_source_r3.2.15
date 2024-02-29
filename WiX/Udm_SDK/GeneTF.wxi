@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<?define GeneTF=..\..\judm\build\build_win\GeneTF?>
+<!-- generated with ../../../../Documents/META/deploy/gen_dir_wxi.py ..\..\judm\build\build_win\GeneTF -->
+    <Fragment>
+        <DirectoryRef Id="GeneTF">
+            <Directory Id="dir3AC402693CAC497FCEE1725D943A7A12" Name="meta" />
+            <Directory Id="dir6C0BD1A48B67DA0B0888B30DCA1190EA" Name="samples" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="GeneTF">
+            <Component Id="cmp8888022C93284E1F4DCF5F3E8BD10A5F" Directory="GeneTF" Guid="*">
+                <File Id="filD327A977FFFB416C23D583A0FE8EB742" KeyPath="yes" Source="$(var.GeneTF)\GeneTF-test.jar" />
+            </Component>
+            <Component Id="cmpD400AF451B6A20B3C71CC09FC7AA8702" Directory="GeneTF" Guid="*">
+                <File Id="filDC9CC28B5EB280A3E5206278DE44D96A" KeyPath="yes" Source="$(var.GeneTF)\GeneTF.jar" />
+            </Component>
+            <Component Id="cmp6AEA83CBDD7A93CDB796C4E16F0D804B" Directory="GeneTF" Guid="*">
+                <File Id="filA1C476847A16ED2140A01E141BF9B869" KeyPath="yes" Source="$(var.GeneTF)\runtests.cmd" />
+            </Component>
+            <Component Id="cmpA28128D8741D87D3C8C61416368D992E" Directory="dir3AC402693CAC497FCEE1725D943A7A12" Guid="*">
+                <File Id="fil307185411B7C2A8EBC54F15755C911A5" KeyPath="yes" Source="$(var.GeneTF)\meta\GeneTF.JPG" />
+            </Component>
+            <Component Id="cmpE033329408B2E9F06CA45C9FF5D92837" Directory="dir3AC402693CAC497FCEE1725D943A7A12" Guid="*">
+                <File Id="fil3969335A0436995E777AA7BDE40341AA" KeyPath="yes" Source="$(var.GeneTF)\meta\GeneTF.xsd" />
+            </Component>
+            <Component Id="cmpAD86DA1C5D13B0E66F9034516DF87525" Directory="dir3AC402693CAC497FCEE1725D943A7A12" Guid="*">
+                <File Id="filC7D6A2DE4AC29C6BF9319302B254F2A7" KeyPath="yes" Source="$(var.GeneTF)\meta\GeneTF_udm.xml" />
+            </Component>
+            <Component Id="cmpE007D8816CCC98226B5A1D4DD78F9537" Directory="dir3AC402693CAC497FCEE1725D943A7A12" Guid="*">
+                <File Id="filDC92F3CEFF7C1332AB811A247F59D8A8" KeyPath="yes" Source="$(var.GeneTF)\meta\GeneTF_uml.xme" />
+            </Component>
+            <Component Id="cmp6F77E6655141F76D0A9BAF28C4AA14CA" Directory="dir6C0BD1A48B67DA0B0888B30DCA1190EA" Guid="*">
+                <File Id="fil772FAF177F1A0368EEADF95EED3454DF" KeyPath="yes" Source="$(var.GeneTF)\samples\test.xml" />
+            </Component>
+            <Component Id="cmp24369D544C28919C85B096D15743A0DE" Directory="dir6C0BD1A48B67DA0B0888B30DCA1190EA" Guid="*">
+                <File Id="fil530A89E97F1A45DE9F6A07EF6BE19818" KeyPath="yes" Source="$(var.GeneTF)\samples\test2.xml" />
+            </Component>
+            <Component Id="cmpCE170A583B88E50BD49E4958A89158E7" Directory="dir6C0BD1A48B67DA0B0888B30DCA1190EA" Guid="*">
+                <File Id="filB48725A8C62BDF7EB74CBB40DA31709E" KeyPath="yes" Source="$(var.GeneTF)\samples\tests.xml" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir6C0BD1A48B67DA0B0888B30DCA1190EA" />
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir3AC402693CAC497FCEE1725D943A7A12" />
+    </Fragment>
+</Wix>

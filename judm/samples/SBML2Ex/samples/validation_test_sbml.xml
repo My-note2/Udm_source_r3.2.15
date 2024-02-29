@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<sbml xmlns="http://www.sbml.org/sbml/level2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sbmlns="http://www.sbml.org/sbml/level2" xmlns:mathmlns="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xsi:noNamespaceSchemaLocation="SBML2Ex.xsd" level="2" version="1">
+    <model>
+    <listOfCompartments>
+    <compartment id="cell"/>
+
+	
+    </listOfCompartments>
+    <listOfParameters>
+    <parameter id="vm" value="2" units="mmls"/>
+    <parameter id="km" value="2" units="mm"/>
+    
+    </listOfParameters>
+    <listOfReactions>
+    <reaction id="v1"><kineticLaw/><listOfProducts><speciesReference species="s1"/></listOfProducts><listOfReactants><speciesReference species="x0"/></listOfReactants></reaction>
+    <reaction id="v2"><kineticLaw/><listOfProducts><speciesReference species="s2"/></listOfProducts><listOfReactants><speciesReference species="s1"/></listOfReactants></reaction>
+    <reaction id="v3"><kineticLaw/><listOfProducts><speciesReference species="x1"/></listOfProducts><listOfReactants><speciesReference species="s2"/></listOfReactants></reaction>
+
+    </listOfReactions>
+    <listOfSpecies>
+    <species id="x0" compartment="cell" initialConcentration="1"/>
+    <species id="x1" compartment="cell" initialConcentration="1"/>
+    <species id="s1" compartment="cell" initialConcentration="1"/>
+    <species id="s1" compartment="cell" initialConcentration="1"/>
+
+    </listOfSpecies>
+    <listOfUnitDefinitions><unitDefinition id="substance"><listOfUnits><unit kind="mole" scale="-3"/></listOfUnits></unitDefinition><unitDefinition id="mmls"><listOfUnits><unit kind="mole" scale="-3"/><unit kind="litre" exponent="-1"/><unit kind="second" exponent="-1"/></listOfUnits></unitDefinition><unitDefinition id="mm"><listOfUnits><unit kind="mole" scale="-3"/></listOfUnits></unitDefinition></listOfUnitDefinitions></model>
+</sbml>
+	

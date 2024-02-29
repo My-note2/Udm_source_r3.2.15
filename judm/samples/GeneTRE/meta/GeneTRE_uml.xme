@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "mga.dtd">
+
+<project guid="{D54944E7-A729-4B2B-9A71-72975C483826}" cdate="Thu Aug 04 13:12:40 2005" mdate="Thu Aug 04 13:12:40 2005" version="" metaguid="{59EBDD54-0EA9-4CDF-96D2-11DF2C3C0EF5}" metaversion="" metaname="UML">
+	<name>GeneTRE</name>
+	<comment></comment>
+	<author></author>
+	<folder id="id-006a-00000001" relid="0x1" childrelidcntr="0x1" kind="RootFolder">
+		<name>GeneTRE</name>
+		<model id="id-0065-00000001" kind="Package" relid="0x1" childrelidcntr="0x2">
+			<name>GeneTRE</name>
+			<attribute kind="version">
+				<value>2.00</value>
+			</attribute>
+			<model id="id-0065-00000002" kind="Namespace" role="Namespace" relid="0x2" childrelidcntr="0x1">
+				<name>genetre</name>
+				<model id="id-0065-00000003" kind="ClassDiagram" role="ClassDiagram" relid="0x1" childrelidcntr="0x18">
+					<name>Binding</name>
+					<atom id="id-0066-00000001" kind="Class" role="Class" relid="0x1">
+						<name>Container</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="Constraints" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>373,128</value>
+								</regnode>
+							</regnode>
+							<regnode name="UML" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>234,35</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Attributes" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="IsAbstract" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="Stereotype" status="meta">
+							<value></value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000002" kind="Class" role="Class" relid="0x2">
+						<name>Gene</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="Constraints" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>100,212</value>
+								</regnode>
+							</regnode>
+							<regnode name="UML" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>14,237</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Attributes">
+							<value>name : String</value>
+						</attribute>
+						<attribute kind="IsAbstract" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="Stereotype" status="meta">
+							<value></value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000003" kind="Class" role="Class" relid="0x3">
+						<name>PWM</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="Constraints" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>198,205</value>
+								</regnode>
+							</regnode>
+							<regnode name="UML" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>224,237</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Attributes">
+							<value>name : String
+</value>
+						</attribute>
+						<attribute kind="IsAbstract" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="Stereotype" status="meta">
+							<value></value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000004" kind="Class" role="Class" relid="0x4">
+						<name>TF</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="Constraints" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>310,205</value>
+								</regnode>
+							</regnode>
+							<regnode name="UML" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>476,237</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Attributes">
+							<value>name : String
+</value>
+						</attribute>
+						<attribute kind="IsAbstract" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="Stereotype" status="meta">
+							<value></value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000005" kind="Connector" role="Connector" relid="0xa">
+						<name>Connector</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="UML" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>138,257</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</atom>
+					<atom id="id-0066-00000006" kind="Class" role="Class" relid="0xd">
+						<name>TRE</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="Constraints" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>121,289</value>
+								</regnode>
+							</regnode>
+							<regnode name="UML" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>72,102</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Attributes">
+							<value>regulation : Integer  = 0
+position : Integer 
+strand : Boolean
+coreScore : Real 
+matrixScore : Real </value>
+						</attribute>
+						<attribute kind="IsAbstract" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="Stereotype" status="meta">
+							<value></value>
+						</attribute>
+					</atom>
+					<connection id="id-0068-00000001" kind="Composition" role="Composition" relid="0x5">
+						<name>Composition</name>
+						<regnode name="autorouterPref" isopaque="yes">
+							<value>N</value>
+						</regnode>
+						<attribute kind="Cardinality" status="meta">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="ChildRole" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ParentRole" status="meta">
+							<value></value>
+						</attribute>
+						<connpoint role="dst" target="id-0066-00000001"/>
+						<connpoint role="src" target="id-0066-00000002"/>
+					</connection>
+					<connection id="id-0068-00000002" kind="Composition" role="Composition" relid="0x6">
+						<name>Composition</name>
+						<attribute kind="Cardinality" status="meta">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="ChildRole" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ParentRole" status="meta">
+							<value></value>
+						</attribute>
+						<connpoint role="dst" target="id-0066-00000001"/>
+						<connpoint role="src" target="id-0066-00000003"/>
+					</connection>
+					<connection id="id-0068-00000003" kind="Composition" role="Composition" relid="0x7">
+						<name>Composition</name>
+						<regnode name="autorouterPref" isopaque="yes">
+							<value>eN</value>
+						</regnode>
+						<attribute kind="Cardinality" status="meta">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="ChildRole" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ParentRole" status="meta">
+							<value></value>
+						</attribute>
+						<connpoint role="dst" target="id-0066-00000001"/>
+						<connpoint role="src" target="id-0066-00000004"/>
+					</connection>
+					<connection id="id-0068-00000004" kind="Src" role="Src" relid="0xb">
+						<name>Src</name>
+						<regnode name="autorouterPref" isopaque="yes">
+							<value>w</value>
+						</regnode>
+						<attribute kind="Cardinality" status="meta">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="srcRolename">
+							<value>gene</value>
+						</attribute>
+						<connpoint role="src" target="id-0066-00000002"/>
+						<connpoint role="dst" target="id-0066-00000005"/>
+					</connection>
+					<connection id="id-0068-00000005" kind="Dst" role="Dst" relid="0xc">
+						<name>Dst</name>
+						<attribute kind="Cardinality" status="meta">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="dstRolename">
+							<value>site</value>
+						</attribute>
+						<connpoint role="dst" target="id-0066-00000003"/>
+						<connpoint role="src" target="id-0066-00000005"/>
+					</connection>
+					<connection id="id-0068-00000006" kind="AssociationClass" role="AssociationClass" relid="0xe">
+						<name>AssociationClass</name>
+						<regnode name="autorouterPref" isopaque="yes">
+							<value>N</value>
+						</regnode>
+						<connpoint role="src" target="id-0066-00000005"/>
+						<connpoint role="dst" target="id-0066-00000006"/>
+					</connection>
+					<connection id="id-0068-00000007" kind="Composition" role="Composition" relid="0xf">
+						<name>Composition</name>
+						<regnode name="autorouterPref" isopaque="yes">
+							<value>N</value>
+						</regnode>
+						<attribute kind="Cardinality" status="meta">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="ChildRole" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ParentRole" status="meta">
+							<value></value>
+						</attribute>
+						<connpoint role="dst" target="id-0066-00000001"/>
+						<connpoint role="src" target="id-0066-00000006"/>
+					</connection>
+					<connection id="id-0068-00000008" kind="Association" role="Association" relid="0x18">
+						<name>Association</name>
+						<attribute kind="Stereotype" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="dstCardinality" status="meta">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="dstRolename">
+							<value>bindsTo</value>
+						</attribute>
+						<attribute kind="srcCardinality" status="meta">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="srcRolename">
+							<value>tf</value>
+						</attribute>
+						<connpoint role="dst" target="id-0066-00000003"/>
+						<connpoint role="src" target="id-0066-00000004"/>
+					</connection>
+				</model>
+			</model>
+		</model>
+	</folder>
+</project>

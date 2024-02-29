@@ -1,0 +1,22 @@
+include ../../Makefile.OSX.incl
+
+BUILT_SOURCES=RefPort.cpp
+SOURCES=$(BUILT_SOURCES) RefPortsTest.cpp main.cpp
+CLEAN_FILES=$(BUILT_SOURCES) RefPort.xsd RefPort.h
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS) test_refports
+
+$(BUILT_SOURCES):RefPort_udm.xml ../../bin/Udm
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -v -d ../../etc -T
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) -I $(CPPUNIT)/include $< -o $@
+
+test_refports: $(OBJECTS)
+	$(CC) $(BCFLAGS) $(OBJECTS) -o test_refports  -lUdm -L../../lib -lcppunit -L $(CPPUNITLIBS)
+
+test:test_refports
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ./test_refports
+
+clean: 
+	rm -f *.o  test_refports $(CLEAN_FILES)

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="Udm"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="&quot;$(UDM_3RDPARTY_PATH)\xerces-c_2_8_0\include&quot;;&quot;$(UDM_3RDPARTY_PATH)\Xalan-C_1_11_0\include&quot;;&quot;$(UDM_3RDPARTY_PATH)\antlr-2.7.7\cpp&quot;;&quot;$(UDM_3RDPARTY_PATH)\zlib&quot;;&quot;$(UDM_3RDPARTY_PATH)\zlib\contrib\minizip&quot;;&quot;$(UDM_3RDPARTY_PATH)\cppunit-1.12.1\include&quot;;&quot;$(UDM_3RDPARTY_PATH)\boost_1_44_0&quot;;&quot;$(JAVA_HOME)\include\win32&quot;;&quot;$(JAVA_HOME)\include&quot;;&quot;$(GME_ROOT)\Interfaces&quot;;&quot;$(GME_ROOT)\Gme\Interfaces&quot;;&quot;$(UDM_3RDPARTY_PATH)\antlr-2.7.7\lib\cpp&quot;;&quot;$(UDM_3RDPARTY_PATH)\json_spirit&quot;;&quot;$(UDM_3RDPARTY_PATH)\pccts\h&quot;"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalLibraryDirectories="&quot;$(UDM_3RDPARTY_PATH)\Xalan-C_1_11_0\lib&quot;;&quot;$(UDM_3RDPARTY_PATH)\xerces-c_2_8_0\lib&quot;;&quot;$(UDM_3RDPARTY_PATH)\zlib&quot;;&quot;$(UDM_3RDPARTY_PATH)\antlr-2.7.7\lib&quot;;&quot;$(UDM_3RDPARTY_PATH)\cppunit-1.12.1\lib&quot;;&quot;$(JAVA_HOME)\lib&quot;;&quot;$(UDM_3RDPARTY_PATH)\pccts\lib&quot;"
+	/>
+	<Tool
+		Name="VCMIDLTool"
+		AdditionalIncludeDirectories="&quot;$(GME_ROOT)\Interfaces&quot;;&quot;$(GME_ROOT)\Gme\Interfaces&quot;"
+	/>
+	<UserMacro
+		Name="CLASSPATH"
+		Value="$(UDM_3RDPARTY_PATH)\junit\junit.jar;$(UDM_3RDPARTY_PATH)\antlr-2.7.7\antlr.jar"
+		PerformEnvironmentSet="true"
+	/>
+	<UserMacro
+		Name="SWIG_EXE"
+		Value="$(UDM_3RDPARTY_PATH)\swigwin-2.0.0\swig.exe"
+	/>
+</VisualStudioPropertySheet>

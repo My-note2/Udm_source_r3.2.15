@@ -1,0 +1,73 @@
+include Makefile.OSX.incl
+
+SUBDIRS = src lib bin judm samples tests
+
+all:	env	
+	@for dir in $(SUBDIRS);\
+	do \
+		echo "\nInvoking make in subdir: " $${dir};\
+		$(MAKE) -C $${dir} $@ -f Makefile.OSX || exit $$?;\
+	done
+
+clean:
+	@for dir in $(SUBDIRS);\
+	do \
+		echo "\nInvoking make clean in subdir: " $${dir};\
+		$(MAKE) clean -C $${dir} $@ -f Makefile.OSX ;\
+	done
+	rm -f set-env.sh
+	rm -rf $(RELEASE_DIR).tar.gz
+	rm -rf $(RELEASE_DIR)
+
+
+test:
+	$(MAKE) test -C tests -f Makefile.OSX
+	$(MAKE) test -C judm -f Makefile.OSX
+	
+
+
+
+env:
+	rm -f set-env.sh
+	echo "export PCRE_LIBS="$(PCRE)"/.libs/" >>set-env.sh 
+	echo "export SWIG_LIB="$(SWIGLIB) >> set-env.sh
+	echo "export DYLD_LIBRARY_PATH="$(DYLDLIBRARYPATH) >>set-env.sh
+	echo "export JVMD32="$(JVMD32) >>set-env.sh
+	echo "export UDM_PATH="$(UDMHOME) >>set-env.sh
+	echo "export JUNIT="$(JUNIT) >> set-env.sh
+	echo "export JUNITDIR="$(JUNITDIR) >> set-env.sh
+	echo "export VERSIONER_PYTHON_PREFER_32_BIT="$(VERSIONER_PYTHON_PREFER_32_BIT) >> set-env.sh
+
+	chmod +x set-env.sh
+
+binary_release: all
+
+	rm -rf $(RELEASE_DIR).tar.gz
+	rm -rf $(RELEASE_DIR)
+	mkdir $(RELEASE_DIR)
+	
+	mkdir $(RELEASE_DIR)/bin
+	cp bin/Udm bin/UdmCopy bin/UdmJson bin/UdmOclPat bin/UdmToXmi bin/UdmViz $(RELEASE_DIR)/bin
+
+	(cd $(XERCESCROOT)/lib; tar cf - libxerces* ) | ( cd $(RELEASE_DIR)/bin; tar x - )
+	(cd $(XALANCROOT)/lib; tar cf - libxalan* ) | ( cd $(RELEASE_DIR)/bin; tar x - )
+	(cd $(PCRE)/.libs; tar cf - *dylib ) | ( cd $(RELEASE_DIR)/bin; tar x - )
+	(cd $(CPPUNITLIBS)/; tar cf - *dylib ) | ( cd $(RELEASE_DIR)/bin; tar x - )
+	cp $(LIBBOOST_PYTHON)  $(RELEASE_DIR)/bin
+	mkdir $(RELEASE_DIR)/lib
+	(cd lib; tar cf - *.dylib *.so)  | (cd $(RELEASE_DIR)/lib; tar x - )
+
+	mkdir $(RELEASE_DIR)/include
+	cp include/*.h include/readme.txt $(RELEASE_DIR)/include
+
+	mkdir $(RELEASE_DIR)/etc
+	cp etc/*.xml etc/*.xme etc/*.xsd $(RELEASE_DIR)/etc
+
+	mkdir $(RELEASE_DIR)/doc
+	cp doc/UDMAPI.* $(RELEASE_DIR)/doc
+
+	cp -R tests samples judm $(RELEASE_DIR)/
+	cp license* Makefile.OSX.incl releaseinfo.txt CHANGELOG.txt $(RELEASE_DIR)/
+	tar -zcf $(RELEASE_DIR).tar.gz $(RELEASE_DIR)/
+	ls -la $(RELEASE_DIR).tar.gz
+	

@@ -1,0 +1,76 @@
+include ../Makefile.OSX.incl
+
+all:libUdm.dylib libUdm.$(COMPAT_VERSION).dylib libUdm.$(MAJOR_VERSION).dylib \
+	libUdmSwig.dylib libUdmSwig.$(COMPAT_VERSION).dylib libUdmSwig.$(MAJOR_VERSION).dylib \
+	udm.so udm.$(COMPAT_VERSION).so udm.$(MAJOR_VERSION).so udm.$(VERSION).so
+
+
+
+libUdm.$(VERSION).dylib:
+	$(CC) -dynamiclib  -arch $(ARCH) -o $@  -current_version $(VERSION) -compatibility_version $(COMPAT_VERSION) -install_name libUdm.$(MAJOR_VERSION).dylib \
+	../src/Udm/ClassGen.o ../src/Udm/DiagramGen.o ../src/Udm/NamespaceGen.o ../src/Udm/UdmCpp.o ../src/Udm/UdmCppH.o ../src/Udm/UdmCS.o ../src/Udm/File2Code/File2Code.cpp \
+	../src/Udm/JavaAPIGen/ClassGen.o ../src/Udm/JavaAPIGen/FactoryGen.o ../src/Udm/JavaAPIGen/JavaAPIGen.o ../src/Udm/JavaAPIGen/Utils.o \
+	../src/Udm/JavaAPIGen/UtilsGen.o ../src/Udm/PythonAPIGen/PythonAPIGen.o \
+	../src/Udm/UdmUtil.o ../src/UdmBase/cint_string.o ../src/UdmBase/DTDGen.o ../src/UdmBase/Project.o ../src/UdmBase/UdmBase.o \
+	../src/UdmBase/UdmProject.o ../src/UdmBase/UdmStatic.o ../src/UdmBase/UdmTomi.o ../src/UdmBase/UmlExt.o ../src/UdmDom/UdmDom.o \
+	../src/UdmOcl/UdmOcl.o ../src/UdmOcl/UdmOclObject.o ../src/UdmOcl/UdmOclType.o ../src/UdmPOI/UdmPOI.o ../src/UdmUtil/UdmUtil.o ../src/Uml/Uml.o \
+	../src/UdmOclPat/GOCL/src/OCLCommon.o ../src/UdmOclPat/GOCL/src/OCLFactory.o ../src/UdmOclPat/GOCL/src/OCLObjectExBasic.o ../src/UdmOclPat/GOCL/src/OCLTree.o \
+	../src/UdmOclPat/GOCL/src/OCLConstraint.o ../src/UdmOclPat/GOCL/src/OCLFeature.o ../src/UdmOclPat/GOCL/src/OCLParserStatic.o ../src/UdmOclPat/GOCL/src/OCLType.o \
+	../src/UdmOclPat/GOCL/src/OCLContext.o ../src/UdmOclPat/GOCL/src/OCLFeatureImplementation.o ../src/UdmOclPat/GOCL/src/OCLRefCount.o ../src/UdmOclPat/GOCL/src/OCLTypeExBasic.o \
+	../src/UdmOclPat/GOCL/src/OCLException.o ../src/UdmOclPat/GOCL/src/OCLObject.o ../src/UdmOclPat/GOCL/src/OCLSignature.o \
+	../src/UdmOclPat/GOCL/src/generated/OCLLexer.o	../src/UdmOclPat/GOCL/src/generated/OCLParser.o	../src/UdmOclPat/GOCL/src/generated/ocl.o \
+	../src/UdmOclPat/GOCL/src/AParser.o ../src/UdmOclPat/GOCL/src/ASTBase.o ../src/UdmOclPat/GOCL/src/ATokenBuffer.o \
+	../src/UdmOclPat/GOCL/src/BufFileInput.o ../src/UdmOclPat/GOCL/src/DLexerBase.o ../src/UdmOclPat/GOCL/src/PCCTSAST.o ../src/UdmOclPat/GOCL/src/slist.o \
+	$(MINIZIP)/minizip/libminizip.a \
+	-lz -lxerces-c -lstdc++ -L $(XERCESCROOT)/lib
+
+libUdm.$(COMPAT_VERSION).dylib:libUdm.$(VERSION).dylib
+	rm -f libUdm.$(COMPAT_VERSION).dylib
+	ln -s $< $@
+
+libUdm.$(MAJOR_VERSION).dylib:libUdm.$(VERSION).dylib
+	rm -f libUdm.$(MAJOR_VERSION).dylib
+	ln -s $< $@
+
+libUdm.dylib:libUdm.$(VERSION).dylib
+	rm -rf libUdm.dylib
+	ln -s $< $@
+
+
+libUdmSwig.$(VERSION).dylib:
+	$(CC) -dynamiclib -arch $(ARCH) -o $@  -current_version $(VERSION) -compatibility_version $(COMPAT_VERSION) -install_name libUdmSwig.$(MAJOR_VERSION).dylib \
+	../src/UdmSwig/UdmSwigMain.o ../src/UdmSwig/UdmSwig_wrap_sed.o -lUdm -L .
+
+libUdmSwig.$(COMPAT_VERSION).dylib:libUdmSwig.$(VERSION).dylib
+	rm -f libUdmSwig.$(COMPAT_VERSION).dylib
+	ln -s $< $@
+
+libUdmSwig.$(MAJOR_VERSION).dylib:libUdmSwig.$(VERSION).dylib
+	rm -f libUdmSwig.$(MAJOR_VERSION).dylib
+	ln -s $< $@
+
+libUdmSwig.dylib:libUdmSwig.$(VERSION).dylib
+	rm -rf libUdmSwig.dylib
+	ln -s $< $@
+
+udm.$(VERSION).so:../src/UdmPython/UdmPython.o
+	$(CC) -dynamiclib -arch $(ARCH) -install_name udm.$(MAJOR_VERSION).so -L$(PYTHON)/lib -L$(PYTHON)/lib/python2.7/config -o $@ $<  $(LIBBOOST_PYTHON)  -lpython2.7 -lUdm -L .    -headerpad_max_install_names 
+
+udm.$(COMPAT_VERSION).so:udm.$(VERSION).so
+	rm -rf $@
+	ln -s $< $@
+
+udm.$(MAJOR_VERSION).so:udm.$(VERSION).so
+	rm -rf $@
+	ln -s $< $@
+
+udm.so:udm.$(VERSION).so
+	rm -rf $@
+	ln -s $< $@
+
+
+
+clean:
+	rm -f libUdm.dylib libUdm.$(MAJOR_VERSION).dylib libUdm.$(COMPAT_VERSION).dylib libUdm.$(VERSION).dylib \
+	libUdmSwig.dylib libUdmSwig.$(MAJOR_VERSION).dylib libUdmSwig.$(COMPAT_VERSION).dylib libUdmSwig.$(VERSION).dylib \
+	udm.so udm.$(COMPAT_VERSION).so udm.$(MAJOR_VERSION).so udm.$(VERSION).so

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\OCLCommon.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\OclConstraint.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\OCLException.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\OCLObject.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\OCLObjectExBasic.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\OCLParserStatic.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\OCLSignature.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\OCLTree.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\OCLType.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\OCLTypeExBasic.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\ANTLRBase\AParser.cpp">
+      <Filter>Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\ANTLRBase\ATokenBuffer.cpp">
+      <Filter>Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\ANTLRBase\DLexerBase.cpp">
+      <Filter>Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\Build\Win32\$(PlatformToolset)\Gen\src\UdmOclPat\GOCL\src\OCLLexer.cpp">
+      <Filter>Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\Build\Win32\$(PlatformToolset)\Gen\src\UdmOclPat\GOCL\src\OCLParser.cpp">
+      <Filter>Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\Build\Win32\$(PlatformToolset)\Gen\src\UdmOclPat\GOCL\src\ocl.cpp">
+      <Filter>Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLCommon.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLConfig.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OclConstraint.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLContext.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLException.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLFactory.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLFeature.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLFeatureImplementation.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLFormalParameter.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLObject.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLObjectExBasic.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLParserStatic.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLRefCount.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLSignature.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\Build\Win32\$(PlatformToolset)\Gen\src\UdmOclPat\GOCL\src\OCLTokens.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLTree.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLType.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\Include\OCLTypeExBasic.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\Build\Win32\$(PlatformToolset)\Gen\src\UdmOclPat\GOCL\src\OCLLexer.h">
+      <Filter>Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\Build\Win32\$(PlatformToolset)\Gen\src\UdmOclPat\GOCL\src\OCLParser.h">
+      <Filter>Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Parser">
+      <UniqueIdentifier>{b44c00f0-805d-4943-8c69-7c6f31f1aa9d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\..\..\..\..\src\UdmOclPat\GOCL\src\ocl.g">
+      <Filter>Parser</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

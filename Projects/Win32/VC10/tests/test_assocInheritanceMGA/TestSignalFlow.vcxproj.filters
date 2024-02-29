@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{d69ac798-19a1-4fc0-8a67-6ef1945ba147}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{28cbb68d-7234-431d-88d4-49627a58fc2f}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\tests\test_assocInheritanceMGA\AssociationInheritanceTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\tests\test_assocInheritanceMGA\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\tests\test_assocInheritanceMGA\SignalFlow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\tests\test_assocInheritanceMGA\AssociationInheritanceTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\tests\test_assocInheritanceMGA\SignalFlow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\..\..\tests\test_assocInheritanceMGA\sf1.xme" />
+  </ItemGroup>
+  <ItemGroup>
+    <mga2xmp Include="..\..\..\..\..\tests\test_assocInheritanceMGA\SignalFlow_meta.xme" />
+  </ItemGroup>
+  <ItemGroup>
+    <xme2mga Include="..\..\..\..\..\tests\test_assocInheritanceMGA\SignalFlow_uml.xme" />
+  </ItemGroup>
+  <ItemGroup>
+    <mga2udmxml Include="..\..\..\..\..\tests\test_assocInheritanceMGA\SignalFlow_uml.mga" />
+  </ItemGroup>
+  <ItemGroup>
+    <udm Include="..\..\..\..\..\tests\test_assocInheritanceMGA\SignalFlow_udm.xml" />
+  </ItemGroup>
+</Project>

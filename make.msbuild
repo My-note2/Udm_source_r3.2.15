@@ -1,0 +1,100 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <Import Project="common-scripts\common.msbuild"/>
+
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
+  </PropertyGroup>
+
+  <Target Name="CheckEnv" DependsOnTargets="CheckEnvGme;CheckEnvUdm">
+    <Error Text="UDM_3RDPARTY_PATH='$(UDM_3RDPARTY_PATH)' doesn't exist" Condition="!Exists('$(UDM_3RDPARTY_PATH)')"/>
+  </Target>
+
+  <ItemGroup>
+    <ProjectToBuild Include="Projects\Win32\VC10\src\Udm.sln"/>
+    <ProjectToBuild Include="Projects\Win32\VC10\tests\UdmTests.sln"/>
+  </ItemGroup>
+
+  <Target Name="BuildVS9">
+    <MSBuild Projects="Projects\Win32\VC9\src\Udm.sln" Targets="UdmDll" Properties="Configuration=Debug" />
+    <MSBuild Projects="Projects\Win32\VC9\src\Udm.sln" Targets="UdmDll" Properties="Configuration=Release" />
+  </Target>
+
+  <Target Name="TestVS9">
+    <MSBuild Projects="Projects\Win32\VC9\tests\UdmTests.sln" Targets="Build" Properties="Configuration=Debug" />
+    <MSBuild Projects="Projects\Win32\VC9\tests\UdmTests.sln" Targets="Build" Properties="Configuration=Release" />
+  </Target>
+
+  <Target Name="BuildVS10" DependsOnTargets="CheckEnv">
+    <Error Text="JAVA_HOME='$(JAVA_HOME)' doesn't exist" Condition="!Exists('$(JAVA_HOME)')"/>
+    <Error Text="JAVA_HOME='$(JAVA_HOME)' doesn't point to a JDK" Condition="!Exists('$(JAVA_HOME)\include\jni.h')"/>
+    <MSBuild Projects="Projects\Win32\VC10\src\Udm.sln" Targets="UdmDll" Properties="Configuration=Debug" />
+    <MSBuild Projects="Projects\Win32\VC10\src\Udm.sln" Targets="Build" Properties="Configuration=Release" />
+    <MSBuild Projects="Projects\Win32\VC10\src\UdmCli.sln" Targets="Build" Properties="Configuration=Release" />
+    <MSBuild Projects="Projects\Win32\VC10\src\UdmPython\UdmPython.vcxproj" Targets="Build" Properties="Configuration=Release27" />
+  </Target>
+  <Target Name="TestVS10">
+    <MSBuild Projects="Projects\Win32\VC10\tests\UdmTests.sln" Targets="Build" Properties="Configuration=Debug" />
+    <MSBuild Projects="Projects\Win32\VC10\tests\UdmTests.sln" Targets="Build" Properties="Configuration=Release" />
+  </Target>
+  <Target Name="BuildVS10_x64" DependsOnTargets="CheckEnv">
+    <MSBuild Projects="Projects\Win32\VC10\src\Udm.sln" Targets="Build" Properties="Configuration=Debug;Platform=x64" />
+    <MSBuild Projects="Projects\Win32\VC10\src\Udm.sln" Targets="Build" Properties="Configuration=Release;Platform=x64" />
+  </Target>
+  <Target Name="TestVS10_x64" DependsOnTargets="CheckEnv">
+    <MSBuild Projects="Projects\Win32\VC10\tests\UdmTests.sln" Targets="Build" Properties="Configuration=Debug;Platform=x64" />
+    <MSBuild Projects="Projects\Win32\VC10\tests\UdmTests.sln" Targets="Build" Properties="Configuration=Release;Platform=x64" />
+  </Target>
+  <Target Name="BuildVS11" DependsOnTargets="CheckEnv">
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv110.sln" Targets="Build" Properties="VisualStudioVersion=11.0;PlatformToolset=v110;Configuration=Debug" />
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv110.sln" Targets="Build" Properties="VisualStudioVersion=11.0;PlatformToolset=v110;Configuration=Release" />
+  </Target>
+  <Target Name="BuildVS11_x64" DependsOnTargets="CheckEnv">
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv110.sln" Targets="Build" Properties="VisualStudioVersion=11.0;PlatformToolset=v110;Configuration=Debug;Platform=x64" />
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv110.sln" Targets="Build" Properties="VisualStudioVersion=11.0;PlatformToolset=v110;Configuration=Release;Platform=x64" />
+  </Target>
+  <Target Name="BuildVS12" DependsOnTargets="CheckEnv">
+    <!-- invoke: msbuild make.msbuild  /t:BuildVS12;BuildVS12_x64 /p:"VCTargetsPath=C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120"; -->
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv110.sln" Targets="Build" Properties="PlatformToolset=v120;Configuration=Debug" />
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv110.sln" Targets="Build" Properties="PlatformToolset=v120;Configuration=Release" />
+  </Target>
+  <Target Name="BuildVS12_x64" DependsOnTargets="CheckEnv">
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv110.sln" Targets="Build" Properties="PlatformToolset=v120;Configuration=Debug;Platform=x64" />
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv110.sln" Targets="Build" Properties="PlatformToolset=v120;Configuration=Release;Platform=x64" />
+  </Target>
+  <Target Name="BuildVC14" DependsOnTargets="CheckEnv">
+    <!-- invoke: msbuild make.msbuild /m /t:BuildVC14;BuildVC14_x64 /p:"VCTargetsPath=C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140";PlatformToolset=v140 -->
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv110.sln" Targets="Build" Properties="PlatformToolset=v140;Configuration=Debug" />
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv110.sln" Targets="Build" Properties="PlatformToolset=v140;Configuration=Release" />
+  </Target>
+  <Target Name="BuildVC14_x64" DependsOnTargets="CheckEnv">
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv110.sln" Targets="Build" Properties="PlatformToolset=v140;Configuration=Debug;Platform=x64" />
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv110.sln" Targets="Build" Properties="PlatformToolset=v140;Configuration=Release;Platform=x64" />
+  </Target>
+  <Target Name="BuildVC15" DependsOnTargets="CheckEnv">
+    <!-- invoke: "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" make.msbuild /m /t:BuildVC15;BuildVC15_x64 /p:"VCTargetsPath=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets";PlatformToolset=v141 -->
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv141.sln" Targets="Build" Properties="PlatformToolset=v141;Configuration=Debug" />
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv141.sln" Targets="Build" Properties="PlatformToolset=v141;Configuration=Release" />
+  </Target>
+  <Target Name="BuildVC15_x64" DependsOnTargets="CheckEnv">
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv141.sln" Targets="Build" Properties="PlatformToolset=v141;Configuration=Debug;Platform=x64" />
+    <MSBuild Projects="Projects\Win32\VC10\src\Udmv141.sln" Targets="Build" Properties="PlatformToolset=v141;Configuration=Release;Platform=x64" />
+  </Target>
+
+  <Target Name="UdmCliGen" DependsOnTargets="CheckEnv">
+    <MSBuild Projects="src\UdmCliGen\make.msbuild"/>
+  </Target>
+  
+  <Target Name="judm" DependsOnTargets="CheckEnv">
+    <Exec Command="call scripts\run-ant-on-judm.bat VC10 Release generate test" WorkingDirectory="$(MSBuildThisFileDirectory)"/>
+  </Target>
+
+  <Target Name="TestPython">
+    <MSBuild Projects="tests\test_UdmPython\test_UdmPython_models.sln" Targets="Build" Properties="Configuration=Release" />
+    <Exec Command="udm_python_test.py" WorkingDirectory="tests\test_UdmPython"/>
+  </Target>
+  
+  <Target Name="Installer" DependsOnTargets="BuildVS9;BuildVS10;BuildVS10_x64;judm">
+    <!-- Must build MetaGME2UML before this -->
+    <!-- TODO: Exec build_msi.py -->
+  </Target>
+</Project>

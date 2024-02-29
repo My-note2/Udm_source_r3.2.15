@@ -1,0 +1,1682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "mga.dtd">
+
+<project guid="{F86628D1-9AD3-4712-92A9-6253AEFD58E7}" cdate="Fri Feb 28 13:31:59 2014" mdate="Fri Feb 28 13:31:59 2014" version="" metaguid="{C84D2738-4519-44F2-B4C1-114F73567576}" metaversion="" metaname="MetaGME">
+	<name>MetaLevel3</name>
+	<comment></comment>
+	<author></author>
+	<folder id="id-006a-00000001" relid="0x1" childrelidcntr="0x2" kind="RootFolder" guid="{63a560aa-4428-418c-833a-f0cd59e4fe37}">
+		<name>MetaLevel3</name>
+		<folder id="id-006a-00000012" relid="0x2" childrelidcntr="0x2" libref=".\MetaLevel2.mga" kind="RootFolder" guid="{4f3f9a34-987a-451e-96d4-9bd3413201a8}">
+			<name>.\MetaLevel2.mga</name>
+			<folder id="id-006a-00000013" relid="0x2" childrelidcntr="0x2" libref=".\MetaLevel1.mga" kind="RootFolder" guid="{6e0e50e3-3dc0-42f9-822b-0151c647bf64}">
+				<name>.\MetaLevel1.mga</name>
+				<regnode name="Level1" status="undefined">
+					<value></value>
+					<regnode name="Level1_Atom_dest-4-Atom" status="undefined">
+						<value></value>
+						<regnode name="MetaRef" isopaque="yes">
+							<value>1012</value>
+							<regnode name="Level1_Model" status="undefined">
+								<value></value>
+								<regnode name="Level1_Atom_dest" isopaque="yes">
+									<value>1005</value>
+									<regnode name="Aspect" isopaque="yes">
+										<value>1009</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<regnode name="NS_Level1::Level1_Model" status="undefined">
+								<value></value>
+								<regnode name="NS_Level1::Level1_Atom_dest" isopaque="yes">
+									<value>1016</value>
+									<regnode name="Aspect" isopaque="yes">
+										<value>1020</value>
+									</regnode>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="PrimaryAspects" status="undefined">
+							<value></value>
+							<regnode name="Level1_Model:Level1_Atom_dest" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>yes</value>
+								</regnode>
+							</regnode>
+							<regnode name="NS_Level1::Level1_Model:NS_Level1::Level1_Atom_dest" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>yes</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="Level1_Atom_src-1-Atom" status="undefined">
+						<value></value>
+						<regnode name="MetaRef" isopaque="yes">
+							<value>1002</value>
+							<regnode name="Level1_Model" status="undefined">
+								<value></value>
+								<regnode name="Level1_Atom_src" status="undefined">
+									<value></value>
+									<regnode name="Aspect" isopaque="yes">
+										<value>1010</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<regnode name="NS_Level1::Level1_Model" status="undefined">
+								<value></value>
+								<regnode name="NS_Level1::Level1_Atom_src" isopaque="yes">
+									<value>1017</value>
+									<regnode name="Aspect" isopaque="yes">
+										<value>1021</value>
+									</regnode>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="PrimaryAspects" status="undefined">
+							<value></value>
+							<regnode name="Level1_Model:Level1_Atom_src" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>yes</value>
+								</regnode>
+							</regnode>
+							<regnode name="NS_Level1::Level1_Model:NS_Level1::Level1_Atom_src" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>yes</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="Level1_Connection-b-Connection" status="undefined">
+						<value></value>
+						<regnode name="MetaRef" isopaque="yes">
+							<value>1013</value>
+							<regnode name="Level1_Model" status="undefined">
+								<value></value>
+								<regnode name="Level1_Connection" isopaque="yes">
+									<value>1007</value>
+									<regnode name="Aspect" isopaque="yes">
+										<value>1011</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<regnode name="NS_Level1::Level1_Model" status="undefined">
+								<value></value>
+								<regnode name="NS_Level1::Level1_Connection" isopaque="yes">
+									<value>1018</value>
+									<regnode name="Aspect" isopaque="yes">
+										<value>1022</value>
+									</regnode>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="PrimaryAspects" status="undefined">
+							<value></value>
+							<regnode name="Level1_Model:Level1_Connection" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>yes</value>
+								</regnode>
+							</regnode>
+							<regnode name="NS_Level1::Level1_Model:NS_Level1::Level1_Connection" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>yes</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="Level1_Model-2-Model" status="undefined">
+						<value></value>
+						<regnode name="MetaRef" isopaque="yes">
+							<value>1015</value>
+						</regnode>
+					</regnode>
+					<regnode name="Level2_Atom_dest-4-Atom" status="undefined">
+						<value></value>
+						<regnode name="MetaRef" isopaque="yes">
+							<value>1001</value>
+							<regnode name="Level2_Model" status="undefined">
+								<value></value>
+								<regnode name="Level2_Atom_dest" isopaque="yes">
+									<value>1005</value>
+									<regnode name="Aspect" isopaque="yes">
+										<value>1009</value>
+									</regnode>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="PrimaryAspects" status="undefined">
+							<value></value>
+							<regnode name="Level2_Model:Level2_Atom_dest" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>yes</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="Level2_Atom_src-1-Atom" status="undefined">
+						<value></value>
+						<regnode name="MetaRef" isopaque="yes">
+							<value>1002</value>
+							<regnode name="Level2_Model" status="undefined">
+								<value></value>
+								<regnode name="Level2_Atom_src" isopaque="yes">
+									<value>1006</value>
+									<regnode name="Aspect" isopaque="yes">
+										<value>1010</value>
+									</regnode>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="PrimaryAspects" status="undefined">
+							<value></value>
+							<regnode name="Level2_Model:Level2_Atom_src" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>yes</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="Level2_Connection-b-Connection" status="undefined">
+						<value></value>
+						<regnode name="MetaRef" isopaque="yes">
+							<value>1003</value>
+							<regnode name="Level2_Model" status="undefined">
+								<value></value>
+								<regnode name="Level2_Connection" isopaque="yes">
+									<value>1007</value>
+									<regnode name="Aspect" isopaque="yes">
+										<value>1011</value>
+									</regnode>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="PrimaryAspects" status="undefined">
+							<value></value>
+							<regnode name="Level2_Model:Level2_Connection" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>yes</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="Level2_Model-2-Model" status="undefined">
+						<value></value>
+						<regnode name="MetaRef" isopaque="yes">
+							<value>1004</value>
+						</regnode>
+					</regnode>
+				</regnode>
+				<regnode name="Level2" status="undefined">
+					<value></value>
+					<regnode name="Level2_Atom-1-Atom" status="undefined">
+						<value></value>
+						<regnode name="MetaRef" isopaque="yes">
+							<value>1001</value>
+							<regnode name="Level2_Model" status="undefined">
+								<value></value>
+								<regnode name="Level2_Atom" isopaque="yes">
+									<value>1004</value>
+									<regnode name="Aspect" isopaque="yes">
+										<value>1006</value>
+									</regnode>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="PrimaryAspects" status="undefined">
+							<value></value>
+							<regnode name="Level2_Model:Level2_Atom" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>yes</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="Level2_Atom_dest-4-Atom" status="undefined">
+						<value></value>
+						<regnode name="MetaRef" isopaque="yes">
+							<value>1011</value>
+							<regnode name="Level2_Model" status="undefined">
+								<value></value>
+								<regnode name="Level2_Atom_dest" isopaque="yes">
+									<value>1019</value>
+									<regnode name="Aspect" isopaque="yes">
+										<value>1021</value>
+									</regnode>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="PrimaryAspects" status="undefined">
+							<value></value>
+							<regnode name="Level2_Model:Level2_Atom_dest" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>yes</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="Level2_Atom_src-1-Atom" status="undefined">
+						<value></value>
+						<regnode name="MetaRef" isopaque="yes">
+							<value>1012</value>
+							<regnode name="Level2_Model" status="undefined">
+								<value></value>
+								<regnode name="Level2_Atom_src" isopaque="yes">
+									<value>1014</value>
+									<regnode name="Aspect" isopaque="yes">
+										<value>1017</value>
+									</regnode>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="PrimaryAspects" status="undefined">
+							<value></value>
+							<regnode name="Level2_Model:Level2_Atom_src" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>yes</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="Level2_Connection-b-Connection" status="undefined">
+						<value></value>
+						<regnode name="MetaRef" isopaque="yes">
+							<value>1013</value>
+							<regnode name="Level2_Model" status="undefined">
+								<value></value>
+								<regnode name="Level2_Connection" isopaque="yes">
+									<value>1015</value>
+									<regnode name="Aspect" isopaque="yes">
+										<value>1018</value>
+									</regnode>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="PrimaryAspects" status="undefined">
+							<value></value>
+							<regnode name="Level2_Model:Level2_Connection" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>yes</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="Level2_Model-2-Model" status="undefined">
+						<value></value>
+						<regnode name="MetaRef" isopaque="yes">
+							<value>1003</value>
+						</regnode>
+					</regnode>
+				</regnode>
+				<regnode name="MetaGME_Options" status="undefined">
+					<value></value>
+					<regnode name="GeneratedConstraints" status="undefined">
+						<value></value>
+						<regnode name="ConnectionEndEventMask" isopaque="yes">
+							<value>0x00000000</value>
+						</regnode>
+						<regnode name="FolderContainmentEventMask" isopaque="yes">
+							<value>0x00000000</value>
+						</regnode>
+						<regnode name="Priority" isopaque="yes">
+							<value>1</value>
+						</regnode>
+						<regnode name="RegularContainmentEventMask" isopaque="yes">
+							<value>0x00000000</value>
+						</regnode>
+					</regnode>
+				</regnode>
+				<regnode name="Namespace" isopaque="yes">
+					<value>NS_Level1</value>
+				</regnode>
+				<model id="id-0065-00000013" kind="ParadigmSheet" guid="{e97e9f15-8207-4770-a405-8edc2d758e9e}" relid="0x1" childrelidcntr="0xe">
+					<name>Level1</name>
+					<atom id="id-0066-00000033" kind="Connector" role="Connector" guid="{8f362b32-06ff-44e1-a22e-2fa3ff024cc1}" relid="0x5">
+						<name>Connector</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="All" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>413,476</value>
+								</regnode>
+							</regnode>
+							<regnode name="ClassDiagram" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>371,427</value>
+								</regnode>
+							</regnode>
+							<regnode name="Visualization" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>413,476</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</atom>
+					<atom id="id-0066-00000034" kind="Connection" role="Connection" guid="{e0e9693f-1cf2-4f1e-b517-633ce215c19e}" relid="0xb">
+						<name>Level1_Connection</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="All" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>63,343</value>
+								</regnode>
+							</regnode>
+							<regnode name="Attributes" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>63,343</value>
+								</regnode>
+							</regnode>
+							<regnode name="ClassDiagram" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>154,371</value>
+								</regnode>
+							</regnode>
+							<regnode name="Constraints" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>63,343</value>
+								</regnode>
+							</regnode>
+							<regnode name="Visualization" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>63,343</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Color" status="meta">
+							<value>0x000000</value>
+						</attribute>
+						<attribute kind="ConnLineEnd" status="meta">
+							<value>butt</value>
+						</attribute>
+						<attribute kind="ConnLineStart" status="meta">
+							<value>butt</value>
+						</attribute>
+						<attribute kind="ConnLineType" status="meta">
+							<value>solid</value>
+						</attribute>
+						<attribute kind="DisplayedName" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="DstAttrLabel1" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="DstAttrLabel2" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="GeneralPreferences">
+							<value>
+sName = srcLevel2_Connection
+dName = dstLevel2_Connection</value>
+						</attribute>
+						<attribute kind="InRootFolder" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsAbstract" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsAutoRouted" status="meta">
+							<value>true</value>
+						</attribute>
+						<attribute kind="LabelFormatStr" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="NamePosition" status="meta">
+							<value>4</value>
+						</attribute>
+						<attribute kind="SrcAttrLabel1" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="SrcAttrLabel2" status="meta">
+							<value></value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000035" kind="Atom" role="Atom" guid="{043e00d0-f9e5-4529-b25b-ce2db9bcd371}" relid="0x1">
+						<name>Level1_Atom_src</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="All" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>224,280</value>
+								</regnode>
+							</regnode>
+							<regnode name="Attributes" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>224,280</value>
+								</regnode>
+							</regnode>
+							<regnode name="ClassDiagram" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>252,273</value>
+								</regnode>
+							</regnode>
+							<regnode name="Constraints" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>224,280</value>
+								</regnode>
+							</regnode>
+							<regnode name="Visualization" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>224,280</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="AutoRouterPref" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Decorator" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="DisplayedName" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="GeneralPreferences" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="GradientFillColor" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="GradientFillDirection" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="HelpURL" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Icon" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="InRootFolder" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="InstanceIcon" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="IsAbstract" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsGradientFillEnabled" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsHotspotEnabled" status="meta">
+							<value>true</value>
+						</attribute>
+						<attribute kind="IsNameEnabled" status="meta">
+							<value>true</value>
+						</attribute>
+						<attribute kind="IsResizable" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsRoundRectangleEnabled" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsShadowCastEnabled" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsTypeShown" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="NamePosition" status="meta">
+							<value>4</value>
+						</attribute>
+						<attribute kind="NameWrapNum" status="meta">
+							<value>0</value>
+						</attribute>
+						<attribute kind="PortIcon" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="RoundRectangleRadius" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ShadowColor" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ShadowDirection" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ShadowThickness" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="SubTypeIcon" status="meta">
+							<value></value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000036" kind="Model" role="Model" guid="{50c27e37-98eb-4b1b-8fff-cbfbc35aaf5e}" relid="0x2">
+						<name>Level1_Model</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="All" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>252,56</value>
+								</regnode>
+							</regnode>
+							<regnode name="Attributes" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>252,56</value>
+								</regnode>
+							</regnode>
+							<regnode name="ClassDiagram" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>252,56</value>
+								</regnode>
+							</regnode>
+							<regnode name="Constraints" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>252,56</value>
+								</regnode>
+							</regnode>
+							<regnode name="Visualization" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>252,56</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="AutoRouterPref" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Decorator" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="DisplayedName" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="GeneralPreferences" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="GradientFillColor" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="GradientFillDirection" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="HelpURL" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Icon" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="InRootFolder">
+							<value>true</value>
+						</attribute>
+						<attribute kind="InstanceIcon" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="IsAbstract" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsGradientFillEnabled" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsHotspotEnabled" status="meta">
+							<value>true</value>
+						</attribute>
+						<attribute kind="IsModelAutoRouted" status="meta">
+							<value>true</value>
+						</attribute>
+						<attribute kind="IsNameEnabled" status="meta">
+							<value>true</value>
+						</attribute>
+						<attribute kind="IsResizable" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsRoundRectangleEnabled" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsShadowCastEnabled" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsTypeInfoShown" status="meta">
+							<value>true</value>
+						</attribute>
+						<attribute kind="IsTypeShown" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="NamePosition" status="meta">
+							<value>4</value>
+						</attribute>
+						<attribute kind="NameWrapNum" status="meta">
+							<value>0</value>
+						</attribute>
+						<attribute kind="PortIcon" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="RoundRectangleRadius" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ShadowColor" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ShadowDirection" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ShadowThickness" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="SubTypeIcon" status="meta">
+							<value></value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000037" kind="Atom" role="Atom" guid="{27f749de-097d-48b5-aee4-82d11f3e0460}" relid="0x4">
+						<name>Level1_Atom_dest</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="All" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>224,280</value>
+								</regnode>
+							</regnode>
+							<regnode name="Attributes" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>224,280</value>
+								</regnode>
+							</regnode>
+							<regnode name="ClassDiagram" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>420,280</value>
+								</regnode>
+							</regnode>
+							<regnode name="Constraints" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>224,280</value>
+								</regnode>
+							</regnode>
+							<regnode name="Visualization" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>224,280</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="AutoRouterPref" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Decorator" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="DisplayedName" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="GeneralPreferences" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="GradientFillColor" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="GradientFillDirection" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="HelpURL" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Icon" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="InRootFolder" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="InstanceIcon" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="IsAbstract" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsGradientFillEnabled" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsHotspotEnabled" status="meta">
+							<value>true</value>
+						</attribute>
+						<attribute kind="IsNameEnabled" status="meta">
+							<value>true</value>
+						</attribute>
+						<attribute kind="IsResizable" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsRoundRectangleEnabled" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsShadowCastEnabled" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="IsTypeShown" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="NamePosition" status="meta">
+							<value>4</value>
+						</attribute>
+						<attribute kind="NameWrapNum" status="meta">
+							<value>0</value>
+						</attribute>
+						<attribute kind="PortIcon" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="RoundRectangleRadius" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ShadowColor" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ShadowDirection" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ShadowThickness" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="SubTypeIcon" status="meta">
+							<value></value>
+						</attribute>
+					</atom>
+					<connection id="id-0068-0000002a" kind="Containment" role="Containment" guid="{35129532-8ea7-48f9-a885-d0002ffbfe17}" relid="0x3">
+						<name>Containment</name>
+						<attribute kind="Cardinality" status="meta">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="IsPort" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="Rolename" status="meta">
+							<value></value>
+						</attribute>
+						<connpoint role="src" target="id-0066-00000035"/>
+						<connpoint role="dst" target="id-0066-00000036"/>
+					</connection>
+					<connection id="id-0068-0000002b" kind="SourceToConnector" role="SourceToConnector" guid="{736af458-52b2-4310-aa61-df18e3eb893a}" relid="0x8">
+						<name>SourceToConnector</name>
+						<attribute kind="Cardinality" status="meta">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="srcRolename" status="meta">
+							<value>src</value>
+						</attribute>
+						<connpoint role="dst" target="id-0066-00000033"/>
+						<connpoint role="src" target="id-0066-00000035"/>
+					</connection>
+					<connection id="id-0068-0000002c" kind="ConnectorToDestination" role="ConnectorToDestination" guid="{724a938a-84a6-49d2-bb16-0da226e32479}" relid="0x7">
+						<name>ConnectorToDestination</name>
+						<attribute kind="Cardinality" status="meta">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="dstRolename" status="meta">
+							<value>dst</value>
+						</attribute>
+						<connpoint role="src" target="id-0066-00000033"/>
+						<connpoint role="dst" target="id-0066-00000037"/>
+					</connection>
+					<connection id="id-0068-0000002d" kind="AssociationClass" role="AssociationClass" guid="{fe2e4103-0468-41eb-b0ef-385654064775}" relid="0xc">
+						<name>AssociationClass</name>
+						<connpoint role="dst" target="id-0066-00000033"/>
+						<connpoint role="src" target="id-0066-00000034"/>
+					</connection>
+					<connection id="id-0068-0000002e" kind="Containment" role="Containment" guid="{97398d26-9164-4768-98b0-d6599b84b3fd}" relid="0xd">
+						<name>Containment</name>
+						<attribute kind="Cardinality" status="meta">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="IsPort" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="Rolename" status="meta">
+							<value></value>
+						</attribute>
+						<connpoint role="src" target="id-0066-00000034"/>
+						<connpoint role="dst" target="id-0066-00000036"/>
+					</connection>
+					<connection id="id-0068-0000002f" kind="Containment" role="Containment" guid="{7ad76623-59cc-4048-bce8-7262cb64a3a6}" relid="0xe">
+						<name>Containment</name>
+						<attribute kind="Cardinality" status="meta">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="IsPort" status="meta">
+							<value>false</value>
+						</attribute>
+						<attribute kind="Rolename" status="meta">
+							<value></value>
+						</attribute>
+						<connpoint role="dst" target="id-0066-00000036"/>
+						<connpoint role="src" target="id-0066-00000037"/>
+					</connection>
+				</model>
+			</folder>
+			<regnode name="Level2" status="undefined">
+				<value></value>
+				<regnode name="Level2_Atom-1-Atom" status="undefined">
+					<value></value>
+					<regnode name="MetaRef" isopaque="yes">
+						<value>1021</value>
+						<regnode name="Level2_Model" status="undefined">
+							<value></value>
+							<regnode name="Level2_Atom" status="undefined">
+								<value></value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1006</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="NS_Level2::Level2_Model" status="undefined">
+							<value></value>
+							<regnode name="NS_Level2::Level2_Atom" isopaque="yes">
+								<value>1024</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1026</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PrimaryAspects" status="undefined">
+						<value></value>
+						<regnode name="Level2_Model:Level2_Atom" status="undefined">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="NS_Level2::Level2_Model:NS_Level2::Level2_Atom" status="undefined">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</regnode>
+				<regnode name="Level2_Atom_dest-4-Atom" status="undefined">
+					<value></value>
+					<regnode name="MetaRef" isopaque="yes">
+						<value>1011</value>
+						<regnode name="Level2_Model" status="undefined">
+							<value></value>
+							<regnode name="Level2_Atom_dest" isopaque="yes">
+								<value>1019</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1021</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PrimaryAspects" status="undefined">
+						<value></value>
+						<regnode name="Level2_Model:Level2_Atom_dest" status="undefined">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</regnode>
+				<regnode name="Level2_Atom_src-1-Atom" status="undefined">
+					<value></value>
+					<regnode name="MetaRef" isopaque="yes">
+						<value>1012</value>
+						<regnode name="Level2_Model" status="undefined">
+							<value></value>
+							<regnode name="Level2_Atom_src" isopaque="yes">
+								<value>1014</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1017</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PrimaryAspects" status="undefined">
+						<value></value>
+						<regnode name="Level2_Model:Level2_Atom_src" status="undefined">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</regnode>
+				<regnode name="Level2_Connection-b-Connection" status="undefined">
+					<value></value>
+					<regnode name="MetaRef" isopaque="yes">
+						<value>1013</value>
+						<regnode name="Level2_Model" status="undefined">
+							<value></value>
+							<regnode name="Level2_Connection" isopaque="yes">
+								<value>1015</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1018</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PrimaryAspects" status="undefined">
+						<value></value>
+						<regnode name="Level2_Model:Level2_Connection" status="undefined">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</regnode>
+				<regnode name="Level2_Model-2-Model" status="undefined">
+					<value></value>
+					<regnode name="MetaRef" isopaque="yes">
+						<value>1003</value>
+					</regnode>
+				</regnode>
+			</regnode>
+			<regnode name="MetaGME_Options" status="undefined">
+				<value></value>
+				<regnode name="GeneratedConstraints" status="undefined">
+					<value></value>
+					<regnode name="ConnectionEndEventMask" isopaque="yes">
+						<value>0x00000000</value>
+					</regnode>
+					<regnode name="FolderContainmentEventMask" isopaque="yes">
+						<value>0x00000000</value>
+					</regnode>
+					<regnode name="Priority" isopaque="yes">
+						<value>1</value>
+					</regnode>
+					<regnode name="RegularContainmentEventMask" isopaque="yes">
+						<value>0x00000000</value>
+					</regnode>
+				</regnode>
+			</regnode>
+			<regnode name="Namespace" isopaque="yes">
+				<value>NS_Level2</value>
+			</regnode>
+			<model id="id-0065-00000012" kind="ParadigmSheet" guid="{5e91c6de-85ed-49ca-9be6-c86a6dc3b32c}" relid="0x1" childrelidcntr="0xe">
+				<name>Level2</name>
+				<atom id="id-0066-00000031" kind="Model" role="Model" guid="{49669bac-eda0-4ae6-a5a8-27619cf25c79}" relid="0x2">
+					<name>Level2_Model</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>252,56</value>
+							</regnode>
+						</regnode>
+						<regnode name="Attributes" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>252,56</value>
+							</regnode>
+						</regnode>
+						<regnode name="ClassDiagram" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>252,56</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>252,56</value>
+							</regnode>
+						</regnode>
+						<regnode name="Visualization" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>252,56</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="AutoRouterPref" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Decorator" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="DisplayedName" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="GeneralPreferences" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="GradientFillColor" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="GradientFillDirection" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="HelpURL" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Icon" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="InRootFolder">
+						<value>true</value>
+					</attribute>
+					<attribute kind="InstanceIcon" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="IsGradientFillEnabled" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="IsHotspotEnabled" status="meta">
+						<value>true</value>
+					</attribute>
+					<attribute kind="IsModelAutoRouted" status="meta">
+						<value>true</value>
+					</attribute>
+					<attribute kind="IsNameEnabled" status="meta">
+						<value>true</value>
+					</attribute>
+					<attribute kind="IsResizable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="IsRoundRectangleEnabled" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="IsShadowCastEnabled" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="IsTypeInfoShown" status="meta">
+						<value>true</value>
+					</attribute>
+					<attribute kind="IsTypeShown" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="NamePosition" status="meta">
+						<value>4</value>
+					</attribute>
+					<attribute kind="NameWrapNum" status="meta">
+						<value>0</value>
+					</attribute>
+					<attribute kind="PortIcon" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="RoundRectangleRadius" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ShadowColor" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ShadowDirection" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ShadowThickness" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="SubTypeIcon" status="meta">
+						<value></value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000032" kind="Atom" role="Atom" guid="{1342f228-93a2-4b8d-878d-76b938f29b1b}" relid="0x1">
+					<name>Level2_Atom</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>224,280</value>
+							</regnode>
+						</regnode>
+						<regnode name="Attributes" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>224,280</value>
+							</regnode>
+						</regnode>
+						<regnode name="ClassDiagram" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>252,273</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>224,280</value>
+							</regnode>
+						</regnode>
+						<regnode name="Visualization" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>224,280</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="AutoRouterPref" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Decorator" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="DisplayedName" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="GeneralPreferences" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="GradientFillColor" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="GradientFillDirection" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="HelpURL" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Icon" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="InRootFolder" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="InstanceIcon" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="IsGradientFillEnabled" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="IsHotspotEnabled" status="meta">
+						<value>true</value>
+					</attribute>
+					<attribute kind="IsNameEnabled" status="meta">
+						<value>true</value>
+					</attribute>
+					<attribute kind="IsResizable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="IsRoundRectangleEnabled" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="IsShadowCastEnabled" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="IsTypeShown" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="NamePosition" status="meta">
+						<value>4</value>
+					</attribute>
+					<attribute kind="NameWrapNum" status="meta">
+						<value>0</value>
+					</attribute>
+					<attribute kind="PortIcon" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="RoundRectangleRadius" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ShadowColor" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ShadowDirection" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ShadowThickness" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="SubTypeIcon" status="meta">
+						<value></value>
+					</attribute>
+				</atom>
+				<connection id="id-0068-00000029" kind="Containment" role="Containment" guid="{b3c381e7-38e1-400d-9467-975dad92eb90}" relid="0x3">
+					<name>Containment</name>
+					<attribute kind="Cardinality" status="meta">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="IsPort" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Rolename" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000031"/>
+					<connpoint role="src" target="id-0066-00000032"/>
+				</connection>
+			</model>
+		</folder>
+		<regnode name="Level1" status="undefined">
+			<value></value>
+			<regnode name="Level1_Atom-2-Atom" status="undefined">
+				<value></value>
+				<regnode name="MetaRef" isopaque="yes">
+					<value>1002</value>
+					<regnode name="NS_Level1::Level1_Model" status="undefined">
+						<value></value>
+						<regnode name="NS_Level1::Level1_Atom" isopaque="yes">
+							<value>1009</value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>1024</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</regnode>
+				<regnode name="PrimaryAspects" status="undefined">
+					<value></value>
+					<regnode name="NS_Level1::Level1_Model:NS_Level1::Level1_Atom" status="undefined">
+						<value></value>
+						<regnode name="Aspect" isopaque="yes">
+							<value>yes</value>
+						</regnode>
+					</regnode>
+				</regnode>
+			</regnode>
+			<regnode name="Level1_Atom_dest-4-Atom" status="undefined">
+				<value></value>
+				<regnode name="MetaRef" isopaque="yes">
+					<value>1008</value>
+					<regnode name="NS_Level1::Level1_Model" status="undefined">
+						<value></value>
+						<regnode name="NS_Level1::Level1_Atom_dest" isopaque="yes">
+							<value>1014</value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>1018</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</regnode>
+				<regnode name="PrimaryAspects" status="undefined">
+					<value></value>
+					<regnode name="NS_Level1::Level1_Model:NS_Level1::Level1_Atom_dest" status="undefined">
+						<value></value>
+						<regnode name="Aspect" isopaque="yes">
+							<value>yes</value>
+						</regnode>
+					</regnode>
+				</regnode>
+			</regnode>
+			<regnode name="Level1_Atom_src-1-Atom" status="undefined">
+				<value></value>
+				<regnode name="MetaRef" isopaque="yes">
+					<value>1009</value>
+					<regnode name="NS_Level1::Level1_Model" status="undefined">
+						<value></value>
+						<regnode name="NS_Level1::Level1_Atom_src" isopaque="yes">
+							<value>1015</value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>1019</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</regnode>
+				<regnode name="PrimaryAspects" status="undefined">
+					<value></value>
+					<regnode name="NS_Level1::Level1_Model:NS_Level1::Level1_Atom_src" status="undefined">
+						<value></value>
+						<regnode name="Aspect" isopaque="yes">
+							<value>yes</value>
+						</regnode>
+					</regnode>
+				</regnode>
+			</regnode>
+			<regnode name="Level1_Connection-b-Connection" status="undefined">
+				<value></value>
+				<regnode name="MetaRef" isopaque="yes">
+					<value>1011</value>
+					<regnode name="NS_Level1::Level1_Model" status="undefined">
+						<value></value>
+						<regnode name="NS_Level1::Level1_Connection" isopaque="yes">
+							<value>1016</value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>1020</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</regnode>
+				<regnode name="PrimaryAspects" status="undefined">
+					<value></value>
+					<regnode name="NS_Level1::Level1_Model:NS_Level1::Level1_Connection" status="undefined">
+						<value></value>
+						<regnode name="Aspect" isopaque="yes">
+							<value>yes</value>
+						</regnode>
+					</regnode>
+				</regnode>
+			</regnode>
+			<regnode name="Level1_Model-1-Model" status="undefined">
+				<value></value>
+				<regnode name="MetaRef" isopaque="yes">
+					<value>1008</value>
+				</regnode>
+			</regnode>
+			<regnode name="Level1_Model-2-Model" status="undefined">
+				<value></value>
+				<regnode name="MetaRef" isopaque="yes">
+					<value>1013</value>
+				</regnode>
+			</regnode>
+		</regnode>
+		<regnode name="Level3" status="undefined">
+			<value></value>
+			<regnode name="Level3_Atom-1-Atom" status="undefined">
+				<value></value>
+				<regnode name="MetaRef" isopaque="yes">
+					<value>1001</value>
+					<regnode name="Level3_Model" status="undefined">
+						<value></value>
+						<regnode name="Level3_Atom" isopaque="yes">
+							<value>1005</value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>1007</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</regnode>
+				<regnode name="PrimaryAspects" status="undefined">
+					<value></value>
+					<regnode name="Level3_Model:Level3_Atom" status="undefined">
+						<value></value>
+						<regnode name="Aspect" isopaque="yes">
+							<value>yes</value>
+						</regnode>
+					</regnode>
+				</regnode>
+			</regnode>
+			<regnode name="Level3_Model-2-Model" status="undefined">
+				<value></value>
+				<regnode name="MetaRef" isopaque="yes">
+					<value>1004</value>
+				</regnode>
+			</regnode>
+		</regnode>
+		<regnode name="MetaGME_Options" status="undefined">
+			<value></value>
+			<regnode name="GeneratedConstraints" status="undefined">
+				<value></value>
+				<regnode name="ConnectionEndEventMask" isopaque="yes">
+					<value>0x00000000</value>
+				</regnode>
+				<regnode name="FolderContainmentEventMask" isopaque="yes">
+					<value>0x00000000</value>
+				</regnode>
+				<regnode name="Priority" isopaque="yes">
+					<value>1</value>
+				</regnode>
+				<regnode name="RegularContainmentEventMask" isopaque="yes">
+					<value>0x00000000</value>
+				</regnode>
+			</regnode>
+		</regnode>
+		<regnode name="Namespace" isopaque="yes">
+			<value></value>
+		</regnode>
+		<model id="id-0065-00000001" kind="ParadigmSheet" guid="{43574269-c3ad-4244-83f8-42b6a45e29b8}" relid="0x1" childrelidcntr="0x3">
+			<name>Level3</name>
+			<atom id="id-0066-00000001" kind="Atom" role="Atom" guid="{3d9c5ba7-0157-4c07-8f26-75d05d993093}" relid="0x1">
+				<name>Level3_Atom</name>
+				<regnode name="PartRegs" status="undefined">
+					<value></value>
+					<regnode name="All" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>238,315</value>
+						</regnode>
+					</regnode>
+					<regnode name="Attributes" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>238,315</value>
+						</regnode>
+					</regnode>
+					<regnode name="ClassDiagram" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>224,315</value>
+						</regnode>
+					</regnode>
+					<regnode name="Constraints" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>238,315</value>
+						</regnode>
+					</regnode>
+					<regnode name="Visualization" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>238,315</value>
+						</regnode>
+					</regnode>
+				</regnode>
+				<attribute kind="AutoRouterPref" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="Decorator" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="DisplayedName" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="GeneralPreferences" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="GradientFillColor" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="GradientFillDirection" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="HelpURL" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="Icon" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="InRootFolder" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="InstanceIcon" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="IsAbstract" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="IsGradientFillEnabled" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="IsHotspotEnabled" status="meta">
+					<value>true</value>
+				</attribute>
+				<attribute kind="IsNameEnabled" status="meta">
+					<value>true</value>
+				</attribute>
+				<attribute kind="IsResizable" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="IsRoundRectangleEnabled" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="IsShadowCastEnabled" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="IsTypeShown" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="NamePosition" status="meta">
+					<value>4</value>
+				</attribute>
+				<attribute kind="NameWrapNum" status="meta">
+					<value>0</value>
+				</attribute>
+				<attribute kind="PortIcon" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="RoundRectangleRadius" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="ShadowColor" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="ShadowDirection" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="ShadowThickness" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="SubTypeIcon" status="meta">
+					<value></value>
+				</attribute>
+			</atom>
+			<atom id="id-0066-00000002" kind="Model" role="Model" guid="{d49fe5e9-006d-4e26-a47f-60c16cb69928}" relid="0x2">
+				<name>Level3_Model</name>
+				<regnode name="PartRegs" status="undefined">
+					<value></value>
+					<regnode name="All" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>224,63</value>
+						</regnode>
+					</regnode>
+					<regnode name="Attributes" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>224,63</value>
+						</regnode>
+					</regnode>
+					<regnode name="ClassDiagram" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>224,63</value>
+						</regnode>
+					</regnode>
+					<regnode name="Constraints" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>224,63</value>
+						</regnode>
+					</regnode>
+					<regnode name="Visualization" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>224,63</value>
+						</regnode>
+					</regnode>
+				</regnode>
+				<attribute kind="AutoRouterPref" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="Decorator" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="DisplayedName" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="GeneralPreferences" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="GradientFillColor" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="GradientFillDirection" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="HelpURL" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="Icon" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="InRootFolder">
+					<value>true</value>
+				</attribute>
+				<attribute kind="InstanceIcon" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="IsAbstract" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="IsGradientFillEnabled" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="IsHotspotEnabled" status="meta">
+					<value>true</value>
+				</attribute>
+				<attribute kind="IsModelAutoRouted" status="meta">
+					<value>true</value>
+				</attribute>
+				<attribute kind="IsNameEnabled" status="meta">
+					<value>true</value>
+				</attribute>
+				<attribute kind="IsResizable" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="IsRoundRectangleEnabled" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="IsShadowCastEnabled" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="IsTypeInfoShown" status="meta">
+					<value>true</value>
+				</attribute>
+				<attribute kind="IsTypeShown" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="NamePosition" status="meta">
+					<value>4</value>
+				</attribute>
+				<attribute kind="NameWrapNum" status="meta">
+					<value>0</value>
+				</attribute>
+				<attribute kind="PortIcon" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="RoundRectangleRadius" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="ShadowColor" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="ShadowDirection" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="ShadowThickness" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="SubTypeIcon" status="meta">
+					<value></value>
+				</attribute>
+			</atom>
+			<connection id="id-0068-00000001" kind="Containment" role="Containment" guid="{24b7f83d-56ca-417a-8cda-4e46798ed8f6}" relid="0x3">
+				<name>Containment</name>
+				<attribute kind="Cardinality" status="meta">
+					<value>0..*</value>
+				</attribute>
+				<attribute kind="IsPort" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="Rolename" status="meta">
+					<value></value>
+				</attribute>
+				<connpoint role="src" target="id-0066-00000001"/>
+				<connpoint role="dst" target="id-0066-00000002"/>
+			</connection>
+		</model>
+	</folder>
+</project>

@@ -1,0 +1,14 @@
+include ../../Makefile.OSX.incl
+
+SOURCES= UdmPat.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS)
+	$(MAKE) -C GOCL/ -f Makefile.OSX
+
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) $< -o $@
+clean: 
+	rm -f *.o
+	$(MAKE) clean  -C GOCL/ -f Makefile.OSX
+	

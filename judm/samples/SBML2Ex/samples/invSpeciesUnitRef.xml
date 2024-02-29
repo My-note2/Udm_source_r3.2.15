@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="invSpeciesUnitRef" name="invSpeciesUnitRef">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Invalid Species Unit Reference</title>
+</head>
+<body>
+<h1>Invalid Species Unit Reference</h1>
+<p>
+A species references a unit which is not defined.
+</p>
+</body>
+</sbml:notes>
+
+<listOfUnitDefinitions>
+  <unitDefinition id="c">
+    <listOfUnits>
+      <unit kind="mole" exponent="1" />
+      <unit kind="litre" exponent="-1" />
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition id="s">
+    <listOfUnits>
+      <unit kind="mole" scale="-3" />
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition id="v">
+    <listOfUnits>
+      <unit kind="litre" scale="-3" />
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions>
+
+<listOfCompartments>
+<compartment id="global" units="volume" size="1.0" />
+</listOfCompartments>
+
+<listOfSpecies>
+  <species id="A" compartment="global" />
+  <species id="B" compartment="global" substanceUnits="substance"
+    spatialSizeUnits="volume" />
+  <species id="C" compartment="global" substanceUnits="mole"
+    spatialSizeUnits="litre" />
+  <species id="D" compartment="global" substanceUnits="s"
+    spatialSizeUnits="v" />
+  <species id="E" compartment="global" substanceUnits="foo"
+    spatialSizeUnits="v" />
+  <species id="F" compartment="global" substanceUnits="s"
+    spatialSizeUnits="foo" />
+  <species id="G" compartment="global" substanceUnits="s"
+    hasOnlySubstanceUnits="true" />
+  <species id="H" compartment="global" substanceUnits="foo"
+    hasOnlySubstanceUnits="true" />
+</listOfSpecies>
+
+</model>
+</sbml>

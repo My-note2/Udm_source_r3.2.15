@@ -1,0 +1,53 @@
+jUdm_build_install_guide.txt
+The requirements and a step-by-step guide to build jUdm  and other domain-specific installation packages
+--------------------------------------------------------------------------------------------
+
+Requirements:
+-------------------
+	The step-by-step guide to compile jUdm source files must be completed
+	J2SK 1.4.2 as Java Runtime Environment 
+
+	This document uses <udm_ns> to denote the root of the UDM_NS sources.
+
+Step-by-step guide:
+-------------------------
+
+	1. Versioning
+
+		The <udm_ns>\judm\etc folder contains the manifest file that will be added to the 
+		judm.jar when compiling the jUdm core classes. Check out this manifest and increment the
+		verison number if necessary.
+
+		Similarly, <udm_ns>\judm\samples\GeneTF\etc, <udm_ns>\judm\samples\GeneTRE\etc, and
+		<udm_ns>\judm\samples\SBML2Ex\etc folders contain the manifest files that will be added
+		to the domain-specific jars when compiling these domain-specific generated classes.
+		Check out these manifest files and increment the version numbers whenever applicable.
+
+	2. Open a command shell and go to the directory <udm_ns>\judm
+
+	3. Using wrapper script ..\scripts\run-ant-on-judm.bat you have to run the following target:
+
+		..\scripts\run-ant-on-judm.bat <select Udm build parameters> rebuild
+			Target “rebuild” re-initializes the build’s distribution environment 
+			(<udm_ns>\judm\build\build_win) after completely removing any previous build
+			from the disk, copies the necessary dll-s into this build directory, 
+			updates, re-generates and compiles the swig and domain-specific source codes, 
+			creates jar files (jUdm and other domain-specific jar files), updates batch files, 
+			and	generates javadoc API documentation.
+			
+	4. InstallShield
+
+		4.1 Create a group (optional) in the install wizard for the jUdm core module
+		4.2 Add <udm_ns>\judm\build\build_win\judm\judm.jar to the install package
+		4.3 Add <udm_ns>\judm\build\build_win\GeneTF to the install package
+		4.4 Add <udm_ns>\judm\build\build_win\GeneTRE to the install package
+		4.5 Add <udm_ns>\judm\build\build_win\SBML2Ex to the install package
+
+			When the user intalls the UDM, he or she should be able to decide whether to install 
+			the jUdm or not; moreover. See the directory structure below:
+
+			<some_udm_install>\bin\judm.jar
+			<some_udm_install>\samples\Java\GeneTF
+			<some_udm_install>\samples\Java\GeneTRE
+			<some_udm_install>\samples\Java\SBML2Ex
+			

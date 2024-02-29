@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml:sbml level="2" version="1" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:sbml="http://www.isis.vanderbilt.edu/2004/schemas/sbml" 
+xsi:schemaLocation="http://www.isis.vanderbilt.edu/2004/schemas/sbml SBML2Ex_sbml.xsd">
+<sbml:model id="versionCheck" name="versionCheck">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes>
+The validation processing is only valid for level 2 version 1.
+</sbml:notes>
+
+</sbml:model>
+</sbml:sbml>

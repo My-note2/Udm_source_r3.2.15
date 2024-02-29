@@ -1,0 +1,121 @@
+HOWTO install Udm from ISIS repos:
+
+CentOS 5.8:
+----------
+On CentOS 5, ISIS Udm packages require python-hashlib from EPEL:
+ Enable EPEL repository: http://fedoraproject.org/wiki/EPEL:
+  wget http://mirror.utexas.edu/epel/5/i386/epel-release-5-4.noarch.rpm
+  rpm -i epel-release-5-4.noarch.rpm
+ yum install -y python-hashlib
+cat > /etc/yum.repos.d/isis.repo <<EOF
+[isis]
+name=ISIS \$releasever - \$basearch
+baseurl=http://repo.isis.vanderbilt.edu/Download/UDM/rhel/\$releasever/\$basearch/
+enabled=1
+gpgcheck=0
+EOF
+
+yum install -y udm
+
+
+Software requirements and instructions to compile UDM source files on Linux
+
+Building:
+---------
+
+Requirements:
+-------------
+- GCC 3.x (or later)
+- Xerces-C++ 2.5.0 (or later)
+- Xalan-C++ 1.8.0 (or later)
+- SWIG 1.3.23 (or later)
+- minizip
+- cppunit
+- pccts
+- gcc-java 4.x (or later) or Java SDK 1.4.2 (or later)
+- ant
+- junit
+- Boost
+- libboost-python-dev for UdmPython (apt-get install libboost-python-dev)
+
+Build-environment preparation (Fedora 14 or newer):
+----------------------------------------------
+- install development tools and libraries
+  yum groupinstall 'Development Libraries' 'Development Tools' 'Java Development'
+  yum install ccache cppunit-devel minizip-devel swig xalan-c-devel xerces-c-devel
+  yum install ant ant-junit ant-trax junit xerces-j2 xalan-j2 xml-commons-apis
+- install the following rpm from our repository or disable antlr: pccts
+
+Build-environment preparation (RHEL/CentOS 5):
+----------------------------------------------
+- enable EPEL repository: http://fedoraproject.org/wiki/EPEL
+- install development tools and libraries
+  yum groupinstall 'Development Libraries' 'Development Tools' 'Java Development'
+  yum install -y ccache cppunit-devel swig xalan-c-devel xerces-c-devel
+  yum install -y ant ant-junit ant-trax junit xerces-j2 xalan-j2 xml-commons-apis
+  yum install -y java-1.6.0-openjdk java-1.6.0-openjdk-devel
+- install the following rpms from our repository:
+  yum install -y minizip minizip-devel minizip-libs pccts
+
+Obtaining model-files.zip:
+--------------------------
+From scratch:
+ - build udm, judm and the tests on Windows: msbuild make.msbuild /t:BuildVS9;judm;TestVS9
+ - on Windows run %UDM_PATH%\scripts\archive-model-files.bat, it will
+   create %UDM_PATH%\model-files-*.zip, an archive with the model data
+   files generated on Windows
+ - Copy the archive model-files-*.zip and rename it to model-files.zip.
+
+From build.isis:
+wget 'http://build.isis.vanderbilt.edu/job/UDM/label=UDM_x86/lastSuccessfulBuild/artifact/trunk/model-files-VC10-Release.zip' -O model-files.zip
+
+Building:
+---------------------
+- on Linux export or checkout the Udm sources from subversion repository
+- in the top directory run
+  autoreconf -i
+- Obtain model-files.zip as above
+- Save model-files.zip in the top directory of your build directory
+- configure and build Udm with the usual sequence of steps for GNU autotools:
+  ./configure  (for RHEL/CentOS and Fedora: ./configure --with-antlr=antlr1)
+  make
+- to run the tests launch the following command in the top build directory:
+  make check
+- to build the binary and source rpms launch the following command in
+  the top build directory:
+  make rpms
+
+Building on Ubuntu 10.04 (Lucid):
+----------------------------------------------
+# Install Build-Deps:
+sudo apt-get install debhelper build-essential autoconf libtool ccache libcppunit-dev libxalan110-dev ant junit libxerces-c2-dev sun-java6-jdk ant-optional pccts libboost-dev zlib1g-dev swig libboost-python-dev
+# Configure alternatives to use java-6-sun
+sudo update-alternatives --set java /usr/lib/jvm/java-6-sun/jre/bin/java
+sudo update-java-alternatives -s java-6-sun
+# Obtain model-files.zip as above or:
+wget 'http://build.isis.vanderbilt.edu/job/UDM/label=UDM_x86/lastSuccessfulBuild/artifact/trunk/model-files-VC10-Release.zip' -O model-files.zip
+# Build binary debs
+fakeroot debian/rules binary
+
+Building on Ubuntu 12.04 (Precise):
+----------------------------------------------
+sudo apt-get install -y fakeroot debhelper build-essential autoconf libtool libxerces-c2-dev autotools-dev ccache libcppunit-dev libxalan110-dev ant junit ant-optional pccts libboost-dev zlib1g-dev swig openjdk-6-jdk libboost-python-dev libjson-spirit-dev
+# Obtain model-files.zip as above or:
+wget 'http://build.isis.vanderbilt.edu/job/UDM/label=UDM_x86/lastSuccessfulBuild/artifact/trunk/model-files-VC10-Release.zip' -O model-files.zip
+# Build binary debs
+fakeroot debian/rules binary
+
+Building on Ubuntu 14.04 (Trusty):
+----------------------------------------------
+sudo apt-get install -y libjson-spirit-dev wget unzip fakeroot debhelper build-essential autoconf libtool libxalan-c-dev libxerces-c-dev autotools-dev ccache libcppunit-dev ant junit ant-optional pccts libboost-dev zlib1g-dev swig openjdk-6-jdk libboost-python-dev libjson-spirit-dev
+fakeroot debian/rules binary
+
+Building (CentOS)
+----------------------------------------------
+- CentOS <6: enable RPMForge repository: http://wiki.centos.org/AdditionalResources/Repositories/RPMForge
+  yum -y groupinstall 'Development Libraries' 'Development Tools' 'Java Development'
+  yum -y install ccache cppunit-devel xerces-c-devel swig ant-junit boost-devel antlr
+  setenforce permissive
+  wget -O model-files.zip http://build.isis.vanderbilt.edu/job/UDM/label=UDM_x86/lastSuccessfulBuild/artifact/trunk/model-files-VC10-Release.zip
+  autoreconf -i
+  cd rpmbuild_CentOS && bash make.sh

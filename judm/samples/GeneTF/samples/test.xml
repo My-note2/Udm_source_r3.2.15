@@ -1,0 +1,31 @@
+<genetf:Container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genetf="http://www.isis.vanderbilt.edu/2004/schemas/genetf" xsi:schemaLocation="http://www.isis.vanderbilt.edu/2004/schemas/genetf GeneTF_genetf.xsd">
+	<genetf:Gene tf="id4a" _id="id42" name="gene_1"/>
+	<genetf:Gene tf="id51" _id="id4f" name="gene_2"/>
+	<genetf:Gene tf="id54" _id="id52" name="gene_3"/>
+	<genetf:Gene tf="id57" _id="id55" name="gene_4"/>
+	<genetf:Gene tf="id5a" _id="id58" name="gene_5"/>
+	<genetf:Gene tf="id5d" _id="id5b" name="gene_6"/>
+	<genetf:Gene tf="id60" _id="id5e" name="gene_7"/>
+	<genetf:Gene tf="id63" _id="id61" name="gene_8"/>
+	<genetf:Gene tf="id66" _id="id64" name="gene_9"/>
+	<genetf:Regulation _id="id4a" type="2" tf_end_="id46" gene_end_="id42"/>
+	<genetf:Regulation _id="id51" type="2" tf_end_="id50" gene_end_="id4f"/>
+	<genetf:Regulation _id="id54" type="2" tf_end_="id53" gene_end_="id52"/>
+	<genetf:Regulation _id="id57" type="2" tf_end_="id56" gene_end_="id55"/>
+	<genetf:Regulation _id="id5a" type="2" tf_end_="id59" gene_end_="id58"/>
+	<genetf:Regulation _id="id5d" type="2" tf_end_="id5c" gene_end_="id5b"/>
+	<genetf:Regulation _id="id60" type="2" tf_end_="id5f" gene_end_="id5e"/>
+	<genetf:Regulation _id="id63" type="2" tf_end_="id62" gene_end_="id61"/>
+	<genetf:Regulation _id="id66" type="2" tf_end_="id65" gene_end_="id64"/>
+	<genetf:TF _id="id46" gene="id4a" name="tf_1"/>
+	<genetf:TF _id="id50" gene="id51" name="tf_2"/>
+	<genetf:TF _id="id53" gene="id54" name="tf_3"/>
+	<genetf:TF _id="id56" gene="id57" name="tf_4"/>
+	<genetf:TF _id="id59" gene="id5a" name="tf_5"/>
+	<genetf:TF _id="id5c" gene="id5d" name="tf_6"/>
+	<genetf:TF _id="id5f" gene="id60" name="tf_7"/>
+	<genetf:TF _id="id62" gene="id63" name="tf_8"/>
+	<genetf:TF _id="id65" gene="id66" name="tf_9"/>
+</genetf:Container>
+
+

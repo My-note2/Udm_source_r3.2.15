@@ -1,0 +1,18 @@
+include ../../Makefile.OSX.incl
+
+SOURCES=cintstringTest.cpp test_cintstring.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS) test_cintstring
+
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) -I $(CPPUNIT)/include $< -o $@
+
+test_cintstring: $(OBJECTS)
+	$(CC) $(BCFLAGS) $(OBJECTS) -o test_cintstring  -lUdm -L../../lib -lcppunit -L $(CPPUNITLIBS)
+
+test:test_cintstring
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ./test_cintstring
+
+clean: 
+	rm -f *.o  test_cintstring 

@@ -1,0 +1,14 @@
+include ../../Makefile.OSX.incl
+
+SOURCES=UdmPython.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+ADDCFLAGS=-ftemplate-depth-128  -fno-inline -dynamic -fexceptions -fPIC
+
+all: $(SOURCES) $(OBJECTS)
+
+.cpp.o:
+	$(CC) $(CFLAGS) $(ADDCFLAGS) $(INCLUDE) $< -o $@ -I$(PYTHON)/include/python2.7/
+clean: 
+	rm -f *.o
+
+

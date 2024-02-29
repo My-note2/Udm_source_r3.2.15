@@ -1,0 +1,8 @@
+include ../../../Makefile.OSX.incl
+
+all: 
+	echo "\n Invoking make in src...";
+	$(MAKE) -C src -f Makefile.OSX;
+clean: 
+	$(MAKE) clean -C src -f Makefile.OSX;
+	

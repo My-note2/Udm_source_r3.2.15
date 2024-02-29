@@ -1,0 +1,32 @@
+<Container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="TimeSeries.xsd">
+	<data_label _id="id2e" src="id38 id40 id41" name="label_1"/>
+	<data_label _id="id42" src="id46 id47 id48" name="label_2"/>
+	<data_label _id="id49" src="id4d id4e id4f" name="label_3"/>
+	<data_label _id="id50" src="id54 id55 id56" name="label_4"/>
+	<real_data _id="id38" dst="id2e" value="0.800000" dst_dv="id32"/>
+	<real_data _id="id40" dst="id2e" value="0.800000" dst_dv="id34"/>
+	<real_data _id="id41" dst="id2e" value="0.800000" dst_dv="id35"/>
+	<real_data _id="id46" dst="id42" value="0.800000" dst_dv="id43"/>
+	<real_data _id="id47" dst="id42" value="0.800000" dst_dv="id44"/>
+	<real_data _id="id48" dst="id42" value="0.800000" dst_dv="id45"/>
+	<real_data _id="id4d" dst="id49" value="0.800000" dst_dv="id4a"/>
+	<real_data _id="id4e" dst="id49" value="0.800000" dst_dv="id4b"/>
+	<real_data _id="id4f" dst="id49" value="0.800000" dst_dv="id4c"/>
+	<real_data _id="id54" dst="id50" value="0.800000" dst_dv="id51"/>
+	<real_data _id="id55" dst="id50" value="0.800000" dst_dv="id52"/>
+	<real_data _id="id56" dst="id50" value="0.800000" dst_dv="id53"/>
+	<time_point at="2.251000" _id="id32" src_tp="id38"/>
+	<time_point at="2.261000" _id="id34" src_tp="id40"/>
+	<time_point at="2.271000" _id="id35" src_tp="id41"/>
+	<time_point at="3.251000" _id="id43" src_tp="id46"/>
+	<time_point at="3.261000" _id="id44" src_tp="id47"/>
+	<time_point at="3.271000" _id="id45" src_tp="id48"/>
+	<time_point at="4.251000" _id="id4a" src_tp="id4d"/>
+	<time_point at="4.261000" _id="id4b" src_tp="id4e"/>
+	<time_point at="4.271000" _id="id4c" src_tp="id4f"/>
+	<time_point at="5.251000" _id="id51" src_tp="id54"/>
+	<time_point at="5.261000" _id="id52" src_tp="id55"/>
+	<time_point at="5.271000" _id="id53" src_tp="id56"/>
+</Container>
+
+

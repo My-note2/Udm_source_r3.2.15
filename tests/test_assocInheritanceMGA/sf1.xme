@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "mga.dtd">
+
+<project guid="{00000000-0000-0000-0000-000000000000}" cdate="Thu Sep 16 10:42:17 2004" mdate="Thu Sep 16 10:45:38 2004" metaguid="{80EC2526-DEAD-BEEF-FEED-DAD000000001}" metaname="SignalFlow">
+	<name>SignalFlow_1</name>
+	<comment></comment>
+	<author></author>
+	<folder id="id-006a-00000001" relid="0x1" childrelidcntr="0x1" kind="RootFolder">
+		<name>SignalFlow_1</name>
+		<model id="id-0065-00000001" kind="CompoundComponent" relid="0x1" childrelidcntr="0x4">
+			<name>CompoundComponent</name>
+			<model id="id-0065-00000002" kind="CompoundComponent" role="CompoundComponent" relid="0x2" childrelidcntr="0x1">
+				<name>CompoundComponent</name>
+				<regnode name="PartRegs">
+					<value></value>
+					<regnode name="Aspect">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>387,226</value>
+						</regnode>
+					</regnode>
+				</regnode>
+				<atom id="id-0066-00000002" kind="InputPort" role="InputPort" relid="0x1">
+					<name>InputPort</name>
+					<regnode name="PartRegs">
+						<value></value>
+						<regnode name="Aspect">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>61,82</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</atom>
+			</model>
+			<atom id="id-0066-00000003" kind="LocalPort" role="LocalPort" relid="0x3">
+				<name>LocalPort</name>
+				<regnode name="PartRegs">
+					<value></value>
+					<regnode name="Aspect">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>156,240</value>
+						</regnode>
+					</regnode>
+				</regnode>
+			</atom>
+			<connection id="id-0068-00000001" kind="Signal" role="Signal" relid="0x4">
+				<name>Signal</name>
+				<regnode name="autorouterPref" isopaque="yes">
+					<value>E</value>
+				</regnode>
+				<connpoint role="dst" target="id-0066-00000002"/>
+				<connpoint role="src" target="id-0066-00000003"/>
+			</connection>
+		</model>
+	</folder>
+</project>

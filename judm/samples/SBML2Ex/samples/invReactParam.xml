@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="invReactParam" name="invReactParam">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Invalid Reaction Parameter Definitions</title>
+</head>
+<body>
+<h1>Invalid Reaction Parameter Definitions</h1>
+<p>
+One duplicate reaction parameter definition is included.  The other
+definitions should not be flagged as errors.
+</p>
+</body>
+</sbml:notes>
+
+<listOfCompartments>
+<compartment id="global" />
+</listOfCompartments>
+
+<listOfSpecies>
+<species id="A" name="A" compartment="global" />
+<species id="B" name="B" compartment="global" />
+</listOfSpecies>
+
+<listOfReactions>
+<reaction id="r1" reversible="true">
+  <listOfReactants>
+    <speciesReference species="A" stoichiometry="2" />
+  </listOfReactants>
+
+  <listOfProducts>
+    <speciesReference species="B" stoichiometry="1" />
+  </listOfProducts>
+
+  <kineticLaw>
+    <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times />
+        <ci>k</ci>
+        <apply>
+          <minus />
+          <apply>
+            <times />
+            <ci>kf</ci>
+            <apply>
+              <power />
+              <ci>A</ci>
+              <cn>2</cn>
+            </apply>
+          </apply>
+          <apply>
+            <times />
+            <ci>k</ci>
+            <ci>B</ci>
+          </apply>
+        </apply>
+      </apply>
+    </math:math>
+
+    <listOfParameters>
+      <parameter id="kf" name="kf" value="1.0" />
+      <parameter id="k" name="k" value="1.0" />
+      <parameter id="k" name="k" value="2.0" />
+    </listOfParameters>
+  </kineticLaw>
+</reaction>
+
+</listOfReactions>
+
+</model>
+</sbml>

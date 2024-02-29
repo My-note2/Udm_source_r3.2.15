@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "mga.dtd">
+
+<project guid="{D538E3F6-A1EB-4F03-92F6-61E662E6CED4}" cdate="Tue Nov 01 16:37:33 2005" mdate="Tue Nov 01 16:37:33 2005" version="" metaguid="{EA1D8BC3-9A0C-409B-8A50-9B85DD54FEE4}" metaversion="" metaname="StateChart">
+	<name>stateClasses</name>
+	<comment></comment>
+	<author></author>
+	<folder id="id-006a-00000001" relid="0x1" childrelidcntr="0x1" kind="RootFolder">
+		<name>stateClasses</name>
+		<model id="id-0065-00000001" kind="OrState" relid="0x1" childrelidcntr="0x8">
+			<name>HomeOrState</name>
+			<attribute kind="DefaultTransition" status="meta">
+				<value></value>
+			</attribute>
+			<attribute kind="Marked" status="meta">
+				<value>false</value>
+			</attribute>
+			<model id="id-0065-00000002" kind="OrState" role="OrState" relid="0x4" childrelidcntr="0xb">
+				<name>System1</name>
+				<regnode name="PartRegs" isopaque="yes">
+					<value></value>
+					<regnode name="State" isopaque="yes">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>134,44</value>
+						</regnode>
+					</regnode>
+				</regnode>
+				<attribute kind="DefaultTransition" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="Marked" status="meta">
+					<value>false</value>
+				</attribute>
+				<atom id="id-0066-00000001" kind="SimpleState" role="SimpleState" relid="0x5">
+					<name>S4</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>179,123</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000002" kind="SimpleState" role="SimpleState" relid="0x4">
+					<name>S3</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>312,123</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000003" kind="SimpleState" role="SimpleState" relid="0x3">
+					<name>S2</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>312,25</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000004" kind="SimpleState" role="SimpleState" relid="0x2">
+					<name>S1</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>179,25</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000005" kind="Init" role="Init" relid="0x1">
+					<name>Init</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>72,30</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<connection id="id-0068-00000001" kind="Transition" role="Transition" relid="0xb">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T4</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="src" target="id-0066-00000001"/>
+					<connpoint role="dst" target="id-0066-00000004"/>
+				</connection>
+				<connection id="id-0068-00000002" kind="Transition" role="Transition" relid="0xa">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T3</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000001"/>
+					<connpoint role="src" target="id-0066-00000002"/>
+				</connection>
+				<connection id="id-0068-00000003" kind="Transition" role="Transition" relid="0x9">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T2</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000002"/>
+					<connpoint role="src" target="id-0066-00000003"/>
+				</connection>
+				<connection id="id-0068-00000004" kind="Transition" role="Transition" relid="0x7">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T1</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000003"/>
+					<connpoint role="src" target="id-0066-00000004"/>
+				</connection>
+				<connection id="id-0068-00000005" kind="Transition" role="Transition" relid="0x6">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T0</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000004"/>
+					<connpoint role="src" target="id-0066-00000005"/>
+				</connection>
+			</model>
+			<model id="id-0065-00000003" kind="OrState" role="OrState" relid="0x7" childrelidcntr="0x19">
+				<name>System2</name>
+				<regnode name="PartRegs" isopaque="yes">
+					<value></value>
+					<regnode name="State" isopaque="yes">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>301,42</value>
+						</regnode>
+					</regnode>
+				</regnode>
+				<attribute kind="DefaultTransition" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="Marked" status="meta">
+					<value>false</value>
+				</attribute>
+				<atom id="id-0066-00000006" kind="SimpleState" role="SimpleState" relid="0x10">
+					<name>S6</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>494,137</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000007" kind="SimpleState" role="SimpleState" relid="0xf">
+					<name>S5</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>494,25</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000008" kind="SimpleState" role="SimpleState" relid="0xe">
+					<name>S4</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>193,137</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000009" kind="SimpleState" role="SimpleState" relid="0xd">
+					<name>S3</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>354,137</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-0000000a" kind="SimpleState" role="SimpleState" relid="0xc">
+					<name>S2</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>354,25</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-0000000b" kind="SimpleState" role="SimpleState" relid="0xb">
+					<name>S1</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>198,30</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-0000000c" kind="Init" role="Init" relid="0x5">
+					<name>Init</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>72,30</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<connection id="id-0068-00000006" kind="Transition" role="Transition" relid="0x19">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T7</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000007"/>
+					<connpoint role="src" target="id-0066-00000007"/>
+				</connection>
+				<connection id="id-0068-00000007" kind="Transition" role="Transition" relid="0x18">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T2</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="src" target="id-0066-00000006"/>
+					<connpoint role="dst" target="id-0066-00000009"/>
+				</connection>
+				<connection id="id-0068-00000008" kind="Transition" role="Transition" relid="0x17">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T8</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000006"/>
+					<connpoint role="src" target="id-0066-00000007"/>
+				</connection>
+				<connection id="id-0068-00000009" kind="Transition" role="Transition" relid="0x16">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T6</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000007"/>
+					<connpoint role="src" target="id-0066-0000000a"/>
+				</connection>
+				<connection id="id-0068-0000000a" kind="Transition" role="Transition" relid="0x15">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T4</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="src" target="id-0066-00000008"/>
+					<connpoint role="dst" target="id-0066-0000000b"/>
+				</connection>
+				<connection id="id-0068-0000000b" kind="Transition" role="Transition" relid="0x14">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T3</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000008"/>
+					<connpoint role="src" target="id-0066-00000009"/>
+				</connection>
+				<connection id="id-0068-0000000c" kind="Transition" role="Transition" relid="0x13">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T2</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000009"/>
+					<connpoint role="src" target="id-0066-0000000a"/>
+				</connection>
+				<connection id="id-0068-0000000d" kind="Transition" role="Transition" relid="0x12">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T1</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-0000000a"/>
+					<connpoint role="src" target="id-0066-0000000b"/>
+				</connection>
+				<connection id="id-0068-0000000e" kind="Transition" role="Transition" relid="0x11">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T0</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-0000000b"/>
+					<connpoint role="src" target="id-0066-0000000c"/>
+				</connection>
+			</model>
+			<model id="id-0065-00000004" kind="OrState" role="OrState" relid="0x6" childrelidcntr="0x10">
+				<name>System3</name>
+				<regnode name="PartRegs" isopaque="yes">
+					<value></value>
+					<regnode name="State" isopaque="yes">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>455,49</value>
+						</regnode>
+					</regnode>
+				</regnode>
+				<attribute kind="DefaultTransition" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="Marked" status="meta">
+					<value>false</value>
+				</attribute>
+				<atom id="id-0066-0000000d" kind="SimpleState" role="SimpleState" relid="0xd">
+					<name>S2</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>464,51</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-0000000e" kind="SimpleState" role="SimpleState" relid="0xc">
+					<name>S1</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>284,46</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-0000000f" kind="Init" role="Init" relid="0xb">
+					<name>Init</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>142,51</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<connection id="id-0068-0000000f" kind="Transition" role="Transition" relid="0x10">
+					<name>Transition</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>Ss</value>
+					</regnode>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T2</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="src" target="id-0066-0000000d"/>
+					<connpoint role="dst" target="id-0066-0000000e"/>
+				</connection>
+				<connection id="id-0068-00000010" kind="Transition" role="Transition" relid="0xf">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T1</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-0000000d"/>
+					<connpoint role="src" target="id-0066-0000000e"/>
+				</connection>
+				<connection id="id-0068-00000011" kind="Transition" role="Transition" relid="0xe">
+					<name>Transition</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>E</value>
+					</regnode>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T0</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-0000000e"/>
+					<connpoint role="src" target="id-0066-0000000f"/>
+				</connection>
+			</model>
+			<model id="id-0065-00000005" kind="OrState" role="OrState" relid="0x8" childrelidcntr="0xa">
+				<name>System4</name>
+				<regnode name="PartRegs" isopaque="yes">
+					<value></value>
+					<regnode name="State" isopaque="yes">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>163,198</value>
+						</regnode>
+					</regnode>
+				</regnode>
+				<attribute kind="DefaultTransition" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="Marked" status="meta">
+					<value>false</value>
+				</attribute>
+				<atom id="id-0066-00000010" kind="Init" role="Init" relid="0x1">
+					<name>Init</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>72,30</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000011" kind="SimpleState" role="SimpleState" relid="0x2">
+					<name>S1</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>179,25</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000012" kind="SimpleState" role="SimpleState" relid="0x3">
+					<name>S2</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>312,25</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000013" kind="SimpleState" role="SimpleState" relid="0x4">
+					<name>S3</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>312,123</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000014" kind="SimpleState" role="SimpleState" relid="0x5">
+					<name>S4</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>179,123</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<connection id="id-0068-00000012" kind="Transition" role="Transition" relid="0x6">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T3</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="src" target="id-0066-00000013"/>
+					<connpoint role="dst" target="id-0066-00000014"/>
+				</connection>
+				<connection id="id-0068-00000013" kind="Transition" role="Transition" relid="0x7">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T1</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="src" target="id-0066-00000011"/>
+					<connpoint role="dst" target="id-0066-00000012"/>
+				</connection>
+				<connection id="id-0068-00000014" kind="Transition" role="Transition" relid="0x8">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T4</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000011"/>
+					<connpoint role="src" target="id-0066-00000014"/>
+				</connection>
+				<connection id="id-0068-00000015" kind="Transition" role="Transition" relid="0x9">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T0</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="src" target="id-0066-00000010"/>
+					<connpoint role="dst" target="id-0066-00000011"/>
+				</connection>
+				<connection id="id-0068-00000016" kind="Transition" role="Transition" relid="0xa">
+					<name>Transition</name>
+					<attribute kind="Action" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Guard" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Trigger">
+						<value>T2</value>
+					</attribute>
+					<attribute kind="isSync" status="meta">
+						<value>false</value>
+					</attribute>
+					<connpoint role="src" target="id-0066-00000012"/>
+					<connpoint role="dst" target="id-0066-00000013"/>
+				</connection>
+			</model>
+		</model>
+	</folder>
+</project>

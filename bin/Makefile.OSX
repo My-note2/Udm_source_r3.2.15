@@ -1,0 +1,27 @@
+include ../Makefile.OSX.incl
+
+all: Udm UdmCopy UdmViz UdmBackendDump UdmOclPat UdmToXmi XmiToUdm UdmJson
+
+Udm:
+	$(CC) $(BCFLAGS) ../src/Udm/Udm.o -o Udm -lUdm -L../lib
+UdmCopy:
+	$(CC) $(BCFLAGS) ../src/UdmCopy/UdmCopy.o -o UdmCopy -lUdm -L../lib
+UdmViz:
+	$(CC) $(BCFLAGS) ../src/UdmViz/UdmViz.o ../src/UdmViz/UdmVizDump.o -o UdmViz -lUdm -L../lib
+UdmBackendDump:
+	$(CC) $(BCFLAGS) ../src/UdmBackendDump/UdmBackendDump.o ../src/UdmBackendDump/BackendDump.o -o UdmBackendDump -lUdm -L../lib
+
+UdmOclPat:
+	$(CC) $(BCFLAGS) ../src/UdmOclPat/UdmPat.o -o UdmOclPat -lUdm -L../lib
+UdmToXmi:
+	$(CC) $(BCFLAGS) ../src/UdmToXmi/UdmToXmi.o ../src/UdmXmi/XSLT.o ../src/UdmXmi/Transform.o -o UdmToXmi -lUdm -L../lib -lxalan-c -L $(XALANCROOT)/lib -lxerces-c -L $(XERCESCROOT)/lib
+XmiToUdm:
+	$(CC) $(BCFLAGS) ../src/XmiToUdm/XmiToUdm.o ../src/UdmXmi/XSLT.o ../src/UdmXmi/Transform.o -o XmiToUdm -lUdm -L../lib -lxalan-c -L $(XALANCROOT)/lib -lxerces-c -L $(XERCESCROOT)/lib
+
+UdmJson:
+	$(CC) $(BCFLAGS) ../src/UdmJson/UdmJson.o -o UdmJson -lUdm -L../lib -lxalan-c -L $(XALANCROOT)/lib -lxerces-c -L $(XERCESCROOT)/lib
+	
+
+
+clean:
+	rm -f Udm UdmCopy UdmViz UdmBackendDump UdmOclPat UdmToXmi XmiToUdm UdmJson

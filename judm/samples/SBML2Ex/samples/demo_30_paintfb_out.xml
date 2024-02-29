@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sbml xmlns="http://www.sbml.org/sbml/level2" xmlns:sbml="http://www.sbml.org/sbml/level2" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:unigene="http://www.dbi.tju.edu/xmlns/unigene" xmlns:go="http://www.dbi.tju.edu/xmlns/go" xmlns:dbi="http://www.dbi.tju.edu/xmlns/dbi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sbml.org/sbml/level2 SBML2Ex_sbml.xsd http://www.w3.org/1998/Math/MathML SBML2Ex_math.xsd http://www.w3.org/1999/xhtml SBML2Ex_html.xsd http://www.dbi.tju.edu/xmlns/unigene SBML2Ex_unigene.xsd http://www.dbi.tju.edu/xmlns/go SBML2Ex_go.xsd http://www.dbi.tju.edu/xmlns/dbi SBML2Ex_dbi.xsd" version="1" level="2">
+  <model>
+    <listOfSpecies>
+      <species id="AA017353" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="2"/>
+          <unigene:acc value="AA017353"/>
+          <unigene:title value="7-dehydrocholesterol reductase"/>
+          <unigene:cluster_id value="Hs.11806"/>
+          <unigene:gene value="DHCR7"/>
+        </annotation>
+      </species>
+      <species id="AA053028" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="2"/>
+          <unigene:acc value="AA053028"/>
+          <unigene:title value="3-hydroxy-3-methylglutaryl-Coenzyme A reductase"/>
+          <unigene:cluster_id value="Hs.11899"/>
+          <unigene:gene value="HMGCR"/>
+        </annotation>
+      </species>
+      <species id="AA026298" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="2"/>
+          <unigene:acc value="AA026298"/>
+          <unigene:title value="stearoyl-CoA desaturase (delta-9-desaturase)"/>
+          <unigene:cluster_id value="Hs.119597"/>
+          <unigene:gene value="SCD"/>
+        </annotation>
+      </species>
+      <species id="AA053411" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="2"/>
+          <unigene:acc value="AA053411"/>
+          <unigene:title value="Homo sapiens transcribed sequence with strong similarity to protein sp:O94913 (H.sapiens) PCFB_HUMAN Pre-mRNA cleavage complex II protein Pcf11"/>
+          <unigene:cluster_id value="Hs.442604"/>
+          <unigene:gene value=""/>
+        </annotation>
+      </species>
+      <species id="AA009465" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="2"/>
+          <unigene:acc value="AA009465"/>
+          <unigene:title value="cell division cycle 42 (GTP binding protein, 25kDa)"/>
+          <unigene:cluster_id value="Hs.355832"/>
+          <unigene:gene value="CDC42"/>
+        </annotation>
+      </species>
+      <species id="AA037799" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="2"/>
+          <unigene:acc value="AA037799"/>
+          <unigene:title value="integrin, beta 5"/>
+          <unigene:cluster_id value="Hs.149846"/>
+          <unigene:gene value="ITGB5"/>
+        </annotation>
+      </species>
+      <species id="AA037486" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="2"/>
+          <unigene:acc value="AA037486"/>
+          <unigene:title value="insulin-like growth factor binding protein 4"/>
+          <unigene:cluster_id value="Hs.1516"/>
+          <unigene:gene value="IGFBP4"/>
+        </annotation>
+      </species>
+      <species id="AA029916" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="2"/>
+          <unigene:acc value="AA029916"/>
+        </annotation>
+      </species>
+      <species id="AA233858"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="2"/>
+          <unigene:acc value="AA233858"/>
+          <unigene:title value="KIAA1582 protein"/>
+          <unigene:cluster_id value="Hs.458298"/>
+          <unigene:gene value="KIAA1582"/>
+        </annotation>
+      </species>
+      <species id="AA004899"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="2"/>
+          <unigene:acc value="AA004899"/>
+          <unigene:title value="glutamate-ammonia ligase (glutamine synthase)"/>
+          <unigene:cluster_id value="Hs.442669"/>
+          <unigene:gene value="GLUL"/>
+        </annotation>
+      </species>
+      <species id="AA534913"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="3"/>
+          <unigene:acc value="AA534913"/>
+          <unigene:title value="ribonuclease P1"/>
+          <unigene:cluster_id value="Hs.511756"/>
+          <unigene:gene value="RNASEP1"/>
+        </annotation>
+      </species>
+      <species id="AA430970"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="3"/>
+          <unigene:acc value="AA430970"/>
+          <unigene:title value="growth factor independent 1B (potential regulator of CDKN1A, translocated in CML)"/>
+          <unigene:cluster_id value="Hs.118539"/>
+          <unigene:gene value="GFI1B"/>
+        </annotation>
+      </species>
+      <species id="AA037443"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="3"/>
+          <unigene:acc value="AA037443"/>
+          <unigene:title value="Homo sapiens transcribed sequence with strong similarity to protein sp:P02795 (H.sapiens) MT2_HUMAN Metallothionein-II (MT-II)"/>
+          <unigene:cluster_id value="Hs.479890"/>
+          <unigene:gene value=""/>
+        </annotation>
+      </species>
+      <species id="AA004948"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="3"/>
+          <unigene:acc value="AA004948"/>
+          <unigene:title value="kinesin heavy chain member 2"/>
+          <unigene:cluster_id value="Hs.113319"/>
+          <unigene:gene value="KIF2"/>
+        </annotation>
+      </species>
+      <species id="AA535078"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="3"/>
+          <unigene:acc value="AA535078"/>
+          <unigene:title value="v-myb myeloblastosis viral oncogene homolog (avian)"/>
+          <unigene:cluster_id value="Hs.407830"/>
+          <unigene:gene value="MYB"/>
+        </annotation>
+      </species>
+      <species id="AA004506"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="3"/>
+          <unigene:acc value="AA004506"/>
+          <unigene:title value="LanC lantibiotic synthetase component C-like 2 (bacterial)"/>
+          <unigene:cluster_id value="Hs.134342"/>
+          <unigene:gene value="LANCL2"/>
+        </annotation>
+      </species>
+      <species id="AA022889"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="3"/>
+          <unigene:acc value="AA022889"/>
+          <unigene:title value="coenzyme Q7 homolog, ubiquinone (yeast)"/>
+          <unigene:cluster_id value="Hs.157113"/>
+          <unigene:gene value="COQ7"/>
+        </annotation>
+      </species>
+      <species id="AA047561"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="3"/>
+          <unigene:acc value="AA047561"/>
+          <unigene:title value="baculoviral IAP repeat-containing 5 (survivin)"/>
+          <unigene:cluster_id value="Hs.1578"/>
+          <unigene:gene value="BIRC5"/>
+        </annotation>
+      </species>
+      <species id="AA235245"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="2"/>
+          <unigene:acc value="AA235245"/>
+          <unigene:title value="delta-like 1 homolog (Drosophila)"/>
+          <unigene:cluster_id value="Hs.169228"/>
+          <unigene:gene value="DLK1"/>
+        </annotation>
+      </species>
+      <species id="AA056578"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="3"/>
+          <unigene:acc value="AA056578"/>
+          <unigene:title value="LIM domain only 2 (rhombotin-like 1)"/>
+          <unigene:cluster_id value="Hs.283063"/>
+          <unigene:gene value="LMO2"/>
+        </annotation>
+      </species>
+      <species id="AA715469"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="1"/>
+          <unigene:acc value="AA715469"/>
+          <unigene:title value="ATP-binding cassette, sub-family B (MDR/TAP), member 6"/>
+          <unigene:cluster_id value="Hs.107911"/>
+          <unigene:gene value="ABCB6"/>
+        </annotation>
+      </species>
+      <species id="AA007601"  compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="1"/>
+          <unigene:acc value="AA007601"/>
+          <unigene:title value="Homo sapiens mRNA; cDNA DKFZp434H068 (from clone DKFZp434H068)"/>
+          <unigene:cluster_id value="Hs.506074"/>
+          <unigene:gene value=""/>
+        </annotation>
+      </species>
+      <species id="AA010645" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="1"/>
+          <unigene:acc value="AA010645"/>
+          <unigene:title value="thioredoxin reductase 1"/>
+          <unigene:cluster_id value="Hs.434367"/>
+          <unigene:gene value="TXNRD1"/>
+        </annotation>
+      </species>
+      <species id="AA074202" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="1"/>
+          <unigene:acc value="AA074202"/>
+        </annotation>
+      </species>
+      <species id="AA045332" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="1"/>
+          <unigene:acc value="AA045332"/>
+          <unigene:title value="malic enzyme 1, NADP(+)-dependent, cytosolic"/>
+          <unigene:cluster_id value="Hs.14732"/>
+          <unigene:gene value="ME1"/>
+        </annotation>
+      </species>
+      <species id="AA311367" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="1"/>
+          <unigene:acc value="AA311367"/>
+          <unigene:title value="glutamate-cysteine ligase, catalytic subunit"/>
+          <unigene:cluster_id value="Hs.414985"/>
+          <unigene:gene value="GCLC"/>
+        </annotation>
+      </species>
+      <species id="AA778663" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="1"/>
+          <unigene:acc value="AA778663"/>
+          <unigene:title value="tumor necrosis factor (ligand) superfamily, member 9"/>
+          <unigene:cluster_id value="Hs.1524"/>
+          <unigene:gene value="TNFSF9"/>
+        </annotation>
+      </species>
+      <species id="AA004823" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="1"/>
+          <unigene:acc value="AA004823"/>
+          <unigene:title value="death associated transcription factor 1"/>
+          <unigene:cluster_id value="Hs.438300"/>
+          <unigene:gene value="DATF1"/>
+        </annotation>
+      </species>
+      <species id="AA027100" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="1"/>
+          <unigene:acc value="AA027100"/>
+          <unigene:title value="hemoglobin, beta"/>
+          <unigene:cluster_id value="Hs.155376"/>
+          <unigene:gene value="HBB"/>
+        </annotation>
+      </species>
+      <species id="AA001281" compartment="null">
+        <annotation>
+          <dbi:user_def name="metacluster" value="1"/>
+          <unigene:acc value="AA001281"/>
+          <unigene:title value="testis derived transcript (3 LIM domains)"/>
+          <unigene:cluster_id value="Hs.129129"/>
+          <unigene:gene value="TES"/>
+        </annotation>
+      </species>
+      <species id="Pax_6_V_PAX6_01" compartment="promoter"/>
+      <species id="LEF_1_V_LEF1_Q6" compartment="promoter"/>
+      <species id="_V_CAAT_01" compartment="promoter"/>
+      <species id="TTF1_V_TITF1_Q3" compartment="promoter"/>
+      <species id="c_Myb_V_CMYB_01" compartment="promoter"/>
+      <species id="HNF_4_V_HNF4_01" compartment="promoter"/>
+      <species id="Bach2_V_BACH2_01" compartment="promoter"/>
+      <species id="MEIS1B_HOXA9_V_MEIS1BHOXA9_01" compartment="promoter"/>
+      <species id="HNF_1_V_HNF1_C" compartment="promoter"/>
+      <species id="Hand1_E47_V_HAND1E47_01" compartment="promoter"/>
+      <species id="GATA_4_V_GATA4_Q3" compartment="promoter"/>
+      <species id="C_EBP_V_CEBP_C" compartment="promoter"/>
+      <species id="Pax_4_V_PAX4_01" compartment="promoter"/>
+      <species id="PPAR_V_PPARG_03" compartment="promoter"/>
+      <species id="c_Myc_Max_V_MYCMAX_B" compartment="promoter"/>
+      <species id="COMP1_V_COMP1_01" compartment="promoter"/>
+      <species id="MAZR_V_MAZR_01" compartment="promoter"/>
+      <species id="HEB_V_HEB_Q6" compartment="promoter"/>
+      <species id="HNF_3beta_V_HNF3B_01" compartment="promoter"/>
+      <species id="AP_1_V_AP1_Q4" compartment="promoter"/>
+      <species id="CRE_BP1_c_Jun_V_CREBP1CJUN_01" compartment="promoter"/>
+      <species id="Cdx_2_V_CDX2_Q5" compartment="promoter"/>
+      <species id="_V_MINI20_B" compartment="promoter"/>
+      <species id="E2F_4_DP_2_V_E2F4DP2_01" compartment="promoter"/>
+      <species id="core_binding_V_COREBINDINGFACTOR_Q6" compartment="promoter"/>
+      <species id="HNF_3alpha_V_HNF3ALPHA_Q6" compartment="promoter"/>
+      <species id="CREB_V_CREB_01" compartment="promoter"/>
+      <species id="NF_Y_V_NFY_Q6_01" compartment="promoter"/>
+      <species id="_V_TANTIGEN_B" compartment="promoter"/>
+      <species id="ER_V_ER_Q6" compartment="promoter"/>
+      <species id="Nkx2_5_V_NKX25_02" compartment="promoter"/>
+      <species id="v_Myb_V_VMYB_01" compartment="promoter"/>
+      <species id="E2F_1_DP_1_V_E2F1DP1_01" compartment="promoter"/>
+      <species id="AML1_V_AML1_Q6" compartment="promoter"/>
+      <species id="Nkx2_5_V_NKX25_01" compartment="promoter"/>
+      <species id="c_Ets_1_68_V_CETS168_Q6" compartment="promoter"/>
+      <species id="HNF_1_V_HNF1_Q6" compartment="promoter"/>
+      <species id="_V_MTATA_B" compartment="promoter"/>
+      <species id="USF_V_USF_C" compartment="promoter"/>
+      <species id="E2F_1_DP_2_V_E2F1DP2_01" compartment="promoter"/>
+      <species id="AP_1_V_AP1_C" compartment="promoter"/>
+      <species id="SREBP_1_V_SREBP1_Q6" compartment="promoter"/>
+      <species id="USF_V_USF_Q6" compartment="promoter"/>
+      <species id="MAZ_V_MAZ_Q6" compartment="promoter"/>
+      <species id="c_Myc_Max_V_MYCMAX_02" compartment="promoter"/>
+      <species id="ATF_1_V_ATF1_Q6" compartment="promoter"/>
+      <species id="Ik_1_V_IK1_01" compartment="promoter"/>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction id="Reaction1">
+        <listOfReactants>
+          <speciesReference species="Hand1_E47_V_HAND1E47_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA233858"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction2">
+        <listOfReactants>
+          <speciesReference species="MAZR_V_MAZR_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA233858"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction3">
+        <listOfReactants>
+          <speciesReference species="USF_V_USF_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA233858"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction4">
+        <listOfReactants>
+          <speciesReference species="_V_MTATA_B"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA778663"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction5">
+        <listOfReactants>
+          <speciesReference species="GATA_4_V_GATA4_Q3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA778663"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction6">
+        <listOfReactants>
+          <speciesReference species="_V_MTATA_B"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA311367"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction7">
+        <listOfReactants>
+          <speciesReference species="MAZ_V_MAZ_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA311367"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction8">
+        <listOfReactants>
+          <speciesReference species="_V_MTATA_B"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA037486"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction9">
+        <listOfReactants>
+          <speciesReference species="AP_1_V_AP1_C"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA029916"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction10">
+        <listOfReactants>
+          <speciesReference species="Cdx_2_V_CDX2_Q5"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA029916"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction11">
+        <listOfReactants>
+          <speciesReference species="Pax_4_V_PAX4_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA029916"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction12">
+        <listOfReactants>
+          <speciesReference species="Cdx_2_V_CDX2_Q5"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA027100"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction13">
+        <listOfReactants>
+          <speciesReference species="SREBP_1_V_SREBP1_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA045332"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction14">
+        <listOfReactants>
+          <speciesReference species="_V_CAAT_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA004899"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction15">
+        <listOfReactants>
+          <speciesReference species="_V_MINI20_B"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA004899"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction16">
+        <listOfReactants>
+          <speciesReference species="SREBP_1_V_SREBP1_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA004899"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction17">
+        <listOfReactants>
+          <speciesReference species="c_Ets_1_68_V_CETS168_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA004899"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction18">
+        <listOfReactants>
+          <speciesReference species="Cdx_2_V_CDX2_Q5"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA001281"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction19">
+        <listOfReactants>
+          <speciesReference species="MEIS1B_HOXA9_V_MEIS1BHOXA9_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA001281"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction20">
+        <listOfReactants>
+          <speciesReference species="Nkx2_5_V_NKX25_02"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA001281"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction21">
+        <listOfReactants>
+          <speciesReference species="v_Myb_V_VMYB_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA001281"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction22">
+        <listOfReactants>
+          <speciesReference species="HNF_3beta_V_HNF3B_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA056578"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction23">
+        <listOfReactants>
+          <speciesReference species="LEF_1_V_LEF1_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA056578"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction24">
+        <listOfReactants>
+          <speciesReference species="NF_Y_V_NFY_Q6_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA017353"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction25">
+        <listOfReactants>
+          <speciesReference species="AML1_V_AML1_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA074202"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction26">
+        <listOfReactants>
+          <speciesReference species="core_binding_V_COREBINDINGFACTOR_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA074202"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction27">
+        <listOfReactants>
+          <speciesReference species="_V_CAAT_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA053411"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction28">
+        <listOfReactants>
+          <speciesReference species="Pax_6_V_PAX6_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA053411"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction29">
+        <listOfReactants>
+          <speciesReference species="Bach2_V_BACH2_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA026298"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction30">
+        <listOfReactants>
+          <speciesReference species="ER_V_ER_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA026298"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction31">
+        <listOfReactants>
+          <speciesReference species="GATA_4_V_GATA4_Q3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA026298"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction32">
+        <listOfReactants>
+          <speciesReference species="HEB_V_HEB_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA026298"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction33">
+        <listOfReactants>
+          <speciesReference species="HNF_3alpha_V_HNF3ALPHA_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA026298"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction34">
+        <listOfReactants>
+          <speciesReference species="PPAR_V_PPARG_03"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA026298"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction35">
+        <listOfReactants>
+          <speciesReference species="c_Myc_Max_V_MYCMAX_02"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA026298"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction36">
+        <listOfReactants>
+          <speciesReference species="AML1_V_AML1_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA026298"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction37">
+        <listOfReactants>
+          <speciesReference species="MAZ_V_MAZ_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA235245"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction38">
+        <listOfReactants>
+          <speciesReference species="c_Myb_V_CMYB_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA047561"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction39">
+        <listOfReactants>
+          <speciesReference species="Nkx2_5_V_NKX25_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA047561"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction40">
+        <listOfReactants>
+          <speciesReference species="TTF1_V_TITF1_Q3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA047561"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction41">
+        <listOfReactants>
+          <speciesReference species="c_Myc_Max_V_MYCMAX_B"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA047561"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction42">
+        <listOfReactants>
+          <speciesReference species="E2F_1_DP_1_V_E2F1DP1_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA715469"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction43">
+        <listOfReactants>
+          <speciesReference species="E2F_1_DP_2_V_E2F1DP2_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA715469"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction44">
+        <listOfReactants>
+          <speciesReference species="E2F_4_DP_2_V_E2F4DP2_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA715469"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction45">
+        <listOfReactants>
+          <speciesReference species="USF_V_USF_C"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA715469"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction46">
+        <listOfReactants>
+          <speciesReference species="C_EBP_V_CEBP_C"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA007601"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction47">
+        <listOfReactants>
+          <speciesReference species="c_Ets_1_68_V_CETS168_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA534913"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction48">
+        <listOfReactants>
+          <speciesReference species="v_Myb_V_VMYB_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA534913"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction49">
+        <listOfReactants>
+          <speciesReference species="AP_1_V_AP1_Q4"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA037443"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction50">
+        <listOfReactants>
+          <speciesReference species="Ik_1_V_IK1_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA037443"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction51">
+        <listOfReactants>
+          <speciesReference species="HNF_4_V_HNF4_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA535078"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction52">
+        <listOfReactants>
+          <speciesReference species="_V_TANTIGEN_B"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA009465"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction53">
+        <listOfReactants>
+          <speciesReference species="ATF_1_V_ATF1_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA009465"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction54">
+        <listOfReactants>
+          <speciesReference species="CRE_BP1_c_Jun_V_CREBP1CJUN_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA009465"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction55">
+        <listOfReactants>
+          <speciesReference species="CREB_V_CREB_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA009465"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction56">
+        <listOfReactants>
+          <speciesReference species="COMP1_V_COMP1_01"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA022889"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction57">
+        <listOfReactants>
+          <speciesReference species="HNF_1_V_HNF1_C"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA022889"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="Reaction58">
+        <listOfReactants>
+          <speciesReference species="HNF_1_V_HNF1_Q6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA022889"/>
+        </listOfProducts>
+      </reaction>
+    </listOfReactions>
+    <listOfCompartments>
+      <compartment id="promoter"/>
+    </listOfCompartments>
+  </model>
+</sbml>

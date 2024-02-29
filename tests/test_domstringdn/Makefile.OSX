@@ -1,0 +1,20 @@
+include ../../Makefile.OSX.incl
+
+SOURCES=test_domstringdn.cpp domstringdnTest.cpp LampDiagram.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS) test_domstringdn
+
+LampDiagram.cpp:../../samples/LampDiagram_udm.xml ../../bin/Udm
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -v -d ../../etc -T
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) -I $(CPPUNIT)/include $< -o $@
+
+test_domstringdn: $(OBJECTS)
+	$(CC) $(BCFLAGS) $(OBJECTS) -o test_domstringdn  -lUdm -L../../lib -lcppunit -L $(CPPUNITLIBS)
+
+test:test_domstringdn
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ./test_domstringdn
+
+clean: 
+	rm -f *.o  test_domstringdn LampDiagram.cpp LampDiagram.h LampDiagram.xsd *.mem *.xml

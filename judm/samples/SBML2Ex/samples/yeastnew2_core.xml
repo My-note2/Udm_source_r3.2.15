@@ -1,0 +1,6640 @@
+<sbml level="2" xmlns="http://www.sbml.org/sbml/level2" version="1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level2">
+	<model name="New Mechanism">
+		<listOfFunctionDefinitions>
+			<functionDefinition id="BB_218" name="BB">
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<math:lambda>
+						<math:bvar>
+							<math:ci>
+								
+								
+								A1
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:bvar>
+							<math:ci>
+								
+								
+								A2
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:bvar>
+							<math:ci>
+								
+								
+								A3
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:bvar>
+							<math:ci>
+								
+								
+								A4
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:apply>
+							<math:plus/>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:minus/>
+									<math:ci>
+										
+										
+										A2
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										A1
+									
+									
+									</math:ci>
+								</math:apply>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										A3
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										A2
+									
+									
+									</math:ci>
+								</math:apply>
+							</math:apply>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									A4
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									A1
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+					</math:lambda>
+				</math>
+			</functionDefinition>
+			<functionDefinition id="GK_219" name="GK">
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<math:lambda>
+						<math:bvar>
+							<math:ci>
+								
+								
+								A1
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:bvar>
+							<math:ci>
+								
+								
+								A2
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:bvar>
+							<math:ci>
+								
+								
+								A3
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:bvar>
+							<math:ci>
+								
+								
+								A4
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:apply>
+							<math:divide/>
+							<math:apply>
+								<math:times/>
+								<math:apply>
+									<math:times/>
+									<math:cn>
+										
+										
+										2.0
+									
+									
+									</math:cn>
+									<math:ci>
+										
+										
+										A4
+									
+									
+									</math:ci>
+								</math:apply>
+								<math:ci>
+									
+									
+									A1
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:ci>
+										
+										
+										BB_218
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										A1
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										A2
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										A3
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										A4
+									
+									
+									</math:ci>
+								</math:apply>
+								<math:apply>
+									<math:root/>
+									<math:degree>
+										<math:ci>
+											
+											
+											2
+										
+										
+										</math:ci>
+									</math:degree>
+									<math:apply>
+										<math:minus/>
+										<math:apply>
+											<math:power/>
+											<math:apply>
+												<math:ci>
+													
+													
+													BB_218
+												
+												
+												</math:ci>
+												<math:ci>
+													
+													
+													A1
+												
+												
+												</math:ci>
+												<math:ci>
+													
+													
+													A2
+												
+												
+												</math:ci>
+												<math:ci>
+													
+													
+													A3
+												
+												
+												</math:ci>
+												<math:ci>
+													
+													
+													A4
+												
+												
+												</math:ci>
+											</math:apply>
+											<math:cn>
+												
+												
+												2.0
+											
+											
+											</math:cn>
+										</math:apply>
+										<math:apply>
+											<math:times/>
+											<math:apply>
+												<math:times/>
+												<math:apply>
+													<math:times/>
+													<math:cn>
+														
+														
+														4.0
+													
+													
+													</math:cn>
+													<math:apply>
+														<math:minus/>
+														<math:ci>
+															
+															
+															A2
+														
+														
+														</math:ci>
+														<math:ci>
+															
+															
+															A1
+														
+														
+														</math:ci>
+													</math:apply>
+												</math:apply>
+												<math:ci>
+													
+													
+													A4
+												
+												
+												</math:ci>
+											</math:apply>
+											<math:ci>
+												
+												
+												A1
+											
+											
+											</math:ci>
+										</math:apply>
+									</math:apply>
+								</math:apply>
+							</math:apply>
+						</math:apply>
+					</math:lambda>
+				</math>
+			</functionDefinition>
+			<functionDefinition id="MichaelisMenten_220" name="Michaelis-Menten">
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<math:lambda>
+						<math:bvar>
+							<math:ci>
+								
+								
+								M1
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:bvar>
+							<math:ci>
+								
+								
+								J1
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:bvar>
+							<math:ci>
+								
+								
+								k1
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:bvar>
+							<math:ci>
+								
+								
+								S1
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:apply>
+							<math:divide/>
+							<math:apply>
+								<math:times/>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										k1
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										S1
+									
+									
+									</math:ci>
+								</math:apply>
+								<math:ci>
+									
+									
+									M1
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:apply>
+								<math:plus/>
+								<math:ci>
+									
+									
+									J1
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									S1
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+					</math:lambda>
+				</math>
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:ratelaw jigcell:name="Michaelis-Menten"/>
+				</annotation>
+			</functionDefinition>
+			<functionDefinition id="Mass_Action_2_221" name="Mass_Action_2">
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<math:lambda>
+						<math:bvar>
+							<math:ci>
+								
+								
+								k1
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:bvar>
+							<math:ci>
+								
+								
+								S1
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:bvar>
+							<math:ci>
+								
+								
+								S2
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:apply>
+							<math:times/>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									k1
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									S1
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:ci>
+								
+								
+								S2
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:lambda>
+				</math>
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:ratelaw jigcell:name="Mass_Action_2"/>
+				</annotation>
+			</functionDefinition>
+			<functionDefinition id="Mass_Action_1_222" name="Mass_Action_1">
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<math:lambda>
+						<math:bvar>
+							<math:ci>
+								
+								
+								k1
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:bvar>
+							<math:ci>
+								
+								
+								S1
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:apply>
+							<math:times/>
+							<math:ci>
+								
+								
+								k1
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								S1
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:lambda>
+				</math>
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:ratelaw jigcell:name="Mass_Action_1"/>
+				</annotation>
+			</functionDefinition>
+			<functionDefinition id="Mass_Action_0_223" name="Mass_Action_0">
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<math:lambda>
+						<math:bvar>
+							<math:ci>
+								
+								
+								k1
+							
+							
+							</math:ci>
+						</math:bvar>
+						<math:ci>
+							
+							
+							k1
+						
+						
+						</math:ci>
+					</math:lambda>
+				</math>
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:ratelaw jigcell:name="Mass_Action_0"/>
+				</annotation>
+			</functionDefinition>
+		</listOfFunctionDefinitions>
+		<listOfCompartments>
+			<compartment id="cell_0" name="cell" size="1" constant="true" spatialDimensions="3"/>
+		</listOfCompartments>
+		<listOfSpecies>
+			<species id="BCK2_1" name="BCK2" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="BUB2_2" name="BUB2" constant="false" compartment="cell_0" initialAmount="0.2" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="BUD_3" name="BUD" constant="false" compartment="cell_0" initialAmount="0.008473" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="C2_4" name="C2" constant="false" compartment="cell_0" initialAmount="0.238404" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="C2P_5" name="C2P" constant="false" compartment="cell_0" initialAmount="0.024034" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="C5_6" name="C5" constant="false" compartment="cell_0" initialAmount="0.070081" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="C5P_7" name="C5P" constant="false" compartment="cell_0" initialAmount="0.006878" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CDC14_8" name="CDC14" constant="false" compartment="cell_0" initialAmount="0.468344" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CDC14T_9" name="CDC14T" constant="false" compartment="cell_0" initialAmount="2.0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CDC15_10" name="CDC15" constant="false" compartment="cell_0" initialAmount="0.656533" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CDC15i_11" name="CDC15i" constant="false" compartment="cell_0" initialAmount="0.343466" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CDC20_12" name="CDC20" constant="false" compartment="cell_0" initialAmount="0.444296" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CDC20i_13" name="CDC20i" constant="false" compartment="cell_0" initialAmount="1.472044" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CDC6_14" name="CDC6" constant="false" compartment="cell_0" initialAmount="0.10758" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CDC6P_15" name="CDC6P" constant="false" compartment="cell_0" initialAmount="0.015486" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CDC6T_16" name="CDC6T" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CDH1_17" name="CDH1" constant="false" compartment="cell_0" initialAmount="0.930499" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CDH1i_18" name="CDH1i" constant="false" compartment="cell_0" initialAmount="0.0695" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CKIT_19" name="CKIT" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CLB2_20" name="CLB2" constant="false" compartment="cell_0" initialAmount="0.1469227" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CLB2T_21" name="CLB2T" constant="false" compartment="cell_0" initialAmount="0.17" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CLB5_22" name="CLB5" constant="false" compartment="cell_0" initialAmount="0.0518014" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CLB5T_23" name="CLB5T" constant="false" compartment="cell_0" initialAmount="0.12" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CLN2_24" name="CLN2" constant="false" compartment="cell_0" initialAmount="0.0652511" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="CLN3_25" name="CLN3" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="D_26" name="D" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="ESP1_27" name="ESP1" constant="false" compartment="cell_0" initialAmount="0.301313" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="F_28" name="F" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="F2_29" name="F2" constant="false" compartment="cell_0" initialAmount="0.236058" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="F2P_30" name="F2P" constant="false" compartment="cell_0" initialAmount="0.0273938" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="F5_31" name="F5" constant="false" compartment="cell_0" initialAmount="7.24E-5" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="F5P_32" name="F5P" constant="false" compartment="cell_0" initialAmount="7.91E-5" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="IE_33" name="IE" constant="false" compartment="cell_0" initialAmount="0.8985" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="IEP_34" name="IEP" constant="false" compartment="cell_0" initialAmount="0.1015" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="LTE1_35" name="LTE1" constant="false" compartment="cell_0" initialAmount="0.1" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="MAD2_36" name="MAD2" constant="false" compartment="cell_0" initialAmount="0.01" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="MASS_37" name="MASS" constant="false" compartment="cell_0" initialAmount="1.206019" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="MCM1_38" name="MCM1" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="mu_39" name="mu" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="NET1_40" name="NET1" constant="false" compartment="cell_0" initialAmount="0.018645" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="NET1P_41" name="NET1P" constant="false" compartment="cell_0" initialAmount="0.970271" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="NET1T_42" name="NET1T" constant="false" compartment="cell_0" initialAmount="2.8" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="ORI_43" name="ORI" constant="false" compartment="cell_0" initialAmount="9.09E-4" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="PDS1_44" name="PDS1" constant="false" compartment="cell_0" initialAmount="0.025612" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="PE_45" name="PE" constant="false" compartment="cell_0" initialAmount="0.7" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="PPX_46" name="PPX" constant="false" compartment="cell_0" initialAmount="0.123179" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="RENT_47" name="RENT" constant="false" compartment="cell_0" initialAmount="1.04954" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="RENTP_48" name="RENTP" constant="false" compartment="cell_0" initialAmount="0.6" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="SBF_49" name="SBF" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="SIC1_50" name="SIC1" constant="false" compartment="cell_0" initialAmount="0.0228776" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="SIC1P_51" name="SIC1P" constant="false" compartment="cell_0" initialAmount="0.00641" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="SIC1T_52" name="SIC1T" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="SPN_53" name="SPN" constant="false" compartment="cell_0" initialAmount="0.03" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="SWI5_54" name="SWI5" constant="false" compartment="cell_0" initialAmount="0.95" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="SWI5P_55" name="SWI5P" constant="false" compartment="cell_0" initialAmount="0.02" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="TEM1GDP_56" name="TEM1GDP" constant="false" compartment="cell_0" initialAmount="0.1" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="TEM1GTP_57" name="TEM1GTP" constant="false" compartment="cell_0" initialAmount="0.9" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vacdh_58" name="Vacdh" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vaiep_59" name="Vaiep" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vasbf_60" name="Vasbf" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vd2c1_61" name="Vd2c1" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vd2f6_62" name="Vd2f6" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vdb2_63" name="Vdb2" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vdb5_64" name="Vdb5" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vdpds_65" name="Vdpds" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vdppx_66" name="Vdppx" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vicdh_67" name="Vicdh" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Visbf_68" name="Visbf" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vkpc1_69" name="Vkpc1" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vkpf6_70" name="Vkpf6" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vkpnet_71" name="Vkpnet" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vppc1_72" name="Vppc1" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vppf6_73" name="Vppf6" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+			<species id="Vppnet_74" name="Vppnet" constant="false" compartment="cell_0" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+		</listOfSpecies>
+		<listOfParameters>
+			<parameter id="b0_75" name="b0" value="0.054" constant="true"/>
+			<parameter id="bub2h_76" name="bub2h" value="1.0" constant="true"/>
+			<parameter id="bub2l_77" name="bub2l" value="0.2" constant="true"/>
+			<parameter id="C0_78" name="C0" value="0.4" constant="true"/>
+			<parameter id="CDC15T_79" name="CDC15T" value="1.0" constant="true"/>
+			<parameter id="Dn3_80" name="Dn3" value="1.0" constant="true"/>
+			<parameter id="ebudb5_81" name="ebudb5" value="1.0" constant="true"/>
+			<parameter id="ebudn2_82" name="ebudn2" value="0.25" constant="true"/>
+			<parameter id="ebudn3_83" name="ebudn3" value="0.05" constant="true"/>
+			<parameter id="ec1b2_84" name="ec1b2" value="0.45" constant="true"/>
+			<parameter id="ec1b5_85" name="ec1b5" value="0.1" constant="true"/>
+			<parameter id="ec1k2_86" name="ec1k2" value="0.03" constant="true"/>
+			<parameter id="ec1n2_87" name="ec1n2" value="0.06" constant="true"/>
+			<parameter id="ec1n3_88" name="ec1n3" value="0.3" constant="true"/>
+			<parameter id="ef6b2_89" name="ef6b2" value="0.55" constant="true"/>
+			<parameter id="ef6b5_90" name="ef6b5" value="0.1" constant="true"/>
+			<parameter id="ef6k2_91" name="ef6k2" value="0.03" constant="true"/>
+			<parameter id="ef6n2_92" name="ef6n2" value="0.06" constant="true"/>
+			<parameter id="ef6n3_93" name="ef6n3" value="0.3" constant="true"/>
+			<parameter id="eicdhb2_94" name="eicdhb2" value="1.2" constant="true"/>
+			<parameter id="eicdhb5_95" name="eicdhb5" value="8.0" constant="true"/>
+			<parameter id="eicdhn2_96" name="eicdhn2" value="0.4" constant="true"/>
+			<parameter id="eicdhn3_97" name="eicdhn3" value="0.25" constant="true"/>
+			<parameter id="eorib2_98" name="eorib2" value="0.45" constant="true"/>
+			<parameter id="eorib5_99" name="eorib5" value="0.9" constant="true"/>
+			<parameter id="esbfb5_100" name="esbfb5" value="2.0" constant="true"/>
+			<parameter id="esbfn2_101" name="esbfn2" value="2.0" constant="true"/>
+			<parameter id="esbfn3_102" name="esbfn3" value="10.0" constant="true"/>
+			<parameter id="ESP1T_103" name="ESP1T" value="1.0" constant="true"/>
+			<parameter id="IET_104" name="IET" value="1.0" constant="true"/>
+			<parameter id="J20ppx_105" name="J20ppx" value="0.15" constant="true"/>
+			<parameter id="Jacdh_106" name="Jacdh" value="0.03" constant="true"/>
+			<parameter id="Jaiep_107" name="Jaiep" value="0.1" constant="true"/>
+			<parameter id="Jamcm_108" name="Jamcm" value="0.1" constant="true"/>
+			<parameter id="Jasbf_109" name="Jasbf" value="0.01" constant="true"/>
+			<parameter id="Jatem_110" name="Jatem" value="0.1" constant="true"/>
+			<parameter id="Jd2c1_111" name="Jd2c1" value="0.05" constant="true"/>
+			<parameter id="Jd2f6_112" name="Jd2f6" value="0.05" constant="true"/>
+			<parameter id="Jicdh_113" name="Jicdh" value="0.03" constant="true"/>
+			<parameter id="Jiiep_114" name="Jiiep" value="0.1" constant="true"/>
+			<parameter id="Jimcm_115" name="Jimcm" value="0.1" constant="true"/>
+			<parameter id="Jisbf_116" name="Jisbf" value="0.01" constant="true"/>
+			<parameter id="Jitem_117" name="Jitem" value="0.1" constant="true"/>
+			<parameter id="Jn3_118" name="Jn3" value="6.0" constant="true"/>
+			<parameter id="Jpds_119" name="Jpds" value="0.04" constant="true"/>
+			<parameter id="Jspn_120" name="Jspn" value="0.14" constant="true"/>
+			<parameter id="ka_121" name="ka15'" value="0.0020" constant="true"/>
+			<parameter id="ka_122" name="ka15''" value="1.0" constant="true"/>
+			<parameter id="ka15p_123" name="ka15p" value="0.0010" constant="true"/>
+			<parameter id="ka_124" name="ka20'" value="0.05" constant="true"/>
+			<parameter id="ka_125" name="ka20''" value="0.2" constant="true"/>
+			<parameter id="kacdh_126" name="kacdh'" value="0.01" constant="true"/>
+			<parameter id="kacdh_127" name="kacdh''" value="0.8" constant="true"/>
+			<parameter id="kaiep_128" name="kaiep" value="0.1" constant="true"/>
+			<parameter id="kamcm_129" name="kamcm" value="1.0" constant="true"/>
+			<parameter id="kasb2_130" name="kasb2" value="50.0" constant="true"/>
+			<parameter id="kasb5_131" name="kasb5" value="50.0" constant="true"/>
+			<parameter id="kasbf_132" name="kasbf" value="0.38" constant="true"/>
+			<parameter id="kasesp_133" name="kasesp" value="50.0" constant="true"/>
+			<parameter id="kasf2_134" name="kasf2" value="15.0" constant="true"/>
+			<parameter id="kasf5_135" name="kasf5" value="0.01" constant="true"/>
+			<parameter id="kasrent_136" name="kasrent" value="200.0" constant="true"/>
+			<parameter id="kasrentp_137" name="kasrentp" value="1.0" constant="true"/>
+			<parameter id="kaswi_138" name="kaswi" value="2.0" constant="true"/>
+			<parameter id="kd14_139" name="kd14" value="0.1" constant="true"/>
+			<parameter id="kd1c1_140" name="kd1c1" value="0.01" constant="true"/>
+			<parameter id="kd1f6_141" name="kd1f6" value="0.01" constant="true"/>
+			<parameter id="kdpds_142" name="kd1pds'" value="0.01" constant="true"/>
+			<parameter id="kd20_143" name="kd20" value="0.3" constant="true"/>
+			<parameter id="kd2c1_144" name="kd2c1" value="1.0" constant="true"/>
+			<parameter id="kd2f6_145" name="kd2f6" value="1.0" constant="true"/>
+			<parameter id="kdpds_146" name="kd2pds''" value="0.2" constant="true"/>
+			<parameter id="kd3c1_147" name="kd3c1" value="1.0" constant="true"/>
+			<parameter id="kd3f6_148" name="kd3f6" value="1.0" constant="true"/>
+			<parameter id="kdpds_149" name="kd3pds''" value="0.04" constant="true"/>
+			<parameter id="kdb_150" name="kdb2'" value="0.0030" constant="true"/>
+			<parameter id="kdb_151" name="kdb2''" value="0.4" constant="true"/>
+			<parameter id="kdb2p_152" name="kdb2p" value="0.15" constant="true"/>
+			<parameter id="kdb_153" name="kdb5'" value="0.01" constant="true"/>
+			<parameter id="kdb_154" name="kdb5''" value="0.16" constant="true"/>
+			<parameter id="kdbud_155" name="kdbud" value="0.06" constant="true"/>
+			<parameter id="kdcdh_156" name="kdcdh" value="0.01" constant="true"/>
+			<parameter id="kdib2_157" name="kdib2" value="0.05" constant="true"/>
+			<parameter id="kdib5_158" name="kdib5" value="0.06" constant="true"/>
+			<parameter id="kdiesp_159" name="kdiesp" value="0.5" constant="true"/>
+			<parameter id="kdif2_160" name="kdif2" value="0.5" constant="true"/>
+			<parameter id="kdif5_161" name="kdif5" value="0.01" constant="true"/>
+			<parameter id="kdirent_162" name="kdirent" value="1.0" constant="true"/>
+			<parameter id="kdirentp_163" name="kdirentp" value="2.0" constant="true"/>
+			<parameter id="kdn2_164" name="kdn2" value="0.12" constant="true"/>
+			<parameter id="kdnet_165" name="kdnet" value="0.03" constant="true"/>
+			<parameter id="kdori_166" name="kdori" value="0.06" constant="true"/>
+			<parameter id="kdppx_167" name="kdppx'" value="0.17" constant="true"/>
+			<parameter id="kdppx_168" name="kdppx''" value="2.0" constant="true"/>
+			<parameter id="kdspn_169" name="kdspn" value="0.06" constant="true"/>
+			<parameter id="kdswi_170" name="kdswi" value="0.08" constant="true"/>
+			<parameter id="KEZ_171" name="KEZ" value="0.3" constant="true"/>
+			<parameter id="KEZ2_172" name="KEZ2" value="0.2" constant="true"/>
+			<parameter id="ki15_173" name="ki15" value="0.5" constant="true"/>
+			<parameter id="kicdh_174" name="kicdh'" value="0.0010" constant="true"/>
+			<parameter id="kicdh_175" name="kicdh''" value="0.08" constant="true"/>
+			<parameter id="kiiep_176" name="kiiep" value="0.15" constant="true"/>
+			<parameter id="kimcm_177" name="kimcm" value="0.15" constant="true"/>
+			<parameter id="kisbf_178" name="kisbf'" value="0.6" constant="true"/>
+			<parameter id="kisbf_179" name="kisbf''" value="8.0" constant="true"/>
+			<parameter id="kiswi_180" name="kiswi" value="0.05" constant="true"/>
+			<parameter id="kkpnet_181" name="kkpnet'" value="0.01" constant="true"/>
+			<parameter id="kkpnet_182" name="kkpnet''" value="0.6" constant="true"/>
+			<parameter id="kppc1_183" name="kppc1" value="4.0" constant="true"/>
+			<parameter id="kppf6_184" name="kppf6" value="4.0" constant="true"/>
+			<parameter id="kppnet_185" name="kppnet'" value="0.05" constant="true"/>
+			<parameter id="kppnet_186" name="kppnet''" value="3.0" constant="true"/>
+			<parameter id="ks14_187" name="ks14" value="0.2" constant="true"/>
+			<parameter id="kspds_188" name="ks1pds''" value="0.03" constant="true"/>
+			<parameter id="ks_189" name="ks20'" value="0.0060" constant="true"/>
+			<parameter id="ks_190" name="ks20''" value="0.6" constant="true"/>
+			<parameter id="kspds_191" name="ks2pds''" value="0.055" constant="true"/>
+			<parameter id="ksb_192" name="ksb2'" value="0.0010" constant="true"/>
+			<parameter id="ksb_193" name="ksb2''" value="0.04" constant="true"/>
+			<parameter id="ksb_194" name="ksb5'" value="8.0E-4" constant="true"/>
+			<parameter id="ksb_195" name="ksb5''" value="0.0050" constant="true"/>
+			<parameter id="ksbud_196" name="ksbud" value="0.2" constant="true"/>
+			<parameter id="ksc_197" name="ksc1'" value="0.012" constant="true"/>
+			<parameter id="ksc_198" name="ksc1''" value="0.12" constant="true"/>
+			<parameter id="kscdh_199" name="kscdh" value="0.01" constant="true"/>
+			<parameter id="ksf_200" name="ksf6'" value="0.024" constant="true"/>
+			<parameter id="ksf_201" name="ksf6''" value="0.12" constant="true"/>
+			<parameter id="ksf_202" name="ksf6'''" value="0.0040" constant="true"/>
+			<parameter id="ksn_203" name="ksn2'" value="0.0" constant="true"/>
+			<parameter id="ksn_204" name="ksn2''" value="0.15" constant="true"/>
+			<parameter id="ksnet_205" name="ksnet" value="0.084" constant="true"/>
+			<parameter id="ksori_206" name="ksori" value="2.0" constant="true"/>
+			<parameter id="kspds_207" name="kspds'" value="0.0" constant="true"/>
+			<parameter id="ksppx_208" name="ksppx" value="0.1" constant="true"/>
+			<parameter id="ksspn_209" name="ksspn" value="0.1" constant="true"/>
+			<parameter id="ksswi_210" name="ksswi'" value="0.0050" constant="true"/>
+			<parameter id="ksswi_211" name="ksswi''" value="0.08" constant="true"/>
+			<parameter id="lte1h_212" name="lte1h" value="1.0" constant="true"/>
+			<parameter id="lte1l_213" name="lte1l" value="0.1" constant="true"/>
+			<parameter id="mad2h_214" name="mad2h" value="8.0" constant="true"/>
+			<parameter id="mad2l_215" name="mad2l" value="0.01" constant="true"/>
+			<parameter id="mdt_216" name="mdt" value="90.0" constant="true"/>
+			<parameter id="TEM1T_217" name="TEM1T" value="1.0" constant="true"/>
+		</listOfParameters>
+		<listOfRules>
+			<assignmentRule variable="BCK2_1">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="b0*MASS" jigcell:constmods="b0=b0"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:times/>
+						<math:ci>
+							
+							
+							b0_75
+						
+						
+						</math:ci>
+						<math:ci>
+							
+							
+							MASS_37
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Visbf_68">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kisbf'+kisbf''*CLB2" jigcell:constmods="kisbf''=kisbf''; kisbf'=kisbf'"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:ci>
+							
+							
+							kisbf_178
+						
+						
+						</math:ci>
+						<math:apply>
+							<math:times/>
+							<math:ci>
+								
+								
+								kisbf_179
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CLB2_20
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="CLN3_25">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="C0*Dn3*MASS/(Jn3+Dn3*MASS)" jigcell:constmods="Jn3=Jn3; Dn3=Dn3; C0=C0"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:divide/>
+						<math:apply>
+							<math:times/>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									C0_78
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									Dn3_80
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:ci>
+								
+								
+								MASS_37
+							
+							
+							</math:ci>
+						</math:apply>
+						<math:apply>
+							<math:plus/>
+							<math:ci>
+								
+								
+								Jn3_118
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									Dn3_80
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									MASS_37
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vppc1_72">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kppc1*CDC14" jigcell:constmods="kppc1=kppc1"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:times/>
+						<math:ci>
+							
+							
+							kppc1_183
+						
+						
+						</math:ci>
+						<math:ci>
+							
+							
+							CDC14_8
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vppf6_73">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kppf6*CDC14" jigcell:constmods="kppf6=kppf6"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:times/>
+						<math:ci>
+							
+							
+							kppf6_184
+						
+						
+						</math:ci>
+						<math:ci>
+							
+							
+							CDC14_8
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vaiep_59">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kaiep*CLB2" jigcell:constmods="kaiep=kaiep"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:times/>
+						<math:ci>
+							
+							
+							kaiep_128
+						
+						
+						</math:ci>
+						<math:ci>
+							
+							
+							CLB2_20
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vacdh_58">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kacdh'+kacdh''*CDC14" jigcell:constmods="kacdh''=kacdh''; kacdh'=kacdh'"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:ci>
+							
+							
+							kacdh_126
+						
+						
+						</math:ci>
+						<math:apply>
+							<math:times/>
+							<math:ci>
+								
+								
+								kacdh_127
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC14_8
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vicdh_67">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kicdh'+kicdh''*(eicdhn3*CLN3+eicdhn2*CLN2+eicdhb5*CLB5+eicdhb2*CLB2)" jigcell:constmods="eicdhn3=eicdhn3; eicdhn2=eicdhn2; eicdhb5=eicdhb5; eicdhb2=eicdhb2; kicdh'=kicdh'; kicdh''=kicdh''"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:ci>
+							
+							
+							kicdh_174
+						
+						
+						</math:ci>
+						<math:apply>
+							<math:times/>
+							<math:ci>
+								
+								
+								kicdh_175
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:plus/>
+									<math:apply>
+										<math:plus/>
+										<math:apply>
+											<math:times/>
+											<math:ci>
+												
+												
+												eicdhn3_97
+											
+											
+											</math:ci>
+											<math:ci>
+												
+												
+												CLN3_25
+											
+											
+											</math:ci>
+										</math:apply>
+										<math:apply>
+											<math:times/>
+											<math:ci>
+												
+												
+												eicdhn2_96
+											
+											
+											</math:ci>
+											<math:ci>
+												
+												
+												CLN2_24
+											
+											
+											</math:ci>
+										</math:apply>
+									</math:apply>
+									<math:apply>
+										<math:times/>
+										<math:ci>
+											
+											
+											eicdhb5_95
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											CLB5_22
+										
+										
+										</math:ci>
+									</math:apply>
+								</math:apply>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										eicdhb2_94
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										CLB2_20
+									
+									
+									</math:ci>
+								</math:apply>
+							</math:apply>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vkpnet_71">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="(kkpnet'+kkpnet''*CDC15)*MASS" jigcell:constmods="kkpnet''=kkpnet''; kkpnet'=kkpnet'"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:times/>
+						<math:apply>
+							<math:plus/>
+							<math:ci>
+								
+								
+								kkpnet_181
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									kkpnet_182
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									CDC15_10
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+						<math:ci>
+							
+							
+							MASS_37
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vppnet_74">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kppnet'+kppnet''*PPX" jigcell:constmods="kppnet'=kppnet'; kppnet''=kppnet''"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:ci>
+							
+							
+							kppnet_185
+						
+						
+						</math:ci>
+						<math:apply>
+							<math:times/>
+							<math:ci>
+								
+								
+								kppnet_186
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								PPX_46
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vasbf_60">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kasbf*(esbfn2*CLN2+esbfn3*(CLN3+BCK2)+esbfb5*CLB5)" jigcell:constmods="esbfn3=esbfn3; esbfn2=esbfn2; kasbf=kasbf; esbfb5=esbfb5"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:times/>
+						<math:ci>
+							
+							
+							kasbf_132
+						
+						
+						</math:ci>
+						<math:apply>
+							<math:plus/>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										esbfn2_101
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										CLN2_24
+									
+									
+									</math:ci>
+								</math:apply>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										esbfn3_102
+									
+									
+									</math:ci>
+									<math:apply>
+										<math:plus/>
+										<math:ci>
+											
+											
+											CLN3_25
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											BCK2_1
+										
+										
+										</math:ci>
+									</math:apply>
+								</math:apply>
+							</math:apply>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									esbfb5_100
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									CLB5_22
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="SBF_49">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="GK(Vasbf, Visbf, Jasbf, Jisbf)" jigcell:constmods="Jisbf=Jisbf; Jasbf=Jasbf"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:ci>
+							
+							
+							GK_219
+						
+						
+						</math:ci>
+						<math:ci>
+							
+							
+							Vasbf_60
+						
+						
+						</math:ci>
+						<math:ci>
+							
+							
+							Visbf_68
+						
+						
+						</math:ci>
+						<math:ci>
+							
+							
+							Jasbf_109
+						
+						
+						</math:ci>
+						<math:ci>
+							
+							
+							Jisbf_116
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="MCM1_38">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="GK(kamcm*CLB2,kimcm,Jamcm,Jimcm)" jigcell:constmods="Jimcm=Jimcm; kimcm=kimcm; Jamcm=Jamcm; kamcm=kamcm"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:ci>
+							
+							
+							GK_219
+						
+						
+						</math:ci>
+						<math:apply>
+							<math:times/>
+							<math:ci>
+								
+								
+								kamcm_129
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CLB2_20
+							
+							
+							</math:ci>
+						</math:apply>
+						<math:ci>
+							
+							
+							kimcm_177
+						
+						
+						</math:ci>
+						<math:ci>
+							
+							
+							Jamcm_108
+						
+						
+						</math:ci>
+						<math:ci>
+							
+							
+							Jimcm_115
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="mu_39">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="ln(2)/mdt" jigcell:constmods="mdt=mdt"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:divide/>
+						<math:apply>
+							<math:ln/>
+							<math:cn>
+								
+								
+								2.0
+							
+							
+							</math:cn>
+						</math:apply>
+						<math:ci>
+							
+							
+							mdt_216
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="D_26">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="1.026/mu-32" jigcell:constmods=""/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:minus/>
+						<math:apply>
+							<math:divide/>
+							<math:cn>
+								
+								
+								1.026
+							
+							
+							</math:cn>
+							<math:ci>
+								
+								
+								mu_39
+							
+							
+							</math:ci>
+						</math:apply>
+						<math:cn>
+							
+							
+							32.0
+						
+						
+						</math:cn>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="F_28">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="exp(-mu*D)" jigcell:constmods=""/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:exp/>
+						<math:apply>
+							<math:times/>
+							<math:apply>
+								<math:minus/>
+								<math:ci>
+									
+									
+									mu_39
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:ci>
+								
+								
+								D_26
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vd2c1_61">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kd2c1*(ec1n3*CLN3+ec1k2*BCK2+ec1n2*CLN2+ec1b5*CLB5+ec1b2*CLB2)" jigcell:constmods="ec1n3=ec1n3; ec1n2=ec1n2; ec1b5=ec1b5; ec1k2=ec1k2; ec1b2=ec1b2; kd2c1=kd2c1"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:times/>
+						<math:ci>
+							
+							
+							kd2c1_144
+						
+						
+						</math:ci>
+						<math:apply>
+							<math:plus/>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:plus/>
+									<math:apply>
+										<math:plus/>
+										<math:apply>
+											<math:times/>
+											<math:ci>
+												
+												
+												ec1n3_88
+											
+											
+											</math:ci>
+											<math:ci>
+												
+												
+												CLN3_25
+											
+											
+											</math:ci>
+										</math:apply>
+										<math:apply>
+											<math:times/>
+											<math:ci>
+												
+												
+												ec1k2_86
+											
+											
+											</math:ci>
+											<math:ci>
+												
+												
+												BCK2_1
+											
+											
+											</math:ci>
+										</math:apply>
+									</math:apply>
+									<math:apply>
+										<math:times/>
+										<math:ci>
+											
+											
+											ec1n2_87
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											CLN2_24
+										
+										
+										</math:ci>
+									</math:apply>
+								</math:apply>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										ec1b5_85
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										CLB5_22
+									
+									
+									</math:ci>
+								</math:apply>
+							</math:apply>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									ec1b2_84
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									CLB2_20
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vd2f6_62">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kd2f6*(ef6n3*CLN3+ef6k2*BCK2+ef6n2*CLN2+ef6b5*CLB5+ef6b2*CLB2)" jigcell:constmods="ef6b2=ef6b2; kd2f6=kd2f6; ef6n3=ef6n3; ef6n2=ef6n2; ef6b5=ef6b5; ef6k2=ef6k2"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:times/>
+						<math:ci>
+							
+							
+							kd2f6_145
+						
+						
+						</math:ci>
+						<math:apply>
+							<math:plus/>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:plus/>
+									<math:apply>
+										<math:plus/>
+										<math:apply>
+											<math:times/>
+											<math:ci>
+												
+												
+												ef6n3_93
+											
+											
+											</math:ci>
+											<math:ci>
+												
+												
+												CLN3_25
+											
+											
+											</math:ci>
+										</math:apply>
+										<math:apply>
+											<math:times/>
+											<math:ci>
+												
+												
+												ef6k2_91
+											
+											
+											</math:ci>
+											<math:ci>
+												
+												
+												BCK2_1
+											
+											
+											</math:ci>
+										</math:apply>
+									</math:apply>
+									<math:apply>
+										<math:times/>
+										<math:ci>
+											
+											
+											ef6n2_92
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											CLN2_24
+										
+										
+										</math:ci>
+									</math:apply>
+								</math:apply>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										ef6b5_90
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										CLB5_22
+									
+									
+									</math:ci>
+								</math:apply>
+							</math:apply>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									ef6b2_89
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									CLB2_20
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vkpc1_69">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kd1c1+Vd2c1/(Jd2c1+SIC1+C2+C5+SIC1P+C2P+C5P)" jigcell:constmods="kd1c1=kd1c1; Jd2c1=Jd2c1"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:ci>
+							
+							
+							kd1c1_140
+						
+						
+						</math:ci>
+						<math:apply>
+							<math:divide/>
+							<math:ci>
+								
+								
+								Vd2c1_61
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:plus/>
+									<math:apply>
+										<math:plus/>
+										<math:apply>
+											<math:plus/>
+											<math:apply>
+												<math:plus/>
+												<math:apply>
+													<math:plus/>
+													<math:ci>
+														
+														
+														Jd2c1_111
+													
+													
+													</math:ci>
+													<math:ci>
+														
+														
+														SIC1_50
+													
+													
+													</math:ci>
+												</math:apply>
+												<math:ci>
+													
+													
+													C2_4
+												
+												
+												</math:ci>
+											</math:apply>
+											<math:ci>
+												
+												
+												C5_6
+											
+											
+											</math:ci>
+										</math:apply>
+										<math:ci>
+											
+											
+											SIC1P_51
+										
+										
+										</math:ci>
+									</math:apply>
+									<math:ci>
+										
+										
+										C2P_5
+									
+									
+									</math:ci>
+								</math:apply>
+								<math:ci>
+									
+									
+									C5P_7
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vkpf6_70">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kd1f6+Vd2f6/(Jd2f6+CDC6+F2+F5+CDC6P+F2P+F5P)" jigcell:constmods="kd1f6=kd1f6; Jd2f6=Jd2f6"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:ci>
+							
+							
+							kd1f6_141
+						
+						
+						</math:ci>
+						<math:apply>
+							<math:divide/>
+							<math:ci>
+								
+								
+								Vd2f6_62
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:plus/>
+									<math:apply>
+										<math:plus/>
+										<math:apply>
+											<math:plus/>
+											<math:apply>
+												<math:plus/>
+												<math:apply>
+													<math:plus/>
+													<math:ci>
+														
+														
+														Jd2f6_112
+													
+													
+													</math:ci>
+													<math:ci>
+														
+														
+														CDC6_14
+													
+													
+													</math:ci>
+												</math:apply>
+												<math:ci>
+													
+													
+													F2_29
+												
+												
+												</math:ci>
+											</math:apply>
+											<math:ci>
+												
+												
+												F5_31
+											
+											
+											</math:ci>
+										</math:apply>
+										<math:ci>
+											
+											
+											CDC6P_15
+										
+										
+										</math:ci>
+									</math:apply>
+									<math:ci>
+										
+										
+										F2P_30
+									
+									
+									</math:ci>
+								</math:apply>
+								<math:ci>
+									
+									
+									F5P_32
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vdb2_63">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kdb2'+kdb2''*CDH1+kdb2p*CDC20" jigcell:constmods="kdb2p=kdb2p; kdb2''=kdb2''; kdb2'=kdb2'"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:apply>
+							<math:plus/>
+							<math:ci>
+								
+								
+								kdb_150
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									kdb_151
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									CDH1_17
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+						<math:apply>
+							<math:times/>
+							<math:ci>
+								
+								
+								kdb2p_152
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC20_12
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vdb5_64">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kdb5'+kdb5''*CDC20" jigcell:constmods="kdb5''=kdb5''; kdb5'=kdb5'"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:ci>
+							
+							
+							kdb_153
+						
+						
+						</math:ci>
+						<math:apply>
+							<math:times/>
+							<math:ci>
+								
+								
+								kdb_154
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC20_12
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vdpds_65">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kd1pds'+kd2pds''*CDC20+kd3pds''*CDH1" jigcell:constmods="kd1pds'=kd1pds'; kd3pds''=kd3pds''; kd2pds''=kd2pds''"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:apply>
+							<math:plus/>
+							<math:ci>
+								
+								
+								kdpds_142
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									kdpds_146
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									CDC20_12
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+						<math:apply>
+							<math:times/>
+							<math:ci>
+								
+								
+								kdpds_149
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDH1_17
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="Vdppx_66">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="kdppx'+kdppx''*(J20ppx+CDC20)*Jpds/(Jpds+PDS1)" jigcell:constmods="J20ppx=J20ppx; Jpds=Jpds; kdppx''=kdppx''; kdppx'=kdppx'"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:ci>
+							
+							
+							kdppx_167
+						
+						
+						</math:ci>
+						<math:apply>
+							<math:divide/>
+							<math:apply>
+								<math:times/>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										kdppx_168
+									
+									
+									</math:ci>
+									<math:apply>
+										<math:plus/>
+										<math:ci>
+											
+											
+											J20ppx_105
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											CDC20_12
+										
+										
+										</math:ci>
+									</math:apply>
+								</math:apply>
+								<math:ci>
+									
+									
+									Jpds_119
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:apply>
+								<math:plus/>
+								<math:ci>
+									
+									
+									Jpds_119
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									PDS1_44
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="CLB2T_21">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="CLB2+C2+C2P+F2+F2P" jigcell:constmods=""/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:apply>
+							<math:plus/>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:plus/>
+									<math:ci>
+										
+										
+										CLB2_20
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										C2_4
+									
+									
+									</math:ci>
+								</math:apply>
+								<math:ci>
+									
+									
+									C2P_5
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:ci>
+								
+								
+								F2_29
+							
+							
+							</math:ci>
+						</math:apply>
+						<math:ci>
+							
+							
+							F2P_30
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="CLB5T_23">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="CLB5+C5+C5P+F5+F5P" jigcell:constmods=""/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:apply>
+							<math:plus/>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:plus/>
+									<math:ci>
+										
+										
+										CLB5_22
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										C5_6
+									
+									
+									</math:ci>
+								</math:apply>
+								<math:ci>
+									
+									
+									C5P_7
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:ci>
+								
+								
+								F5_31
+							
+							
+							</math:ci>
+						</math:apply>
+						<math:ci>
+							
+							
+							F5P_32
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="CDC14T_9">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="CDC14+RENT+RENTP" jigcell:constmods=""/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:apply>
+							<math:plus/>
+							<math:ci>
+								
+								
+								CDC14_8
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								RENT_47
+							
+							
+							</math:ci>
+						</math:apply>
+						<math:ci>
+							
+							
+							RENTP_48
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="NET1T_42">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="NET1+NET1P+RENT+RENTP" jigcell:constmods=""/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:apply>
+							<math:plus/>
+							<math:apply>
+								<math:plus/>
+								<math:ci>
+									
+									
+									NET1_40
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									NET1P_41
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:ci>
+								
+								
+								RENT_47
+							
+							
+							</math:ci>
+						</math:apply>
+						<math:ci>
+							
+							
+							RENTP_48
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="SIC1T_52">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="SIC1+C2+C5+SIC1P+C2P+C5P" jigcell:constmods=""/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:apply>
+							<math:plus/>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:plus/>
+									<math:apply>
+										<math:plus/>
+										<math:ci>
+											
+											
+											SIC1_50
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											C2_4
+										
+										
+										</math:ci>
+									</math:apply>
+									<math:ci>
+										
+										
+										C5_6
+									
+									
+									</math:ci>
+								</math:apply>
+								<math:ci>
+									
+									
+									SIC1P_51
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:ci>
+								
+								
+								C2P_5
+							
+							
+							</math:ci>
+						</math:apply>
+						<math:ci>
+							
+							
+							C5P_7
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="CDC6T_16">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="CDC6+F2+F5+CDC6P+F2P+F5P" jigcell:constmods=""/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:apply>
+							<math:plus/>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:plus/>
+									<math:apply>
+										<math:plus/>
+										<math:ci>
+											
+											
+											CDC6_14
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											F2_29
+										
+										
+										</math:ci>
+									</math:apply>
+									<math:ci>
+										
+										
+										F5_31
+									
+									
+									</math:ci>
+								</math:apply>
+								<math:ci>
+									
+									
+									CDC6P_15
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:ci>
+								
+								
+								F2P_30
+							
+							
+							</math:ci>
+						</math:apply>
+						<math:ci>
+							
+							
+							F5P_32
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<assignmentRule variable="CKIT_19">
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:species jigcell:equation="SIC1T+CDC6T" jigcell:constmods=""/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:plus/>
+						<math:ci>
+							
+							
+							SIC1T_52
+						
+						
+						</math:ci>
+						<math:ci>
+							
+							
+							CDC6T_16
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</assignmentRule>
+			<algebraicRule>
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:conservationlaw jigcell:dependent="CDC15i_11"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:minus/>
+						<math:apply>
+							<math:plus/>
+							<math:ci>
+								
+								
+								CDC15_10
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC15i_11
+							
+							
+							</math:ci>
+						</math:apply>
+						<math:ci>
+							
+							
+							CDC15T_79
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</algebraicRule>
+			<algebraicRule>
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:conservationlaw jigcell:dependent="IE_33"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:minus/>
+						<math:apply>
+							<math:plus/>
+							<math:ci>
+								
+								
+								IE_33
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								IEP_34
+							
+							
+							</math:ci>
+						</math:apply>
+						<math:ci>
+							
+							
+							IET_104
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</algebraicRule>
+			<algebraicRule>
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:conservationlaw jigcell:dependent="PE_45"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:minus/>
+						<math:apply>
+							<math:plus/>
+							<math:ci>
+								
+								
+								ESP1_27
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								PE_45
+							
+							
+							</math:ci>
+						</math:apply>
+						<math:ci>
+							
+							
+							ESP1T_103
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</algebraicRule>
+			<algebraicRule>
+				<annotation xmlns:jigcell="http://mpf.biol.vt.edu/ns">
+					<jigcell:conservationlaw jigcell:dependent="TEM1GDP_56"/>
+				</annotation>
+				<math:math>
+					<math:apply>
+						<math:minus/>
+						<math:apply>
+							<math:plus/>
+							<math:ci>
+								
+								
+								TEM1GDP_56
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								TEM1GTP_57
+							
+							
+							</math:ci>
+						</math:apply>
+						<math:ci>
+							
+							
+							TEM1T_217
+						
+						
+						</math:ci>
+					</math:apply>
+				</math:math>
+			</algebraicRule>
+		</listOfRules>
+		<listOfEvents>
+			<event>
+				<trigger>
+					<math:math>
+						<math:apply>
+							<math:lt/>
+							<math:apply>
+								<math:minus/>
+								<math:apply>
+									<math:plus/>
+									<math:ci>
+										
+										
+										CLB2_20
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										CLB5_22
+									
+									
+									</math:ci>
+								</math:apply>
+								<math:ci>
+									
+									
+									KEZ2_172
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:cn>
+								
+								
+								0.0
+							
+							
+							</math:cn>
+						</math:apply>
+					</math:math>
+				</trigger>
+				<delay>
+					<math:math>
+						<math:cn>
+							
+							
+							0.0
+						
+						
+						</math:cn>
+					</math:math>
+				</delay>
+				<listOfEventAssignments>
+					<eventAssignment variable="ORI_43">
+						<math:math>
+							<math:cn>
+								
+								
+								0.0
+							
+							
+							</math:cn>
+						</math:math>
+					</eventAssignment>
+				</listOfEventAssignments>
+			</event>
+			<event>
+				<trigger>
+					<math:math>
+						<math:apply>
+							<math:gt/>
+							<math:apply>
+								<math:minus/>
+								<math:ci>
+									
+									
+									ORI_43
+								
+								
+								</math:ci>
+								<math:cn>
+									
+									
+									1.0
+								
+								
+								</math:cn>
+							</math:apply>
+							<math:cn>
+								
+								
+								0.0
+							
+							
+							</math:cn>
+						</math:apply>
+					</math:math>
+				</trigger>
+				<delay>
+					<math:math>
+						<math:cn>
+							
+							
+							0.0
+						
+						
+						</math:cn>
+					</math:math>
+				</delay>
+				<listOfEventAssignments>
+					<eventAssignment variable="MAD2_36">
+						<math:math>
+							<math:ci>
+								
+								
+								mad2h_214
+							
+							
+							</math:ci>
+						</math:math>
+					</eventAssignment>
+					<eventAssignment variable="BUB2_2">
+						<math:math>
+							<math:ci>
+								
+								
+								bub2h_76
+							
+							
+							</math:ci>
+						</math:math>
+					</eventAssignment>
+				</listOfEventAssignments>
+			</event>
+			<event>
+				<trigger>
+					<math:math>
+						<math:apply>
+							<math:gt/>
+							<math:apply>
+								<math:minus/>
+								<math:ci>
+									
+									
+									SPN_53
+								
+								
+								</math:ci>
+								<math:cn>
+									
+									
+									1.0
+								
+								
+								</math:cn>
+							</math:apply>
+							<math:cn>
+								
+								
+								0.0
+							
+							
+							</math:cn>
+						</math:apply>
+					</math:math>
+				</trigger>
+				<delay>
+					<math:math>
+						<math:cn>
+							
+							
+							0.0
+						
+						
+						</math:cn>
+					</math:math>
+				</delay>
+				<listOfEventAssignments>
+					<eventAssignment variable="MAD2_36">
+						<math:math>
+							<math:ci>
+								
+								
+								mad2l_215
+							
+							
+							</math:ci>
+						</math:math>
+					</eventAssignment>
+					<eventAssignment variable="LTE1_35">
+						<math:math>
+							<math:ci>
+								
+								
+								lte1h_212
+							
+							
+							</math:ci>
+						</math:math>
+					</eventAssignment>
+					<eventAssignment variable="BUB2_2">
+						<math:math>
+							<math:ci>
+								
+								
+								bub2l_77
+							
+							
+							</math:ci>
+						</math:math>
+					</eventAssignment>
+				</listOfEventAssignments>
+			</event>
+			<event>
+				<trigger>
+					<math:math>
+						<math:apply>
+							<math:lt/>
+							<math:apply>
+								<math:minus/>
+								<math:ci>
+									
+									
+									CLB2_20
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									KEZ_171
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:cn>
+								
+								
+								0.0
+							
+							
+							</math:cn>
+						</math:apply>
+					</math:math>
+				</trigger>
+				<delay>
+					<math:math>
+						<math:cn>
+							
+							
+							0.0
+						
+						
+						</math:cn>
+					</math:math>
+				</delay>
+				<listOfEventAssignments>
+					<eventAssignment variable="MASS_37">
+						<math:math>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									F_28
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									MASS_37
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:math>
+					</eventAssignment>
+					<eventAssignment variable="LTE1_35">
+						<math:math>
+							<math:ci>
+								
+								
+								lte1l_213
+							
+							
+							</math:ci>
+						</math:math>
+					</eventAssignment>
+					<eventAssignment variable="BUD_3">
+						<math:math>
+							<math:cn>
+								
+								
+								0.0
+							
+							
+							</math:cn>
+						</math:math>
+					</eventAssignment>
+					<eventAssignment variable="SPN_53">
+						<math:math>
+							<math:cn>
+								
+								
+								0.0
+							
+							
+							</math:cn>
+						</math:math>
+					</eventAssignment>
+				</listOfEventAssignments>
+			</event>
+		</listOfEvents>
+		<listOfReactions>
+			<reaction id="Growth_225" fast="false" name="Growth" reversible="false">
+				<listOfProducts>
+					<speciesReference species="MASS_37" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									mu_39
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									MASS_37
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="SynthesisofCLN_226" fast="false" name="Synthesis of CLN2" reversible="false">
+				<listOfProducts>
+					<speciesReference species="CLN2_24" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:times/>
+								<math:apply>
+									<math:plus/>
+									<math:ci>
+										
+										
+										ksn_203
+									
+									
+									</math:ci>
+									<math:apply>
+										<math:times/>
+										<math:ci>
+											
+											
+											ksn_204
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											SBF_49
+										
+										
+										</math:ci>
+									</math:apply>
+								</math:apply>
+								<math:ci>
+									
+									
+									MASS_37
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofCLN_227" fast="false" name="Degradation of CLN2" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CLN2_24" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdn2_164
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CLN2_24
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="SynthesisofCLB_228" fast="false" name="Synthesis of CLB2" reversible="false">
+				<listOfProducts>
+					<speciesReference species="CLB2_20" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:times/>
+								<math:apply>
+									<math:plus/>
+									<math:ci>
+										
+										
+										ksb_192
+									
+									
+									</math:ci>
+									<math:apply>
+										<math:times/>
+										<math:ci>
+											
+											
+											ksb_193
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											MCM1_38
+										
+										
+										</math:ci>
+									</math:apply>
+								</math:apply>
+								<math:ci>
+									
+									
+									MASS_37
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofCLB_229" fast="false" name="Degradation of CLB2" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CLB2_20" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vdb2_63
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CLB2_20
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="SynthesisofCLB_230" fast="false" name="Synthesis of CLB5" reversible="false">
+				<listOfProducts>
+					<speciesReference species="CLB5_22" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:times/>
+								<math:apply>
+									<math:plus/>
+									<math:ci>
+										
+										
+										ksb_194
+									
+									
+									</math:ci>
+									<math:apply>
+										<math:times/>
+										<math:ci>
+											
+											
+											ksb_195
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											SBF_49
+										
+										
+										</math:ci>
+									</math:apply>
+								</math:apply>
+								<math:ci>
+									
+									
+									MASS_37
+								
+								
+								</math:ci>
+							</math:apply>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofCLB_231" fast="false" name="Degradation of CLB5" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CLB5_22" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vdb5_64
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CLB5_22
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="SynthesisofSIC_232" fast="false" name="Synthesis of SIC1" reversible="false">
+				<listOfProducts>
+					<speciesReference species="SIC1_50" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:plus/>
+								<math:ci>
+									
+									
+									ksc_197
+								
+								
+								</math:ci>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										ksc_198
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										SWI5_54
+									
+									
+									</math:ci>
+								</math:apply>
+							</math:apply>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="PhosphorylationofSIC_233" fast="false" name="Phosphorylation of SIC1" reversible="false">
+				<listOfReactants>
+					<speciesReference species="SIC1_50" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="SIC1P_51" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vkpc1_69
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								SIC1_50
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DephosphorylationofSIC_234" fast="false" name="Dephosphorylation of SIC1" reversible="false">
+				<listOfReactants>
+					<speciesReference species="SIC1P_51" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="SIC1_50" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vppc1_72
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								SIC1P_51
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="FastDegradationofSICP_235" fast="false" name="Fast Degradation of SIC1P" reversible="false">
+				<listOfReactants>
+					<speciesReference species="SIC1P_51" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kd3c1_147
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								SIC1P_51
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="AssocofCLBandSIC_236" fast="false" name="Assoc. of CLB2 and SIC1" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CLB2_20" stoichiometry="1"/>
+					<speciesReference species="SIC1_50" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="C2_4" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_2_221
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kasb2_130
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CLB2_20
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								SIC1_50
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DissocofCLBSICcomplex_237" fast="false" name="Dissoc. of CLB2/SIC1 complex" reversible="false">
+				<listOfReactants>
+					<speciesReference species="C2_4" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CLB2_20" stoichiometry="1"/>
+					<speciesReference species="SIC1_50" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdib2_157
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								C2_4
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="AssocofCLBandSIC_238" fast="false" name="Assoc. of CLB5 and SIC1" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CLB5_22" stoichiometry="1"/>
+					<speciesReference species="SIC1_50" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="C5_6" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_2_221
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kasb5_131
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CLB5_22
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								SIC1_50
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DissocofCLBSIC_239" fast="false" name="Dissoc. of CLB5/SIC1" reversible="false">
+				<listOfReactants>
+					<speciesReference species="C5_6" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CLB5_22" stoichiometry="1"/>
+					<speciesReference species="SIC1_50" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdib5_158
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								C5_6
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="PhosphorylationofC_240" fast="false" name="Phosphorylation of C2" reversible="false">
+				<listOfReactants>
+					<speciesReference species="C2_4" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="C2P_5" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vkpc1_69
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								C2_4
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DephosphorylationofCP_241" fast="false" name="Dephosphorylation of C2P" reversible="false">
+				<listOfReactants>
+					<speciesReference species="C2P_5" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="C2_4" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vppc1_72
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								C2P_5
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_242" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="C5_6" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="C5P_7" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vkpc1_69
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								C5_6
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_243" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="C5P_7" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="C5_6" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vppc1_72
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								C5P_7
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofCLBinC_244" fast="false" name="Degradation of CLB2 in C2" reversible="false">
+				<listOfReactants>
+					<speciesReference species="C2_4" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="SIC1_50" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vdb2_63
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								C2_4
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_245" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="C5_6" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="SIC1_50" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vdb5_64
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								C5_6
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofSICinCP_246" fast="false" name="Degradation of SIC1 in C2P" reversible="false">
+				<listOfReactants>
+					<speciesReference species="C2P_5" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CLB2_20" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kd3c1_147
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								C2P_5
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_247" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="C5P_7" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CLB5_22" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kd3c1_147
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								C5P_7
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofCLBinCP_248" fast="false" name="Degradation of CLB2 in C2P" reversible="false">
+				<listOfReactants>
+					<speciesReference species="C2P_5" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="SIC1P_51" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vdb2_63
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								C2P_5
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_249" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="C5P_7" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="SIC1P_51" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vdb5_64
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								C5P_7
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="CDCanotherCKIlikeSIC_250" fast="false" name="CDC6, another CKI like SIC1" reversible="false">
+				<listOfProducts>
+					<speciesReference species="CDC6_14" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:plus/>
+									<math:ci>
+										
+										
+										ksf_200
+									
+									
+									</math:ci>
+									<math:apply>
+										<math:times/>
+										<math:ci>
+											
+											
+											ksf_201
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											SWI5_54
+										
+										
+										</math:ci>
+									</math:apply>
+								</math:apply>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										ksf_202
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										SBF_49
+									
+									
+									</math:ci>
+								</math:apply>
+							</math:apply>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_251" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDC6_14" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDC6P_15" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vkpf6_70
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC6_14
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_252" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDC6P_15" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDC6_14" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vppf6_73
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC6P_15
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_253" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDC6P_15" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kd3f6_148
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC6P_15
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_254" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CLB2_20" stoichiometry="1"/>
+					<speciesReference species="CDC6_14" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="F2_29" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_2_221
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kasf2_134
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CLB2_20
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC6_14
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_255" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="F2_29" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CLB2_20" stoichiometry="1"/>
+					<speciesReference species="CDC6_14" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdif2_160
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								F2_29
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_256" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CLB5_22" stoichiometry="1"/>
+					<speciesReference species="CDC6_14" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="F5_31" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_2_221
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kasf5_135
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CLB5_22
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC6_14
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_257" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="F5_31" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CLB5_22" stoichiometry="1"/>
+					<speciesReference species="CDC6_14" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdif5_161
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								F5_31
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_258" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="F2_29" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="F2P_30" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vkpf6_70
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								F2_29
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_259" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="F2P_30" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="F2_29" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vppf6_73
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								F2P_30
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_260" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="F5_31" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="F5P_32" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vkpf6_70
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								F5_31
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_261" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="F5P_32" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="F5_31" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vppf6_73
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								F5P_32
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_262" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="F2_29" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDC6_14" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vdb2_63
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								F2_29
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_263" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="F5_31" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDC6_14" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vdb5_64
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								F5_31
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_264" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="F2P_30" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CLB2_20" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kd3f6_148
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								F2P_30
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_265" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="F5P_32" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CLB5_22" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kd3f6_148
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								F5P_32
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_266" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="F2P_30" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDC6P_15" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vdb2_63
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								F2P_30
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_267" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="F5P_32" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDC6P_15" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vdb5_64
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								F5P_32
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="SynthesisofSWI_268" fast="false" name="Synthesis of SWI5" reversible="false">
+				<listOfProducts>
+					<speciesReference species="SWI5_54" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:plus/>
+								<math:ci>
+									
+									
+									ksswi_210
+								
+								
+								</math:ci>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										ksswi_211
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										MCM1_38
+									
+									
+									</math:ci>
+								</math:apply>
+							</math:apply>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofSWI_269" fast="false" name="Degradation of SWI5" reversible="false">
+				<listOfReactants>
+					<speciesReference species="SWI5_54" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdswi_170
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								SWI5_54
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofSWIP_270" fast="false" name="Degradation of SWI5P" reversible="false">
+				<listOfReactants>
+					<speciesReference species="SWI5P_55" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdswi_170
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								SWI5P_55
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="ActivationofSWI_271" fast="false" name="Activation of SWI5" reversible="false">
+				<listOfReactants>
+					<speciesReference species="SWI5P_55" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="SWI5_54" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									kaswi_138
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									CDC14_8
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:ci>
+								
+								
+								SWI5P_55
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="InactivationofSWI_272" fast="false" name="Inactivation of SWI5" reversible="false">
+				<listOfReactants>
+					<speciesReference species="SWI5_54" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="SWI5P_55" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									kiswi_180
+								
+								
+								</math:ci>
+								<math:ci>
+									
+									
+									CLB2_20
+								
+								
+								</math:ci>
+							</math:apply>
+							<math:ci>
+								
+								
+								SWI5_54
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="ActivationofIEP_273" fast="false" name="Activation of IEP" reversible="false">
+				<listOfReactants>
+					<speciesReference species="IE_33" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="IEP_34" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								MichaelisMenten_220
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vaiep_59
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Jaiep_107
+							
+							
+							</math:ci>
+							<math:cn>
+								
+								
+								1.0
+							
+							
+							</math:cn>
+							<math:ci>
+								
+								
+								IE_33
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="Inactivation_274" fast="false" name="Inactivation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="IEP_34" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="IE_33" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								MichaelisMenten_220
+							
+							
+							</math:ci>
+							<math:cn>
+								
+								
+								1.0
+							
+							
+							</math:cn>
+							<math:ci>
+								
+								
+								Jiiep_114
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kiiep_176
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								IEP_34
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="SynthesisofinactiveCDC_275" fast="false" name="Synthesis of inactive CDC20" reversible="false">
+				<listOfProducts>
+					<speciesReference species="CDC20i_13" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:plus/>
+								<math:ci>
+									
+									
+									ks_189
+								
+								
+								</math:ci>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										ks_190
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										MCM1_38
+									
+									
+									</math:ci>
+								</math:apply>
+							</math:apply>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofinactiveCDC_276" fast="false" name="Degradation of inactiveCDC20" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDC20i_13" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kd20_143
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC20i_13
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofactiveCDC_277" fast="false" name="Degradation of active CDC20" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDC20_12" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kd20_143
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC20_12
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="ActivationofCDC_278" fast="false" name="Activation of CDC20" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDC20i_13" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDC20_12" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:plus/>
+								<math:ci>
+									
+									
+									ka_124
+								
+								
+								</math:ci>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										ka_125
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										IEP_34
+									
+									
+									</math:ci>
+								</math:apply>
+							</math:apply>
+							<math:ci>
+								
+								
+								CDC20i_13
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="Inactivation_274" fast="false" name="Inactivation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDC20_12" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDC20i_13" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								MAD2_36
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC20_12
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_279" fast="false" name="" reversible="false">
+				<listOfProducts>
+					<speciesReference species="CDH1_17" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kscdh_199
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_280" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDH1_17" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdcdh_156
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDH1_17
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_281" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDH1i_18" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdcdh_156
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDH1i_18
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="Activation_282" fast="false" name="Activation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDH1i_18" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDH1_17" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								MichaelisMenten_220
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vacdh_58
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Jacdh_106
+							
+							
+							</math:ci>
+							<math:cn>
+								
+								
+								1.0
+							
+							
+							</math:cn>
+							<math:ci>
+								
+								
+								CDH1i_18
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="Inactivation_274" fast="false" name="Inactivation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDH1_17" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDH1i_18" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								MichaelisMenten_220
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vicdh_67
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Jicdh_113
+							
+							
+							</math:ci>
+							<math:cn>
+								
+								
+								1.0
+							
+							
+							</math:cn>
+							<math:ci>
+								
+								
+								CDH1_17
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_283" fast="false" name="" reversible="false">
+				<listOfProducts>
+					<speciesReference species="CDC14_8" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								ks14_187
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_284" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDC14_8" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kd14_139
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC14_8
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="AssocwithNETtoformRENT_285" fast="false" name="Assoc. with NET1 to form RENT" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDC14_8" stoichiometry="1"/>
+					<speciesReference species="NET1_40" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="RENT_47" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_2_221
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kasrent_136
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC14_8
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								NET1_40
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DissocfromRENT_286" fast="false" name="Dissoc. from RENT" reversible="false">
+				<listOfReactants>
+					<speciesReference species="RENT_47" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="NET1_40" stoichiometry="1"/>
+					<speciesReference species="CDC14_8" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdirent_162
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								RENT_47
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="AssocwithNETPtoformRENTP_287" fast="false" name="Assoc with NET1P to form RENTP" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDC14_8" stoichiometry="1"/>
+					<speciesReference species="NET1P_41" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="RENTP_48" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_2_221
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kasrentp_137
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC14_8
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								NET1P_41
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DissocfromRENP_288" fast="false" name="Dissoc. from RENP" reversible="false">
+				<listOfReactants>
+					<speciesReference species="RENTP_48" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDC14_8" stoichiometry="1"/>
+					<speciesReference species="NET1P_41" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdirentp_163
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								RENTP_48
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_289" fast="false" name="" reversible="false">
+				<listOfProducts>
+					<speciesReference species="NET1_40" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								ksnet_205
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_290" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="NET1_40" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdnet_165
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								NET1_40
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_291" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="NET1P_41" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdnet_165
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								NET1P_41
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="NETphosphorylation_292" fast="false" name="NET1 phosphorylation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="NET1_40" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="NET1P_41" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vkpnet_71
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								NET1_40
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="dephosphorylation_293" fast="false" name="dephosphorylation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="NET1P_41" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="NET1_40" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vppnet_74
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								NET1P_41
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="RENTphosphorylation_294" fast="false" name="RENT phosphorylation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="RENT_47" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="RENTP_48" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vkpnet_71
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								RENT_47
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="dephosphorylation_293" fast="false" name="dephosphorylation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="RENTP_48" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="RENT_47" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vppnet_74
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								RENTP_48
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofNETinRENT_295" fast="false" name="Degradation of NET1 in RENT" reversible="false">
+				<listOfReactants>
+					<speciesReference species="RENT_47" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDC14_8" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdnet_165
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								RENT_47
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofNETPinRENTP_296" fast="false" name="Degradation of NET1P in RENTP" reversible="false">
+				<listOfReactants>
+					<speciesReference species="RENTP_48" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDC14_8" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdnet_165
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								RENTP_48
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofCDCinRENT_297" fast="false" name="Degradation of CDC14 in RENT" reversible="false">
+				<listOfReactants>
+					<speciesReference species="RENT_47" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="NET1_40" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kd14_139
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								RENT_47
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofCDCinRENTP_298" fast="false" name="Degradation of CDC14 in RENTP" reversible="false">
+				<listOfReactants>
+					<speciesReference species="RENTP_48" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="NET1P_41" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kd14_139
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								RENTP_48
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="TEMactivation_299" fast="false" name="TEM1 activation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="TEM1GDP_56" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="TEM1GTP_57" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								MichaelisMenten_220
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								LTE1_35
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Jatem_110
+							
+							
+							</math:ci>
+							<math:cn>
+								
+								
+								1.0
+							
+							
+							</math:cn>
+							<math:ci>
+								
+								
+								TEM1GDP_56
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="inactivation_300" fast="false" name="inactivation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="TEM1GTP_57" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="TEM1GDP_56" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								MichaelisMenten_220
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								BUB2_2
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Jitem_117
+							
+							
+							</math:ci>
+							<math:cn>
+								
+								
+								1.0
+							
+							
+							</math:cn>
+							<math:ci>
+								
+								
+								TEM1GTP_57
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="CDCactivation_301" fast="false" name="CDC15 activation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDC15i_11" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDC15_10" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:plus/>
+									<math:apply>
+										<math:times/>
+										<math:ci>
+											
+											
+											ka_121
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											TEM1GDP_56
+										
+										
+										</math:ci>
+									</math:apply>
+									<math:apply>
+										<math:times/>
+										<math:ci>
+											
+											
+											ka_122
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											TEM1GTP_57
+										
+										
+										</math:ci>
+									</math:apply>
+								</math:apply>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										ka15p_123
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										CDC14_8
+									
+									
+									</math:ci>
+								</math:apply>
+							</math:apply>
+							<math:ci>
+								
+								
+								CDC15i_11
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="inactivation_300" fast="false" name="inactivation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="CDC15_10" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="CDC15i_11" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								ki15_173
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								CDC15_10
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="PPXsynthesis_302" fast="false" name="PPX synthesis" reversible="false">
+				<listOfProducts>
+					<speciesReference species="PPX_46" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								ksppx_208
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="degradation_303" fast="false" name="degradation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="PPX_46" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vdppx_66
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								PPX_46
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="PDSsynthesis_304" fast="false" name="PDS1 synthesis" reversible="false">
+				<listOfProducts>
+					<speciesReference species="PDS1_44" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:plus/>
+								<math:apply>
+									<math:plus/>
+									<math:ci>
+										
+										
+										kspds_207
+									
+									
+									</math:ci>
+									<math:apply>
+										<math:times/>
+										<math:ci>
+											
+											
+											kspds_188
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											SBF_49
+										
+										
+										</math:ci>
+									</math:apply>
+								</math:apply>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										kspds_191
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										MCM1_38
+									
+									
+									</math:ci>
+								</math:apply>
+							</math:apply>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="degradation_303" fast="false" name="degradation" reversible="false">
+				<listOfReactants>
+					<speciesReference species="PDS1_44" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vdpds_65
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								PDS1_44
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DegradationofPDSinPE_305" fast="false" name="Degradation of PDS1 in PE" reversible="false">
+				<listOfReactants>
+					<speciesReference species="PE_45" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="ESP1_27" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								Vdpds_65
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								PE_45
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="AssocwithESPtoformPE_306" fast="false" name="Assoc. with ESP1 to form PE" reversible="false">
+				<listOfReactants>
+					<speciesReference species="PDS1_44" stoichiometry="1"/>
+					<speciesReference species="ESP1_27" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="PE_45" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_2_221
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kasesp_133
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								PDS1_44
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								ESP1_27
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="DissofromPE_307" fast="false" name="Disso. from PE" reversible="false">
+				<listOfReactants>
+					<speciesReference species="PE_45" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="PDS1_44" stoichiometry="1"/>
+					<speciesReference species="ESP1_27" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdiesp_159
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								PE_45
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_308" fast="false" name="" reversible="false">
+				<listOfProducts>
+					<speciesReference species="ORI_43" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									ksori_206
+								
+								
+								</math:ci>
+								<math:apply>
+									<math:plus/>
+									<math:apply>
+										<math:times/>
+										<math:ci>
+											
+											
+											eorib5_99
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											CLB5_22
+										
+										
+										</math:ci>
+									</math:apply>
+									<math:apply>
+										<math:times/>
+										<math:ci>
+											
+											
+											eorib2_98
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											CLB2_20
+										
+										
+										</math:ci>
+									</math:apply>
+								</math:apply>
+							</math:apply>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_309" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="ORI_43" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdori_166
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								ORI_43
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_310" fast="false" name="" reversible="false">
+				<listOfProducts>
+					<speciesReference species="BUD_3" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:times/>
+								<math:ci>
+									
+									
+									ksbud_196
+								
+								
+								</math:ci>
+								<math:apply>
+									<math:plus/>
+									<math:apply>
+										<math:plus/>
+										<math:apply>
+											<math:times/>
+											<math:ci>
+												
+												
+												ebudn2_82
+											
+											
+											</math:ci>
+											<math:ci>
+												
+												
+												CLN2_24
+											
+											
+											</math:ci>
+										</math:apply>
+										<math:apply>
+											<math:times/>
+											<math:ci>
+												
+												
+												ebudn3_83
+											
+											
+											</math:ci>
+											<math:ci>
+												
+												
+												CLN3_25
+											
+											
+											</math:ci>
+										</math:apply>
+									</math:apply>
+									<math:apply>
+										<math:times/>
+										<math:ci>
+											
+											
+											ebudb5_81
+										
+										
+										</math:ci>
+										<math:ci>
+											
+											
+											CLB5_22
+										
+										
+										</math:ci>
+									</math:apply>
+								</math:apply>
+							</math:apply>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_311" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="BUD_3" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdbud_155
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								BUD_3
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_312" fast="false" name="" reversible="false">
+				<listOfProducts>
+					<speciesReference species="SPN_53" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:apply>
+								<math:divide/>
+								<math:apply>
+									<math:times/>
+									<math:ci>
+										
+										
+										ksspn_209
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										CLB2_20
+									
+									
+									</math:ci>
+								</math:apply>
+								<math:apply>
+									<math:plus/>
+									<math:ci>
+										
+										
+										Jspn_120
+									
+									
+									</math:ci>
+									<math:ci>
+										
+										
+										CLB2_20
+									
+									
+									</math:ci>
+								</math:apply>
+							</math:apply>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_313" fast="false" name="" reversible="false">
+				<listOfReactants>
+					<speciesReference species="SPN_53" stoichiometry="1"/>
+				</listOfReactants>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_1_222
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								kdspn_169
+							
+							
+							</math:ci>
+							<math:ci>
+								
+								
+								SPN_53
+							
+							
+							</math:ci>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_314" fast="false" name="" reversible="false">
+				<listOfProducts>
+					<speciesReference species="MAD2_36" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:cn>
+								
+								
+								0.0
+							
+							
+							</math:cn>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_315" fast="false" name="" reversible="false">
+				<listOfProducts>
+					<speciesReference species="LTE1_35" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:cn>
+								
+								
+								0.0
+							
+							
+							</math:cn>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+			<reaction id="_316" fast="false" name="" reversible="false">
+				<listOfProducts>
+					<speciesReference species="BUB2_2" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math:math>
+						<math:apply>
+							<math:ci>
+								
+								
+								Mass_Action_0_223
+							
+							
+							</math:ci>
+							<math:cn>
+								
+								
+								0.0
+							
+							
+							</math:cn>
+						</math:apply>
+					</math:math>
+				</kineticLaw>
+			</reaction>
+		</listOfReactions>
+	</model>
+</sbml>
+
+

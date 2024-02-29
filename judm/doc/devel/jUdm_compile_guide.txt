@@ -1,0 +1,67 @@
+jUdm_compile_guide.txt
+The requirements and a step-by-step guide to compile jUdm source files
+--------------------------------------------------------------------------------------------
+
+Requirements:
+-------------------
+	J2SDK 1.4.2 (or later) as Java Runtime Environment 
+
+Step-by-step guide:
+-------------------------
+	1. Compile and build the UDM_NS solution
+		follow the guidelines described in the "Udm_ns compile guide" to compile UDM_ns
+
+	2. Set up ANT tool
+	   (Note: if you have used scripts/vc*-env.bat to set up the environment, then skip this step)
+	   Before running ant, some additional set up must be done:
+		  - Add the bin directory to the PATH 
+		  - Set the ANT_HOME environment variable to the directory 
+		    where Ant is  installed (you can use the udm_3rdparty/ant directory)
+		  - Set the JAVA_HOME environment variable to the directory 
+		    where JDK (< 1.4.2) is installed
+		  - Add %ANT_HOME%\lib, %UDM_3RDPARTY_PATH%\junit\junit.jar and current directory to the classpath
+		
+		    Example: Windows OS
+		             Ant is installed in c:\ant\
+		
+		             set ANT_HOME=c:\ant
+		             set JAVA_HOME=c:\jdk1.4.2
+		             set PATH=%PATH%;%ANT_HOME%\bin
+		             set CLASSPATH=%CLASSPATH%;%ANT_HOME%\lib;%UDM_3RDPARTY_PATH%\junit\junit.jar;.
+
+	3. Open a command shell and go to the directory <udm_ns>\judm. 
+		Using the wrapper script ..\scripts\run-ant-on-judm.bat you can run the following targets:
+
+		5.1 ..\scripts\run-ant-on-judm.bat <select Udm build parameters> rebuild
+			Target “rebuild” re-initializes the build’s distribution environment 
+			(<udm_ns>\judm\build\build_win) after completely removing any previous build
+			from the disk, copies the necessary dll-s into this build directory, 
+			updates, re-generates and compiles the swig and domain-specific source codes, 
+			creates jar files (jUdm and other domain-specific jar files), updates batch files, and
+			generates javadoc API documentation.
+
+		    For example:
+		    ..\scripts\run-ant-on-judm.bat VC9 Debug rebuild
+
+		5.2 ..\scripts\run-ant-on-judm.bat <select Udm build parameters> build
+			Target “build” re-initializes the build’s distribution environment 
+			(<udm_ns>\judm\build\build_win), copies the necessary dll-s into this build directry, 
+			compiles the swig and domain-specific source codes.
+			This task requires the existence of the swig and domain-specific source codes, so you
+			have to run either "rebuild" or "generate" task prior running this task.
+
+		5.3 ..\scripts\run-ant-on-judm.bat <select Udm build parameters> compile
+			Target “compile” re-initializes the build’s distribution environment 
+			(<udm_ns>\judm\build\build_win) by copying the necessary dll-s into this build directory 
+			and compiling the swig and domain-specific source codes.
+			This task does not update the source codes.
+			This task requires the existence of the swig and domain-specific source codes, so you
+			have to run either "rebuild" or "generate" task prior running this task.
+
+		5.4 ..\scripts\run-ant-on-judm.bat <select Udm build parameters> generate
+			Target “generate” re-initializes the build’s distribution environment 
+			(<udm_ns>\judm\build\build_win) by copying the necessary dll-s into this build directory, 
+			and updating, re-generating the swig and domain-specific source codes.
+			This task updates the source codes.
+			
+

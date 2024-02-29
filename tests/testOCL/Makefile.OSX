@@ -1,0 +1,23 @@
+include ../../Makefile.OSX.incl
+
+BUILT_SOURCES=SBML2.cpp
+CLEANFILES=$(BUILT_SOURCES) SBML2.h SBML2.dtd SBML2.xsd SBML2_xsd.h SBML2_sbml_xsd.h SBML2_math_xsd.h SBML2_math.dtd SBML2_math.xsd SBML2_sbml.dtd SBML2_sbml.xsd
+SOURCES=$(BUILT_SOURCES) main.cpp Test.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS) testOcl
+
+$(BUILT_SOURCES):SBML2_udm.xml ../../bin/Udm
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -v -d ../../etc -t -T -v -g -u math=http://www.w3.org/1998/Math/MathML -u sbml=http://www.sbml.org/sbml/level2
+
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) -I $(CPPUNIT)/include $< -o $@
+
+testOcl: $(OBJECTS)
+	$(CC) $(BCFLAGS) $(OBJECTS) -o testOcl -lUdm -L../../lib -lcppunit -L $(CPPUNITLIBS)
+
+test:testOcl
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ./testOcl
+
+clean: 
+	rm -f *.o  testOcl $(CLEANFILES) testmodel.udm test_out.xml

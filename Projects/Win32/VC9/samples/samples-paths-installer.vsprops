@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="samples-paths"
+	OutputDirectory="$(ConfigurationName)"
+	IntermediateDirectory="$(OutDir)"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="$(UDM_PATH)\include;$(GenPath)"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalLibraryDirectories="$(UDM_PATH)\lib"
+	/>
+	<Tool
+		Name="VCPreBuildEventTool"
+		CommandLine=""
+	/>
+	<Tool
+		Name="VCResourceCompilerTool"
+		AdditionalIncludeDirectories="$(UDM_PATH)\include;$(GenPath)"
+	/>
+	<UserMacro
+		Name="GenPath"
+		Value="$(OutDir)"
+		PerformEnvironmentSet="true"
+	/>
+	<UserMacro
+		Name="SourceDir"
+		Value="$(ProjectDir)"
+		PerformEnvironmentSet="true"
+	/>
+	<UserMacro
+		Name="ReleaseGenPath"
+		Value="$(OutDir)"
+		PerformEnvironmentSet="true"
+	/>
+	<UserMacro
+		Name="DebugGenPath"
+		Value="$(OutDir)"
+	/>
+</VisualStudioPropertySheet>

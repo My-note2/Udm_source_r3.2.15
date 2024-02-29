@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "mga.dtd">
+
+<project guid="{DD1F0CA5-BB21-42FE-B5E9-2FCFE6E66A06}" cdate="Wed Jul 21 11:51:49 2010" mdate="Wed Jul 21 11:51:49 2010" version="" metaguid="{76131D79-E564-499C-8F90-8E71CA695E46}" metaversion="" metaname="UdmPythonTestMeta">
+	<name>RootFolder</name>
+	<comment></comment>
+	<author></author>
+	<folder id="id-006a-00000001" relid="0x1" childrelidcntr="0x1" kind="RootFolder" guid="{f20afcf4-5cf2-4ab9-ac3c-2532e73b1105}">
+		<name>RootFolder</name>
+		<model id="id-0065-00000001" kind="Container" guid="{7faee418-2bde-46e1-9fb2-4d1ae71cafab}" relid="0x1" childrelidcntr="0xb">
+			<name>NewContainer</name>
+			<model id="id-0065-00000002" kind="Container" role="Container" guid="{6cfff06f-2c0c-413e-b74b-aaced90b6c63}" relid="0xa" childrelidcntr="0x0">
+				<name>Container</name>
+				<regnode name="PartRegs" status="undefined">
+					<value></value>
+					<regnode name="Aspect" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>70,154</value>
+						</regnode>
+					</regnode>
+				</regnode>
+			</model>
+			<atom id="id-0066-00000001" kind="AtomA" role="AtomA" guid="{2ad836dd-61ae-405c-90ac-8ae3695aeb40}" relid="0x6">
+				<name>AtomA1</name>
+				<regnode name="PartRegs" status="undefined">
+					<value></value>
+					<regnode name="Aspect" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>68,299</value>
+						</regnode>
+					</regnode>
+				</regnode>
+				<attribute kind="boolattr">
+					<value>true</value>
+				</attribute>
+				<attribute kind="intattr">
+					<value>42</value>
+				</attribute>
+				<attribute kind="stringattr">
+					<value>teststring</value>
+				</attribute>
+			</atom>
+			<atom id="id-0066-00000002" kind="AtomB" role="cmproleA" guid="{22f26c44-9fc0-4067-9e2a-874c9b3b1284}" relid="0x7">
+				<name>cmproleA1</name>
+				<regnode name="PartRegs" status="undefined">
+					<value></value>
+					<regnode name="Aspect" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>68,411</value>
+						</regnode>
+					</regnode>
+				</regnode>
+			</atom>
+			<atom id="id-0066-00000003" kind="AtomB" role="cmproleB" guid="{5c109cda-932e-4152-8090-b230ed8216c6}" relid="0x8">
+				<name>cmproleB1</name>
+				<regnode name="PartRegs" status="undefined">
+					<value></value>
+					<regnode name="Aspect" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>285,411</value>
+						</regnode>
+					</regnode>
+				</regnode>
+			</atom>
+			<atom id="id-0066-00000004" kind="AtomB" role="cmproleA" guid="{682d98b9-9923-43f4-ab6c-f48ebc23e7bb}" relid="0x9">
+				<name>cmproleA2</name>
+				<regnode name="PartRegs" status="undefined">
+					<value></value>
+					<regnode name="Aspect" status="undefined">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>194,411</value>
+						</regnode>
+					</regnode>
+				</regnode>
+			</atom>
+			<connection id="id-0068-00000001" kind="Connection" role="Connection" guid="{e5fc52e1-0b46-4d6b-9693-e280fc7e334a}" relid="0xb">
+				<name>Connection</name>
+				<regnode name="srcLabel1" isopaque="yes">
+					<value>src</value>
+				</regnode>
+				<connpoint role="src" target="id-0066-00000002"/>
+				<connpoint role="dst" target="id-0066-00000004"/>
+			</connection>
+		</model>
+	</folder>
+</project>

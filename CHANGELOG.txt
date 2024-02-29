@@ -1,0 +1,1349 @@
+------------
+Unified Data Model (UDM)
+------------
+
+This archive contains the UDM package developed by ISIS / Vanderbilt University.
+
+------------
+Copyright
+------------
+
+
+
+Copyright (c) Vanderbilt University, 2000-2007
+
+Permission is granted to use this software for academic/research purposes
+
+ALL RIGHTS RESERVED
+Vanderbilt University disclaims all warranties with regard to this
+software, including all implied warranties of merchantability
+and fitness.  In no event shall Vanderbilt University be liable for
+any special, indirect or consequential damages or any damages
+whatsoever resulting from loss of use, data or profits, whether
+in an action of contract, negligence or other tortious action,
+arising out of or in connection with the use or performance of
+this software.
+
+
+-------------------
+Directory structure
+-------------------
+
+/bin			binary executables and DLLs
+/doc			documentation
+/etc			essential diagrams, DTDs, conversion XSL scripts
+/3rdParty		third party libraries and tools used by this packages
+/include		UDM C++ include files
+/samples		sample data models and UDM applications
+/lib			UDM static libraries
+
+
+-------
+Credits
+-------
+
+	Miklos Maroti <mmaroti@math.vanderbilt.edu>			- original screenplay
+	Arpad Bakay <arpad.bakay@vanderbilt.edu>			- developer & maintainer(-2002) 
+	Endre Magyari <endre.magyari@vanderbilt.edu>			- developer & current maintaine
+	Tihamer Levendovszky <tihamer.levendovszky@vanderbilt.edu>	- UdmTomi developer
+	Tamas Paka<tamas.paka@vanderbilt.edu>				- Constraint Manager developer
+
+
+--------------------
+Contact and support
+--------------------
+Contact Endre Magyari for support.
+Upgrades, accessories are posted to http://www.isis.vanderilt.edu/Projects/mobies/default.html
+
+
+-----------------
+DOCUMENTATION
+-----------------
+
+Please see /Documents/UDMAPI.pdf for further documentation.
+
+-----------------
+Changelog 
+-----------------
+08/31/09	-	Release 3.2.1
+		
+		- 	Performance improvements in MEM and DOM backends
+		- 	Performance improvements in the data network copy tool, UdmCopy
+		- 	C++ generic programming code is genereated only if Udm is called with parameter --leesa
+		- 	Improved concepts and typelists for representing composition relationships in the generic programming API
+		-	add udm interpreter visual studio project wizard
+		- 	GME 9.8.28 compatibility
+		- 	upgrade to xerces 2_8_0
+		-	upgrade to xalan 1_11
+		-	upgrade to boost 1.36
+
+11/3/08		-	Release 3.1.3
+
+		-	Support for attaching of data-networks as libraries, similar to GME libraries; emulate libraries in DOM and MEM backends
+		-	In the generated C++ code expose more type information using traits
+		-	Generated C++ code has new types and member function templates, to support generic programming
+		-	Default values of real attributes are not truncated anymore to six digits
+		-	Small memory leak fixes in OCL code
+
+6/29/07		-	Release 3.1.2
+
+		-	GME 7.6.29 support
+		- 	GME namespaces are supported genuinely by the MGA backend
+		- 	If no name is defined for the child role of a composition that has
+			the parent and child classes in different namespaces, then the generated name 
+			for the child role will contain the full path of the child class, instead of 
+			the name of the child class. Things affected by this change:
+		    	- results returned by UML::MakeRoleName() and UML::MakeShortRoleName()
+		    	- name of kind_children() and kind_children_sorted() methods in generated C++ code
+		    	- values of "__child_as" attribute in DOM backend
+  		- 	Diagram initialization from another diagram works correctly
+		- 	Generated C++ code initializes meta objects correctly when there are associations 
+			with ends in different namespaces
+		- 	Order of elements in DOM data networks match again the order defined by the 
+			corresponding XML Schema
+		- 	XML Schema generation bug fixes related to namespace support
+		- 	UdmOclPat interpreter improvements:
+			- fixed some bugs that caused crashes
+			- line numbers in error messages are accurate now
+			- fix determination of method implementation to call when a polymorphic method is invoked
+
+11/22/06	-	Release 3.1.1
+
+		-	GME 6.11.9 support
+		-	Nested UML namespaces
+		-	Helper classes used to access object attributes now have a same-class assignment operator
+		-	Added support to get/set the GME model annotations
+		-	UdmPseudoObject implements interface Comparable and overrides method hashCode()
+		-	Various bug fixes for object hierarchy copy
+		-	When generating the XSD schema, the list of global elements will include the classes which 
+			are contained only by abstract superclasses
+		-	Fix bugs that made attributes of instantiated/derived objects "desynched" from the archetype
+		-	Preserve synched/desynched status when copying objects
+		-	Added ObjectImpl::getAttrStatus() and ObjectImpl::getTempAttrStatus() to get the 
+			synched/desynched status of the value of attributes
+
+04/06/06		Release 3.0.1
+
+		-	GME 5.11.18 support
+		-	Upgraded to Visual studio 8
+		-	Fix UdmProject to work when the name of root folders is 
+			longer than 50 characters.
+		-	The UML2XML interpreter now sets the association and composition
+			names even if they have not been changed from the default
+			"Association", "Composition" respectively.
+		- 	The UML2XML interpreter has been rewritten to use UdmDom data
+  			networks and UdmProjects.
+		-	Fix naming of cross classes in crosslink diagrams.
+		-	Optimize Udm to speed up the generation of C code.
+		-	Namespace related speed improvements in UdmDom backend.
+		-	Enhanced UdmGme backend to support references that have an 
+			abstract UML class.
+		-	DataNetwork::GetAllInstancesOf() detects loops in the fast traversal
+			mode and switches to a slower mode.
+		-	OCL fixes related to the naming of OCL types.
+		-	When interpreting UML models, the name of the diagrams can be
+			overridden by the "alias" attribute of the corresponding Package.
+
+11/07/05		Release 3.00
+
+		
+		-	Enhanced GME reference port issues - the helper connections can be accessed even if the GME datanetwork was not created with UDM.
+		-	Enhancing the functionality of GetAdjacentObjects() family of functions to return multiset-s, with eventually multiple copies of the same instance. The original functions 
+			were replaced by GetAdjacentUniqueObjects().
+		-	Compiled Linux_build.txt to describe how to build the package on Linux platforms;
+		-	Removed all cint related stuff
+		-	UdmPOI library introduced for UdmPseudoObject Interface.
+		- 	Java codegenerator, java support w/ SWIG; Renamed udmCint to UdmSwig
+		-	Added Namespace support 
+
+
+
+06/16/05		Release 2.23
+
+		-	Upgraded to VC71
+
+11/12/04	-	Release 2.21
+
+		-	Require GME4 R4.11.10
+		-	Updated to xerces_2_5
+		-	Updated to xalan_1_8	
+		- 	Updated UdmCopy functions to also handle copying object hierarchies within the same datanetwork,
+			with peers, archetypes and references "out of the box".
+		- 	Small UdmDom bug: FUll XSD path is included in XML header
+		- 	Text attributes are also supported, which get persisted in XML as Text nodes.
+		- 	Silent mode UML2XML
+		-	Please note the change of the software license. 
+
+09/28/04	-	Release 2.20
+
+		-	Compatible with GME 4.8.25
+		-	UDM Interpreter Wizard is provided
+		-	CppUnit testprojects are provided.
+		-	UdmTomi::DeleteObject() bugfix, the object on which DeleteObject is called not it is a null UDM object.
+		-	UdmDom bugfix regarding the ordering of the subelements in the saved XML file, in certain situations the ordering of
+			the sublements did not respect the corresponding XSD file.
+		- 	Bugfixes for the reported bugs on JIRA site: (UDM-10, UDM-11, UDM-13, UDM-14, UDM-15, UDM-16, UDM-17)
+			(the JIRA site is located at http://escher.isis.vanderbilt.edu/JIRA/secure/IssueNavigator.jspa?reset=true&mode=hide&pid=10053)
+		-	Please note the change of the software license. 
+
+06/18/04	-	Release 2.19
+
+
+		- 	udm.exe -c (CORBA switch) switch bug fixed. Now, it works for .udm files containing cross links.
+		-	The bug associated with "Heap limit reached" and "Too many exception handlers" compiler errors 
+			for large class diagrams fixed. The initialize function is now broken down into many different functions
+		-	Please note the change of the software license. 
+
+06/04/04	-	Release 2.18
+
+
+		- 	Added Udm::BaseVisitor class and Udm::Object::Accept(const BaseVisitor&) virtual functions
+		-	Removed the typedef Udm::Object Object type definition from generated code,
+			thus the generated namespace is not polluated.
+		-	Added a -x switch to Udm.exe. When using this switch a different .xsd file is generated,
+			which also reflects the inheritance relationships between the types and the abstractness 
+			pf the classes. However, he such generated XSD is not usable for validation, it's intended 
+			to use with other code generators which need an XSD file as input.
+
+
+05/31/04	-	Release 2.17
+
+		-	Various code generation bugfixes
+		-	Changed the generated Initialize(const Uml::Diagram&) function to allow
+			intialization of the API from Diagrams that contain more than one role with the same 
+			target and name.
+
+
+
+05/21/04	-	Release 2.16
+
+		-	Recompiled with GME 4.5.18
+05/13/04	-	Release 2.15
+
+		- New UdmDom feature: 
+			
+			Udm DOM datanetwork can work on XML strings instead of XML files
+			by using CreateDataNetworkToString, OpenDataNetworkFromString DomDataNetwork 
+			member functions
+		
+		- New Udm.exe feature:
+
+			Dynamic META can be used with generated API, by calling an other initialize 
+			function, which, instead of creating the metaobjects, locates them in a previously
+			created or dynamically loaded Uml Diagram, and assigns the meta pointers in the API
+			
+		- Minor UdmStaticProject Bug 
+			
+			~UdmStaticProject did not delete a StaticDataNetwork created on heap by UdmStaticProject(),
+			this could cause in some rare cases problems when exiting from main().
+		
+		- connection supertype bugfix in UdmGme backend
+
+			The UdmGme backend did not allow the using of abstract or non-abstract connection superclasses.
+	
+
+04/28/04	-	Release 2.14
+
+		- MGA backend bugfixes: 
+			- Folder objects could not be deleted through UDM. 
+			- createChild bug scenario: 
+					- B is an abstract class
+					- B is contained in A with empty child role
+					- C is the only descendant of B
+					- crateChild() tries to create C in A	(exeception was thrown)
+		- cint_string enhacments:
+			- copy constrctor
+			- append operators for integer and character
+
+		- Udm::DataNetwork assignment operator bugfix: 
+			- The assignment operator did not remove existing objects from the detsination
+			datanetwork
+
+		- ordering of the sets returned by template classes in generated APIs:
+		ChildrenAttr, AssocAttr, AssocEndAttr, CrossAssocAttr, CrossAssocEndAttr, DerivedAttr, 
+		InstantiatedAttr
+			- API methods returning set<Type>-s of Udm objects will also have a sorted version,
+			with the '_sorted' ending. To these functions a comparer object can be passed, like
+			less<Type> or greater_equal<Type> which will sort the returned set<Type> accordingly.
+
+04/20/04	-	Release 2.13
+			
+			- Fixed StaticObject::setAssociation bug, which prevented adding/removing
+			"out of the box" links to instance objects
+			- Fixed detach() in each backend to also remove the placheholder object, if it exists
+			- Fixed UdmTOMI bug GetAssociationClassObjects, added boolean variable tryCrosslink
+
+04/14/04	-	Release 2.12
+
+			- Fixed ~StaticObject destructor bug.
+			- Fixed CreateLink(), DeleteLink() bug regarding temporary association 
+			between the objects of the same datanetwork
+			
+04/07/04	-	Release 2.11
+
+			- Added UdmTomi functions:
+
+				GetStrValue() to _int64 -  
+				SetStrValue() from _int64 -
+				GetIntValue() to _string - 
+				SetIntValue() from string -
+	
+			- Exported UdmStatic::CreateObject() in UdmDll.
+		
+04/05/04	-	Release 2.10
+
+			- Bugfix in StaticDataNetwork, which could cause a crash when a StaticObject was
+			destructed without a valid type reference (Uml::Class & m_type);
+			- Virtual destructor added to the generated Visitor class.
+
+03/29/04	-	Release 2.09
+
+			- Upgraded the following TOMI functions to work handle cross-package 
+			  associations(cross-datanetwork links): 
+				GetAdjacentObjects 
+				GetAssociationClassObjects
+				GetPeersFromAssociationClassObject
+				GetAssociationEnd
+				DeleteLink
+
+			- Minor bugfix in CreateLink UdmTomi function
+			- Bugfix in UML2XML interpreter
+			- cint_string linker error bugfix
+
+03/25/04	-	Release 2.08
+
+			- UdmCopy bug when the same datanetwork was copied twice with StaticDataNetwork as destination network,
+			  with dinamycally loaded XML meta
+			- Updated documentation
+			- Added the BackEndSemantics parameter to GmeDatNetwork's Openexisting() (for GME interpreters)
+
+03/15/04	-	Release 2.07
+
+			- Changed UdmDom backend's internal attributes names with _prefixed version
+			- Minor bugfix in UdmDom::DomObject::unqiueId()  which might have caused crashes
+			- Compiled with GME 4.3.12
+
+03/03/04	-	Release 2.06
+
+
+			- New method StaticUdmProject::Close(). StaticUdmProjects must be closed before closing
+			any participant DataNetwork
+			- StaticDataNetworkSpecifier can be constructed with all kinds of DataNetworks
+			- in the case of an array attribute, StaticObject::getStringAttr() retrieves a single string 
+			with the elements separated by ';'. (this is to ensure that all the backends behave in the same way)
+		
+
+02/27/04	-	Release 2.05
+
+		- Changed de UML paradigm
+			- Package Folder has been replaced by Package Model
+			- Package Folder is ignored by the interpreter, however it is still supported in the UML paradigm,
+			 to allow the importing existing UML models
+			- ClassDiagrams directly in root folder are ignored by interpreter, the UML paradigm allows them for 
+			the previous reason
+			- The Package model has a version attribute, which enables the versioning of the UDM interfaces.
+			- The UML meta-meta model has changed, Uml::Diagram has a version string.
+			- The version of a UML diagram is also recorded as XML processing instructions in the XSD/DTD files
+			- UdmDom checks the version of the interface compiled in the application against the version recorded in the DTD/XSD and 
+			will not load an XML if the version recorded in the XSD/DTD used to parse the XML does not match
+			the version of the interface compiled in the application
+
+			
+
+02/10/04	-	Release 2.04
+
+		- Recompiled with GME 4
+		- added general container() function to Udm::Object
+
+01/26/04	-	Release 2.03
+
+		- Linux Redhat 7.3 (gcc 2.96) RPMs released.
+
+
+01/19/04		- Release 2.02 (Bugfix release)
+
+		- CreateLink TOMI functions works with cross-link associations as well
+		- XSD generator allows classes having only self-containment relationships 
+		to be root objects. 
+
+		
+01/08/04		- Release 2.01 (Bugfix release)
+
+		- StaticUdmProject minor bug reported by Feng Shi fixed.
+
+12/24/03		- Release 2.00 final
+
+		- XSD Support for XML Backend
+		- StaticUdmProject supports in-memory UdmProject construction from existing datanetworks
+		
+
+08/10/03		- Release 2.00pre1
+
+	support for cross-package associations:
+		
+		- UML paradigm & interpretter changed:
+			-  "Package"-s can be placed in rootfolder, Class diagrams can be placed 
+				in packages.
+			-   If multiple packages exist in the UML model, a "UDM Project file" will be 
+				generated which will hold all the information which is needed
+				to generate the corresponding API. The "UDM Project file" is 
+				several datanetworks and DTDs compressed with ZIP technology
+
+			-   If there is only one package in the model, a normal XML will be generated as in
+				previous versions.
+
+			-   cross-package associations can be modelled by "copy"-ing a class with the 
+				"ClassCopy" reference mechanism from one package to another, and creating 
+				the association between a "local" class and the reference of a "remote" class.
+
+			- the XML export of the new UML paradigm can be found at etc\UmlMeta.xml
+		
+		- UDM.exe changed
+			
+			- UDM.exe can read both simple XML files and composite UDM packages specifying more 
+			UML diagrams with cross-package associations allowed. IN this later case appropiate code will
+			be generated. However, the generated code has the same namig convetions for access-methods for 
+			cross-package associations.
+		
+		- UDM framework.
+			
+			- a new class Udm::UdmProject has been introduced. The most important thing is that UDM can still work 
+			with DataNetworks. The use of UDM projects and UDM Project files is optional and it should be used
+			only when cross-package links are required.
+
+		- cross-link sample
+			
+			- a sample program exists which should make everything clear.
+			sample/cross_links
+
+
+06/21/03 		- Release 1.76
+
+	Memory leak fixes in MGA and DOM backend.
+
+
+05/21/03 - endre	- Release 1.74
+
+	UdmDom:		
+		- DTDs can be supplied as resources for the UdmDom backend. 
+		  However, if the DomDataNetwork::DTDPath is set, the backend will not
+		  search for the DTD in resources. It will search instead the path.
+	Udm.exe
+		- Udm.exe contains Uml.dtd as a resource. If the -d switch is used to specify
+		  a path for Uml.dtd, the one included as a resource won't be used.
+		- If you use Udm.exe with XMI input it is mandatory that:
+			- have OMG's Uml.dtd in the same directory with the input XML
+			- use the -d switch and provide the path for UDM's Uml.dtd
+			- make sure the XMI input is XMI 1.0/UML1.3 and has the 
+			<!DOCTYPE XMI SYSTEM "Uml.dtd"> in the header.
+	UdmXmi:
+		- minor bugfixes
+
+05/15/03 - endre	- Release 1.73
+
+	Bugfixes:
+		- UdmInt: Accidental rolleback of a previous fix in 
+			UdmPseudoObject::GetBoolVal() code.
+
+05/14/03 - endre	- Release 1.72
+
+	Bugfixes:
+		- UML2XML Interpreter:
+			- generated _id attributes were starting from "id00000" which
+			confused the UdmDom backend when reading the UML metamodel
+			- stereotype attributes in output XML files were printed as binary
+			data and not as strings
+		- UdmGME backend:
+			problem creating associations without association classes.
+			Fixed. (Reported by Adi)
+
+05/13/03 - endre	- Release 1.71
+
+	Bugfixes:
+		- detach() issue: a detach() call should not be a problem on an already detached
+			ObjectImpl. Fixed for all backends. (Attila Vizhanyo)
+		- 
+		- UdmCopy: Attributes for root objects were not copied
+		- UdmDom: - significant performance enhancements, specially in setAssociation() code
+			  - upgraded to xerces 2.2.0
+		- UdmXmi: - upgraded to Xalan 1.5.0
+
+04/27/03 - endre	_ Release 1.70
+
+	Bugfixes:
+
+		- Diagrams containing classes with multiple base classes and with no peer-parentrole 
+		named 'parent' resulted in invalid generated C++ code. (Reported by Brandon Eames and Aditya Agraval)
+
+		- UdmTomi bug: DeleteObject() should reset the object which was deleted (Reported by Attila Vizhanyo)
+		- MGA backend: detach() method was not implemented, so UdmTomi level DeleteObject() call could not work.
+		(Attila Vizhanyo)
+
+	New features: Integration of The Constraint Manager
+
+		- The UdmOcl static library provides OCL constraint checking capability on UDM datanetworks
+		- The GmeOclExprChecker GME add-on verifies all the constraints for validity at UML modeling time.
+		- Documentation upgraded.
+
+
+04/01/03 - endre	- Release 1.69
+
+	Mostly bugfixes:
+		- In rare situations, in instantiated/derived objects in the MEM backend
+		a duplicated links were created. (Andras)
+		
+		- workaround for MEM & DOM backend for supporting references. References
+		are supported in the same way (by UDM association w/o assoc class, with 
+		rolenames ref<->*), but a workaround was needed to correctly handle
+		the situations when references (objects with such links) are inherited/derived.(Andras)
+
+		- In some inheritence scenarios & user code the templated parent() methods of
+		generated classes could not be compiled. (Tamas)
+
+		- endless loop inside the detach() call in MEM backend. (Aditya)
+		
+		
+		
+ 
+04/01/03 - endre	- Release 1.68
+
+		MGA workaround, which supports connections through ports of model-references.
+		To be done: 
+			Constraint Manager integration
+			
+
+03/30/03 - endre	- Release 1.67
+
+		New features:
+			64 bit integer support requested by Benn A. Abbott and Zonghua Gu	
+
+			- MEM and DOM backend support 64 bit integers. 
+			notes:
+				- Because of operator ambiguities, long cast & assignment operators
+				had to be removed. This will results in compiler warnings whenever 
+				a UDM integer value is assigned to a compatible, but smaller datatype,
+				like 32bit long ints and longs.
+				- MGA backend does not support 64 bit integer attributes, values are
+				truncated to 32bit signed integers. 
+
+		Bugfixes:
+			- Negative numbers could not be specified as default values for 
+			  UML attributes. Reported by Sandeep. Fixed.
+
+			- MGA positions not always read correctly in case of multi-aspect 
+			  MGA paradigms. Reported by Feng.
+				
+			  To resolve ambiguity, in case of multi-aspect paradigm the position
+			  may be accessed by defining the corresponding UML attribute, named
+			  "position", of type string. This attribute may be of array or non-array 
+			  type. The following table explains how MGA positions can be accessed:
+
+			+--------------+--------------------+-------------------------------------+
+			|position att. | MGA Object has	    |Behaviour of MGA backend when	  |
+			|multiplicity  | multiple aspects   |	getting the position attribute	  |
+			+--------------+--------------------+-------------------------------------+
+			|single	       |no		    | A string is returned in the form:	  |
+			|(non-array)   |		    |  "(x,y)"	                          |
+			+--------------+--------------------+-------------------------------------+
+			|array	       |no		    | A vector<string> containing one     |
+			|	       |		    | string, in the form: "(x,y)"	  |
+			+--------------+--------------------+-------------------------------------+
+			|single	       |yes		    | A position string containing the    |
+			|(non-array)   |		    | positions in all aspects:		  |
+			|	       |		    | "asp1(x,y);asp2(x,y);...asp3(x,y);" |
+			+--------------+--------------------+-------------------------------------+
+			|array	       |yes		    |a vector<string>, containing a string|
+			|	       |		    |for each aspect, in the form:	  |
+			|	       |		    | "aspect_name(x,y)"			  |
+			+--------------+--------------------+-------------------------------------+
+
+
+			+--------------+--------------------+-------------------------------------+
+			|position att. | MGA Object has	    |Behaviour of MGA backend when	  |
+			|multiplicity  | multiple aspects   |	setting the position attribute	  |
+			+--------------+--------------------+-------------------------------------+
+			|single	       |no		    | A string is expected in the form:	  |
+			|(non-array)   |		    |  "(x,y)" or "(x,y);"	          |
+			+--------------+--------------------+-------------------------------------+
+			|array	       |no		    | A vector<string> is expected        |
+			|	       |		    | containing one string, 	  	  |
+			|	       |		    |	in the form: "(x,y)"		  |
+			+--------------+--------------------+-------------------------------------+
+			|single	       |yes		    | A string is expected containing     |
+			|(non-array)   |		    | positions in aspects:		  |
+			|	       |		    | "asp1(x,y);asp2(x,y);...asp3(x,y);" |
+			|	       |		    | or "(x,y)" or "(x,y);"		  |
+			|	       |		    |Note1:In aspects not listed positions|					  |
+			|	       |		    |remain the same.			  |
+			|	       |		    |Note2:If only one position is given  |
+			|	       |		    |w/o an aspect name, the position in  |
+			|	       |		    |primary aspect is changed.		  |   
+			+--------------+--------------------+-------------------------------------+
+			|array	       |yes		    |a vector<string> is expected,        |
+			|	       |		    |containing a string for each aspect, |
+			|	       |		    |in the form:			  |
+			|	       |		    |	 "aspect_name(x,y)"	          |
+			|	       |                    |or containing only one string in the |
+			|	       |		    |form: "(x,y)" 			  |
+			|	       |                    | Same notes apply as in previous     |
+			|	       |		    | section.				  |
+			+--------------+--------------------+-------------------------------------+
+			
+			
+			  In case of single-aspect paradigms, the returned string will have
+			  the same syntax: (x,y)
+			  In case of multi-aspect paradigms, the returned string will have
+			  the following syntax: Aspect1_name(x,y);Aspect2_name(x,y)...Aspectn_name(x,y);
+
+			  When the position is set with the string(x,y)
+			
+03/23/03 - endre	- Release 1.66
+	
+		Ported to STLPort. 
+		To be done:
+			- Constraint Manager integration
+			- MGA issue: connections through reference ports can not be set
+
+
+
+03/19/03 - endre	- Release 1.65
+
+	Various bugfixes:
+		- Sandeep's note about mandatory attributes without 
+		  having a default value defined: Such attributes should
+		  be set even if they don't have a default value defined.
+			Reason: if not, XML files could be invalid: the DTD says that 
+			the attribute is mandatory, but it does not exists in the 
+			XML file because it was not set AND it did not have a default
+			defined.
+		This is fixed.
+		- Andras: ESCM2ESML translator failed to work on MEM/XML destination
+			backends. The problem was that those backends were unable to
+			reconnect the inherited reference objects  in subtypes/instances,
+			because these references acted as if they were links (UDM uses 
+			associations to represent reference-referenced relationships) 
+			with one connecting end outside of the base model which was
+			subtyped or instantiated. This is fixed, the translator works
+			on any destination backend, and correctly reconnects the references.
+
+			- MEM backend, accidental infinite loop when setting the attributes
+			for derived/instantiated objects
+						
+		To be done:
+			- Constraint Manager integration
+			- STL replace with STL Port			
+			- MGA issue: connections through reference ports can not be set
+
+		
+	
+
+	
+
+
+03/16/03 - endre	- Release 1.64
+
+	- Minor bugfix: The volatile(non-persistent) attributes showed up in the generated DTD.
+
+
+03/16/03 - endre	- Release 1.63
+
+	- Upgraded the UML interpreter and the GME backend to GME version 003
+	- Added archetype/subtype/instance supports to all backends. In case of DOM/MEM
+	  backend this works the same way as it is implemented in GME:
+
+		- synchronous attributes; the attributes of derived/instantiated objects 
+		  are kept synchronized to the attributes of the archetype unless modified 
+		  directly on the derived/instantiated objects
+		- automatic propagation of changes in archetypes to subtypes & instances; 
+			- new objects added to archetype are added to all subtypes, instances
+			- objects deleted from archetype are removed from all subtypes & instances
+		- code-generator, for each class a CreateInstance() and a CreateDerived() function
+		  is generated, Derived(), Instances() and Archetype()
+		- UdmCopy supports copying of datanetworks containing archetype/derived/instances
+		  relations accross different backends.
+
+
+
+
+01/13/03 - endre	- Release 1.50
+
+	- New directory structure
+	- Third party tools are separated in the 3rdParty/ directory, with a README 
+	  file how to obtain them(URLs, version numbers).
+	- UdmTomi: 
+		- added new call DeleteLink() (Feng)
+		- fixed minor bug in GetAssociationClassObjects() (Feng)
+	- MGA: 
+		- fixed a bug reading associations of type archetype/derived (Feng)
+
+	- Udm.exe:
+		- added constraints to prevent the geneartion of invalid API
+			(duplicate and/or reserved class, attribute and role names)
+
+	- UDM:
+		- now supporting constraints in the metamodel and the UML interpreter.
+		  An evaluator is not yet ready, but constraints are available as 
+		  metainformation.		
+		
+12/19/02 - endre	- Release 1.41
+
+	- Rollbacked to the official GME release r9.20.02.
+	- Fixed a UdmInt bug, bool values were not transferred 
+		correctly between interpreted and compiled context perphaps 
+		due to a Cint bug. 
+
+		
+12/09/02 - endre	- Release 1.40
+
+	- Added support for the XMI(XML Metadata Interchange v1.0, UML v1.3) OMG standard. 
+		Please read the documentation, section 5.
+	- Upgraded to Xerces version 2.1.0.
+	- Third party binaries, libraries and headers are no more included in the package.
+		Please read the Documents/3rdParty.zip about the pre-requirements of the 
+		UDM framework.
+
+11/19/02 - endre	- Release 1.31
+
+	Upgraded the UML2XML interpreter and the MGA backend code to the new
+	version (2.9) MGA interfaces shipped with GME v2.0 release 11/08/02.
+
+	Only the Win32 binaries have changed, since this is the only platform
+	supporting MGA. 
+	
+
+11/05/02 - endre	- Release 1.30
+
+
+	New features:
+
+		UML-GME interpreter:
+		===================
+
+		- New UML attribute syntax and cardinality syntax, compliant 
+		with the UML notation guide.(OMG-UML 1.4). See the documentation for
+		more details.
+
+		Examples of valid attribute specifiers:
+		
+		public ModelName:String="Default Lamp Name"
+		ArrayStr:String[0..* ordered]="second","first"
+		ArrayInt:Integer[1..* ordered]=5,4,3,2
+		ArrayBool:Boolean[0..* ordered]=false,true,false,true
+		ArrayReal:Real[0..* ordered]=9,8,7,6
+		volatile public TempArrayStr:String[0..* ordered]="tempdef3","tempdef2","abcdef"
+		volatile TempArrayInt:Integer[0..* ordered]=9,8,5,6
+		volatile TempArrayReal:Real[0..* ordered]=40,35,26,17
+		volatile TempArrayBoolean:Boolean[0..* ordered]=true,false,true,false
+
+
+
+		- Added support for:
+			 - orderer attribute arrays
+			 - default values for attribute arrays
+			 - attribute visibility (as metainformation at this point)
+
+		- Changed the UML meta-model; added attributes to the class Uml::Attribute
+
+		UDMDOM:
+		=======
+
+		 - The XML backend and the associated DTD generator were changed 
+		upon request(Johnatan, Gabor):
+			- The DTD generator now generates the element definitions with 
+			the list of subelements with the cardinality of the containment 
+			connections in the UML class diagram.
+			- This implies a certain order of the subelements; The DOM
+			backend was changed to generate all subelements of an element in 
+			the alphabetical order of their type.
+	
+	Bugfixes:
+
+		MGA:
+			In certain situations involving inheritence the GME MetaRole was
+			not composed correctly. Fixed.
+
+		MEM:
+			Serialize(), DeSerialize() bug discovered by Feng. 
+
+			The MEM backend was incorrectly assuming that composition childroles
+			are always non-empty. This holds when the meta is the one generated
+			& build up by the .cpp file, because the code generator generated some
+			default rolenames even when there were no rolenames.
+			But when the metainformation was loaded runtime from a backend, 
+			(for example: UdmCopy) the empty child role names caused problems.
+		
+
+
+	
+09/30/02 - endre	- Release 1.21
+
+	- Accidentally, 1.20 contained SGI STL 3.3 instead of 3.2. 
+		3.3 is not compatible with the OTIF framework yet.
+
+	- added the operator+=() for cint_string class. (Feng)
+
+	- The cint package is no longer included in the binary release
+		for linux (Gabor)
+
+09/26/02 - endre	- Release 1.20
+
+
+
+	- Upgraded to SGI STL version  3.2 
+	(requested by Andras)
+	
+	- Ported and compiled with egcs on linux platform. Most tools
+	(Udm, UdmCopy, UdmViz, UdmPat, UdmBackendDump), and two 
+	backends (MEM, DOM) are available. The Cint interpreter 
+	environment is also supported. A precompiled binary version
+	(tested with glibc 2.1.3) is released. 
+	(requested by Andras)
+	
+	Bugs:
+
+	- UdmCopy bug: The same datanetwork could not be copied 
+	more than once 	because of some temporary attributes stored 
+	in the source data network during the copy process. 
+	(ran into druing tests)
+
+	- MGA backend bug: A CloseWithUpdate(), CloseNoUpdate() call on any 
+	opened MGA datanetwork made impossible to access the other MGA 
+	datanetworks, which were already opened at the time of the call.
+	(ran into during tests)
+	
+	
+	
+		
+
+
+09/05/02 - endre	- Release 1.11
+
+	MGA Backend:
+
+		Compiled against GME release 8.29.02
+
+	TOMI Iface:
+
+		Udm::Object::Createlink() and Udm::Object::CreateObject() bugs fixed.
+
+	Samples: 
+		
+		- Fixed CreateLampModel.dsp settings.
+		
+		- Added UdmSamples.dsw workspace for compiling the sample projects DisplayLamp and CreateLampModel 
+		  from the distribution.
+		
+		- Also added some comments to CreateLampModel.cpp.
+		
+		- Added LampDiagramTemp.xml and LampUMLTempMeta.xml to the distirbution file list
+	
+		
+
+
+
+08/26/02 - endre	- Release 1.10
+
+	New feature:
+		- the EiC ANSI C interpreter and the Cint C/C++ interpreter have been integrated
+		  in UDM. This makes possible to evaluate runtime arbitrary C/C++ expressions on UDM objects.
+		  For a complete reference, please the section "Interpretted UDM" in the Udm manual, and the 3rd party 
+		  documentations as well(EiC and CInt).
+
+		
+
+	Bugfixes:
+
+		- fixed getParent() bug reported by Feng in MGA backend. Still related to 
+		inherited childroles and parentroles. 
+
+	
+08/01/02 - endre 	- Release 1.00
+
+
+	VERSIONING:
+	
+		- New version UDM 1.00. The major number will reflect major changes,
+		 while the minor number will reflect mostly bugfixes.
+
+	Udm.exe:
+		
+		- Added CORBA and C# code generators. 
+		-s		 generate C# API (.cs), normal format
+		-s -m		 generate C# API (.cs), meta format
+		-c		 generate CPP API, CORBA format
+
+	
+	ChildrenAttr: (new feature & change of behaviour)
+
+		new feature which provides a way to set an object's children 
+		in a way that preserves their order.
+		Requested by Gabor. 
+		
+		- added cast operator for vector<CLASS> to preserve 
+		the order of the children. This leaves all previous
+		set<> assignments intact, except this note:
+
+					
+		- +=, -= operators on children now return vectors instead
+		of sets. This should not be a problem when using a syntax 
+		like this:
+
+			lamp.children() += new_bulb;
+
+		because there is a ChildrenAttr assignment operator 
+		which takes a vector of object as input. 
+
+		However, if any of these syntax is used, 
+		the code will not compile:
+
+		1:
+			[...]
+			set<Bulb> bulbs = lamp.children() += new_bulb;
+			[...]
+						
+		2:
+			[...]
+			set<Bulb> AddBulbFunc(Bulb newBulb, Lamp hostLamp)
+			{
+				return hostLamp.children() += new_bulb;
+			}
+			[...]
+	
+			the sets should be changed to vectors, when using 
+			the return value of the operators
+
+			The change would be:
+						
+		1:
+			[...]
+			lamp.children() += new_bulb;
+			set<Bulb> bulbs = lamp.children();
+			[...]
+						
+		2:
+			[...]
+			set<Bulb> AddBulbFunc(Bulb newBulb, Lamp hostLamp)
+			{
+				lamp.children() += new_bulb;
+				return lamp.children();
+			}
+			[...]
+
+		
+		
+
+	TOMI PIAPI - Traversal and Object Manipulation Paradigm Independent API
+	(new features)
+	
+		TOMI Paradigm Independent API ported from Tihamer's
+		graph rewriting engine. See documentation for API description.
+
+		Headers of API calls are added as member functions to 
+		class Udm::Object
+
+
+	MGA BACKEND (fixes):
+
+		- it's compiled against latest STABLE GME r4.9.2
+					
+		- yet another createChild() bug involving inherited childroles,
+		  discovered by Tihamer.
+		Status:  Fixed.
+
+	MEM BACKEND (fixes):	
+
+		
+		- Serialize() bug discovered by Tihammer.
+
+		Metaobjects were obtained based on their Ids (ObjectByID)
+		using the DataNetwork of the StaticObject to be Serialized.
+		This was fine for StaticObjects with Static meta objects, because
+		StaticDataNetwork's ObjectById() works for all StaticObjects, even if
+		they are not in the DataNetwork on which ObjectById() is called. 
+		(this behaviour is controlled by static bool StaticDataNetwork::SafeObjectById), which
+		is false during Serialize to make things faster.)
+		
+		Status: Fixed
+	
+
+06/25/02 - endre
+
+	1. MGA backend bugfixes:
+	
+	-fixed createChild(role, kind) bug. 
+	
+		when both 'role' and  'kind' were provided, 
+		and 'kind' was different from 'role.target()',
+		(i.e. the type of the object(='kind') to be inserted 
+		had only an inherited childrole), the new object was
+		created with incosistent types: the target class of 
+		the 'role' in the MGA layer, and with 'kind' in the 
+		UDM layer. That could cause harm.
+					
+		  Scenario when this could happen:
+
+			+---+a	    +---+
+			| A |-----<>| B |
+			+-+-+	    +---+
+			  | 	
+			 /_\
+			  |
+			+-+-+
+			| C |
+			+---+
+				
+		B Binst;
+
+		If you wanted to create an object of type C in Binst, 
+		you either did this:
+						
+		  C Cinst = C::Create(Binst); 
+						
+		or this:
+
+		  C Cinst = C::Create(Binst, a)
+						
+		in both cases, Cinst would be created with it's type pointer
+		set to C, but in MGA it would be an instance of type A.
+
+					
+	
+	- fixed getChildren(role, kind) bug
+
+		The desired behaviour of this function is that to return 
+		all the children via role 'role' which are of type compatible
+		with 'kind'. That is, either type 'kind' or a type derived from 'kind'
+
+		However, this function returned only children with type 'kind' when
+		kind was provided. 
+
+		Scenario when this could happen:
+
+			+---+a	    +---+
+			| A |-----<>| B |
+			+-+-+	    +---+
+			  | 	
+			 /_\
+			  |
+			+-+-+
+			| C |
+			+---+
+			
+		B Binst;			//we assume it's already created
+		A Ainst = A::Create(Binst,a);	//childrole 'a' could be omitted 
+		C Cinst = C::Create(Binst,a);	//childrole 'a' could be omitted  
+
+		and then,
+
+		Binst.__impl()->getChildren(a, A);
+
+		is expected to return both Cinst and Ainst, but it returned
+		only Ainst.
+
+				
+		Affected are mostly paradigm&backend indepent codes
+		which use the createChild(role, kind) and getChildren(role, kind)
+		functions with both params provided. 
+		(UdmCopy, datanetwork assignment operator are such. PatternMatcher?)
+
+
+	2. New feature: Support for attribute arrays(requested by Gabor)
+	
+		Section 2.5.1 from the manual:
+	
+		2.5.1 Array Attributes:
+
+		Udm starting from release 25 June 2002 supports attributes of type array.
+		Arrays can be of Integer, String, Real and Boolean. In the API, they are 
+		mapped to vectors of coresponding  C++ types.
+
+		An attribute of type array should be defined as follows:
+
+		ArrayStr[0..*]:String 				//attribute is optional
+		or
+		ArrayStr[1..*]:String				//attribute is required
+
+
+		When using attributes of type array with MGA backend, these attributes 
+		must be declared in the GME Meta as attributes of type string. 
+		This is because MGA does not support array attributes, and they are 
+		implemented in MGA using attributes of type string.
+
+		Array attributes in MGA and XML backends are not really implemented, 
+		because the underlying backends do not support them. However, UDM 
+		provides this functionality by using the string attributes of the backends.
+
+		In MEM backend, there is real suppport for array attributes and it has 
+		no performance penalty over simple-value attributes.
+
+		If  UDM XML/MGA DataNetworks which use attributes of type array are 
+		directly edited, it should be considered how UDM represents arrays as 
+		strings in these backends:
+
+			Array of integers and floats:		values delimited by ‘;’
+			Array of booleans:	sequence of  ‘true’s or ‘false’s (case insensitive) delimited by ‘;’
+			Array of strings:	strings delimited by ‘;’, 
+				‘;’ can be escaped by ‘\’
+				‘\’ can be escaped by ‘\’
+
+		
+		User code with array attributes
+
+		In user code, array attributes can be set/get in the same was 
+		as with simple attributes.
+		The only difference is that not values, but vectors of values 
+		are accessed.
+
+		Examples:
+
+		-	Checking the size of the array:
+
+			if (person.name())
+				//the array has elements
+			
+
+			if (!person.name())
+				//the array has no elements
+
+			vector<string> names = person.name();
+			int size = names.size();
+			//the array has size elements
+
+		
+	-	getting the attribute values: 
+
+		
+			vector<string> names = person.name();
+
+	-	setting the attribute values:
+
+			vector<string> names;
+			names.push_back(“John”);
+			names.push_back(“Jerry”);
+			person.name() = names;
+
+
+	-	adding values to the attribute:
+
+			vector<string> names;
+			names.push_back(“John”);
+			names.push_back(“Jerry”);
+			person.name() += names;
+
+	-	getting the value at an index in the array
+
+			string name_0 = person.name()[0];
+			string name_1 = person.name()[1];
+
+		Note: Index is a 0 based index. If no such element exists,
+		 either string(), or double() or long() or bool() is returned. 
+		One may check the size of the vector before addressing individual 
+		elements. In such cases the value is undefined.
+
+	-	setting the value at an index in the array
+
+			person.name()[1] = “Jerry”;
+
+		Note: If the array is smaller than the index then it’s filled 
+		automatically to the size requested by index with string(), double(), 
+		long() or bool(); These values are undefined. Then, the value at 
+		the position is changed to the right value of assignment.
+
+	-	adding a value to the value at an index int the array
+
+			person.name()[1] += “,  jr.”;
+
+		Note: When the array is smaller than the index, then the same 
+		note applies as in the case of assignment operator before.
+		The += operator does not work – and also does not make sense – 
+		for boolean arrays. 
+
+	Note: The = and the += operators for array of strings, integers, and reals 
+	are defined for all related types:
+	·	In case of string arrays, you can use the operators with right values 
+		of type string and const char *.
+	·	In case of real and integer arrays, you can use the operators with right values of  
+		any numeric type: float, double, long, int
+
+	3. UdmCopy updated to correctly handle array attributes
+	
+
+06/08/02 - endre
+
+	Various performance enhancements in al backends:
+
+	DOM:
+	 -	Using now Xerces 1_6_0, which claims to be more performant then 1_2_0.
+		When linking against MFC, the release version of your application *may* crash when
+		saving a DomDataNetwork, or existing the application after opening a DomdataNetwork
+		with CHANGES_PERSIST_ALWAYS semantics. 
+		If so, there are two solutions to avoid this problem:
+			- Use static backend and save it to a MEM file, then copy it with UdmCopy.	
+			- Use the debug version of your MFC application
+
+	 -	cache mechanism for find a class in the metainfo by name, this speeds up the loading
+		process
+	 -	improved __getdn() calls on DomObject(), which also speeds up all uniqueID operations,
+		because the maps are in the container DomDataNetwork.
+
+
+	MEM:
+
+	-	Save and load operations are much faster. (8M file w/ 15k objects written and read in 5s)
+	-	~StaticDataNetwork() uses direct reference count decrement on objects, speeding up 				dramatically the deleting of a Static Object Network - which usually speeds up the 
+		exitting.
+
+	GME:
+
+	-	Dramatic performance improvments when the datanetwork is opened w/ CHANGES_PERSIST_ALWAYS
+		or CHANGES_PERSISTS_DEFAULT semantics. In such cases the edit sequence queue is
+		automatically committed after an optimal number of operations.	
+
+	 -	cache mechanism for find a class in the metainfo by name, this speeds up the loading
+		process
+	 -	improved __getdn() calls on GmeObject().
+	
+
+	
+	Bug fixes:
+
+	UML interpretter bug(Ruslan) - fixed:
+	
+		Uml metamodels containing classes which had containment relationship to themselves were
+		not correctly interpretted and could lead to misbehaviour. 
+	
+	UdmBackEndDump 	- fixed, Tihamer:
+		
+		Misbehaviour when inherited child/parent/association roles were present.		
+	
+	
+	New tools:
+		(contributed by Tihamer)
+	
+	
+		UdmViz - A new Udm tool which can display Udm data networks together with
+			the ATT GraphViz tool. UdmViz provides the input for the ATT GraphViz tool.
+			You can get the tool from:
+			
+			http://www.research.att.com/sw/tools/graphviz/download.html
+			
+			(ISIS: The tool is in the 3rdParty.zip)
+
+
+
+05/10/02 - endre
+	
+
+	If a DomDataNetwork was closed by either CloseWithUpdate() or CloseNoUpdate(), 	the 	DomDataNetwork's rootobject is set to NULL; in such situations  the ~DomDataNetwork() 	 			destructor simply returned, thus did not remove itself from the map, causing 
+	DomObject::__getdn() functions to crash when polling each network's RootObject.
+	(that's how it finds his own ...)
+
+	The fix is that ~DomDataNetwork() removes itself from the map even if it has a NULL RootObject.
+
+05/06/02 - endre
+
+	The GME UML interpreter was compiled with an older version of GME.
+	Now it's compiled and should be used with GME r03-20-02.
+
+
+04/30/02 - endre
+
+	Just minor bugfixes:
+
+	- DOM BackEnd: getChildren() misbehaviour in certain situation when rolename was provided, but the type of the children was not.
+	- UdmBackendDump: misbehaviour when containments in the object data network involved inherited parent roles.
+	- UdmCopy, datanetwork assignment operator: possible infinite loops because of an accidental error in the code. ( a misplaced '}' )
+
+
+
+04/26/02 - endre
+	
+	- Major StaticDataNetwork fixes, performance enhancement, memory issues, reference counting.
+
+	- File persistency for StaticDataNetwork: .mem files. Save/Load operations are about 50% faster then DOM when size >1M. Still, all objects are in memory and thus operations are fast. Files are only used when calling persistency functions: SaveAs, Openexisting, CloseAs. It works with SmartDataNetworks if working with ".mem" extensions.
+
+	- getParent() fix in all the back-ends. getParent() returned the child's (only) parent even if the provided parent Role was not appropriate. Now it return's its parent iif the parentrole of the composition matches the provided one.
+
+	- Assignment operator across all data networks. One can copy a data network to another data network in a paradigm & backend independent way (of course, both source and destination must have the same meta information). The operator =() for DataNetwork virtual class is now implemented.
+
+	- (generated) DTD file enhancement:(Jonathan requested). In case of ambiguous containment relationship between two classes the generated DTD inserted an extra string attribute "__child_as" in which stored the child role of the containment. The specification of this attribute was an open NMTOKENS, so it was not clear for someone generating UDM DOM input what exactly write there. That was changed to an enumeration with all the possible child roles.
+
+	- (generated) CPP file format changed, now the meta data network is build as a normal data network, using the UML API calls. Udm.exe has now an extra switch which controls which format should be generated. The meta-meta (Uml.cpp) it's still generated in the old format. 
+
+	- Documentation is extended with the descriptions of the UDM internal architecture and the internal API & helper functions: Object API, ObjectImpl API, Uml API (generated) helper functions, misc. functions.
+
+
+	- Finally, GME backend can be now invoked directly from a GME interpreter. Tihamer has created a great wizard which auto-magically generates the framework (source code, VS project files) of an UDM based GME model-interpreter. This tool comes in a separate package.
+
+	
+	
+	
+
+03/23/02 - endre
+	
+	- Created StaticDataNetwork, implemented fully StaticObject. This means,
+	  that one can create data network in memory, without any persistance.
+	  However, this has some consequences:
+		1. It's FAST.
+		2. Since the meta and meta-meta objects are store in StaticObjects,
+		   which are diagrams with memory backends, (StaticDataNetworks), 
+		   these objects are writable at run time. So a program may decide
+		   to alter the meta information. At the first glance this was considered
+		   as a bug, but it turned out that it's an udocumented, or partially 
+		   documented feature.
+		3. One may decide to create at run time a data network in memory, which 
+		   later on can serve as metainformation for manipulating with an object
+		   network. Of course, this could be done with DOM/GME backends, but it would
+		   have a serious performance impact. 
+
+]	- GME backend fixes
+
+		   Thanks to our very gifted. grad student, Levendovszky Tihamer, a lot of 
+		   GME backend bugs have been fixed. However, there are still to come,
+		   for example, the children's parent can not be changed when using GME 
+		   backends. This will be fixed later on.
+
+	- New tool: UdmBackendDump
+		   
+		   It's a tool that generates a human readable textual representation
+		   of an object network regardless of it’s meta-model. Both meta and instance
+		   objects are dumped out. Also contributed by Tihamer.
+
+	- Upgraded documentation
+			
+		   	1. step-by-step tutorial for using GME backends.
+			2. Notes on StaticDataNetwork
+			3. A manual page for the new tool
+
+
+		
+
+03/06/02 - endre
+	
+	Implemented DomDataNetwork::SaveAs(), GMEDataNetwork::SaveAs() upon request.
+
+
+02/22/02 - endre
+
+	Minor bug that could cause an access violation in xerces.dll when deleting objects from the 
+DOM tree. Fixed.
+
+
+
+
+02/07/02 - endre
+The most important changes from previous release:
+
+	- Redesigned the DOM backend. Serious (about 80-100x) performance improvments
+		 when using DOM backends
+	- Changed the Attributes the Udm MetaModel:
+		Attribute syntax:
+			Attr_name[[min..max] [= defvalue]] : type
+		Metamodel:
+
+			- 'option' attributes for attributes is no longer supported
+			- cardinality for attributes can be made by attributes min, max.
+		Udm.cpp, Udm.h, Udm.dtd now generated from the Uml.xml
+		The new UDM metamodel is available now in this release.
+
+

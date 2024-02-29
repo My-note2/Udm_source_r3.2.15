@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='windows-1252'?>
+
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi' RequiredVersion='3.0.4813.0'>
+
+  <?include Udm_inc.wxi ?>
+
+
+
+  <Product Name='$(var.ProductName)' Id='*' UpgradeCode='$(var.UpgradeCode)'
+        Language='1033' Codepage='1252' Version='$(var.VERSIONSTR)' Manufacturer='Vanderbilt University, ISIS'>
+
+    <Package Id='*' Description='Universal Data Model'
+        Manufacturer='Vanderbilt University, ISIS'
+        InstallerVersion='300' Languages='1033' Compressed='yes' SummaryCodepage='1252'
+        InstallPrivileges='elevated' InstallScope='perMachine'/>
+
+
+    <Upgrade Id="$(var.UpgradeCode)">
+      <UpgradeVersion Minimum="$(var.VERSIONSTR)" OnlyDetect="yes" Property="NEWERVERSIONDETECTED"/>
+      <UpgradeVersion OnlyDetect="no" Minimum="1.0.0" IncludeMinimum="yes" Maximum="$(var.VERSIONSTR)" IncludeMaximum="no" Property="PREVIOUSFOUND"/>
+    </Upgrade>
+    <?if $(sys.BUILDARCH)=x64 ?>
+    <Upgrade Id="D656A56A-F239-4B35-865C-840B1EA235E0">
+      <UpgradeVersion Minimum="$(var.VERSIONSTR)" OnlyDetect="yes" Property="NEWERVERSIONDETECTED_X86"/>
+      <UpgradeVersion OnlyDetect="no" Minimum="1.0.0" IncludeMinimum="yes" Maximum="$(var.VERSIONSTR)" IncludeMaximum="no" Property="PREVIOUSFOUND_X86"/>
+    </Upgrade>
+    <?endif?>
+    <?if $(sys.BUILDARCH)=x64 ?>
+    <InstallExecuteSequence>
+      <Custom Action="WixExitEarlyWithSuccess" After="FindRelatedProducts">NEWERVERSIONDETECTED OR NEWERVERSION_DETECTED_X86</Custom>
+    </InstallExecuteSequence>
+    <?else?>
+    <CustomActionRef Id="WixExitEarlyWithSuccess"/>
+    <?endif?>
+
+    <InstallExecuteSequence>
+      <RemoveExistingProducts After="InstallValidate" />
+    </InstallExecuteSequence>
+
+
+    <Property Id='UNINSTALL_EXE32'>
+      <RegistrySearch Id='LocateUninstallExe32' Type='file' Root='HKLM' Key='SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\ISIS UDM_is1' Name='UninstallString' Win64='no'>
+        <FileSearch Id='LocateUninstallExe32File' Name='unins000.exe' />
+      </RegistrySearch>
+    </Property>
+    <CustomAction Id="RemovePreviousVersion32" Property="UNINSTALL_EXE32" ExeCommand="/VERYSILENT" Execute="deferred" Return="ignore" />
+    <InstallExecuteSequence>
+      <Custom Action="RemovePreviousVersion32" After="InstallInitialize">UNINSTALL_EXE32</Custom>
+    </InstallExecuteSequence>
+
+    <Media Id='1' Cabinet='Udm.cab' EmbedCab='yes' />
+
+    <Condition Message="This application is only supported on Windows XP or higher.">
+      <![CDATA[Installed OR (VersionNT >= 501)]]>
+    </Condition>
+
+    <WixVariable Id="WixUILicenseRtf" Value="..\license.rtf" />
+    <WixVariable Id="WixUIBannerBmp" Value="WixUiBanner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="WixUIDialog.bmp" />
+
+    <!-- =========================================================== -->
+    <!-- DIRECTORY STRUCTURE -->
+    <!-- =========================================================== -->
+    <Directory Id='TARGETDIR' Name='SourceDir'>
+      <Directory Id='SystemFolder' Name='SystemFolder'/>
+      <Directory Id='ProgramFilesFolder'>
+        <Directory Id='ISIS' Name='ISIS'>
+          <Directory Id='INSTALLDIR' Name='Udm'>
+            <Directory Id='etc' Name='etc'>
+              <Directory Id='etc_Java' Name='Java'/>
+            </Directory>
+            <Directory Id='include' Name='include'/>
+            <Directory Id='doc' Name='doc'/>
+            <Directory Id='libx86' Name='lib'/>
+              <Directory Id='binx86' Name='bin'>
+              <Directory Id='Python26x86' Name='Python26'/>
+              <Directory Id='Python27x86' Name='Python27'/>
+            </Directory>
+            <Directory Id='UIntWizVS' Name='UdmIntWizard'/>
+            <Directory Id='Samples' Name='Samples'>
+              <Directory Id='Samples_Python' Name='Python'>
+                <Directory Id='test_UdmPython'/>
+              </Directory>
+              <Directory Id='GeneTF' Name='GeneTF'/>
+              <Directory Id='GeneTRE' Name='GeneTRE'/>
+              <Directory Id='SBML2Ex' Name='SBML2Ex'/>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+      <?if $(sys.BUILDARCH)=x64 ?>
+      <Directory Id='System64Folder' Name='System64Folder'/>
+      <Directory Id='ProgramFiles64Folder'>
+        <Directory Id='ISISx64' Name='ISIS'>
+          <Directory Id='Udmx64' Name='Udm'>
+            <Directory Id='libx64' Name='lib'/>
+            <Directory Id='binx64' Name='bin'/>
+          </Directory>
+        </Directory>
+      </Directory>
+      <?endif?>
+    </Directory>
+
+    <!-- =========================================================== -->
+    <!-- MERGE MODULES -->
+    <!-- =========================================================== -->
+    <DirectoryRef Id='TARGETDIR'>
+      <Merge Id="CRT100" Language="0" SourceFile="$(env.ProgramFiles)\Common Files\Merge Modules\Microsoft_VC100_CRT_$(sys.BUILDARCH).msm" DiskId="1" />
+      <Merge Id="MFC100" Language="0" SourceFile="$(env.ProgramFiles)\Common Files\Merge Modules\Microsoft_VC100_MFC_$(sys.BUILDARCH).msm" DiskId="1" />
+      <Merge Id="ATL100" Language="0" SourceFile="$(env.ProgramFiles)\Common Files\Merge Modules\Microsoft_VC100_ATL_$(sys.BUILDARCH).msm" DiskId="1" />
+
+      <?if $(sys.BUILDARCH)=x64 ?>
+      <Merge Id="CRT100_x86" Language="0" SourceFile="$(env.ProgramFiles)\Common Files\Merge Modules\Microsoft_VC100_CRT_x86.msm" DiskId="1" />
+      <Merge Id="MFC100_x86" Language="0" SourceFile="$(env.ProgramFiles)\Common Files\Merge Modules\Microsoft_VC100_MFC_x86.msm" DiskId="1" />
+      <Merge Id="ATL100_x86" Language="0" SourceFile="$(env.ProgramFiles)\Common Files\Merge Modules\Microsoft_VC100_ATL_x86.msm" DiskId="1" />
+      <?endif?>
+    </DirectoryRef>
+
+
+    <!-- =========================================================== -->
+    <!-- FEATURES -->
+    <!-- =========================================================== -->
+    <Feature Id='Complete' Title='Udm' Description='The complete package' Display='expand' Level='1'>
+
+      <ComponentGroupRef Id='xerces_cx86'/>
+      <ComponentGroupRef Id='Udm_binx86' />
+      <ComponentGroupRef Id='Udm_SDKx86' />
+      <ComponentGroupRef Id='UdmDllx86' />
+      <ComponentGroupRef Id='UdmDll_VS10x86' />
+      <ComponentGroupRef Id='UdmDll_VC11x86' />
+      <ComponentGroupRef Id='UdmDll_VC12x86' />
+      <ComponentGroupRef Id='UdmDll_VC14x86' />
+      <ComponentGroupRef Id='UdmSDK_VC9x86' />
+      <ComponentGroupRef Id='UdmSDK_VC11x86' />
+      <ComponentGroupRef Id='UdmSDK_VC12x86' />
+      <ComponentGroupRef Id='UdmSDK_VC14x86' />
+      <?if $(sys.BUILDARCH)=x64 ?>
+      <ComponentGroupRef Id='xerces_cx64'/>
+      <ComponentGroupRef Id='Udm_binx64' />
+      <ComponentGroupRef Id='Udm_SDKx64' />
+      <!-- UdmDllx64 intentionally omitted: no VC9 build for UdmDll -->
+      <ComponentGroupRef Id='UdmDll_VS10x64' />
+      <ComponentGroupRef Id='UdmDll_VC11x64' />
+      <ComponentGroupRef Id='UdmDll_VC12x64' />
+      <ComponentGroupRef Id='UdmDll_VC14x64' />
+      <ComponentGroupRef Id='UdmSDK_VC11x64' />
+      <ComponentGroupRef Id='UdmSDK_VC12x64' />
+      <ComponentGroupRef Id='UdmSDK_VC14x64' />
+      <MergeRef Id='CRT100_x86' />
+      <MergeRef Id='MFC100_x86' />
+      <MergeRef Id='ATL100_x86' />
+      <?endif?>
+
+      <MergeRef Id='CRT100' />
+      <MergeRef Id='MFC100' />
+      <MergeRef Id='ATL100' />
+    </Feature>
+
+    <!-- =========================================================== -->
+    <!-- USER INTERFACE -->
+    <!-- =========================================================== -->
+    <UI>
+      <UIRef Id="WixUI_Minimal" />
+      <UIRef Id="WixUI_ErrorProgressText" />
+      <InstallUISequence>
+        <Show Dialog="UserExit" OnExit="cancel">0</Show>
+      </InstallUISequence>
+    </UI>
+
+  </Product>
+</Wix>

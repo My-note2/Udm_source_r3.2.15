@@ -1,0 +1,16 @@
+SUBDIRS = MPCGen StrResGen Udm UdmBackendDump UdmBase UdmCopy UdmDom UdmOcl UdmOclPat UdmPOI UdmPython UdmSwig UdmToXmi UdmUtil UdmViz UdmXmi Uml XmiToUdm UdmJson
+
+all:
+	@for dir in $(SUBDIRS);\
+	do \
+		echo "\nInvoking make in subdir: " $${dir};\
+		$(MAKE) -C $${dir} $@ -f Makefile.OSX || exit $$?;\
+	done
+
+clean:
+	@for dir in $(SUBDIRS);\
+	do \
+		echo "\nInvoking make clean in subdir: " $${dir};\
+		$(MAKE) clean -C $${dir} $@ -f Makefile.OSX ;\
+	done
+

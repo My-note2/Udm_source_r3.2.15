@@ -1,0 +1,20 @@
+include ../../Makefile.OSX.incl
+
+BUILT_SOURCES           = CL.cpp CD1.cpp CD2.cpp CD3.cpp
+OTHER_BUILT_FILES	= CL.h CL.xsd CD1.h CD1.xsd CD2.h CD2.xsd CD3.h CD3.xsd
+SOURCES=$(BUILT_SOURCES) cross_links.cpp
+
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS) cross_links 
+
+$(BUILT_SOURCES):../CL_udm.udm ../../bin/Udm
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -v -d ../../etc -T
+
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) $< -o $@
+
+cross_links: $(OBJECTS)
+	$(CC) $(BCFLAGS) $(OBJECTS)  -o cross_links -lUdm -L../../lib
+clean: 
+	rm -f $(OBJECTS) $(BUILT_SOURCES) $(OTHER_BUILT_FILES) cross_links sample.udm

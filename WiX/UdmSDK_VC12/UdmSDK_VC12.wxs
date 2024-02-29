@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='windows-1252'?>
+
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi' RequiredVersion='3.0.4813.0'>
+
+  <?include ..\Udm_inc.wxi ?>
+  <Fragment>
+    <DirectoryRef Id='bin$(sys.BUILDARCH)'/>
+    <DirectoryRef Id='lib$(sys.BUILDARCH)'/>
+
+    <ComponentGroup Id='UdmSDK_VC12$(sys.BUILDARCH)'>
+      <?if $(sys.BUILDARCH)=x86 ?>
+      <Component Id='UdmDll_v120_Win32.lib' Directory='lib$(sys.BUILDARCH)'>
+        <File Source="..\Build\Win32\v120\Release\UdmDll_v120_Win32.lib" />
+      </Component>
+      <Component Id='UdmDll_v120_Win32D.lib' Directory='lib$(sys.BUILDARCH)'>
+        <File Source="..\Build\Win32\v120\Debug\UdmDll_v120_Win32D.lib" />
+      </Component>
+      <?else?>
+      <Component Id='UdmDll_v120_x64.lib' Directory='libx86' Win64='no'>
+        <File Source="..\Build\x64\v120\Release\UdmDll_v120_x64.lib" />
+      </Component>
+      <Component Id='UdmDll_v120_x64D.lib' Directory='libx86' Win64='no'>
+        <File Source="..\Build\x64\v120\Debug\UdmDll_v120_x64D.lib" />
+      </Component>
+      <?endif?>
+
+      <?if $(sys.BUILDARCH)=x86 ?>
+      <Component Id='UdmDll_3_2_v120_Win32D.dll' Directory='bin$(sys.BUILDARCH)'>
+        <File Source="..\Build\Win32\v120\Debug\UdmDll_3_2_v120_Win32D.dll" />
+      </Component>
+      <?else?>
+      <Component Id='UdmDll_3_2_v120_x64D.dll' Directory='bin$(sys.BUILDARCH)'>
+        <File Source="..\Build\x64\v120\Debug\UdmDll_3_2_v120_x64D.dll" />
+      </Component>
+      <?endif?>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

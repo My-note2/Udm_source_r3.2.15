@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?udm interface="Uml" version="2.04"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ elementFormDefault="qualified" 
+>
+<!-- generated on Mon Nov 21 10:42:57 2011 -->
+
+
+	<xsd:complexType name="CompositionChildRoleType">
+		<xsd:attribute name="max" type="xsd:long" use="required"/>
+		<xsd:attribute name="min" type="xsd:long" use="required"/>
+		<xsd:attribute name="isNavigable" type="xsd:boolean" default="true"/>
+		<xsd:attribute name="name" type="xsd:string"/>
+		<xsd:attribute name="target" type="xsd:IDREF" use="required"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="CompositionParentRoleType">
+		<xsd:attribute name="isNavigable" type="xsd:boolean" default="true"/>
+		<xsd:attribute name="name" type="xsd:string"/>
+		<xsd:attribute name="target" type="xsd:IDREF" use="required"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="AssociationRoleType">
+		<xsd:attribute name="isNavigable" type="xsd:boolean" default="true"/>
+		<xsd:attribute name="name" type="xsd:string"/>
+		<xsd:attribute name="max" type="xsd:long" use="required"/>
+		<xsd:attribute name="min" type="xsd:long" use="required"/>
+		<xsd:attribute name="isPrimary" type="xsd:boolean" default="false"/>
+		<xsd:attribute name="rp_helper_user" type="xsd:IDREF"/>
+		<xsd:attribute name="rp_helper" type="xsd:IDREF"/>
+		<xsd:attribute name="target" type="xsd:IDREF" use="required"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="ClassType">
+		<xsd:sequence>
+			<xsd:element name="Attribute" type="AttributeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Constraint" type="ConstraintType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ConstraintDefinition" type="ConstraintDefinitionType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="TaggedValue" type="TaggedValueType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="isAbstract" type="xsd:boolean" use="required"/>
+		<xsd:attribute name="stereotype" type="xsd:string"/>
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="from" type="xsd:string"/>
+		<xsd:attribute name="childRoles" type="xsd:IDREFS"/>
+		<xsd:attribute name="parentRoles" type="xsd:IDREFS"/>
+		<xsd:attribute name="associationRoles" type="xsd:IDREFS"/>
+		<xsd:attribute name="association" type="xsd:IDREF"/>
+		<xsd:attribute name="subTypes" type="xsd:IDREFS"/>
+		<xsd:attribute name="baseTypes" type="xsd:IDREFS"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="DiagramType">
+		<xsd:sequence>
+			<xsd:element name="Association" type="AssociationType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Class" type="ClassType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Composition" type="CompositionType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Namespace" type="NamespaceType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Diagram" type="DiagramType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string"/>
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+		<xsd:attribute name="_libname" type="xsd:string"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="AssociationType">
+		<xsd:sequence>
+			<xsd:element name="AssociationRole" type="AssociationRoleType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="TaggedValue" type="TaggedValueType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="nonpersistent" type="xsd:boolean" default="false"/>
+		<xsd:attribute name="name" type="xsd:string"/>
+		<xsd:attribute name="assocClass" type="xsd:IDREF"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="CompositionType">
+		<xsd:sequence>
+			<xsd:element name="CompositionChildRole" type="CompositionChildRoleType"/>
+			<xsd:element name="CompositionParentRole" type="CompositionParentRoleType"/>
+		</xsd:sequence>
+		<xsd:attribute name="nonpersistent" type="xsd:boolean" default="false"/>
+		<xsd:attribute name="name" type="xsd:string"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="NamespaceType">
+		<xsd:sequence>
+			<xsd:element name="Association" type="AssociationType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Class" type="ClassType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Composition" type="CompositionType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Namespace" type="NamespaceType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="TaggedValueType">
+		<xsd:attribute name="value" type="xsd:string"/>
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConstraintDefinitionType">
+		<xsd:attribute name="stereotype" type="xsd:string" default="method"/>
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="parameterList" type="xsd:string"/>
+		<xsd:attribute name="expression" type="xsd:string" use="required"/>
+		<xsd:attribute name="returnType" type="xsd:string" use="required"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="AttributeType">
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="type" type="xsd:string" use="required"/>
+		<xsd:attribute name="defvalue" type="xsd:string"/>
+		<xsd:attribute name="min" type="xsd:long" use="required"/>
+		<xsd:attribute name="max" type="xsd:long" use="required"/>
+		<xsd:attribute name="visibility" type="xsd:string" default="public"/>
+		<xsd:attribute name="ordered" type="xsd:boolean" default="false"/>
+		<xsd:attribute name="nonpersistent" type="xsd:boolean" default="false"/>
+		<xsd:attribute name="registry" type="xsd:boolean" default="false"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConstraintType">
+		<xsd:attribute name="description" type="xsd:string"/>
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="expression" type="xsd:string" use="required"/>
+		<xsd:attribute name="_id" type="xsd:ID"/>
+		<xsd:attribute name="_archetype" type="xsd:IDREF"/>
+		<xsd:attribute name="_derived" type="xsd:IDREFS"/>
+		<xsd:attribute name="_instances" type="xsd:IDREFS"/>
+		<xsd:attribute name="_desynched_atts" type="xsd:string"/>
+		<xsd:attribute name="_real_archetype" type="xsd:boolean"/>
+		<xsd:attribute name="_subtype" type="xsd:boolean"/>
+	</xsd:complexType>
+
+ <xsd:element name="Diagram" type="DiagramType"/>
+
+</xsd:schema>

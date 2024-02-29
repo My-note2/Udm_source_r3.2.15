@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='windows-1252'?>
+
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi' RequiredVersion='3.0.4813.0'>
+
+  <?include ..\Udm_inc.wxi?>
+
+  <Fragment>
+    <DirectoryRef Id='$(var.SystemFolderNative)'/>
+    <ComponentGroup Id='UdmDll_VC11$(sys.BUILDARCH)'>
+        <Component Id='UdmDllVC11$(sys.BUILDARCH)' Guid='$(var.UdmDllVC11_Guid)' Directory='$(var.SystemFolderNative)'>
+          <File Source='$(var.Build)v110\Release\$(var.UdmDllVC11)' />
+        </Component>
+    </ComponentGroup>
+
+  </Fragment>
+</Wix>

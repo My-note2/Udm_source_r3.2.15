@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<?define test_UdmPython=..\..\tests\test_UdmPython?>
+<!-- generated with ../../../../Documents/META/deploy/gen_dir_wxi.py ../../tests/test_UdmPython/ -->
+    <Fragment>
+        <DirectoryRef Id="test_UdmPython" />
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="test_UdmPython">
+            <Component Id="cmpEFB76B307BEE8F26896A2640FF64CA85" Directory="test_UdmPython" Guid="*">
+                <File Id="fil794E6F4B98A91F1AC96DA7474370630D" KeyPath="yes" Source="$(var.test_UdmPython)\UdmPythonTestMeta.xme" />
+            </Component>
+            <Component Id="cmp0C8CA9DC841EED779906DCC49C9D018A" Directory="test_UdmPython" Guid="*">
+                <File Id="filC62CE6C8D2AEE344F929D788E145C35A" KeyPath="yes" Source="$(var.test_UdmPython)\UdmPythonTestMeta.xml" />
+            </Component>
+            <Component Id="cmpE2E025F172676CF58F35C6FAA6EC8A9E" Directory="test_UdmPython" Guid="*">
+                <File Id="fil2CCC1B5EC8B84112B2ABFA67A0BEE1E3" KeyPath="yes" Source="$(var.test_UdmPython)\UdmPythonTestMeta.xmp" />
+            </Component>
+            <Component Id="cmp2D501323DD3BA0753326BA48390493A3" Directory="test_UdmPython" Guid="*">
+                <File Id="filCC675C615A95F8FEA94DC1C316A3A4FD" KeyPath="yes" Source="$(var.test_UdmPython)\UdmPythonTestModel.xme" />
+            </Component>
+            <Component Id="cmp03CC4A079D4C0B389D20A53F65CDB6A5" Directory="test_UdmPython" Guid="*">
+                <File Id="fil13125BDE068AED4C1C62DE1AC4A196BA" KeyPath="yes" Source="$(var.test_UdmPython)\udm_python_test.py" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

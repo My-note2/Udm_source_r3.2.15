@@ -1,0 +1,64 @@
+#from common import *
+
+namespace $namespace
+{
+    public interface I$c.name
+#if $c.baseTypes
+        : ${", ".join([fq_iname(b) for b in $c.baseTypes])}
+#else
+        : global::Udm.IUdmObject
+#end if
+    {
+        I$c.name archetype { get; }
+        System.Collections.Generic.IEnumerable<I$c.name> instances { get; }
+        System.Collections.Generic.IEnumerable<I$c.name> derived { get; }
+
+
+#for $attr in $c.children(child_type=$uml.Attribute)
+        $attr_typemap[$attr.attr('type')] @$attr.name { get; set; }
+#end for
+
+// Child roles
+#for $crole in $c.childRoles
+#set prole = crole.parent.parentRole_role_children[0]
+        $fq_iname(prole.target) @$role_name(prole) { get; set; }
+#end for
+
+// Parent roles
+#for $prole in $c.parentRoles
+#set crole = prole.parent.childRole_role_children[0]
+#if crole.max == 1
+        $fq_iname(crole.target) @$role_name(crole) { get; set; }
+#else
+        global::System.Collections.Generic.IEnumerable<$fq_iname(crole.target)> @$role_name(crole) { get; set; }
+#end if
+#end for
+
+// Association ends
+#for $arole in $c.associationRoles
+#set orole = ($arole.parent.children()[1] if $arole != $arole.parent.children()[1] else $arole.parent.children()[0])
+#if not $orole.parent.assocClass
+#if $orole.max == 1
+        $fq_iname(orole.target) @$orole.name { get; set; }
+#else
+        global::System.Collections.Generic.IEnumerable<$fq_iname(orole.target)> @$orole.name { get; set; }
+#end if
+#else
+#if $orole.max == 1
+        $fq_iname(orole.parent.assocClass) @$orole.name { get; set; }
+## FIXME: possible name clash
+        $fq_iname(orole.target) @${orole.name}_target { get; set; }
+#else
+        global::System.Collections.Generic.IEnumerable<$fq_iname(orole.parent.assocClass)> @$orole.name { get; set; }
+        global::System.Collections.Generic.IEnumerable<$fq_iname(orole.target)> @${orole.name}_targets { get; set; }
+#end if
+#end if
+#end for
+// Association role
+#if $c.association
+#for $role in $c.association.children()
+        $fq_iname($role.target) @$role.name { get; set; }
+#end for
+#end if
+    }
+}

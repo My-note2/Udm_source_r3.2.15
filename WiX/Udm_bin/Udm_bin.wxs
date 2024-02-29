@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='windows-1252'?>
+
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi' RequiredVersion='3.0.4813.0'>
+
+  <?include ..\Udm_inc.wxi ?>
+
+  <Fragment>
+    <DirectoryRef Id="$(var.SystemFolderNative)"/>
+    <DirectoryRef Id="bin$(sys.BUILDARCH)"/>
+
+    <?if $(sys.BUILDARCH)=x86?>
+    <DirectoryRef Id="Python26$(sys.BUILDARCH)"/>
+    <DirectoryRef Id="Python27$(sys.BUILDARCH)"/>
+    <?endif?>
+
+    <ComponentGroup Id='Udm_bin$(sys.BUILDARCH)'>
+      <?if $(sys.BUILDARCH)=x64?>
+      <Component Directory="$(var.SystemFolderNative)" Id="UdmSwig$(sys.BUILDARCH)">
+        <File Source="..\Build\x64\VC10\Release\UdmSwig.dll" Id="UdmSwig$(sys.BUILDARCH)"/>
+      </Component>
+      <?endif?>
+      <?if $(sys.BUILDARCH)=x64?>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\Build\x64\v100\Debug\UdmDll_3_2_v100_x64D.dll" />
+        <Environment Id="PATH$(sys.BUILDARCH)" Action="set" System="yes" Name="PATH" Value="[bin$(sys.BUILDARCH)]" Part="last" />
+      </Component>
+      <?endif?>
+      <?if $(sys.BUILDARCH)=x86 ?>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\bin\Xalan-C_1_11.dll" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\bin\XalanMessages_1_11.dll" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\bin\Xalan-C_1_11D.dll" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\bin\XalanMessages_1_11D.dll" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\v100\Debug\UdmDll_3_2_VS10D.dll" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\VC10\Release\Udm.exe" Id="Udm.exe$(sys.BUILDARCH)"/>
+        <Environment Id="UDM_PATH$(sys.BUILDARCH)" Action="set" System="yes" Name="UDM_PATH" Value="[INSTALLDIR]" />
+        <Environment Id="PATH$(sys.BUILDARCH)" Action="set" System="yes" Name="PATH" Value="[bin$(sys.BUILDARCH)]" Part="last" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\VC10\Release\UdmCopy.exe" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\VC10\Release\UdmBackendDump.exe" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\VC10\Release\UdmOclPat.exe" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\VC10\Release\UdmViz.exe" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\VC10\Release\XmiToUdm.exe" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\VC10\Release\UdmToXmi.exe" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\VC10\Release\UdmSwig.dll" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\judm\build\build_win\judm\judm.jar" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\bin\udm.py" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\VC10\Release\UdmCli.dll" Assembly=".net"/>
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\VC10\Release\UdmCliBridge.dll" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\src\UdmCliGen\dist\UdmCliGen.exe" />
+      </Component>
+      <Component Directory="bin$(sys.BUILDARCH)">
+        <File Source="..\src\UdmCliGen\dist\python27.dll" />
+      </Component>
+      <?endif?>
+
+      <ComponentGroupRef Id="MetaGME2Uml$(sys.BUILDARCH)"/>
+      <ComponentGroupRef Id="UML2XML$(sys.BUILDARCH)"/>
+      <?if $(sys.BUILDARCH)=x86 ?>
+      <ComponentGroupRef Id="UMLOCLExpressionChecker$(sys.BUILDARCH)"/>
+      <Component Directory="Python26$(sys.BUILDARCH)">
+        <File Source="..\bin\Python26\udm.pyd" />
+      </Component>
+      <Component Directory="Python26$(sys.BUILDARCH)">
+        <File Source="..\bin\Python26\__init__.py" />
+      </Component>
+
+      <Component Directory="Python27$(sys.BUILDARCH)">
+        <File Source="..\bin\Python27\udm.pyd" Id="udm.pyd27"/>
+      </Component>
+      <Component Directory="Python27$(sys.BUILDARCH)">
+        <File Source="..\bin\Python27\__init__.py" Id="initpy27"/>
+      </Component>
+      <?endif?>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

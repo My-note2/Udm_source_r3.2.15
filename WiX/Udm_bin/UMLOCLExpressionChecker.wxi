@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Fragment>
+  <DirectoryRef Id="bin" />
+</Fragment>
+<Fragment>
+<ComponentGroup Id="UMLOCLExpressionChecker$(sys.BUILDARCH)">
+  <Component Id="UMLOCLExpressionChecker.dll$(sys.BUILDARCH)" Directory="bin$(sys.BUILDARCH)">
+    <File Source="..\Build\Win32\VC10\Release\GmeOclExprChecker.dll">
+      <TypeLib Id="002B5FA9-C403-487D-8699-43CD7F7403BE" Description="MGA AddOn TypeLibrary (UMLOCLExpressionChecker)" Language="0" MajorVersion="1" MinorVersion="0">
+        <Class Id="{8FA738DE-767C-4765-8C0C-06365835D90A}" Context="InprocServer32" Description="MGA.AddOn.UMLOCLExpressionChecker">
+          <ProgId Id="MGA.AddOn.UMLOCLExpressionChecker" Description="MGA.AddOn.UMLOCLExpressionChecker" />
+        </Class>
+      </TypeLib>
+    </File>
+    <RegistryKey Root='HKLM' Key='Software\GME\Components\MGA.AddOn.UMLOCLExpressionChecker'>
+      <RegistryValue Name='Description' Type='string' Value='UMLOCLExpressionChecker'/>
+      <RegistryValue Name='Paradigm' Type='string' Value='UML'/>
+      <RegistryValue Name='Type' Type='integer' Value='2'/>
+
+      <RegistryKey Key='Associated'>
+        <RegistryValue Name='UML' Type='string' Value=''/>
+      </RegistryKey>
+
+    </RegistryKey>
+  </Component>
+</ComponentGroup>
+</Fragment>
+</Wix>

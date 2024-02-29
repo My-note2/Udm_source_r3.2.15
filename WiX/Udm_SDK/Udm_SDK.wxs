@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='windows-1252'?>
+
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi' RequiredVersion='3.0.4813.0'>
+
+  <?include ..\Udm_inc.wxi ?>
+  <Fragment>
+
+    <DirectoryRef Id="lib$(sys.BUILDARCH)"/>
+    <DirectoryRef Id="INSTALLDIR"/>
+
+    <?if $(sys.BUILDARCH)=x86 ?>
+    <DirectoryRef Id="include"/>
+    <DirectoryRef Id='etc'/>
+    <DirectoryRef Id='doc'/>
+    <DirectoryRef Id='UIntWizVS'/>
+    <DirectoryRef Id='Samples'/>
+    <DirectoryRef Id='Samples_Python'/>
+    <DirectoryRef Id='test_UdmPython'/>
+    <DirectoryRef Id='GeneTF'/>
+    <DirectoryRef Id='GeneTRE'/>
+    <DirectoryRef Id='SBML2Ex'/>
+    <?endif?>
+
+    <ComponentGroup Id='Udm_SDK$(sys.BUILDARCH)'>
+
+      <?if $(sys.BUILDARCH)=x86 ?>
+      <ComponentGroupRef Id="include" />
+      <ComponentGroupRef Id="UIntWizVS" />
+      <ComponentGroupRef Id="test_UdmPython"/>
+      <ComponentGroupRef Id="GeneTF"/>
+      <ComponentGroupRef Id="GeneTRE"/>
+      <ComponentGroupRef Id="SBML2Ex"/>
+
+      <Component Directory="INSTALLDIR">
+        <File Source="..\releaseinfo.txt" />
+      </Component>
+      <Component Directory="INSTALLDIR">
+        <File Source="..\license.txt" />
+      </Component>
+
+      <Component Directory="doc">
+        <File Source="..\doc\UDMAPI.pdf" />
+      </Component>
+      <Component Directory="doc">
+        <File Source="..\doc\UdmInterpreterWizard.pdf" />
+      </Component>
+      <!-- TODO: javadoc judm\build\build_win\judm\apidoc -->
+
+      <Component Directory="etc">
+        <File Source="..\etc\CreateUdmXml.vbs" />
+      </Component>
+      <Component Directory="etc">
+        <File Source="..\etc\compileUdmAPI.bat" />
+      </Component>
+      <Component Directory="etc">
+        <File Source="..\etc\CreateMGA.vbs" />
+      </Component>
+      <Component Directory="etc">
+        <File Source="..\etc\CreateXmp.vbs" />
+      </Component>
+      <Component Directory="etc">
+        <File Source="..\etc\Uml.xsd" />
+      </Component>
+      <Component Directory="etc">
+        <File Source="..\etc\UdmProject.xme" />
+      </Component>
+      <Component Directory="etc">
+        <File Source="..\etc\UdmProject_udm.xml" />
+      </Component>
+      <Component Directory="etc">
+        <File Source="..\etc\UdmProject.xsd" />
+      </Component>
+      <Component Directory="etc">
+        <File Source="..\etc\Uml.xml" />
+      </Component>
+      <Component Directory="etc">
+        <File Source="..\etc\Xme2UdmXml.bat" />
+      </Component>
+      <Component Directory="etc">
+        <File Source="..\etc\UmlInUml.xme" />
+      </Component>
+      <Component Directory="etc">
+        <File Source="..\etc\UmlMeta.xme" />
+      </Component>
+      <Component Directory="etc">
+        <File Source="..\Build\Win32\VC10\Release\StrResGen.exe" />
+      </Component>
+
+      <Component Directory="etc_Java">
+        <File Source="..\etc\JAVA\judmAPI.bat" />
+      </Component>
+      <Component Directory="etc_Java">
+        <File Source="..\etc\JAVA\.classpath" />
+      </Component>
+      <Component Directory="etc_Java">
+        <File Source="..\etc\JAVA\.project" />
+      </Component>
+      <Component Directory="etc_Java">
+        <File Source="..\etc\JAVA\build.xml" />
+      </Component>
+      <Component Directory="etc_Java">
+        <File Source="..\etc\JAVA\eclipseAPI.bat" />
+      </Component>
+      <?endif?>
+
+      <?if $(sys.BUILDARCH)=x86 ?>
+      <Component Directory="lib$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\v100\Release\UdmDll_VS10.lib" />
+      </Component>
+      <Component Directory="lib$(sys.BUILDARCH)">
+        <File Source="..\Build\Win32\v100\Debug\UdmDll_VS10D.lib" />
+      </Component>
+      <?else?>
+      <Component Directory="libx86" Win64='no'>
+        <File Source="..\Build\x64\v100\Release\UdmDll_v100_x64.lib" />
+      </Component>
+      <Component Directory="libx86" Win64='no'>
+        <File Source="..\Build\x64\v100\Debug\UdmDll_v100_x64D.lib" />
+      </Component>
+      <?endif?>
+
+    </ComponentGroup>
+  </Fragment>
+</Wix>

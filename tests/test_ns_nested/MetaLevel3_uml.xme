@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "mga.dtd">
+
+<project guid="{0D84BFB0-B4EB-46B8-BCC1-A25C2D2B77D4}" cdate="Tue Mar 04 11:26:46 2014" mdate="Tue Mar 04 11:26:46 2014" version="" metaguid="{1913C77F-2986-4DA3-BD61-02F6C19FD44E}" metaversion="" metaname="UML">
+	<name>MetaLevel3</name>
+	<comment></comment>
+	<author></author>
+	<folder id="id-006a-00000001" relid="0x1" childrelidcntr="0x1" kind="RootFolder" guid="{eaa91c85-9dad-46f3-9510-b581f1c55f8d}">
+		<name>MetaLevel3</name>
+		<model id="id-0065-00000001" kind="Package" guid="{369dff8e-dd88-43d9-bc41-8c775bd0a906}" relid="0x1" childrelidcntr="0x4">
+			<name>MetaLevel3</name>
+			<attribute kind="alias" status="meta">
+				<value></value>
+			</attribute>
+			<attribute kind="version" status="meta">
+				<value>1.00</value>
+			</attribute>
+			<model id="id-0065-00000002" kind="ClassDiagram" role="ClassDiagram" guid="{f76341d0-9808-4cd5-af71-646b7708f382}" relid="0x1" childrelidcntr="0x13">
+				<name>zC_GMEInheritanceSheet</name>
+				<atom id="id-0066-00000001" kind="Class" role="Class" guid="{08723694-4aad-4d1e-8f1b-edc2ff8ec214}" relid="0x1">
+					<name>MgaObject</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>350,5</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>350,5</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes">
+						<value>name : String[0..1] 
+position : String[0..1]
+</value>
+					</attribute>
+					<attribute kind="IsAbstract">
+						<value>true</value>
+					</attribute>
+					<attribute kind="Stereotype" status="meta">
+						<value></value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000002" kind="Inheritance" role="Inheritance" guid="{c67e2ec3-5b70-44ad-b1a1-21f8c1f8239b}" relid="0x2">
+					<name></name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>350,100</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>350,100</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</atom>
+				<reference id="id-0067-00000004" kind="ClassCopy" role="ClassCopy" guid="{b04c4612-c2b2-479d-8c7a-b2ebfa78d4a2}" relid="0x4" referred="id-0066-0000000a">
+					<name>Level3_Atom</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>0,200</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>0,200</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-00000005" kind="ClassCopy" role="ClassCopy" guid="{3780d927-3220-49a2-86f8-d7d0eefcca3c}" relid="0x6" referred="id-0066-0000000b">
+					<name>Level3_Model</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>150,200</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>150,200</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-00000006" kind="ClassCopy" role="ClassCopy" guid="{d25ddbd8-39cd-4427-aff7-19bc6ff7e72f}" relid="0x8" referred="id-0066-00000009">
+					<name>Level2_Model</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>300,200</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>300,200</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-00000007" kind="ClassCopy" role="ClassCopy" guid="{84a66a59-a001-4070-b63b-b09814c8d233}" relid="0xa" referred="id-0066-00000008">
+					<name>Level2_Atom</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>450,200</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>450,200</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-00000008" kind="ClassCopy" role="ClassCopy" guid="{8ed621ee-7917-490e-9760-872d5c79c6a1}" relid="0xc" referred="id-0066-00000006">
+					<name>Level1_Connection</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>600,200</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>600,200</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-00000009" kind="ClassCopy" role="ClassCopy" guid="{9e821929-2aaa-4ebc-afd2-0f0dab956f23}" relid="0xe" referred="id-0066-00000007">
+					<name>Level1_Atom_src</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>750,200</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>750,200</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-0000000a" kind="ClassCopy" role="ClassCopy" guid="{c045d619-1cec-48b4-b67c-6c3f45b5f286}" relid="0x10" referred="id-0066-00000005">
+					<name>Level1_Model</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>900,200</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>900,200</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-0000000b" kind="ClassCopy" role="ClassCopy" guid="{10280c6a-752c-4b11-9a87-4c20b26ddad4}" relid="0x12" referred="id-0066-00000004">
+					<name>Level1_Atom_dest</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>1050,200</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>1050,200</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+				</reference>
+				<connection id="id-0068-00000001" kind="Base" role="Base" guid="{ab458ef9-4035-41d1-a60a-f8d2ec5363b1}" relid="0x3">
+					<name></name>
+					<connpoint role="src" target="id-0066-00000001"/>
+					<connpoint role="dst" target="id-0066-00000002"/>
+				</connection>
+				<connection id="id-0068-0000000e" kind="Sub" role="Sub" guid="{33771b30-ca46-419f-8e93-f33ec5617154}" relid="0x5">
+					<name></name>
+					<connpoint role="src" target="id-0066-00000002"/>
+					<connpoint role="dst" target="id-0067-00000004"/>
+				</connection>
+				<connection id="id-0068-0000000f" kind="Sub" role="Sub" guid="{ebb778dc-9e82-4c9a-8391-ea508002f13a}" relid="0x7">
+					<name></name>
+					<connpoint role="src" target="id-0066-00000002"/>
+					<connpoint role="dst" target="id-0067-00000005"/>
+				</connection>
+				<connection id="id-0068-00000010" kind="Sub" role="Sub" guid="{41643111-6946-487c-a949-5968d36f3f03}" relid="0x9">
+					<name></name>
+					<connpoint role="src" target="id-0066-00000002"/>
+					<connpoint role="dst" target="id-0067-00000006"/>
+				</connection>
+				<connection id="id-0068-00000011" kind="Sub" role="Sub" guid="{1adbb9d6-0876-4c74-99b8-bce4439831d4}" relid="0xb">
+					<name></name>
+					<connpoint role="src" target="id-0066-00000002"/>
+					<connpoint role="dst" target="id-0067-00000007"/>
+				</connection>
+				<connection id="id-0068-00000012" kind="Sub" role="Sub" guid="{25cb409a-bdb9-4575-b95d-46f6c53d0efc}" relid="0xd">
+					<name></name>
+					<connpoint role="src" target="id-0066-00000002"/>
+					<connpoint role="dst" target="id-0067-00000008"/>
+				</connection>
+				<connection id="id-0068-00000013" kind="Sub" role="Sub" guid="{b23fe604-f804-4199-9674-add2516c8710}" relid="0xf">
+					<name></name>
+					<connpoint role="src" target="id-0066-00000002"/>
+					<connpoint role="dst" target="id-0067-00000009"/>
+				</connection>
+				<connection id="id-0068-00000014" kind="Sub" role="Sub" guid="{75cba564-e72a-4b1f-b40a-2f956ec587b6}" relid="0x11">
+					<name></name>
+					<connpoint role="src" target="id-0066-00000002"/>
+					<connpoint role="dst" target="id-0067-0000000a"/>
+				</connection>
+				<connection id="id-0068-00000015" kind="Sub" role="Sub" guid="{1f4d5169-42d6-4b65-ac07-fff4278b1642}" relid="0x13">
+					<name></name>
+					<connpoint role="src" target="id-0066-00000002"/>
+					<connpoint role="dst" target="id-0067-0000000b"/>
+				</connection>
+			</model>
+			<model id="id-0065-00000003" kind="ClassDiagram" role="ClassDiagram" guid="{8e4155ad-45c3-4450-a12a-580aba21879c}" relid="0x2" childrelidcntr="0x8">
+				<name>zC_RootFolderCompositionSheet</name>
+				<atom id="id-0066-00000003" kind="Class" role="Class" guid="{604ba30c-49a0-427b-81d4-e294b732c51b}" relid="0x1">
+					<name>RootFolder</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>350,5</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>350,5</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes">
+						<value>name : String[0..1]
+</value>
+					</attribute>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype">
+						<value>Folder</value>
+					</attribute>
+				</atom>
+				<reference id="id-0067-00000001" kind="ClassCopy" role="ClassCopy" guid="{f6fcea83-0ee9-4d3d-be55-3f203064db1a}" relid="0x3" referred="id-0066-00000005">
+					<name>Level1_Model</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>0,200</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>0,200</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-00000002" kind="ClassCopy" role="ClassCopy" guid="{8923b164-75ce-4943-b745-f7416632db1d}" relid="0x5" referred="id-0066-00000009">
+					<name>Level2_Model</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>150,200</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>150,200</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-00000003" kind="ClassCopy" role="ClassCopy" guid="{40c4aea8-de8b-4e72-9766-547ec31a77fa}" relid="0x7" referred="id-0066-0000000b">
+					<name>Level3_Model</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>300,200</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>300,200</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+				</reference>
+				<connection id="id-0068-00000002" kind="Composition" role="Composition" guid="{8ca4ec94-bcb6-488d-959c-611e5a191cca}" relid="0x2">
+					<name></name>
+					<attribute kind="Cardinality">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="ChildRole" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ParentRole" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000003"/>
+					<connpoint role="src" target="id-0066-00000003"/>
+				</connection>
+				<connection id="id-0068-00000003" kind="Composition" role="Composition" guid="{679b656a-a672-489c-bd36-08d912b02be4}" relid="0x4">
+					<name></name>
+					<attribute kind="Cardinality" status="meta">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="ChildRole" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ParentRole" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000003"/>
+					<connpoint role="src" target="id-0067-00000001"/>
+				</connection>
+				<connection id="id-0068-00000004" kind="Composition" role="Composition" guid="{00009a97-b479-49b0-ac7b-446b3bc6152a}" relid="0x6">
+					<name></name>
+					<attribute kind="Cardinality" status="meta">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="ChildRole" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ParentRole" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000003"/>
+					<connpoint role="src" target="id-0067-00000002"/>
+				</connection>
+				<connection id="id-0068-00000005" kind="Composition" role="Composition" guid="{c2396540-a569-450c-9af6-eb3856396e69}" relid="0x8">
+					<name></name>
+					<attribute kind="Cardinality" status="meta">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="ChildRole" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ParentRole" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000003"/>
+					<connpoint role="src" target="id-0067-00000003"/>
+				</connection>
+			</model>
+			<model id="id-0065-00000004" kind="ClassDiagram" role="ClassDiagram" guid="{e2901f5c-8221-4411-bfa1-bb263fb6811a}" relid="0x3" childrelidcntr="0x3">
+				<name>Level3</name>
+				<atom id="id-0066-0000000a" kind="Class" role="Class" guid="{48cf329a-efc9-4a60-b455-18bea2a91898}" relid="0x1">
+					<name>Level3_Atom</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>238,315</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>224,315</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="IsAbstract">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype">
+						<value>Atom</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-0000000b" kind="Class" role="Class" guid="{3e964adc-1555-4610-a843-c19bdabf94eb}" relid="0x2">
+					<name>Level3_Model</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="Constraints" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>224,63</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>224,63</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="IsAbstract">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype">
+						<value>Model</value>
+					</attribute>
+				</atom>
+				<connection id="id-0068-0000000d" kind="Composition" role="Composition" guid="{97e4ae9d-5b41-4e47-b100-a77d4d664607}" relid="0x3">
+					<name></name>
+					<attribute kind="Cardinality">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="ChildRole">
+						<value></value>
+					</attribute>
+					<attribute kind="ParentRole" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="src" target="id-0066-0000000a"/>
+					<connpoint role="dst" target="id-0066-0000000b"/>
+				</connection>
+			</model>
+			<model id="id-0065-00000005" kind="Namespace" role="Namespace" guid="{dcad2eb8-41ed-4008-a4c6-f54186ee8c5a}" relid="0x4" childrelidcntr="0x2">
+				<name>NS_Level2</name>
+				<model id="id-0065-00000006" kind="ClassDiagram" role="ClassDiagram" guid="{5a4a6e73-4653-4a7b-a70e-02a947c0f4e5}" relid="0x1" childrelidcntr="0x3">
+					<name>Level2</name>
+					<atom id="id-0066-00000008" kind="Class" role="Class" guid="{cc2fedc5-91d6-4a50-8de1-08d09884a67f}" relid="0x1">
+						<name>Level2_Atom</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="Constraints" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>224,280</value>
+								</regnode>
+							</regnode>
+							<regnode name="UML" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>252,273</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Attributes" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="IsAbstract">
+							<value>false</value>
+						</attribute>
+						<attribute kind="Stereotype">
+							<value>Atom</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000009" kind="Class" role="Class" guid="{104db573-c9f7-4b02-a77b-6d742e51d0de}" relid="0x2">
+						<name>Level2_Model</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="Constraints" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>252,56</value>
+								</regnode>
+							</regnode>
+							<regnode name="UML" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>252,56</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Attributes" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="IsAbstract">
+							<value>false</value>
+						</attribute>
+						<attribute kind="Stereotype">
+							<value>Model</value>
+						</attribute>
+					</atom>
+					<connection id="id-0068-0000000c" kind="Composition" role="Composition" guid="{f02ed646-2e8c-417c-988c-8760b74b631e}" relid="0x3">
+						<name></name>
+						<attribute kind="Cardinality">
+							<value>0..*</value>
+						</attribute>
+						<attribute kind="ChildRole">
+							<value></value>
+						</attribute>
+						<attribute kind="ParentRole" status="meta">
+							<value></value>
+						</attribute>
+						<connpoint role="src" target="id-0066-00000008"/>
+						<connpoint role="dst" target="id-0066-00000009"/>
+					</connection>
+				</model>
+				<model id="id-0065-00000007" kind="Namespace" role="Namespace" guid="{e43b5798-1611-4d32-a920-9e00abb1ac55}" relid="0x2" childrelidcntr="0x1">
+					<name>NS_Level1</name>
+					<model id="id-0065-00000008" kind="ClassDiagram" role="ClassDiagram" guid="{d3ad3b2c-6018-4683-be5a-775ec0b1c9f1}" relid="0x1" childrelidcntr="0xb">
+						<name>Level1</name>
+						<atom id="id-0066-00000004" kind="Class" role="Class" guid="{d3edda25-3280-44d4-bb74-b16d11fda149}" relid="0x1">
+							<name>Level1_Atom_dest</name>
+							<regnode name="PartRegs" status="undefined">
+								<value></value>
+								<regnode name="Constraints" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>224,280</value>
+									</regnode>
+								</regnode>
+								<regnode name="UML" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>420,280</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<attribute kind="Attributes" status="meta">
+								<value></value>
+							</attribute>
+							<attribute kind="IsAbstract">
+								<value>false</value>
+							</attribute>
+							<attribute kind="Stereotype">
+								<value>Atom</value>
+							</attribute>
+						</atom>
+						<atom id="id-0066-00000005" kind="Class" role="Class" guid="{e48d88bc-7f85-481e-90e3-fa3971afe529}" relid="0x2">
+							<name>Level1_Model</name>
+							<regnode name="PartRegs" status="undefined">
+								<value></value>
+								<regnode name="Constraints" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>252,56</value>
+									</regnode>
+								</regnode>
+								<regnode name="UML" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>252,56</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<attribute kind="Attributes" status="meta">
+								<value></value>
+							</attribute>
+							<attribute kind="IsAbstract">
+								<value>false</value>
+							</attribute>
+							<attribute kind="Stereotype">
+								<value>Model</value>
+							</attribute>
+						</atom>
+						<atom id="id-0066-00000006" kind="Class" role="Class" guid="{8be5f3bb-d51d-4960-98c6-5100980556f9}" relid="0x3">
+							<name>Level1_Connection</name>
+							<regnode name="PartRegs" status="undefined">
+								<value></value>
+								<regnode name="Constraints" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>63,343</value>
+									</regnode>
+								</regnode>
+								<regnode name="UML" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>154,371</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<attribute kind="Attributes" status="meta">
+								<value></value>
+							</attribute>
+							<attribute kind="IsAbstract">
+								<value>false</value>
+							</attribute>
+							<attribute kind="Stereotype">
+								<value>Connection</value>
+							</attribute>
+						</atom>
+						<atom id="id-0066-00000007" kind="Class" role="Class" guid="{35f771ff-b663-44c4-bbd3-d13517328cb5}" relid="0x4">
+							<name>Level1_Atom_src</name>
+							<regnode name="PartRegs" status="undefined">
+								<value></value>
+								<regnode name="Constraints" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>224,280</value>
+									</regnode>
+								</regnode>
+								<regnode name="UML" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>252,273</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<attribute kind="Attributes" status="meta">
+								<value></value>
+							</attribute>
+							<attribute kind="IsAbstract">
+								<value>false</value>
+							</attribute>
+							<attribute kind="Stereotype">
+								<value>Atom</value>
+							</attribute>
+						</atom>
+						<atom id="id-0066-0000000c" kind="Connector" role="Connector" guid="{0daa0274-7fd3-4e6a-97eb-659919e5337b}" relid="0x8">
+							<name></name>
+							<regnode name="PartRegs" status="undefined">
+								<value></value>
+								<regnode name="UML" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>371,427</value>
+									</regnode>
+								</regnode>
+							</regnode>
+						</atom>
+						<connection id="id-0068-00000006" kind="Composition" role="Composition" guid="{76846e87-e2ad-48a3-b7d5-3928a7e8a314}" relid="0x5">
+							<name></name>
+							<attribute kind="Cardinality">
+								<value>0..*</value>
+							</attribute>
+							<attribute kind="ChildRole">
+								<value></value>
+							</attribute>
+							<attribute kind="ParentRole" status="meta">
+								<value></value>
+							</attribute>
+							<connpoint role="dst" target="id-0066-00000005"/>
+							<connpoint role="src" target="id-0066-00000007"/>
+						</connection>
+						<connection id="id-0068-00000007" kind="Composition" role="Composition" guid="{9649ca01-88f4-4094-84aa-e6676c4c3c00}" relid="0x6">
+							<name></name>
+							<attribute kind="Cardinality">
+								<value>0..*</value>
+							</attribute>
+							<attribute kind="ChildRole">
+								<value></value>
+							</attribute>
+							<attribute kind="ParentRole" status="meta">
+								<value></value>
+							</attribute>
+							<connpoint role="src" target="id-0066-00000004"/>
+							<connpoint role="dst" target="id-0066-00000005"/>
+						</connection>
+						<connection id="id-0068-00000008" kind="Composition" role="Composition" guid="{73c1d2f4-a191-4e57-abde-7ffe5935b307}" relid="0x7">
+							<name></name>
+							<attribute kind="Cardinality">
+								<value>0..*</value>
+							</attribute>
+							<attribute kind="ChildRole">
+								<value></value>
+							</attribute>
+							<attribute kind="ParentRole" status="meta">
+								<value></value>
+							</attribute>
+							<connpoint role="dst" target="id-0066-00000005"/>
+							<connpoint role="src" target="id-0066-00000006"/>
+						</connection>
+						<connection id="id-0068-00000009" kind="Src" role="Src" guid="{87743dee-d76c-4d13-a3da-ad9d10602f61}" relid="0x9">
+							<name></name>
+							<attribute kind="Cardinality">
+								<value>0..*</value>
+							</attribute>
+							<attribute kind="srcRolename">
+								<value>srcLevel2_Connection</value>
+							</attribute>
+							<connpoint role="src" target="id-0066-00000007"/>
+							<connpoint role="dst" target="id-0066-0000000c"/>
+						</connection>
+						<connection id="id-0068-0000000a" kind="Dst" role="Dst" guid="{e9c8e3de-e198-44ca-8a3b-4e5cadc6c391}" relid="0xa">
+							<name></name>
+							<attribute kind="Cardinality">
+								<value>0..*</value>
+							</attribute>
+							<attribute kind="dstRolename">
+								<value>dstLevel2_Connection</value>
+							</attribute>
+							<connpoint role="dst" target="id-0066-00000004"/>
+							<connpoint role="src" target="id-0066-0000000c"/>
+						</connection>
+						<connection id="id-0068-0000000b" kind="AssociationClass" role="AssociationClass" guid="{626d9cd6-ce09-4083-9a33-3d240ab28042}" relid="0xb">
+							<name></name>
+							<connpoint role="dst" target="id-0066-00000006"/>
+							<connpoint role="src" target="id-0066-0000000c"/>
+						</connection>
+					</model>
+				</model>
+			</model>
+		</model>
+	</folder>
+</project>

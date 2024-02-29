@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{2e0c27a8-3da9-48c6-9c59-ed2124174936}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{990af252-af93-4f57-8a8e-b91216bff02f}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{3861cd47-266d-4d58-b018-8fc389595648}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="NewFilter1">
+      <UniqueIdentifier>{03d1ffa4-0138-43eb-99cb-49fc3e64959f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\tests\testUdmCint\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\tests\testUdmCint\testReadSBML2Ex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\tests\testUdmCint\Test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\tests\testUdmCint\versionCheck.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <xme2mga Include="..\..\..\..\..\tests\testUdmCint\SBML2Ex_uml.xme" />
+    <xme2mga Include="..\..\..\..\..\tests\testUdmCint\GeneTF_uml.xme" />
+  </ItemGroup>
+  <ItemGroup>
+    <mga2udmxml Include="..\..\..\..\..\tests\testUdmCint\SBML2Ex_uml.mga" />
+    <mga2udmxml Include="..\..\..\..\..\tests\testUdmCint\GeneTF_uml.mga" />
+  </ItemGroup>
+  <ItemGroup>
+    <udm Include="..\..\..\..\..\tests\testUdmCint\SBML2Ex_udm.xml" />
+    <udm Include="..\..\..\..\..\tests\testUdmCint\GeneTF_udm.xml" />
+  </ItemGroup>
+</Project>

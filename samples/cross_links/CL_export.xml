@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "mga.dtd">
+
+<project guid="{00000000-0000-0000-0000-000000000000}" cdate="Thu Aug 21 09:22:02 2003" mdate="Thu Sep 04 20:25:54 2003" metaguid="{DA44B836-DEAD-BEEF-FEED-DAD000000001}" metaname="UML">
+	<name>CL</name>
+	<comment></comment>
+	<author></author>
+	<folder id="id-006a-00000001" relid="0x1" childrelidcntr="0x4" kind="RootFolder">
+		<name>CL</name>
+		<folder id="id-006a-00000004" relid="0x4" childrelidcntr="0x1" kind="Package">
+			<name>CD3</name>
+			<model id="id-0065-00000003" kind="ClassDiagram" relid="0x1" childrelidcntr="0x5">
+				<name>CD3</name>
+				<connection id="id-0068-00000016" kind="Sub" role="Sub" relid="0x5">
+					<name>Sub</name>
+					<connpoint role="dst" target="id-0066-00000012"/>
+					<connpoint role="src" target="id-0066-00000011"/>
+				</connection>
+				<connection id="id-0068-00000015" kind="Base" role="Base" relid="0x4">
+					<name>Base</name>
+					<connpoint role="dst" target="id-0066-00000011"/>
+					<connpoint role="src" target="id-0066-00000010"/>
+				</connection>
+				<atom id="id-0066-00000012" kind="Class" role="Class" relid="0x3">
+					<name>MM3</name>
+					<regnode name="PartRegs">
+						<value></value>
+						<regnode name="UML">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>160,154</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>205,156</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Attributes" status="meta">
+						<value></value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000011" kind="Inheritance" role="Inheritance" relid="0x2">
+					<name>Inheritance</name>
+					<regnode name="PartRegs">
+						<value></value>
+						<regnode name="UML">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>212,114</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>212,114</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</atom>
+				<atom id="id-0066-00000010" kind="Class" role="Class" relid="0x1">
+					<name>M3</name>
+					<regnode name="PartRegs">
+						<value></value>
+						<regnode name="UML">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>211,42</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>198,149</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Attributes" status="meta">
+						<value></value>
+					</attribute>
+				</atom>
+			</model>
+		</folder>
+		<folder id="id-006a-00000003" relid="0x2" childrelidcntr="0x1" kind="Package">
+			<name>CD2</name>
+			<model id="id-0065-00000002" kind="ClassDiagram" relid="0x1" childrelidcntr="0x1a">
+				<name>CD2</name>
+				<atom id="id-0066-00000002" kind="Class" role="Class" relid="0x4">
+					<name>M2</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>120,126</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>37,23</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Attributes" status="meta">
+						<value></value>
+					</attribute>
+				</atom>
+			</model>
+		</folder>
+		<folder id="id-006a-00000002" relid="0x1" childrelidcntr="0x1" kind="Package">
+			<name>CD1</name>
+			<model id="id-0065-00000001" kind="ClassDiagram" relid="0x1" childrelidcntr="0x2f">
+				<name>CD1</name>
+				<reference id="id-0067-00000004" kind="ClassCopy" role="ClassCopy" relid="0x1d" referred="id-0066-00000010">
+					<name>M3</name>
+					<regnode name="PartRegs">
+						<value></value>
+						<regnode name="UML">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>246,84</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>282,37</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-00000003" kind="ClassCopy" role="ClassCopy" relid="0x1c" referred="id-0066-00000002">
+					<name>M2</name>
+					<regnode name="PartRegs">
+						<value></value>
+						<regnode name="UML">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>183,28</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>51,44</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+				</reference>
+				<connection id="id-0068-0000000f" kind="AssociationClass" role="AssociationClass" relid="0x21">
+					<name>AssociationClass</name>
+					<connpoint role="dst" target="id-0066-00000001"/>
+					<connpoint role="src" target="id-0066-00000006"/>
+				</connection>
+				<connection id="id-0068-0000000e" kind="Dst" role="Dst" relid="0x20">
+					<name>Dst</name>
+					<attribute kind="Cardinality">
+						<value>1</value>
+					</attribute>
+					<attribute kind="dstRolename" status="meta">
+						<value>dst</value>
+					</attribute>
+					<connpoint role="dst" target="id-0067-00000004"/>
+					<connpoint role="src" target="id-0066-00000006"/>
+				</connection>
+				<connection id="id-0068-0000000d" kind="Src" role="Src" relid="0x1f">
+					<name>Src</name>
+					<attribute kind="Cardinality" status="meta">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="srcRolename" status="meta">
+						<value>src</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000006"/>
+					<connpoint role="src" target="id-0067-00000003"/>
+				</connection>
+				<atom id="id-0066-00000006" kind="Connector" role="Connector" relid="0x1e">
+					<name>Connector</name>
+					<regnode name="PartRegs">
+						<value></value>
+						<regnode name="UML">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>194,103</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</atom>
+				<atom id="id-0066-00000001" kind="Class" role="Class" relid="0xe">
+					<name>M1</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="Constraints" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>37,37</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>183,140</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Attributes" status="meta">
+						<value></value>
+					</attribute>
+				</atom>
+			</model>
+		</folder>
+	</folder>
+</project>

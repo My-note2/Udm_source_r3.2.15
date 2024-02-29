@@ -1,0 +1,22 @@
+include ../../Makefile.OSX.incl
+
+BUILT_SOURCES=test_ns.cpp
+SOURCES=$(BUILT_SOURCES) test_ns_test.cpp main.cpp
+CLEAN_FILES=$(BUILT_SOURCES) test_ns.h test_ns.xsd test_ns_A.xsd test_ns_B.xsd test_ns_AB.xsd
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS) test_ns
+
+$(BUILT_SOURCES):test_ns_udm.xml ../../bin/Udm
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -v -d ../../etc -T
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) -I $(CPPUNIT)/include $< -o $@
+
+test_ns: $(OBJECTS)
+	$(CC) $(BCFLAGS) $(OBJECTS) -o test_ns  -lUdm -L../../lib -lcppunit -L $(CPPUNITLIBS)
+
+test:test_ns
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ./test_ns
+
+clean: 
+	rm -f *.o  test_ns $(CLEAN_FILES)

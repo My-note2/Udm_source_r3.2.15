@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="invSpCompartment" name="invSpCompartment">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Invalid Species Compartment Reference</title>
+</head>
+<body>
+<h1>Invalid Species Compartment Reference</h1>
+<p>
+A species references a compartment which is not defined.
+</p>
+</body>
+</sbml:notes>
+
+<listOfCompartments>
+<compartment id="global" />
+</listOfCompartments>
+
+<listOfSpecies>
+<species id="A" name="A" compartment="global" />
+<species id="B" name="B" compartment="missing" />
+</listOfSpecies>
+
+</model>
+</sbml>

@@ -1,0 +1,27 @@
+include ../../Makefile.OSX.incl
+
+SOURCES=UdmSwigMain.cpp UdmSwig_wrap_sed.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS)
+
+
+#UdmSwig_wrap.cpp:build_UdmSwig_wrap.sh
+#	./build_UdmSwig_Wrap.sh
+
+
+#Apple LLVM version 5.0 (clang-500.2.79) (based on LLVM 3.3svn)A
+#does not like std::vector< bool >::const_reference result;
+#unfortunately this is generated code by SWIG, so no other choice than this replace hack.... 
+
+
+UdmSwig_wrap_sed.cpp:UdmSwig_wrap.cpp
+	sed 's/std::vector< bool >::const_reference result;/bool result;/' < $<  > $@ 
+
+UdmSwig_wrap.cpp:
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) SWIG_LIB=$(SWIGLIB) $(SWIG) -java -package edu.vanderbilt.isis.udm.swig -outdir ../../judm/src/UdmSwig/edu/vanderbilt/isis/udm/swig/ -v -c++ -o UdmSwig_wrap.cpp UdmSwig.i
+
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) -I$(JDK_INCLUDE) $< -o $@
+clean: 
+	rm -f *.o UdmSwig_wrap.cpp UdmSwig_wrap_sed.cpp

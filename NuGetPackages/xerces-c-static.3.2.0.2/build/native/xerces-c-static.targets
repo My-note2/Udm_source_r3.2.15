@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="xerces-c-static_init">
+  <PropertyGroup Label="Debug and static and RuntimeLibraryNull" Condition="( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-xerces-c-static.ToLower())' == 'static' And ('$(RuntimeLibrary)' == '')">
+    <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+  </PropertyGroup>
+  <PropertyGroup Label="Release and static and RuntimeLibraryNull" Condition="( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-xerces-c-static.ToLower())' == 'static' And ('$(RuntimeLibrary)' == '')">
+    <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+  </PropertyGroup>
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-xerces-c-static Condition="'$(Linkage-xerces-c-static)' == ''">dynamic</Linkage-xerces-c-static>
+    <CallingConvention-xerces-c-static Condition="'$(CallingConvention-xerces-c-static)' == ''">cdecl</CallingConvention-xerces-c-static>
+  </PropertyGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\xerces-c-static-propertiesui-7c00a281-9f61-4ad3-9c67-af0553f22943.xml" />
+  </ItemGroup>
+  <ItemDefinitionGroup Label="static" Condition="'$(Linkage-xerces-c-static.ToLower())' == 'static'">
+    <ClCompile>
+      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64" Condition="'$(Platform.ToLower())' == 'x64'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\xerces-c_3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32" Condition="'$(Platform.ToLower())' == 'win32'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\xerces-c_3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <UsingTask TaskName="xerces-c-static_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+  <Target Name="xerces-c-static_init">
+    <xerces-c-static_Contains Text="Linkage-dynamic" Library="xerces-c-static" Value="dynamic" Condition="'$(Linkage-xerces-c-static)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-xerces-c-static" />
+    </xerces-c-static_Contains>
+    <xerces-c-static_Contains Text="Linkage-static" Library="xerces-c-static" Value="static" Condition="'$(Linkage-xerces-c-static)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-xerces-c-static" />
+    </xerces-c-static_Contains>
+    <xerces-c-static_Contains Text="Linkage-ltcg" Library="xerces-c-static" Value="ltcg" Condition="'$(Linkage-xerces-c-static)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-xerces-c-static" />
+    </xerces-c-static_Contains>
+    <xerces-c-static_Contains Text="Linkage-sxs" Library="xerces-c-static" Value="sxs" Condition="'$(Linkage-xerces-c-static)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-xerces-c-static" />
+    </xerces-c-static_Contains>
+    <xerces-c-static_Contains Text="CallingConvention-cdecl" Library="xerces-c-static" Value="cdecl" Condition="'$(CallingConvention-xerces-c-static)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-xerces-c-static" />
+    </xerces-c-static_Contains>
+    <xerces-c-static_Contains Text="CallingConvention-stdcall" Library="xerces-c-static" Value="stdcall" Condition="'$(CallingConvention-xerces-c-static)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-xerces-c-static" />
+    </xerces-c-static_Contains>
+    <xerces-c-static_Contains Text="CallingConvention-fastcall" Library="xerces-c-static" Value="fastcall" Condition="'$(CallingConvention-xerces-c-static)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-xerces-c-static" />
+    </xerces-c-static_Contains>
+    <xerces-c-static_Contains Text="CallingConvention-thiscall" Library="xerces-c-static" Value="thiscall" Condition="'$(CallingConvention-xerces-c-static)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-xerces-c-static" />
+    </xerces-c-static_Contains>
+    <xerces-c-static_Contains Text="CallingConvention-clrcall" Library="xerces-c-static" Value="clrcall" Condition="'$(CallingConvention-xerces-c-static)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-xerces-c-static" />
+    </xerces-c-static_Contains>
+  </Target>
+</Project>

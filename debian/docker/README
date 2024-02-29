@@ -1,0 +1,34 @@
+build.isis Jenkins Udm builds are run on Docker:
+
+sudo docker build -t udm-14.04-x86-build UDM_14.04_x86/
+sudo docker build -t udm-12.04-x86-build UDM_12.04_x86/
+sudo docker build -t udm-14.04-build UDM_14.04/
+sudo docker build -t udm-12.04-build UDM_12.04/
+
+sudo docker run -d --name udm-14.04 udm-14.04-build
+sudo docker run -d --name udm-12.04 udm-12.04-build
+sudo docker run -d --name udm-12.04-x86 udm-12.04-x86-build
+sudo docker run -d --name udm-14.04-x86 udm-14.04-x86-build
+
+After a host reboot:
+sudo docker start udm-14.04
+sudo docker start udm-12.04
+sudo docker start udm-12.04-x86
+sudo docker start udm-14.04-x86
+
+
+# HOWTO: create x86 docker ubuntu image
+wget https://github.com/docker/docker/raw/master/contrib/mkimage-debootstrap.sh
+sudo apt-get install debootstrap
+bash mkimage-debootstrap.sh -a i386 ubuntu_14.04_x86 trusty
+# if tagging fails:
+#  cd /var/tmp/docker-rootfs-deboot strap-precise-10853-2375/
+#  sudo tar --numeric-owner -c . | sudo docker import - ubuntu_14.04_x86
+sudo docker tag ubuntu_14.04_x86 ubuntu:14.04_x86
+# test:
+#  sudo docker run --rm ubuntu:12.04_x86 uname -a
+#  sudo docker run --rm ubuntu:12.04_x86 bash -c 'apt-get install -y file && file /bin/bash'
+#  sudo docker run --rm ubuntu:12.04_x86 linux32 uname -a
+#  sudo docker run --rm udm-12.04-x86-build java -version
+#  sudo docker run --rm udm-12.04-x86-build ls /usr/lib/jvm/
+#  sudo docker run --rm -v `pwd`/UDM:/jenkins udm-12.04-x86-build fakeroot debian/rules binary

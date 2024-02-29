@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="eventUnitRef" name="eventUnitRef">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Event Unit Reference</title>
+</head>
+<body>
+<h1>Event Unit Reference</h1>
+<p>
+The <em>timeUnits</em> attribute must reference one of the predefined
+unit identifiers <em>time</em> or <em>seconds</em> or the identifier
+for a <em>unitDefinition</em> structure.
+</p>
+</body>
+</sbml:notes>
+
+<listOfUnitDefinitions>
+  <unitDefinition id="u1">
+    <listOfUnits>
+      <unit kind="second" scale="-3" />
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions>
+
+<listOfParameters>
+  <parameter id="ep0" />
+</listOfParameters>
+
+<listOfEvents>
+  <event id="e0" timeUnits="time">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep0">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e1" timeUnits="second">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep1">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e2" timeUnits="u1">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep2">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e3" timeUnits="foo">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep3">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+  <event id="e4" timeUnits="metre">
+    <trigger>
+      <math:math />
+    </trigger>
+    <listOfEventAssignments>
+      <eventAssignment variable="ep4">
+        <math:math />
+      </eventAssignment>
+    </listOfEventAssignments>
+  </event>
+</listOfEvents>
+</model>
+</sbml>

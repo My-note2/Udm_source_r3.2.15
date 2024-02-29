@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UdmCliBridge", "UdmCliBridge\UdmCliBridge.vcxproj", "{23D887FD-5A09-4F84-A8B1-DC67A4A632F0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E96F4873-D47D-4513-97B6-D0A2869434BC} = {E96F4873-D47D-4513-97B6-D0A2869434BC}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UdmCliSwig", "UdmCliSwig\UdmCliSwig.vcxproj", "{E96F4873-D47D-4513-97B6-D0A2869434BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23D887FD-5A09-4F84-A8B1-DC67A4A632F0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{23D887FD-5A09-4F84-A8B1-DC67A4A632F0}.Debug|Win32.Build.0 = Debug|Win32
+		{23D887FD-5A09-4F84-A8B1-DC67A4A632F0}.Release|Win32.ActiveCfg = Release|Win32
+		{23D887FD-5A09-4F84-A8B1-DC67A4A632F0}.Release|Win32.Build.0 = Release|Win32
+		{E96F4873-D47D-4513-97B6-D0A2869434BC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E96F4873-D47D-4513-97B6-D0A2869434BC}.Debug|Win32.Build.0 = Debug|Win32
+		{E96F4873-D47D-4513-97B6-D0A2869434BC}.Release|Win32.ActiveCfg = Release|Win32
+		{E96F4873-D47D-4513-97B6-D0A2869434BC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

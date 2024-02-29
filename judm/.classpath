@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="debug-logging.properties|vssver.scc" kind="src" path="src/UdmSwigLight"/>
+	<classpathentry kind="src" path="samples/TimeSeries/src/main"/>
+	<classpathentry kind="src" path="samples/TimeSeries/src/test"/>
+	<classpathentry kind="src" path="src/jUdmHelper"/>
+	<classpathentry kind="src" path="src/UdmSwig"/>
+	<classpathentry excluding="edu/vanderbilt/isis/sbml2ex/package.html" kind="src" path="samples/SBML2Ex/src/main"/>
+	<classpathentry excluding="edu/vanderbilt/isis/sbml2ex/test/vssver.scc" kind="src" path="samples/SBML2Ex/src/test"/>
+	<classpathentry excluding="edu/vanderbilt/isis/genetf/package.html" kind="src" path="samples/GeneTF/src/main"/>
+	<classpathentry excluding="edu/vanderbilt/isis/genetf/test/vssver.scc" kind="src" path="samples/GeneTF/src/test"/>
+	<classpathentry excluding="edu/vanderbilt/isis/genetre/package.html" kind="src" path="samples/GeneTRE/src/main"/>
+	<classpathentry excluding="edu/vanderbilt/isis/genetre/test/vssver.scc" kind="src" path="samples/GeneTRE/src/test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/ksmyth/Documents/3rdparty/UDM_VS2010/junit/junit.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

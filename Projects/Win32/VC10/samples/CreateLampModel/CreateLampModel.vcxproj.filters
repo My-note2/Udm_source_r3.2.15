@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8fd50191-cbe9-4fd8-9fb4-d5daf1cbc64f}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{cf8dc8cd-cf0e-4848-929e-263c88926ef0}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="UML Diagrams">
+      <UniqueIdentifier>{9929790a-a422-433b-9eff-9276c24f527c}</UniqueIdentifier>
+      <Extensions>xml</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(SourceDir)\CreateLampModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ReleaseGenPath)\LampDiagram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="$(SourceDir)\CreateLampModel.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="$(DebugGenPath)\LampDiagram.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="$(DebugGenPath)\LampDiagram_udm.xml">
+      <Filter>UML Diagrams</Filter>
+    </CustomBuild>
+    <CustomBuild Include="$(ReleaseGenPath)\LampDiagram.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="$(ReleaseGenPath)\LampDiagram_udm.xml">
+      <Filter>UML Diagrams</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\..\samples\CreateLampModel\LampDiagramUML.xme" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(DebugGenPath)\LampDiagram.cpp">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

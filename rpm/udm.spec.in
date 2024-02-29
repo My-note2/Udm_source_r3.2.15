@@ -1,0 +1,122 @@
+%define swig @swig@
+%define antlr @antlr@
+%define _unpackaged_files_terminate_build 0
+
+Name: udm
+Summary: The UDM (Universal Data Model) framework
+Version: @PACKAGE_VERSION@
+Release: 0localbuild
+Group: Development/Tools
+Source: %{name}-%{version}.tar.gz
+#Source1: model-files.zip
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+Packager: Endre Magyari <endre@nextra.ro>
+License: Vanderbilt University EULA
+BuildRequires: xerces-c-devel, xalan-c-devel, minizip-devel, pccts
+BuildRequires: swig >= 1.3.24, cppunit-devel
+BuildRequires: ant, ant-junit, ant-trax, junit, xml-commons-apis
+BuildRequires: java-devel
+BuildRequires: boost-devel
+Requires: xerces-c, xalan-c, minizip-libs
+%if "%{rhldisttag}" == "rh7"
+BuildRequires: gcc3-c++
+%endif
+
+%description
+The UDM (Universal Data Model) framework includes the development 
+process and set of supporting tools that are used to generate C++ 
+programmatic interfaces from UML class diagrams of data structures. 
+These interfaces and the underlying libraries provide convenient 
+programmatic access and automatically configured persistence services 
+for data structures as described in the input UML diagram.
+
+%package devel
+Group: Development/Libraries
+Summary: Development package for programs that use UDM
+Requires: udm = %{version}-%{release}, xerces-c-devel, xalan-c-devel, minizip-devel
+
+%description devel
+This package includes the libraries and header files for
+developing programs that use the UDM framework. It also contains
+sample C++ applications.
+
+%package java
+Group: Development/Libraries
+Summary: Java interface to the UDM framework
+Requires: udm = %{version}-%{release}, jpackage-utils
+
+%description java
+This package contains the Java interface to the UDM framework for
+developing Java programs that use the UDM framework.
+
+%prep
+%setup -q
+#%setup -a 1 -D -q
+
+%build
+%if "%{rhldisttag}" == "rh7"
+export CXX=g++3
+%else
+export CXX=g++
+%endif
+%configure --enable-static --with-swig=%{swig} --with-antlr=%{antlr}
+make %{_smp_mflags}
+
+#%check
+make check
+
+%install
+[ "$RPM_BUILD_ROOT" != "/" ] && rm -rf $RPM_BUILD_ROOT
+
+%makeinstall
+
+# jar
+install -d $RPM_BUILD_ROOT%{_javadir}
+install -m 644 judm/build/build_linux/judm/judm.jar $RPM_BUILD_ROOT%{_javadir}/judm-%{version}.jar
+(cd $RPM_BUILD_ROOT%{_javadir} && ln -sf judm-%{version}.jar judm.jar)
+
+# javadoc
+install -d $RPM_BUILD_ROOT%{_javadocdir}
+cp -pr judm/build/build_linux/judm/apidoc $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
+
+# java samples
+install -d $RPM_BUILD_ROOT%{_datadir}/%{name}/samples/java
+for sample in GeneTF GeneTRE SBML2Ex TimeSeries; do
+    install -d $RPM_BUILD_ROOT%{_datadir}/%{name}/samples/java/$sample
+    cp -pr judm/build/build_linux/$sample/{apidoc,*.jar,meta,runtests.sh,samples} $RPM_BUILD_ROOT%{_datadir}/%{name}/samples/java/$sample
+done
+
+%postun
+/sbin/ldconfig
+
+%post
+/sbin/ldconfig
+
+%clean
+rm -fr $RPM_BUILD_ROOT
+
+%files
+%defattr(-,root,root)
+%doc doc/*.pdf
+%{_bindir}/*
+%{_libdir}/libudm.so.*
+# judm loads libUdmSwig.so, include it here
+%{_libdir}/libUdmSwig.so*
+%{_datadir}/%{name}/etc
+
+%files devel
+%defattr(-,root,root)
+%{_includedir}/%{name}
+%{_libdir}/*.*a
+%{_libdir}/libudm.so
+%{_datadir}/%{name}/samples/LampDiagram_udm.xml
+%{_datadir}/%{name}/samples/CreateLampModel
+%{_datadir}/%{name}/samples/cross_links
+
+%files java
+%defattr(-,root,root)
+%doc judm/doc/UDM_Tutorial.pdf
+%{_javadocdir}/%{name}-%{version}
+%{_javadir}/judm-%{version}.jar
+%{_javadir}/judm.jar
+%{_datadir}/%{name}/samples/java

@@ -1,0 +1,8 @@
+<genetre:Container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genetre="http://www.isis.vanderbilt.edu/2004/schemas/genetre" xsi:schemaLocation="http://www.isis.vanderbilt.edu/2004/schemas/genetre GeneTRE_genetre.xsd">
+	<genetre:Gene _id="id9e" name="jojo" site="idae"/>
+	<genetre:PWM _id="ida6" gene="idae" name="PWM"/>
+	<genetre:TF name="toto"/>
+	<genetre:TRE _id="idae" strand="false" position="0" coreScore="0.000000" gene_end_="id9e" site_end_="ida6" matrixScore="0.000000"/>
+</genetre:Container>
+
+

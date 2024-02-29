@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <GenPath>..\..\..\..\..\Build\Win32\VC10\$(Configuration)\Gen\samples</GenPath>
+    <SourceDir>..\..\..\..\..\samples\$(ProjectName)\</SourceDir>
+    <ReleaseGenPath>..\..\..\..\..\Build\Win32\VC10\Release\Gen\samples</ReleaseGenPath>
+    <DebugGenPath>..\..\..\..\..\Build\Win32\VC10\Debug\Gen\samples</DebugGenPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.21006.1</_ProjectFileVersion>
+    <OutDir>..\..\..\..\..\Build\Win32\VC10\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)obj\samples\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\..\..\include;$(GenPath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(UDM_PATH)\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PreBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\..\..\..\include;$(GenPath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="GenPath">
+      <Value>$(GenPath)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="SourceDir">
+      <Value>$(SourceDir)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ReleaseGenPath">
+      <Value>$(ReleaseGenPath)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="DebugGenPath">
+      <Value>$(DebugGenPath)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

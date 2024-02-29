@@ -1,0 +1,20 @@
+include ../../Makefile.OSX.incl
+
+SOURCES=childrenorderTest.cpp test_childrenorder.cpp LampDiagram.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS) test_childrenorder
+
+LampDiagram.cpp:../../samples/LampDiagram_udm.xml ../../bin/Udm
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -v -d ../../etc -T
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) -I $(CPPUNIT)/include $< -o $@
+
+test_childrenorder: $(OBJECTS)
+	$(CC) $(BCFLAGS) $(OBJECTS) -o test_childrenorder  -lUdm -L../../lib -lcppunit -L $(CPPUNITLIBS)
+
+test:test_childrenorder
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ./test_childrenorder
+
+clean: 
+	rm -f *.o  test_childrenorder LampDiagram.cpp LampDiagram.h LampDiagram.xsd *.mem *.xml

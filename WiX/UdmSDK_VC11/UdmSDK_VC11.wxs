@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='windows-1252'?>
+
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi' RequiredVersion='3.0.4813.0'>
+
+  <?include ..\Udm_inc.wxi ?>
+  <Fragment>
+    <DirectoryRef Id='bin$(sys.BUILDARCH)'/>
+    <DirectoryRef Id='lib$(sys.BUILDARCH)'/>
+
+    <ComponentGroup Id='UdmSDK_VC11$(sys.BUILDARCH)'>
+      <?if $(sys.BUILDARCH)=x86 ?>
+      <Component Id='UdmDll_v110_Win32.lib' Guid='1F03A6E0-CEA0-46B1-AE20-5BA5C6085BDE' Directory='lib$(sys.BUILDARCH)'>
+        <File Source="..\Build\Win32\v110\Release\UdmDll_v110_Win32.lib" />
+      </Component>
+      <Component Id='UdmDll_v110_Win32D.lib' Guid='7972E73A-959C-4D06-8B55-96472AD3F2CD' Directory='lib$(sys.BUILDARCH)'>
+        <File Source="..\Build\Win32\v110\Debug\UdmDll_v110_Win32D.lib" />
+      </Component>
+      <?else?>
+      <Component Id='UdmDll_v110_x64.lib' Guid='80BAA333-6817-4C22-9F69-5752B0AE6BDB' Directory='libx86' Win64='no'>
+        <File Source="..\Build\x64\v110\Release\UdmDll_v110_x64.lib" />
+      </Component>
+      <Component Id='UdmDll_v110_x64D.lib' Guid='4414035E-BC87-428D-A8F4-92F0A9B87E58' Directory='libx86' Win64='no'>
+        <File Source="..\Build\x64\v110\Debug\UdmDll_v110_x64D.lib" />
+      </Component>
+      <?endif?>
+
+      <?if $(sys.BUILDARCH)=x86 ?>
+      <Component Id='UdmDll_3_2_v110_Win32D.dll' Guid='8ED4F0F9-C611-4B0F-AAC3-61B8603EAAE0' Directory='bin$(sys.BUILDARCH)'>
+        <File Source="..\Build\Win32\v110\Debug\UdmDll_3_2_v110_Win32D.dll" />
+      </Component>
+      <?else?>
+      <Component Id='UdmDll_3_2_v110_x64D.dll' Guid='16E21AAE-CDDA-4AB9-A7E3-CC1124441534' Directory='bin$(sys.BUILDARCH)'>
+        <File Source="..\Build\x64\v110\Debug\UdmDll_3_2_v110_x64D.dll" />
+      </Component>
+      <?endif?>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

@@ -1,0 +1,7 @@
+<genetf:Container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genetf="http://www.isis.vanderbilt.edu/2004/schemas/genetf" xsi:schemaLocation="http://www.isis.vanderbilt.edu/2004/schemas/genetf GeneTF_genetf.xsd">
+	<genetf:Gene tf="id25" _id="id1d" name="jojo"/>
+	<genetf:Regulation _id="id25" type="2" tf_end_="id21" gene_end_="id1d"/>
+	<genetf:TF _id="id21" gene="id25" name="toto"/>
+</genetf:Container>
+
+

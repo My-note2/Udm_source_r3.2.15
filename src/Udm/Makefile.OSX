@@ -1,0 +1,22 @@
+include ../../Makefile.OSX.incl
+
+SOURCES=ClassGen.cpp NamespaceGen.cpp UdmCS.cpp	UdmCppH.cpp DiagramGen.cpp Udm.cpp UdmCpp.cpp UdmUtil.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+SUBDIRS = File2Code JavaAPIGen PythonAPIGen
+
+all: $(SOURCES) $(OBJECTS)
+	@for dir in $(SUBDIRS);\
+	do \
+		echo "\nInvoking make in subdir: " $${dir};\
+		$(MAKE) -C $${dir} $@ -f Makefile.OSX || exit $$?;\
+	done
+
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) $< -o $@
+clean: 
+	rm -f *.o
+	@for dir in $(SUBDIRS);\
+	do \
+		echo "\nInvoking make in subdir: " $${dir};\
+		$(MAKE) clean -C $${dir} $@ -f Makefile.OSX || exit $$?;\
+	done

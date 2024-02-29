@@ -1,0 +1,53 @@
+prefix		= @prefix@
+includedir	= @includedir@
+datadir		= @datadir@
+
+UDM_INCDIR	= @UDM_INCDIR@
+UDM_INC		= @UDM_INC@
+UDM_LIBS	= @UDM_LIBS@
+UDM_DTD_PATH	= @UDM_DTD_PATH@
+UDM_SAMPLES_PATH	= @UDM_SAMPLES_PATH@
+
+CXXFLAGS	= $(UDM_INC)
+LDFLAGS		= $(UDM_LIBS)
+
+PROGRAM		= CreateLampModel
+
+GEN_SOURCES	= LampDiagram.cpp LampDiagram.h LampDiagram.xsd
+GEN_OBJS	= LampDiagram.o
+
+OBJS		= $(PROGRAM).o
+
+DATA		= $(UDM_SAMPLES_PATH)/LampDiagram_udm.xml
+UDM_ARGS	= -v -d $(UDM_DTD_PATH)
+
+
+all: $(PROGRAM)
+
+$(PROGRAM): $(GEN_OBJS) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
+$(OBJS): $(GEN_SOURCES)
+
+clean:
+	rm -f $(GEN_SOURCES) $(GEN_OBJS) $(OBJS) $(PROGRAM) sources-stamp
+
+
+sources-stamp: $(DATA)
+	@rm -f sources-temp
+	@touch sources-temp
+	Udm $< $(UDM_ARGS)
+	@mv -f sources-temp $@
+
+$(GEN_SOURCES): sources-stamp
+	@if test -f $@; then :; else \
+		trap 'rm -rf sources-lock sources-stamp' 1 2 13 15; \
+		if mkdir sources-lock 2>/dev/null; then \
+			rm -f sources-stamp; \
+			$(MAKE) $(AM_MAKEFLAGS) sources-stamp; \
+			rmdir sources-lock; \
+		else \
+			while test -d sources-lock; do sleep 1; done; \
+			test -f sources-stamp; exit $$?; \
+		fi; \
+	fi

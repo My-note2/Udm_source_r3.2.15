@@ -1,0 +1,26 @@
+include ../../Makefile.OSX.incl
+
+BUILT_SOURCES_A=PackageA.cpp PackageB.cpp testAssociationScenarios.cpp 
+BUILT_SOURCES_B=LampDiagram.cpp
+BUILT_SOURCES=$(BUILT_SOURCES_A) $(BUILT_SOURCES_B)
+CLEANFILES=$(BUILT_SOURCES) PackageA.h PackageA.xsd PackageB.h PackageB.xsd testAssociationScenarios.h testAssociationScenarios.xsd LampDiagram.h LampDiagram.xsd
+SOURCES=$(BUILT_SOURCES) main.cpp TestGetAdjacentObjects.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS) testGetAdjacentObjects
+
+$(BUILT_SOURCES_B):../../samples/LampDiagram_udm.xml ../../bin/Udm
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -v -d ../../etc -T 
+$(BUILT_SOURCES_A):testAssociationScenarios_udm.udm ../../bin/Udm
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -v -d ../../etc -T 
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) -I $(CPPUNIT)/include $< -o $@
+
+testGetAdjacentObjects: $(OBJECTS)
+	$(CC) $(BCFLAGS) $(OBJECTS) -o testGetAdjacentObjects -lUdm -L../../lib -lcppunit -L $(CPPUNITLIBS)
+
+test:testGetAdjacentObjects
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ./testGetAdjacentObjects
+
+clean: 
+	rm -f *.o  testGetAdjacentObjects $(CLEANFILES) testmodel.udm

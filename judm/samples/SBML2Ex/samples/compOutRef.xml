@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="compOutRef" name="compOutRef">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Invalid Outside Compartment Reference</title>
+</head>
+<body>
+<h1>Invalid Outside Compartment Reference</h1>
+<p>
+Outside/containment references in a compartment definition must exist.
+</p>
+</body>
+</sbml:notes>
+
+<listOfCompartments>
+  <compartment id="outer" />
+  <compartment id="inner" outside="outer" />
+  <compartment id="bad" outside="random" />
+  <compartment id="self" outside="self" />
+</listOfCompartments>
+
+</model>
+</sbml>

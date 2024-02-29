@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='windows-1252'?>
+
+<?define VERSIONSTR=3.2.15?>
+<Include>
+  <?if $(sys.BUILDARCH)=x64 ?>
+  <?define UpgradeCode='11CB0ED6-A45B-49FA-ABB2-A718EB5C970D'?>
+  <?define xerces_c_Package_Id='87EE74AF-F5DB-4371-A1E6-36E4B77457AA'?>
+  <?define ProgramFilesNativeFolder='ProgramFiles64Folder'?>
+  <?define SystemFolderNative='System64Folder'?>
+  <?define Win64='yes'?>
+  <?define ProductName='ISIS Udm (64 bit)'?>
+  <?define Release='x64\Release'?>
+  <?define lib='lib\x64'?>
+  <?define bin='bin\x64'?>
+  <?define Build='..\Build\x64\'?>
+  <?define UdmDllVC10=UdmDll_3_2_v100_x64.dll?>
+  <?define UdmDllVC11=UdmDll_3_2_v110_x64.dll?>
+  <?define UdmDllVC11_Guid='6D4CBBFD-64C3-4E60-AFA6-357B08EFFC17'?>
+  <?define UdmDllVC12=UdmDll_3_2_v120_x64.dll?>
+  <?define UdmDllVC12_Guid='2F2E2D5B-E926-452E-B57C-8ACDED7452F2'?>
+  <?define UdmDllVC14=UdmDll_3_2_v140_x64.dll?>
+  <?define UdmDllVC14_Guid='9587AC49-4C39-4673-A6C2-E2FBDD201136'?>
+  <?define XercesC=xerces-c_2_8_x64.dll?>
+  <?define Great_bin=$(var.GREAT_PATH)\bin\x64?>
+  <?else ?>
+  <?define UpgradeCode='D656A56A-F239-4B35-865C-840B1EA235E0'?>
+  <?define xerces_c_Package_Id='0CF60AD2-F0AD-456A-8B93-05FA971AC640'?>
+  <?define ProgramFilesNativeFolder='ProgramFilesFolder'?>
+  <?define SystemFolderNative='SystemFolder'?>
+  <?define Win64='no'?>
+  <?define ProductName='ISIS Udm'?>
+  <?define Release='Release'?>
+  <?define lib='lib'?>
+  <?define bin='bin'?>
+  <?define Build='..\Build\Win32\'?>
+  <?define UdmDllVC10=UdmDll_3_2_VS10.dll?>
+  <?define UdmDllVC11=UdmDll_3_2_v110_Win32.dll?>
+  <?define UdmDllVC11_Guid='F5C3661A-80D5-4888-8BAD-F25F8D3A5125'?>
+  <?define UdmDllVC12=UdmDll_3_2_v120_Win32.dll?>
+  <?define UdmDllVC12_Guid='649B8429-62C0-416C-B932-0211592A1572'?>
+  <?define UdmDllVC14=UdmDll_3_2_v140_Win32.dll?>
+  <?define UdmDllVC14_Guid='BBEE6C4F-971E-49A5-A36F-41D7AA191BD9'?>
+  <?define XercesC=xerces-c_2_8.dll?>
+  <?define Great_bin=$(var.GREAT_PATH)\bin?>
+  <?endif ?>
+</Include>

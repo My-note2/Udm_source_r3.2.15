@@ -1,0 +1,40 @@
+<genetre:Container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genetre="http://www.isis.vanderbilt.edu/2004/schemas/genetre" xsi:schemaLocation="http://www.isis.vanderbilt.edu/2004/schemas/genetre GeneTRE_genetre.xsd">
+	<genetre:Gene _id="id24" name="gene1" site="id34"/>
+	<genetre:Gene _id="id3b" name="gene2" site="id3e"/>
+	<genetre:Gene _id="id3f" name="gene3" site="id42"/>
+	<genetre:Gene _id="id43" name="gene4" site="id46"/>
+	<genetre:Gene _id="id47" name="gene5" site="id4a"/>
+	<genetre:Gene _id="id4c" name="gene6" site="id4e"/>
+	<genetre:Gene _id="id4f" name="gene7" site="id51"/>
+	<genetre:Gene _id="id52" name="gene8" site="id54"/>
+	<genetre:Gene _id="id55" name="gene9" site="id57"/>
+	<genetre:Gene _id="id58" name="gene10" site="id5a"/>
+	<genetre:PWM tf="id28" _id="id2c" gene="id34" name="pwm1"/>
+	<genetre:PWM tf="id3c" _id="id3d" gene="id3e" name="pwm2"/>
+	<genetre:PWM tf="id40" _id="id41" gene="id42" name="pwm3"/>
+	<genetre:PWM tf="id44" _id="id45" gene="id46" name="pwm4"/>
+	<genetre:PWM tf="id48" _id="id49" gene="id4a" name="pwm5"/>
+	<genetre:PWM tf="id4d id50 id53 id56 id59" _id="id4b" gene="id4e id51 id54 id57 id5a" name="pwm"/>
+	<genetre:TF _id="id28" name="tf1" bindsTo="id2c"/>
+	<genetre:TF _id="id3c" name="tf2" bindsTo="id3d"/>
+	<genetre:TF _id="id40" name="tf3" bindsTo="id41"/>
+	<genetre:TF _id="id44" name="tf4" bindsTo="id45"/>
+	<genetre:TF _id="id48" name="tf5" bindsTo="id49"/>
+	<genetre:TF _id="id4d" name="tf6" bindsTo="id4b"/>
+	<genetre:TF _id="id50" name="tf7" bindsTo="id4b"/>
+	<genetre:TF _id="id53" name="tf8" bindsTo="id4b"/>
+	<genetre:TF _id="id56" name="tf9" bindsTo="id4b"/>
+	<genetre:TF _id="id59" name="tf10" bindsTo="id4b"/>
+	<genetre:TRE _id="id34" strand="false" position="0" coreScore="0.000000" gene_end_="id24" site_end_="id2c" matrixScore="0.000000"/>
+	<genetre:TRE _id="id3e" strand="false" position="0" coreScore="0.000000" gene_end_="id3b" site_end_="id3d" matrixScore="0.000000"/>
+	<genetre:TRE _id="id42" strand="false" position="0" coreScore="0.000000" gene_end_="id3f" site_end_="id41" matrixScore="0.000000"/>
+	<genetre:TRE _id="id46" strand="false" position="0" coreScore="0.000000" gene_end_="id43" site_end_="id45" matrixScore="0.000000"/>
+	<genetre:TRE _id="id4a" strand="false" position="0" coreScore="0.000000" gene_end_="id47" site_end_="id49" matrixScore="0.000000"/>
+	<genetre:TRE _id="id4e" strand="false" position="0" coreScore="0.000000" gene_end_="id4c" site_end_="id4b" matrixScore="0.000000"/>
+	<genetre:TRE _id="id51" strand="false" position="0" coreScore="0.000000" gene_end_="id4f" site_end_="id4b" matrixScore="0.000000"/>
+	<genetre:TRE _id="id54" strand="false" position="0" coreScore="0.000000" gene_end_="id52" site_end_="id4b" matrixScore="0.000000"/>
+	<genetre:TRE _id="id57" strand="false" position="0" coreScore="0.000000" gene_end_="id55" site_end_="id4b" matrixScore="0.000000"/>
+	<genetre:TRE _id="id5a" strand="false" position="0" coreScore="0.000000" gene_end_="id58" site_end_="id4b" matrixScore="0.000000"/>
+</genetre:Container>
+
+

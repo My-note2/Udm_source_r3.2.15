@@ -1,0 +1,14 @@
+include ../../Makefile.OSX.incl
+
+
+all:UdmPythonTestMeta.xsd
+
+
+UdmPythonTestMeta.xsd:UdmPythonTestMeta.xml
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -v -d ../../etc -T 
+
+ test:udm_python_test.py udm_python_test.py UdmPythonTest.xml UdmPythonTestMeta.xml UdmPythonTestMeta.xsd
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) VERSIONER_PYTHON_PREFER_32_BIT=$(VERSIONER_PYTHON_PREFER_32_BIT) python udm_python_test.py
+
+clean: 
+	rm -f *.o UdmPythonTestMeta.cpp UdmPythonTestMeta.h UdmPythonTestMeta.xsd

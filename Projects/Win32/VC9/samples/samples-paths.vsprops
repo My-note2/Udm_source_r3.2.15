@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="samples-paths"
+	OutputDirectory="..\..\..\..\..\Build\Win32\VC9\$(ConfigurationName)"
+	IntermediateDirectory="$(OutDir)\obj\samples\$(ProjectName)"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="..\..\..\..\..\include;$(GenPath)"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalLibraryDirectories="$(OutDir)"
+	/>
+	<Tool
+		Name="VCPreBuildEventTool"
+		Description=""
+		CommandLine=""
+	/>
+	<Tool
+		Name="VCResourceCompilerTool"
+		AdditionalIncludeDirectories="..\..\..\..\..\include;$(GenPath)"
+	/>
+	<UserMacro
+		Name="GenPath"
+		Value="$(OutDir)\Gen\samples"
+		PerformEnvironmentSet="true"
+	/>
+	<UserMacro
+		Name="SourceDir"
+		Value="..\..\..\..\..\samples\$(ProjectName)\"
+		PerformEnvironmentSet="true"
+	/>
+	<UserMacro
+		Name="ReleaseGenPath"
+		Value="..\..\..\..\..\Build\Win32\VC9\Release\Gen\samples"
+		PerformEnvironmentSet="true"
+	/>
+	<UserMacro
+		Name="DebugGenPath"
+		Value="..\..\..\..\..\Build\Win32\VC9\Debug\Gen\samples"
+	/>
+</VisualStudioPropertySheet>

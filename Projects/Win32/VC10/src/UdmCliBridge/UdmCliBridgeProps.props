@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <CliBridgeCppDir>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)\..\..\..\..\..\Build\Win32\VC10\Gen\src\UdmCliBridge\cpp))</CliBridgeCppDir>
+    <CliBridgeCsDir>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)\..\..\..\..\..\Build\Win32\VC10\Gen\src\UdmCliBridge\cs))</CliBridgeCsDir>
+    <UdmCliBridgeDll>UdmCliBridge.dll</UdmCliBridgeDll>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\..\..\..\..\Build\Win32\VC10\$(Configuration)))\</OutDir>
+    <IntDir>$(OutDir)obj\src\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(UDM_PATH)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UDM_DYNAMIC_LINKING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(UDM_PATH)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="CliBridgeCppDir">
+      <Value>$(CliBridgeCppDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CliBridgeCsDir">
+      <Value>$(CliBridgeCsDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="UdmCliBridgeDll">
+      <Value>$(UdmCliBridgeDll)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

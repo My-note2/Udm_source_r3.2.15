@@ -1,0 +1,26 @@
+nuget {
+   nuspec {
+      id = Udm;
+      version : 3.2.14.1;
+      title : Udm;
+      authors : Vanderbilt University;
+      owners : ksmyth;
+      licenseUrl : "http://repo.isis.vanderbilt.edu/UDM/license.txt";
+      projectUrl: "http://repo.isis.vanderbilt.edu/UDM/";
+      iconUrl: "http://repo.isis.vanderbilt.edu/GME/GME.ico";
+      requireLicenseAcceptance:false;
+      summary: Universal Data Model;
+
+      description: @"Universal Data Model";
+      releaseNotes: "";
+      copyright: Copyright 2017;
+      tags: { native, cpp };
+   }
+
+   files {
+      nestedInclude : {
+         #destination = ${d_include};
+         "include\*.h",
+      };
+   }
+}

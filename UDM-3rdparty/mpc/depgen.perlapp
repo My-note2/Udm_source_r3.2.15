@@ -1,0 +1,98 @@
+#!C:\Program Files\ActiveState Perl Dev Kit 6.0 Deployment\bin\lib\pai.exe
+PAP-Version: 1.0
+Packer: C:\Program Files\ActiveState Perl Dev Kit 6.0 Deployment\bin\perlapp.exe
+Add: File::Path
+Add: File::Compare
+Add: AutomakeProjectCreator
+Add: AutomakeWorkspaceCreator
+Add: BMakeProjectCreator
+Add: BMakeWorkspaceCreator
+Add: Creator
+Add: DirectoryManager
+Add: Driver
+Add: EM3ProjectCreator
+Add: EM3WorkspaceCreator
+Add: FeatureParser
+Add: GHSProjectCreator
+Add: GHSWorkspaceCreator
+Add: GUID
+Add: HTMLProjectCreator
+Add: HTMLWorkspaceCreator
+Add: MakeProjectCreator
+Add: MakeWorkspaceCreator
+Add: MPC
+Add: MWC
+Add: NMakeProjectCreator
+Add: NMakeWorkspaceCreator
+Add: Options
+Add: OutputMessage
+Add: Parser
+Add: ProjectCreator
+Add: SLEProjectCreator
+Add: SLEWorkspaceCreator
+Add: StringProcessor
+Add: TemplateInputReader
+Add: TemplateParser
+Add: VC6ProjectCreator
+Add: VC6WorkspaceCreator
+Add: VC7ProjectCreator
+Add: VC7WorkspaceCreator
+Add: VC8ProjectCreator
+Add: VC8WorkspaceCreator
+Add: VC71ProjectCreator
+Add: VC71WorkspaceCreator
+Add: Version
+Add: WinVersionTranslator
+Add: WorkspaceCreator
+Add: WorkspaceHelper
+Add: WinProjectBase
+Add: BDS4ProjectCreator
+Add: BDS4WorkspaceCreator
+Add: CCProjectCreator
+Add: CCWorkspaceCreator
+Add: ConfigParser
+Add: MakeWorkspaceBase
+Add: VCProjectBase
+Add: WinWorkspaceBase
+Add: XMLProjectBase
+Add: DependencyEditor
+Add: DependencyGenerator
+Add: DependencyWriter
+Add: DependencyWriterFactory
+Add: MakeDependencyWriter
+Add: MakeObjectGenerator
+Add: NMakeDependencyWriter
+Add: NMakeObjectGenerator
+Add: ObjectGenerator
+Add: ObjectGeneratorFactory
+Add: Preprocessor
+Clean: 
+Cwd: C:/MPC
+Date: 2007-07-03 14:24:39
+Debug: 
+Dependent: 
+Dyndll: 
+Exe: depgen.exe
+Force: 1
+Gui: 
+Hostname: Iggy
+Lib: lib:modules\Depgen
+Lib: lib:modules
+No-Compress: 
+No-Logo: 
+Runlib: 
+Script: depgen.pl
+Shared: none
+Tmpdir: 
+Verbose: 
+Version-Comments: 
+Version-CompanyName: 
+Version-FileDescription: 
+Version-FileVersion: 
+Version-InternalName: 
+Version-LegalCopyright: 
+Version-LegalTrademarks: 
+Version-OriginalFilename: 
+Version-ProductName: 
+Version-ProductVersion: 
+Xclude: 

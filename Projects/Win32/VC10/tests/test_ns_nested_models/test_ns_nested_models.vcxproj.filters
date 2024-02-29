@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <mga2xmp Include="..\..\..\..\..\tests\test_ns_nested\MetaLevel3.xme" />
+  </ItemGroup>
+  <ItemGroup>
+    <mga2udmxml Include="..\..\..\..\..\tests\test_ns_nested\MetaLevel3_uml.xme" />
+  </ItemGroup>
+  <ItemGroup>
+    <udm Include="..\..\..\..\..\tests\test_ns_nested\MetaLevel3_udm.xml" />
+  </ItemGroup>
+</Project>

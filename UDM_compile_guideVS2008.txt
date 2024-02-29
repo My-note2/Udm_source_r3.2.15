@@ -1,0 +1,28 @@
+UDM_compile_guide.txt
+Software requirements and a step-by-step guide to compile UDM source files
+on Windows with Visual Studio 2008 or 2010
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Requirements:
+-------------------
+	- Visual Studio 2008 or 2010
+	- J2SE 1.5 (or later) JDK
+	- (For UdmCliGen.exe) Python 2.6 or 2.7 with py2exe
+
+Step-by-step guide:
+-------------------------
+	1. Check out the UDM sources from the SVN repository:
+		https://svn.isis.vanderbilt.edu/MoBIES/UDM/trunk/
+
+	2. Check out UDM 3rd party files from:
+		https://svn.isis.vanderbilt.edu/isis-common/trunk/3rdparty/
+
+	3. Set your build environment as follows:
+	UDM_PATH=
+		your https://svn.isis.vanderbilt.edu/MoBIES/UDM/trunk/ working copy
+	UDM_3RDPARTY_PATH=
+		the UDM_VS2010 subdirectory of your https://svn.isis.vanderbilt.edu/isis-common/trunk/3rdparty/ working copy
+	JAVA_HOME=
+		your Java 1.5 (or later) JDK path, e.g. c:\Program Files\Java\jdk1.6.0_16
+
+	4. Use Projects/Win32/VC9/src/Udm.sln for VS2008 or Projects/Win32/VC10/src/Udm.sln for VS2010

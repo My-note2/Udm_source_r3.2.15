@@ -1,0 +1,69 @@
+##############################################
+#		VERSIONING of UDM	     #
+#	<DON'T EDIT THIS SECTION>	     #
+##############################################
+MAJOR_VERSION=3
+MINOR_VERSION=2.13
+VERSION=$(MAJOR_VERSION).$(MINOR_VERSION)
+COMPAT_VERSION=$(MAJOR_VERSION).2
+RELEASE_DIR=udm-macosx-i386-$(VERSION)
+##############################################
+#		COMPILER FLAGS		     #
+#	<DON'T EDIT THIS SECTION>	     #
+##############################################
+CC=g++
+#Xerces binary was available only for i386
+#Xerces source does not compile in MACOSX with --arch x86_64
+#Therefore the whole package is compiled for i386
+ARCH=i386
+#ARCH=x86_64
+CFLAGS=-c -arch $(ARCH)
+BCFLAGS=-arch $(ARCH)
+# we need to run Python in 32bit mode as well
+VERSIONER_PYTHON_PREFER_32_BIT=yes
+
+##############################################
+# 3rd Party tools expected to be installed   #
+#	<DON'T EDIT THIS SECTION>	     #
+##############################################
+#already on a Mac with XCode
+PYTHON=/System/Library/Frameworks/Python.framework/Versions/2.7
+JDK_INCLUDE=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/JavaVM.framework/Versions/Current/Headers/
+
+#################################################
+#packages that are downloaded/installed manually#
+#     SECTION TO BE CONFIGURED BY THE USER	#
+#################################################
+UDMHOME=~/trunk
+ANT=~/devtools/apache-ant-1.9.3/bin/ant
+JUNITDIR=~/devtools/junit
+MINIZIP=~/devtools
+BOOST=~/devtools/boost_1_55_0
+PCCTS=~/devtools/pccts
+SWIGDIR=~/devtools/swig-2.0.11
+PCRE=~/devtools/pcre-8.33
+XERCESCROOT=~/devtools/xerces-c_2_8_0-x86-macosx-gcc_4_0
+XALANCROOT=~/devtools/xalan-c-1.11/c
+CPPUNIT=~/devtools/cppunit-1.12.1
+#JAVA 1.6.0 is needed in order to have a JVM which is capable to load 32bit shared libraries (UdmSwig) (-d32 flag)
+#UdmSwig is a shared library compiled with i386
+JVMD32=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java
+JSON_SPIRIT=~/devtools/json_spirit_v4.06/json_spirit
+
+#####################################################
+# variables and paths needed by the build process   #
+#		<DON'T EDIT THIS SECTION>	    #
+#####################################################
+
+
+#.jar and -javadoc.jar extensions will be added by judm/Makefile
+JUNIT=junit-4.11
+CPPUNITLIBS=$(CPPUNIT)/src/cppunit/.libs
+LIBBOOST_PYTHON_DIR=$(BOOST)/bin.v2/libs/python/build/darwin-4.2.1/release/threading-multi
+LIBBOOST_PYTHON=$(LIBBOOST_PYTHON_DIR)/libboost_python.dylib
+DYLDLIBRARYPATH=$(UDMHOME)/lib:$(XERCESCROOT)/lib:$(XALANCROOT)/lib:$(PCRE)/.libs:$(CPPUNITLIBS):$(LIBBOOST_PYTHON_DIR)
+SWIGLIB=$(SWIGDIR)/lib
+SWIG=$(SWIGDIR)/swig
+ANTLR=$(PCCTS)/bin/antlr
+DLG=$(PCCTS)/bin/dlg
+INCLUDE=-I $(UDMHOME)/include -I $(UDMHOME)/src -I $(UDMHOME)/src/UdmOclPat/GOCL/Include/ -I $(MINIZIP) -I $(XERCES)/include -I $(BOOST) -I $(XERCESCROOT)/include -I $(XALANCROOT)/src -I $(XALANCROOT)/nls/include -I $(JSON_SPIRIT)

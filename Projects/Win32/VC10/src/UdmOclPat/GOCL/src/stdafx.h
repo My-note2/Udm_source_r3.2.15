@@ -1,0 +1,22 @@
+#pragma once
+
+#include "OCLCommon.h"
+#include "OCLConfig.h"
+#include "OCLConstraint.h"
+#include "OCLContext.h"
+#include "OCLException.h"
+#include "OCLFactory.h"
+#include "OCLFeature.h"
+#include "OCLFeatureImplementation.h"
+#include "OCLFormalParameter.h"
+#include "OCLObject.h"
+#include "OCLObjectExBasic.h"
+#include "OCLParserStatic.h"
+#include "OCLRefCount.h"
+#include "OCLSignature.h"
+#include "OCLTree.h"
+#include "OCLType.h"
+#include "OCLTypeExBasic.h"
+#include "OclViolation.h"
+#include "Solve4786.h"
+

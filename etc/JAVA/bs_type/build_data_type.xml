@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir="${basedir}" default="nbm" name="data_type">
+	<description> Wrapper for Creating Domain-Specific Datatype </description>
+
+	<!-- Make production module file -->
+	<target name="nbm" depends="init,clean,dirs,src_gen,compile" description="Makes production module file">
+
+    <!-- Condition -->
+		<fail unless="dspackage" message="Missing parameter: dspackage" />
+		<fail unless="dspackage_lower" message="Missing parameter: dspackage_lower" />
+		<fail unless="dashboard_home" message="Missing parameter: dashboard_home" />
+
+    <!-- Install the new daata types, i.e., copy the production module file -->
+		<copy file="${module.jar}" todir="${dashboard_home}/modules" />                
+		<copy file="${module.jar}" todir="${netbeans.module.dir}" />
+
+    <!-- Make the production module file -->
+    <taskdef name="makenbm" classname="org.netbeans.nbbuild.MakeNBM" classpath="${dashboard_home}/nbantext.jar" />
+		<makenbm file="${module.name}.nbm" topdir="." module="${basedir}/${module.jar}" homepage="http://www.isis.vanderbilt.edu/" distribution="http://www.isis.vanderbilt.edu/udm/${module.jar}"/>
+
+		<!-- Create type zip -->
+		<!--zip destfile="${dspackage_lower}_type.zip">
+			<fileset dir="">
+				<include name="*.jar" />
+				<include name="*.nbm" />
+				<include name="*.txt" />
+			</fileset>
+		</zip-->
+
+    <!-- Clean up the mess -->
+		<delete dir="${netbeans.dir}" />
+		<delete dir="${info.dir}" />
+		<delete dir="${build.dir}" />
+		<delete dir="${src.dir}" />
+		
+		<delete verbose="true">
+			<fileset dir="${basedir}">
+				<include name="${manifest.file}" />
+			</fileset>
+		</delete>
+
+	</target>
+
+	<!-- Set properties, classpath -->
+	<target name="init" description="Initialize properties and classpath variable.">
+
+    <!-- Condition -->
+		<fail unless="dspackage" message="Missing parameter: dspackage" />
+		<fail unless="dspackage_lower" message="Missing parameter: dspackage_lower" />
+		<fail unless="dashboard_home" message="Missing parameter: dashboard_home" />
+		<fail unless="version" message="Missing parameter: version" />
+	  
+		<!-- Directory of the judm.jar  -->
+		<property environment="env" />
+		<property name="judm.dir" location="${env.UDM_PATH}" />
+		
+		<!-- Directory of the dashboard-specific project files -->
+		<property name="etc.dir" location="${judm.dir}\etc\java\bs_type" />
+		
+    <!-- Installation directory of Dashboard  -->
+	  <property name="dashboard_home" location="${dashboard_home}"/>
+	  <!--property name="dashboard_home" location="C:\Program Files\Bio-SPICE\Dashboard-6.0\Dashboard"/-->
+
+	  <!-- Version number  -->
+	  <property name="version.number" value="${version}" />
+
+	  <!-- Module information  -->
+	  <property name="project.name" value="${dspackage_lower}_type" />
+	  <property name="module.name" value="${project.name}-${version.number}" />
+	  <property name="module.jar" value="${module.name}.jar" />
+
+	  <!-- Classpath information  -->
+	  <property name="src.dir" location="${basedir}/src"/>
+	  <property name="src_edu.dir" location="${src.dir}/edu/vanderbilt/isis/${dspackage_lower}analyzer/datatypes"/>
+	  <property name="build.dir" location="${basedir}/build"/>
+	  <property name="classes.dir" location="${build.dir}/classes"/>
+	  <property name="layer.file" location="${src.dir}/${dspackage_lower}analyzer/datatypes/layer.xml" />
+	  <property name="info.dir" location="${basedir}/Info" />
+	  <property name="manifest.template" value="manifest.in" />
+	  <property name="manifest.file" value="manifest.mf" />
+
+	  <!-- Netbeans/Dashboard information  -->
+	  <property name="netbeans.dir" location="${basedir}/netbeans" />
+	  <property name="netbeans.module.dir" location="${netbeans.dir}/modules" />
+
+  </target>
+
+	<!-- Delete previous build -->
+	<target name="clean" description="Delete previous build and generated production files.">
+
+		<delete dir="${netbeans.dir}" />
+		<delete dir="${info.dir}" />
+		<delete dir="${build.dir}" />
+		<delete dir="${src.dir}" />
+		
+		<delete verbose="false" failonerror="no" >
+			<fileset dir="${basedir}">
+				<include name="**/*.class" />
+				<!--include name="*.jar" />
+				<include name="*.nbm" /-->
+				<include name="*.txt" />
+				<include name="${manifest.file}" />
+			</fileset>
+		</delete>
+		
+	</target>
+
+	<!-- Create library structure -->
+	<target name="dirs" description="Create library structure.">
+
+		<mkdir dir="${netbeans.dir}" />
+		<mkdir dir="${info.dir}" />
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${src.dir}" />
+		<mkdir dir="${src_edu.dir}" />
+		
+	</target>
+
+	<!-- Generate and update source files -->
+	<target name="src_gen" description="Generate and update source files">
+
+    <!-- Condition --> 
+		<fail unless="dspackage" message="Missing parameter: dspackage" />
+		<fail unless="dspackage_lower" message="Missing parameter: dspackage_lower" />
+
+    <tstamp>
+      <format property="touch.time" pattern="yyMMdd"/>
+    </tstamp>
+
+    <tstamp>
+      <format property="datetime" pattern="MMM dd, yyyy"/>
+    </tstamp>
+
+    <!-- Update manifest file -->
+		<copy file="${etc.dir}/${manifest.template}" tofile="${manifest.file}" filtering="on">
+			<filterset>
+				<filter token="VERSION" value="${version.number}" />
+				<filter token="TIMESTAMP" value="${touch.time}" />
+				<filter token="DSPACKAGE" value="${dspackage}" />
+				<filter token="DSPACKAGELOWER" value="${dspackage_lower}" />
+			</filterset>
+		</copy>
+
+    <!-- Update readme file -->
+		<copy file="${etc.dir}/readme.txt" tofile="${dspackage_lower}_type_readme.txt" filtering="on">
+			<filterset>
+				<filter token="VERSION" value="${version.number}" />
+				<filter token="DSPACKAGE" value="${dspackage}" />
+				<filter token="DSPACKAGELOWER" value="${dspackage_lower}" />
+			</filterset>
+		</copy>
+
+    <!-- Update layer file -->
+		<copy file="${etc.dir}/src/layer.xml" tofile="${src_edu.dir}/layer.xml" filtering="on">
+			<filterset>
+				<filter token="DSPACKAGE" value="${dspackage}" />
+				<filter token="DSPACKAGELOWER" value="${dspackage_lower}" />
+			</filterset>
+		</copy>
+
+    <!-- Update Data.java file -->
+		<copy file="${etc.dir}/src/Data.java" tofile="${src_edu.dir}/${dspackage}Data.java" filtering="on">
+			<filterset>
+				<filter token="DATE" value="${datetime}" />
+				<filter token="DSPACKAGE" value="${dspackage}" />
+				<filter token="DSPACKAGELOWER" value="${dspackage_lower}" />
+			</filterset>
+		</copy>
+
+    <!-- Update DataFactory.java file -->
+		<copy file="${etc.dir}/src/DataFactory.java" tofile="${src_edu.dir}/${dspackage}DataFactory.java" filtering="on">
+			<filterset>
+				<filter token="DATE" value="${datetime}" />
+				<filter token="DSPACKAGE" value="${dspackage}" />
+				<filter token="DSPACKAGELOWER" value="${dspackage_lower}" />
+			</filterset>
+		</copy>
+
+    <!-- Update DataType.java file -->
+		<copy file="${etc.dir}/src/DataType.java" tofile="${src_edu.dir}/${dspackage}DataType.java" filtering="on">
+			<filterset>
+				<filter token="DATE" value="${datetime}" />
+				<filter token="DSPACKAGE" value="${dspackage}" />
+				<filter token="DSPACKAGELOWER" value="${dspackage_lower}" />
+		</filterset>
+		</copy>
+
+	</target>
+
+	<!-- Compile domain-specific sources  -->
+	<target name="compile" description="Compile domain-specific sources.">
+
+		<!-- Compile source files -->
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${classes.dir}" />
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" debug="true">
+			<classpath>
+				<pathelement path="${dashboard_home}/modules/biospice-ide.jar" />
+				<pathelement path="${dashboard_home}/lib/openide.jar" />
+			</classpath>
+		</javac>
+
+		<!-- Create domain specific jar file -->
+		<jar jarfile="${module.jar}" manifest="${manifest.file}">
+			<fileset dir="${classes.dir}">
+				<include name="edu/vanderbilt/isis/${dspackage_lower}analyzer/datatypes/*.class" />
+			</fileset>
+			<fileset dir="${src.dir}">
+				<include name="edu/vanderbilt/isis/${dspackage_lower}analyzer/datatypes/*.xml" />
+			</fileset>
+		</jar>
+
+	</target>
+
+</project>

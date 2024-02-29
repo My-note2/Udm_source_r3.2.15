@@ -1,0 +1,12 @@
+include ../../../Makefile.OSX.incl
+
+SOURCES=PythonAPIGen.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS)
+
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) $< -o $@
+clean: 
+	rm -f *.o
+

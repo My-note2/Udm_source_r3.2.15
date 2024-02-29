@@ -1,0 +1,38 @@
+include ../../../../Makefile.OSX.incl
+
+
+
+ANTLR_SOURCES		= $(PCCTS)/h/AParser.cpp $(PCCTS)/h/ASTBase.cpp $(PCCTS)/h/ATokenBuffer.cpp \
+			$(PCCTS)/h/BufFileInput.cpp $(PCCTS)/h/DLexerBase.cpp $(PCCTS)/h/PCCTSAST.cpp $(PCCTS)/h/SList.cpp
+
+COPIED_ANTLR_SOURCES	= AParser.cpp ASTBase.cpp ATokenBuffer.cpp BufFileInput.cpp DLexerBase.cpp PCCTSAST.cpp SList.cpp
+
+SOURCES                   = OCLCommon.cpp OCLConstraint.cpp OCLContext.cpp \
+                          OCLException.cpp OCLFactory.cpp OCLFeature.cpp \
+                          OCLFeatureImplementation.cpp OCLObject.cpp \
+                          OCLObjectExBasic.cpp OCLParserStatic.cpp \
+                          OCLRefCount.cpp OCLSignature.cpp OCLTree.cpp \
+                          OCLType.cpp OCLTypeExBasic.cpp generated/OCLLexer.cpp	generated/OCLParser.cpp	generated/ocl.cpp \
+			  $(COPIED_ANTLR_SOURCES)
+
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: antlr copy_antlr_base $(SOURCES) $(OBJECTS)
+
+antlr:	ocl.g
+	rm -rf generated
+	mkdir generated
+	$(ANTLR) -CC -ft OCLTokens.h -fl OCLParser.dlg -o generated/ ocl.g
+	$(DLG) -C2 -i -CC -cl OCLLexer generated/OCLParser.dlg -o generated/
+
+copy_antlr_base:	$(ANTLR_SOURCES)
+	cp $(ANTLR_SOURCES) .
+
+	
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) -I generated/ -I $(PCCTS)/h/  $< -o $@
+clean: 
+	rm -f *.o
+	rm -f $(COPIED_ANTLR_SOURCES)
+	rm -rf generated/
+	

@@ -1,0 +1,13 @@
+// this file is used to generate the COM magic implementation for Mga and Meta object pointers
+// Unfortunately the result of the microsoft #import statement is not sufficient, 
+// since it does not require input pointers to be NULL, what is checked by the Mga and Meta dll-s
+// to correct this, a sed script filters the output of #import statements and the result is put into 
+// MgaAndMeta.tli2   
+
+#define dddd #pragma warning( disable : 4786 )
+dddd
+#define cccc #include "CommonHeaders.h"
+cccc
+#import <bin\Meta.dll>		implementation_only
+#import <bin\Mga.dll>		implementation_only
+#import <bin\Gme.exe>   implementation_only

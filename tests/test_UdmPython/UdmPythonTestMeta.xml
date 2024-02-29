@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Diagram name="UdmPythonTestMeta" version="1.00" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Uml.xsd">
+
+  <Association _id="id17" assocClass="id7" name="Connection" nonpersistent="false">
+    <AssociationRole _id="id18" isNavigable="true" isPrimary="false" max="-1" min="0" name="srcConnection" target="id6"/>
+    <AssociationRole _id="id19" isNavigable="true" isPrimary="false" max="-1" min="0" name="dstConnection" target="id6"/>
+  </Association>
+
+  <Class _id="id3" baseTypes="id4" childRoles="idA id12" isAbstract="false" name="Container" parentRoles="id9 idB idD idF id11" stereotype="Model"/>
+
+  <Class _id="id5" baseTypes="id4" childRoles="id10" isAbstract="false" name="AtomA" stereotype="Atom">
+    <Attribute defvalue="false;" max="1" min="1" name="boolattr" nonpersistent="false" ordered="false" registry="false" type="Boolean" visibility="public"/>
+    <Attribute max="1" min="1" name="stringattr" nonpersistent="false" ordered="false" registry="false" type="String" visibility="public"/>
+    <Attribute max="1" min="1" name="intattr" nonpersistent="false" ordered="false" registry="false" type="Integer" visibility="public"/>
+  </Class>
+
+  <Class _id="id6" associationRoles="id18 id19" baseTypes="id4" childRoles="idC ide" isAbstract="false" name="AtomB" stereotype="Atom"/>
+
+  <Class _id="id7" association="id17" baseTypes="id4" childRoles="id8" isAbstract="false" name="Connection" stereotype="Connection"/>
+
+  <Class _id="id13" childRoles="id15" isAbstract="false" name="RootFolder" parentRoles="id14 id16" stereotype="Folder">
+    <Attribute max="1" min="0" name="name" nonpersistent="false" ordered="false" registry="false" type="String" visibility="public"/>
+  </Class>
+
+  <Class _id="id4" isAbstract="true" name="MgaObject" subTypes="id3 id5 id6 id7">
+    <Attribute max="1" min="0" name="name" nonpersistent="false" ordered="false" registry="false" type="String" visibility="public"/>
+    <Attribute max="1" min="0" name="position" nonpersistent="false" ordered="false" registry="false" type="String" visibility="public"/>
+  </Class>
+
+  <Composition nonpersistent="false">
+    <CompositionChildRole _id="id8" isNavigable="true" max="-1" min="0" target="id7"/>
+    <CompositionParentRole _id="id9" isNavigable="true" target="id3"/>
+  </Composition>
+
+  <Composition nonpersistent="false">
+    <CompositionChildRole _id="idA" isNavigable="true" max="-1" min="0" target="id3"/>
+    <CompositionParentRole _id="idB" isNavigable="true" target="id3"/>
+  </Composition>
+
+  <Composition nonpersistent="false">
+    <CompositionChildRole _id="idC" isNavigable="true" max="-1" min="0" name="cmproleA" target="id6"/>
+    <CompositionParentRole _id="idD" isNavigable="true" target="id3"/>
+  </Composition>
+
+  <Composition nonpersistent="false">
+    <CompositionChildRole _id="ide" isNavigable="true" max="-1" min="0" name="cmproleB" target="id6"/>
+    <CompositionParentRole _id="idF" isNavigable="true" target="id3"/>
+  </Composition>
+
+  <Composition nonpersistent="false">
+    <CompositionChildRole _id="id10" isNavigable="true" max="-1" min="0" target="id5"/>
+    <CompositionParentRole _id="id11" isNavigable="true" target="id3"/>
+  </Composition>
+
+  <Composition nonpersistent="false">
+    <CompositionChildRole _id="id12" isNavigable="true" max="-1" min="0" target="id3"/>
+    <CompositionParentRole _id="id14" isNavigable="true" target="id13"/>
+  </Composition>
+
+  <Composition nonpersistent="false">
+    <CompositionChildRole _id="id15" isNavigable="true" max="-1" min="0" target="id13"/>
+    <CompositionParentRole _id="id16" isNavigable="true" target="id13"/>
+  </Composition>
+
+</Diagram>

@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sbml level="2" version="1" xmlns="http://www.sbml.org/sbml/level2"  xmlns:sbml="http://www.sbml.org/sbml/level2" xmlns:math="http://www.w3.org/1998/Math/MathML">
+<!-- <sbml level="2" version="1" xmlns:sbml="http://www.sbml.org/sbml/level2"  xmlns:math="http://www.w3.org/1998/Math/MathML">-->
+  <!--                   -->
+  <!-- Model Starts Here -->
+  <!--                   -->
+  <model id="Lac_V1">
+    <notes>
+    <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>Questions can be directed to Adam Halasz <a href = "mailto:halasz@grasp.upenn.edu">halasz@grasp.upenn.edu</a>. </p>
+    <p>Last modified : 2004-06-29 </p>
+    </body>
+    </notes>
+    <listOfUnitDefinitions>
+      <unitDefinition id="inv_min">
+        <listOfUnits>
+          <unit kind="second" multiplier="0.016666666666666666" exponent="-1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="M">
+        <listOfUnits>
+          <unit kind="mole" exponent="1"/>
+          <unit kind="litre" exponent="-1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mM">
+        <listOfUnits>
+          <unit kind="mole" scale="-3" exponent="1"/>
+          <unit kind="litre" exponent="-1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mM_per_min">
+        <listOfUnits>
+          <unit kind="mole" scale="-3" exponent="1"/>
+          <unit kind="litre" exponent="-1"/>
+          <unit kind="second" multiplier="0.016666666666666666" exponent="-1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="inv_mM_squared">
+        <listOfUnits>
+          <unit kind="mole" scale="6" exponent="-2"/>
+          <unit kind="litre" exponent="2"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="min">
+        <listOfUnits>
+          <unit kind="second" multiplier="60" />
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cell" size="1.3e-15"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species compartment="cell" id="M"  name="mRNA" initialConcentration="6.26e-4" substanceUnits="mM" />
+      <species compartment="cell" id="B"  name="Betagalactosidase" initialConcentration="0.0" substanceUnits="mM"  />
+      <species compartment="cell" id="A"  name="allolactose" initialConcentration="3.80e-2" substanceUnits="mM"/>
+      <species compartment="cell" id="L"  name="lactose_internal" initialConcentration="3.72e-1" substanceUnits="mM"/>
+      <species compartment="cell" id="P"  name="permease" initialConcentration="1.49e-2" substanceUnits="mM"/>
+      <species compartment="cell" id="I1" name="PartialmRNA" initialConcentration="0" substanceUnits="mM"/>
+      <species compartment="cell" id="I2" name="PartialBetagalactosidase" initialConcentration="0" substanceUnits="mM"/>
+      <species compartment="cell" id="I3" name="PartialPermease" initialConcentration="0" substanceUnits="mM"/>
+      <species compartment="cell" id="L_e" constant="true" boundaryCondition="true" name="External_Lactose" initialConcentration="4.0e-2" substanceUnits="mM"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="mu"      value="2.26e-2" units="inv_min"/>
+      <parameter id="gamma_M" value="0.411"   units="inv_min"/>
+      <parameter id="gamma_B" value="8.33e-4" units="inv_min"/>
+      <parameter id="gamma_A" value="0.52"    units="inv_min"/>
+      <parameter id="gamma_0" value="7.25e-7" units="mM_per_min"/>
+      <parameter id="K"       value="7.2e3"   units="dimensionless"/>
+      <parameter id="alpha_M" value="9.97e-4" units="mM_per_min"/>
+      <parameter id="tau_B"   value="2.0"     units="min"/>
+      <parameter id="alpha_A" value="1.76e4"  units="inv_min" />
+      <parameter id="K_L1"    value="1.81"    units="mM"/>
+      <parameter id="alpha_B" value="1.66e-2" units="inv_min"/>
+      <parameter id="K_A"     value="1.95"    units="mM"/>
+      <parameter id="beta_A"  value="2.15e4"  units="inv_min"/>
+      <parameter id="tau_M"   value="0.1"     units="min"/>
+      <parameter id="K_L"     value="0.97"    units="mM"/>
+      <parameter id="gamma_L" value="0.0"     units="inv_min"/>
+      <parameter id="gamma_P" value="0.65"    units="inv_min"/>
+      <parameter id="alpha_L" value="2.88e3"  units="inv_min"/>
+      <parameter id="alpha_P" value="10.0"    units="inv_min"/>
+      <parameter id="tau_P"   value="0.83"    units="min"/>
+      <parameter id="beta_L1" value="2.65e3"  units="inv_min"/>
+      <parameter id="K_Le"    value="0.26"    units="mM"/>
+      <parameter id="K_1"     value="2.52e4"  units="inv_mM_squared"/>
+      <parameter id="R_total" value="6.4e-4"  units="mM"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="r_m1" name="Basal_mRNA_Synthesis" reversible="false">
+        <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:ConstantLaw> 
+                            <bc:K>
+                                <math:math>
+                                <math:ci>gamma_0</math:ci>
+                            </math:math>
+                            </bc:K>
+                        </bc:ConstantLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfProducts>
+          <speciesReference species="M" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <ci>gamma_0</ci>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_m2" name="mRNA_Degradation" reversible="false">
+        <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MassActionLaw>
+                            <bc:K_forward>
+                                <math:math>
+                                    <math:apply>
+                                                   <math:plus/>
+                                                   <math:ci>gamma_M</math:ci>
+                                                   <math:ci>mu</math:ci>
+                                </math:apply>
+                                </math:math>
+                            </bc:K_forward>
+                            <bc:K_reverse>
+                                <math:math>
+                                    <math:apply>
+                                        <math:cn>0</math:cn>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_reverse>
+                        </bc:MassActionLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfReactants>
+          <speciesReference species="M" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+                <ci>M</ci>
+                <apply>
+                  <plus/>
+                  <ci>gamma_M</ci>
+                  <ci>mu</ci>
+                </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_m3_i1" name="allolactose_controlled_mRNA_synthesis" reversible="false">
+        <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MassActionLaw>
+                            <bc:K_forward>
+                                <math:math>
+                                    <math:apply>
+                                        <math:divide>
+                                            <math:cn>1</math:cn>
+                                            <math:ci>tau_M</math:ci>
+                                        </math:divide>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_forward>
+                            <bc:K_reverse>
+                                <math:math>
+                                    <math:apply>
+                                        <math:ci>0</math:ci>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_reverse>
+                        </bc:MassActionLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfReactants>
+          <speciesReference species="I1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+                <ci>I1</ci>
+                <ci>tau_M</ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_i1" name="allolactose_controlled_partial_mRNA_synthesis" reversible="false">
+        <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:EffectorRepressorLaw>
+                            <bc:V>
+                                <math:math>
+                                <math:ci>alpha_M</math:ci>
+                            </math:math>
+                            </bc:V>
+                            <bc:A>
+                                <math:math>
+                                    <math:apply>
+                                        <math:times/>
+                                    <math:ci>K_1</math:ci>
+                                    <math:apply>
+                                        <math:power/>
+                                        <math:apply>
+                                            <math:exp/>
+                                            <math:apply>
+                                                <math:minus/>
+                                                <math:apply>
+                                                    <math:times/>
+                                                    <math:ci>mu</math:ci>
+                                                            <math:ci>tau_M</math:ci>
+                                                </math:apply>
+                                            </math:apply>
+                                        </math:apply>
+                                        <math:cn>2</math:cn>
+                                    </math:apply>
+                                    </math:apply>
+                            </math:math>
+                            </bc:A>
+                            <bc:B>
+                                     <math:math>
+                                     <math:ci>K</math:ci>
+                                     </math:math>
+                            </bc:B>
+                            <bc:Rtot>
+                                   <math:math>
+                                   <math:ci>R_total</math:ci>
+                                   </math:math>                         
+                             </bc:Rtot>
+                        </bc:EffectorRepressorLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfProducts>
+          <speciesReference species="I1" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="A"/>
+        </listOfModifiers>
+        <kineticLaw>
+<math xmlns='http://www.w3.org/1998/Math/MathML'>
+ <apply>
+  <times/>
+  <ci>alpha_M</ci>
+  <apply>
+   <divide/>
+   <apply>
+    <plus/>
+    <apply>
+     <times/>
+     <ci>K_1</ci>
+     <apply>
+      <exp/>
+      <apply>
+       <times/>
+       <ci>mu</ci>
+       <ci>tau_M</ci>
+       <cn type='integer'>-2</cn>
+      </apply>
+     </apply>
+     <apply>
+      <power/>
+      <ci>A</ci>
+      <cn type='integer'>2</cn>
+     </apply>
+    </apply>
+    <cn type='integer'>1</cn>
+   </apply>
+   <apply>
+    <plus/>
+    <ci>K</ci>
+    <apply>
+     <times/>
+     <ci>K_1</ci>
+     <apply>
+      <exp/>
+      <apply>
+       <times/>
+       <cn type='integer'>-2</cn>
+       <ci>mu</ci>
+       <ci>tau_M</ci>
+      </apply>
+     </apply>
+     <apply>
+      <power/>
+      <ci>A</ci>
+      <cn type='integer'>2</cn>
+     </apply>
+    </apply>
+   </apply>
+  </apply>
+ </apply>
+</math> 
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_b1" name="Beta_galactosidase_Degredation" reversible="false">
+        <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MassActionLaw>
+                            <bc:K_forward>
+                                <math:math>
+                                    <math:apply>
+                                                    <math:plus/>
+                                                    <math:ci>gamma_B</math:ci>
+                                                    <math:ci>mu</math:ci>
+                                </math:apply>
+                                </math:math>
+                            </bc:K_forward>
+                            <bc:K_reverse>
+                                <math:math>
+                                    <math:apply>
+                                        <math:cn>0</math:cn>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_reverse>
+                        </bc:MassActionLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfReactants>
+          <speciesReference species="B" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+                <ci>B</ci>
+                <apply>
+                  <plus/>
+                  <ci>gamma_B</ci>
+                  <ci>mu</ci>
+                </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_b2_i2" name="Beta_galactosidase_synthesis" reversible="false">
+    <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MassActionLaw>
+                            <bc:K_forward>
+                                <math:math>
+                                    <math:apply>
+                                        <math:divide/>
+                                        <math:cn>1</math:cn>
+                                        <math:ci>tau_B</math:ci>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_forward>
+                            <bc:K_reverse>
+                                <math:math>
+                                    <math:apply>
+                                        <math:cn>0</math:cn>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_reverse>
+                        </bc:MassActionLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfReactants>
+          <speciesReference species="I2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="B" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+                <ci>I2</ci>
+                <ci>tau_B</ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_i2" name="Partial_Beta_galactosidase_synthesis" reversible="false">
+    <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MassActionLaw>
+                            <bc:K_forward>
+                                <math:math>
+                                    <math:apply>
+                                        <math:times/>
+                                        <math:ci>alpha_B</math:ci>
+                                        <math:apply>
+                                            <math:exp/>
+                                                <math:apply>
+                                                    <math:minus/>
+                                                    <math:apply>
+                                                        <math:times/>
+                                                            <math:ci>mu</math:ci>
+                                                        <math:ci>tau_B</math:ci>
+                                                    </math:apply>
+                                                </math:apply>
+                                        </math:apply>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_forward>
+                            <bc:K_reverse>
+                                <math:math>
+                                    <math:apply>
+                                        <math:cn>0</math:cn>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_reverse>
+                        </bc:MassActionLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfProducts>
+          <speciesReference species="I2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="M"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+                <ci>alpha_B</ci>
+                <apply>
+                  <times/>
+                  <ci>M</ci>
+                  <apply>
+                    <exp/>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <times/>
+                            <ci>mu</ci>
+                            <ci>tau_B</ci>
+                        </apply>
+                    </apply>
+                  </apply>
+                </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_a1" name="Basal_Allolactose_Degredation" reversible="false">
+    <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MassActionLaw>
+                            <bc:K_forward>
+                                <math:math>
+                                    <math:apply>
+                                                     <math:plus/>
+                                                     <math:ci>gamma_A</math:ci>
+                                                     <math:ci>mu</math:ci>
+                                </math:apply>
+                            </math:math>
+                            </bc:K_forward>
+                            <bc:K_reverse>
+                                <math:math>
+                                    <math:apply>
+                                        <math:cn>0</math:cn>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_reverse>
+                        </bc:MassActionLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfReactants>
+          <speciesReference species="A" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+                <ci>A</ci>
+                <apply>
+                  <plus/>
+                  <ci>gamma_A</ci>
+                  <ci>mu</ci>
+                </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_a2" name="Betagalactosidase_mediated_Allolactose_Degredation" reversible="false">
+    <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MichaelisMentenLaw>
+                            <bc:Km>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <ci>K_A</ci>
+                                </math>
+                            </bc:Km>
+                            <bc:Kcat>
+                                <math  xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <ci>beta_A</ci>
+                                </math>
+                            </bc:Kcat>
+                        </bc:MichaelisMentenLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfReactants>
+          <speciesReference species="A" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="B"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+                <ci>beta_A</ci>
+                <apply>
+                    <times/>
+                    <ci>B</ci>
+                    <apply>
+                        <divide/>
+                        <ci>A</ci>
+                        <apply>
+                            <plus/>
+                            <ci>K_A</ci>
+                            <ci>A</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_a3_l1" name="Beta_galactosidase_reaction" reversible="false">
+    <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MichaelisMentenLaw>
+                            <bc:Km>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                   <ci>K_L</ci>
+                                </math>
+                            </bc:Km>
+                            <bc:Kcat>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <ci>alpha_A</ci>
+                                </math>
+                            </bc:Kcat>
+                        </bc:MichaelisMentenLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfReactants>
+          <speciesReference species="L" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="A" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="B"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+                <ci>alpha_A</ci>
+                <apply>
+                    <times/>
+                    <ci>B</ci>
+                    <apply>
+                        <divide/>
+                        <ci>L</ci>
+                        <apply>
+                            <plus/>
+                            <ci>K_L</ci>
+                            <ci>L</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_l2" name="lactose_degredation" reversible="false">
+    <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MassActionLaw>
+                            <bc:K_forward>
+                                <math:math>
+                                    <math:apply>
+                                                     <math:plus/>
+                                                     <math:ci>gamma_L</math:ci>
+                                                     <math:ci>mu</math:ci>
+                                </math:apply>
+                            </math:math>
+                            </bc:K_forward>
+                            <bc:K_reverse>
+                                <math:math>
+                                    <math:apply>
+                                        <math:cn>0</math:cn>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_reverse>
+                        </bc:MassActionLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfReactants>
+          <speciesReference species="L" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+                <ci>L</ci>
+                <apply>
+                   <plus/>
+                   <ci>gamma_L</ci>
+                   <ci>mu</ci>
+                </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_l3" name="Lactose_transport_out" reversible="false">
+    <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MichaelisMentenLaw>
+                            <bc:Km>
+                                <math  xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <ci>K_L1</ci>
+                                </math>
+                            </bc:Km>
+                            <bc:Kcat>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <ci>beta_L1</ci>
+                                </math>
+                            </bc:Kcat>
+                        </bc:MichaelisMentenLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfReactants>
+          <speciesReference species="L" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="P"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+                <ci>beta_L1</ci>
+                <apply>
+                    <times/>
+                    <ci>P</ci>
+                    <apply>
+                        <divide/>
+                        <ci>L</ci>
+                        <apply>
+                            <plus/>
+                            <ci>K_L1</ci>
+                            <ci>L</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_l4" name="Lactose_transport_in" reversible="false">
+    <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MichaelisMentenLaw>
+                            <bc:Km>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <ci>K_Le</ci>
+                                </math>
+                            </bc:Km>
+                            <bc:Kcat>
+                                <math  xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <ci>alpha_L</ci>
+                                </math>
+                            </bc:Kcat>
+                        </bc:MichaelisMentenLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfProducts>
+          <speciesReference species="L" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="P"/>
+          <modifierSpeciesReference species="L_e"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/> 
+                <ci>alpha_L</ci>
+                <apply>
+                    <times/>
+                    <ci>P</ci>
+                    <apply>
+                        <divide/>
+                        <ci>L_e</ci>
+                        <apply>
+                            <plus/>
+                            <ci>K_Le</ci>
+                            <ci>L_e</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_p1" name="permease_degredation" reversible="false">
+    <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MassActionLaw>
+                            <bc:K_forward>
+                                <math:math>
+                                    <math:apply>
+                                                   <math:plus/>
+                                                   <math:ci>gamma_P</math:ci>
+                                                   <math:ci>mu</math:ci>
+                                </math:apply>
+                                </math:math>
+                            </bc:K_forward>
+                            <bc:K_reverse>
+                                <math:math>
+                                    <math:apply>
+                                        <math:cn>0</math:cn>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_reverse>
+                        </bc:MassActionLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfReactants>
+          <speciesReference species="P" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+                <ci>P</ci>
+                <apply>
+                  <plus/>
+                  <ci>gamma_P</ci>
+                  <ci>mu</ci>
+                </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_p2_i3" name="permease_synthesis" reversible="false">
+    <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MassActionLaw>
+                            <bc:K_forward>
+                                <math:math>
+                                    <math:apply>
+                                        <math:divide>
+                                            <math:cn>1</math:cn>
+                                            <math:apply>
+                                                <math:plus>
+                                                <math:ci>tau_B</math:ci>
+                                                <math:ci>tau_P</math:ci>
+                                                </math:plus>
+                                            </math:apply>
+                                        </math:divide>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_forward>
+                            <bc:K_reverse>
+                                <math:math>
+                                    <math:apply>
+                                        <math:cn>0</math:cn>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_reverse>
+                        </bc:MassActionLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfReactants>
+          <speciesReference species="I3" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+                <ci>I3</ci>
+                <apply>
+                    <plus/>
+                    <ci>tau_B</ci>
+                    <ci>tau_P</ci>
+                </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_i3" name="partial_permease_synthesis" reversible="false">
+    <sbml:annotation xmlns:bc="http://www.sbml.org/2001/ns/biocharon">
+                    <bc:charon_annotation>
+                        <bc:MassActionLaw>
+                            <bc:K_forward>
+                                <math:math>
+                                    <math:apply>
+                                        <math:times/>
+                                            <math:ci>alpha_P</math:ci>
+                                            <math:apply>
+                                            <math:exp/>
+                                                <math:apply>
+                                                    <math:minus/>
+                                                    <math:apply>
+                                                        <math:times/>
+                                                        <math:ci>mu</math:ci>
+                                                        <math:apply>
+                                                            <math:plus/>
+                                                            <math:ci>tau_B</math:ci>
+                                                            <math:ci>tau_P</math:ci>
+                                                        </math:apply>
+                                                    </math:apply>
+                                                </math:apply>
+                                            </math:apply>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_forward>
+                            <bc:K_reverse>
+                                <math:math>
+                                    <math:apply>
+                                        <math:cn>0</math:cn>
+                                    </math:apply>
+                                </math:math>
+                            </bc:K_reverse>
+                        </bc:MassActionLaw>
+                    </bc:charon_annotation>
+        </sbml:annotation>
+        <listOfProducts>
+          <speciesReference species="I3" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="M"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+                <ci>alpha_P</ci>
+                <apply>
+                  <times/>
+                  <ci>M</ci>
+                  <apply>
+                    <exp/>
+                    <apply>
+                        <times/>
+                        <cn>-1</cn>
+                        <apply>
+                            <times/>
+                            <ci>mu</ci>
+                            <apply>
+                                <plus/>
+                                <ci>tau_B</ci>
+                                <ci>tau_P</ci>
+                            </apply>
+                        </apply>
+                    </apply>
+                  </apply>
+                </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

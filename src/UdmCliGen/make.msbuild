@@ -1,0 +1,5 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="py2exe">
+  <Target Name="py2exe">
+    <Exec Command="C:\Python27\python.exe UdmCliGen-setup.py py2exe" />
+  </Target>
+</Project>

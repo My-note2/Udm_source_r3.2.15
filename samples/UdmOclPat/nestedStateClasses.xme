@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "mga.dtd">
+
+<project guid="{BA08D77C-1923-425D-A18B-5BC684B06972}" cdate="Tue Nov 01 16:37:52 2005" mdate="Tue Nov 01 16:37:52 2005" version="" metaguid="{EA1D8BC3-9A0C-409B-8A50-9B85DD54FEE4}" metaversion="" metaname="StateChart">
+	<name>Root Folder</name>
+	<comment></comment>
+	<author></author>
+	<folder id="id-006a-00000001" relid="0x1" childrelidcntr="0x1" kind="RootFolder">
+		<name>Root Folder</name>
+		<model id="id-0065-00000001" kind="OrState" relid="0x1" childrelidcntr="0x5">
+			<name>System</name>
+			<attribute kind="DefaultTransition" status="meta">
+				<value></value>
+			</attribute>
+			<attribute kind="Marked" status="meta">
+				<value>false</value>
+			</attribute>
+			<model id="id-0065-00000002" kind="OrState" role="OrState" relid="0x1" childrelidcntr="0x1">
+				<name>System1</name>
+				<regnode name="PartRegs" isopaque="yes">
+					<value></value>
+					<regnode name="State" isopaque="yes">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>93,44</value>
+						</regnode>
+					</regnode>
+				</regnode>
+				<attribute kind="DefaultTransition" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="Marked" status="meta">
+					<value>false</value>
+				</attribute>
+				<model id="id-0065-00000003" kind="OrState" role="OrState" relid="0x1" childrelidcntr="0x3">
+					<name>System11</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>114,51</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+					<atom id="id-0066-00000001" kind="SimpleState" role="SimpleState" relid="0x1">
+						<name>S111</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="State" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>222,96</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DefaultTransition" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Marked" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000002" kind="Init" role="Init" relid="0x2">
+						<name>Init</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="State" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>114,100</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DefaultTransition" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Marked" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000003" kind="SimpleState" role="SimpleState" relid="0x3">
+						<name>S112</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="State" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>338,100</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DefaultTransition" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Marked" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+				</model>
+			</model>
+			<model id="id-0065-00000004" kind="OrState" role="OrState" relid="0x3" childrelidcntr="0x2">
+				<name>System2</name>
+				<regnode name="PartRegs" isopaque="yes">
+					<value></value>
+					<regnode name="State" isopaque="yes">
+						<value></value>
+						<regnode name="Position" isopaque="yes">
+							<value>266,42</value>
+						</regnode>
+					</regnode>
+				</regnode>
+				<attribute kind="DefaultTransition" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="Marked" status="meta">
+					<value>false</value>
+				</attribute>
+				<model id="id-0065-00000005" kind="OrState" role="OrState" relid="0x1" childrelidcntr="0x2">
+					<name>System21</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>72,65</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+					<model id="id-0065-00000006" kind="OrState" role="OrState" relid="0x1" childrelidcntr="0x3">
+						<name>System211</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="State" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>133,56</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DefaultTransition" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Marked" status="meta">
+							<value>false</value>
+						</attribute>
+						<atom id="id-0066-00000004" kind="Init" role="Init" relid="0x1">
+							<name>Init</name>
+							<regnode name="PartRegs" isopaque="yes">
+								<value></value>
+								<regnode name="State" isopaque="yes">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>135,51</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<attribute kind="DefaultTransition" status="meta">
+								<value></value>
+							</attribute>
+							<attribute kind="Marked" status="meta">
+								<value>false</value>
+							</attribute>
+						</atom>
+						<atom id="id-0066-00000005" kind="SimpleState" role="SimpleState" relid="0x2">
+							<name>S2111</name>
+							<regnode name="PartRegs" isopaque="yes">
+								<value></value>
+								<regnode name="State" isopaque="yes">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>254,65</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<attribute kind="DefaultTransition" status="meta">
+								<value></value>
+							</attribute>
+							<attribute kind="Marked" status="meta">
+								<value>false</value>
+							</attribute>
+						</atom>
+						<atom id="id-0066-00000006" kind="SimpleState" role="SimpleState" relid="0x3">
+							<name>S2112</name>
+							<regnode name="PartRegs" isopaque="yes">
+								<value></value>
+								<regnode name="State" isopaque="yes">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>261,170</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<attribute kind="DefaultTransition" status="meta">
+								<value></value>
+							</attribute>
+							<attribute kind="Marked" status="meta">
+								<value>false</value>
+							</attribute>
+						</atom>
+					</model>
+					<model id="id-0065-00000007" kind="OrState" role="OrState" relid="0x2" childrelidcntr="0x5">
+						<name>System212</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="State" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>357,56</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DefaultTransition" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Marked" status="meta">
+							<value>false</value>
+						</attribute>
+						<atom id="id-0066-00000007" kind="Init" role="Init" relid="0x1">
+							<name>Init</name>
+							<regnode name="PartRegs" isopaque="yes">
+								<value></value>
+								<regnode name="State" isopaque="yes">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>149,128</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<attribute kind="DefaultTransition" status="meta">
+								<value></value>
+							</attribute>
+							<attribute kind="Marked" status="meta">
+								<value>false</value>
+							</attribute>
+						</atom>
+						<atom id="id-0066-00000008" kind="SimpleState" role="SimpleState" relid="0x2">
+							<name>S2121</name>
+							<regnode name="PartRegs" isopaque="yes">
+								<value></value>
+								<regnode name="State" isopaque="yes">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>268,114</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<attribute kind="DefaultTransition" status="meta">
+								<value></value>
+							</attribute>
+							<attribute kind="Marked" status="meta">
+								<value>false</value>
+							</attribute>
+						</atom>
+						<atom id="id-0066-00000009" kind="SimpleState" role="SimpleState" relid="0x3">
+							<name>S2123</name>
+							<regnode name="PartRegs" isopaque="yes">
+								<value></value>
+								<regnode name="State" isopaque="yes">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>348,110</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<attribute kind="DefaultTransition" status="meta">
+								<value></value>
+							</attribute>
+							<attribute kind="Marked" status="meta">
+								<value>false</value>
+							</attribute>
+						</atom>
+						<atom id="id-0066-0000000a" kind="SimpleState" role="SimpleState" relid="0x4">
+							<name>S2122</name>
+							<regnode name="PartRegs" isopaque="yes">
+								<value></value>
+								<regnode name="State" isopaque="yes">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>268,184</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<attribute kind="DefaultTransition" status="meta">
+								<value></value>
+							</attribute>
+							<attribute kind="Marked" status="meta">
+								<value>false</value>
+							</attribute>
+						</atom>
+						<atom id="id-0066-0000000b" kind="SimpleState" role="SimpleState" relid="0x5">
+							<name>S2124</name>
+							<regnode name="PartRegs" isopaque="yes">
+								<value></value>
+								<regnode name="State" isopaque="yes">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>348,180</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<attribute kind="DefaultTransition" status="meta">
+								<value></value>
+							</attribute>
+							<attribute kind="Marked" status="meta">
+								<value>false</value>
+							</attribute>
+						</atom>
+					</model>
+				</model>
+				<model id="id-0065-00000008" kind="OrState" role="OrState" relid="0x2" childrelidcntr="0x3">
+					<name>System22</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="State" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>310,65</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DefaultTransition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Marked" status="meta">
+						<value>false</value>
+					</attribute>
+					<atom id="id-0066-0000000c" kind="Init" role="Init" relid="0x1">
+						<name>Init</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="State" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>135,114</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DefaultTransition" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Marked" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-0000000d" kind="SimpleState" role="SimpleState" relid="0x2">
+						<name>S221</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="State" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>233,107</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DefaultTransition" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Marked" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-0000000e" kind="SimpleState" role="SimpleState" relid="0x3">
+						<name>S222</name>
+						<regnode name="PartRegs" isopaque="yes">
+							<value></value>
+							<regnode name="State" isopaque="yes">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>345,107</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DefaultTransition" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Marked" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+				</model>
+			</model>
+		</model>
+	</folder>
+</project>

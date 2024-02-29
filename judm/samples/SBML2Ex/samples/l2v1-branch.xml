@@ -1,0 +1,306 @@
+<sbml level="2" xmlns="http://www.sbml.org/sbml/level2" version="1">
+	<model id="Branch">
+		<notes>
+			<body xmlns="http://www.w3.org/1999/xhtml">
+				<p>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					Simple branch system.
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				</p>
+				<p>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					The reaction looks like this:
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				</p>
+				<p>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					reaction-1:   X0 -&gt; S1; k1*X0;
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				</p>
+				<p>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					reaction-2:   S1 -&gt; X1; k2*S1;
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				</p>
+				<p>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					reaction-3:   S1 -&gt; X2; k3*S1;
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				</p>
+			</body>
+		</notes>
+		<listOfCompartments>
+			<compartment id="compartmentOne" size="1" constant="true" spatialDimensions="3"/>
+		</listOfCompartments>
+		<listOfSpecies>
+			<species id="S1" constant="false" compartment="compartmentOne" boundaryCondition="false" initialConcentration="0" hasOnlySubstanceUnits="false"/>
+			<species id="X0" constant="false" compartment="compartmentOne" boundaryCondition="true" initialConcentration="0" hasOnlySubstanceUnits="false"/>
+			<species id="X1" constant="false" compartment="compartmentOne" boundaryCondition="true" initialConcentration="0" hasOnlySubstanceUnits="false"/>
+			<species id="X2" constant="false" compartment="compartmentOne" boundaryCondition="true" initialConcentration="0" hasOnlySubstanceUnits="false"/>
+		</listOfSpecies>
+		<listOfReactions>
+			<reaction id="reaction_1" fast="false" reversible="false">
+				<listOfReactants>
+					<speciesReference species="X0" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="S1" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math xmlns="http://www.w3.org/1998/Math/MathML">
+						<apply>
+							<times/>
+							<ci>
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								 k1 
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							</ci>
+							<ci>
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								 X0 
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							</ci>
+						</apply>
+					</math>
+					<listOfParameters>
+						<parameter id="k1" value="0" constant="true"/>
+					</listOfParameters>
+				</kineticLaw>
+			</reaction>
+			<reaction id="reaction_2" fast="false" reversible="false">
+				<listOfReactants>
+					<speciesReference species="S1" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="X1" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math xmlns="http://www.w3.org/1998/Math/MathML">
+						<apply>
+							<times/>
+							<ci>
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								 k2 
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							</ci>
+							<ci>
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								 S1 
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							</ci>
+						</apply>
+					</math>
+					<listOfParameters>
+						<parameter id="k2" value="0" constant="true"/>
+					</listOfParameters>
+				</kineticLaw>
+			</reaction>
+			<reaction id="reaction_3" fast="false" reversible="false">
+				<listOfReactants>
+					<speciesReference species="S1" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="X2" stoichiometry="1"/>
+				</listOfProducts>
+				<kineticLaw>
+					<math xmlns="http://www.w3.org/1998/Math/MathML">
+						<apply>
+							<times/>
+							<ci>
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								 k3 
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							</ci>
+							<ci>
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								 S1 
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							</ci>
+						</apply>
+					</math>
+					<listOfParameters>
+						<parameter id="k3" value="0" constant="true"/>
+					</listOfParameters>
+				</kineticLaw>
+			</reaction>
+		</listOfReactions>
+	</model>
+</sbml>
+
+

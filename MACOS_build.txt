@@ -1,0 +1,223 @@
+
+
+1. General notice:
+==================
+
+- Only 32 bit version of UDM can be compiled on MAC OS X because there is no Xerces 64bit binary available for this platform and the source will not compile with 64bit arhictecture 
+- Autoconf/automake are not used; Makefile.OSX will build UDM on MAC OS X platforms after updating the paths in 'section to be configured by the user' in Makefile.OSX.incl. This is a more straightforward approach. 
+- XCODE, including the command line tools has to be downloaded from the AppStore, it is freely available.
+- The build procedure was tested on: 
+		
+	OS X 10.9.3
+
+	uname: 
+	Darwin Kernel Version 13.2.0: Thu Apr 17 23:03:13 PDT 2014; root:xnu-2422.100.13~1/RELEASE_X86_64 x86_64
+	
+	CC --version:
+	Apple LLVM version 5.1 (clang-503.0.40) (based on LLVM 3.4svn)
+	Target: x86_64-apple-darwin13.2.0
+	Thread model: posix
+
+2. JAVA 6:
+==========
+
+OS X 10.9.1 comes with Java 1.7.0-45, which can not run a 32 bit JVM
+Therefore, Java 1.6.0 for MAC OS has to be downloaded from here:
+
+http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2013-05.dmg
+
+open in Finder, double click and install it.
+This should install Java 1.6.0 JVM in: /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java
+
+Check and if necessary edit the value of JVMD32 in Makefile.OSX.incl located in the top directory of UDM
+
+
+3. 3rd Party software needed to compile UDM on a Macintosh OSX
+==============================================================
+
+There are a bunch of 3rd Party software tools needed to compile UDM. 
+There are two ways of getting these
+
+	- obtain from ISIS an archive containing all the necessary software to compile UDM: udm_macosx_devtools-1.00.tar.gz
+	 https://svn.isis.vanderbilt.edu/isis-common/trunk/3rdparty/OSX/udm_macosx_devtools-1.00.tar.gz
+
+ 	In this archive there are already compiled binaries of the necessary 3rdParty software, set up to work on Mac OSx for compiling UDM. Untar it to a directory (like ~/devtools). 
+	- obtain&compile each necessary software item, as described below in chapter 5.
+
+4. compiling and testing UDM 	 
+============================
+
+Once the 3rdParty tools are all available, compiling UDM is very easy
+
+ 	- check Makefile.OSX.incl in the top directory, the section marked to be configured by the user. If you obtained the archive from ISIS with the 3rdParty tools for MAC OS and if you untar-ed it to ~/devtools then no change is necessary
+	- compile the project with the command:
+		make -f Makefile.OSX
+	- run the tests with 
+		make -f Makefile.OSX test
+
+
+
+
+
+
+
+5. Setting up environment by downloading and compiling each item.
+=================================================================
+
+ANT
+===
+
+Apache ANT is used for build the Java wrapper of UDM
+
+1. Obtain apache-ant-1.9.3-bin.tar.bz2 from http://www.apache.org/dist/ant/binaries/apache-ant-1.9.3-bin.tar.bz2
+2. Untar it in a directory where developer tools are (for instance: ~/devtools)
+3. Set/change the value of ANT to the directory of ANT binary, located in top directory of UDM (example: ~/devtools/apache-ant-1.9.3/bin/ant)
+
+JUNIT
+=====
+
+JUNIT is used for testing the Java wrapper of UDM
+1. Obtain junit-4.11.jar from http://search.maven.org/remotecontent?filepath=junit/junit/4.11/junit-4.11.jar
+2. Obtain junit-4.11-javadoc.jar from http://search.maven.org/remotecontent?filepath=junit/junit/4.11/junit-4.11-javadoc.jar 
+2. Create a junit/ directory where developer tools are (for instance: ~/devtools) and copy the above two files in this directory
+3. Set/change the value of JUNITDIR to the directory of JUNIT, located in top directory of UDM (example: ~/devtools/junit)
+
+CPPUNIT
+=======
+
+1. Obtain cppunit-1.12.1.tar from: http://sourceforge.net/projects/cppunit/files/cppunit/1.12.1/cppunit-1.12.1.tar.gz/download?use_mirror=netcologne
+2. Untar it in a directory where developer tools are (for instance: ~/devtools) and compile using the below commands:
+
+cd cppunit-1.12.1; 
+export CFLAGS="-g -O2 -arch i386"
+export CXXFLAGS="$CFLAGS" 
+./configure
+make 
+3. Set/change the value of CPPUNIT to the directory of CPPUNIT in Makefile.OSX.incl located in top directory of UDM (example:~/devtools/cppunit-1.12.1)
+ 
+BOOST
+=====
+
+1. Obtain boost_1_55_0.tar.gz from http://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.gz/download
+2. Untar it in a directory where developer tools are (for instance: ~/devtools).
+3. Most of the boost libraries are header only libraries, however we do need boost_python binary module which needs to be compiled.
+	3.1 build bjam (a tool which is needed to build boost)
+
+		cd boost_1_55_0/tools/build/v2/engine
+		export CFLAGS="-g -O2 -arch i386"
+		export CXXFLAGS="$CFLAGS" 
+		./build.sh cc
+	3.2 build boost (will be needed for UdmPython). If the Python wrapper for UDM will not be used, you can skip this section
+		cd boost_1_55_0/
+		tools/build/v2/engine/bin.macosxx86/bjam -sBUILD=release cxxflags="-g -O2 -arch i386" cflags="-g -O2 -arch i386" linkflags="-arch i386"
+
+
+4. If build.sh will report 'operation not permitted', than the file was quarantined by Mac OS because it was downloaded from the internet. You can solve this by issuing xattr -dr com.apple.quarantine . in that directory.
+5. Set/change the value of BOOST to the directory of BOOST in Makefile.OSX.incl located in top directory of UDM (example:~/devtools/boost_1_55_0)
+
+JSON_SPIRIT
+===========
+
+1. Download Json Spirit from: http://www.codeproject.com/Articles/20027/JSON-Spirit-A-C-JSON-Parser-Generator-Implemented
+2. copy the directory json_spirit_v4.06 to a directory where developer tools are (for instance ~/devtools)
+3. set/change the value of JSON_SPIRIT to the directory of json_spirit_v4.06/json_spirit in Makefile.OSX.incl located in top directory of UDM (example: ~/devtools/json_spirit_v4.06/json_spirit)
+
+
+MINIZIP
+=======
+
+1. Download Minizip from http://www.winimage.com/zLibDll/unzip101h.zip
+2. Unzip it to a directory where developer tools are (for instance: ~/devtools/minizip)
+3. Replace minizip/Makefile with the following:
+
+-----------8><--------------------------------
+CC=cc
+CFLAGS=$(OPT) -I../.. -Dunix -fPIC -arch i386
+
+.c.o:
+        $(CC) -c $(CFLAGS) $*.c
+
+all: libminizip
+
+libminizip: unzip.o zip.o ioapi.o
+        ar rcs libminizip.a unzip.o zip.o ioapi.o
+
+clean:
+        /bin/rm -f *.o *~ minizip miniunz *.so *.a
+---------8><-----------------------------------
+4. cd minizip; make 
+
+PCCTS
+=====
+
+PCCTS (= ANTLR 1) is used to generate c++ parser files from the OCL grammar. Thatis needed to parse and evaluate UDM constraints
+
+1. Download PCCTS 1.33 MR from http://www.polhode.com/pccts133mr.zip
+2. Unzip it to a directory where developer tools are (like ~/devtools/pccts)
+3. Add -D PCCTS_USE_STDARG to CFLAGS in sorcerer/lib/makefile:
+	CFLAGS=$(COPT) -I../../h -I../h -D PCCTS_USE_STDARG
+4. cd pccts; make
+5. set/change the value of PCCTS to the directory of pccts in Makefile.OSX.incl located in top directory of UDM (example: ~/devtools/pccts)
+
+PCRE
+====
+
+PCRE is needed to run SWIG. 
+SWIG is needed to generate the UDM Java wrapper. 
+
+1. Download pcre-8.33.tar.gz from ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
+2. untar to a directory where developer tools are (like ~/devtools/pcre-8.33)
+3. 
+	cd pcre-8.33
+	./configure
+ 	make 
+4. set/change the value of PCRE to the directory of PCRE in Makefile.OSX.incl located in top directory of UDM (example: ~/devtools/pcre-8.33)
+
+SWIG
+====
+
+SWIG is needed to generate the UDM Java wrapper. 
+
+
+1. Download swig-2.0.11.tar.gz from http://sourceforge.net/projects/swig/files/swig/swig-2.0.11/swig-2.0.11.tar.gz/download
+2. untar to a directory where developer tools are (like ~/devtools/swig-2.0.11)
+3. set/export PCRE_LIBS to .libs/ of the compiled PCRE subdir (like ~/devtools/pcre-8.33/.libs), configure and compile the project with the below steps:
+	
+	cd swig-2.0.11
+	export PCRE_LIBS=~/devtools/pcre-8.33/.libs/libpcre.dylib
+	export CFLAGS="-g -O2 -I ~/devtools/pcre-8.33"
+	./configure
+	make
+4. set/change the value of SWIGDIR to the directory of Swig in Makefile.OSX.incl located in top directory of UDM (example: ~/devtools/swig-2.0.11)
+
+
+XERCES
+======
+
+Xerces is needed by the UdmDom backend to read-write UML documents
+We use a binary prepared by Apache as I was unable to compile Xerces for MAC OS X platform. Unfortunatelly, only a 32bit binary is available:
+
+1. Download the binary release of Xerces C++ 2.8.0 from: http://mirrors.hostingromania.ro/apache.org//xerces/c/2/binaries/xerces-c_2_8_0-x86-macosx-gcc_4_0.tar.gz (or from any other hosting site)
+2. untar it to a directory where developer tools are (like ~/devtools/xerces-c_2_8_0-x86-macosx-gcc_4_0)
+3. set/change the value of XERCESCROOT in Makefile.OSX.incl located in top directory of UDM (example =~/devtools/xerces-c_2_8_0-x86-macosx-gcc_4_0)
+
+XALAN
+=====
+
+Xalan is needed to convert UML diagrams to XMI files 
+
+1. Download the source release xalan_c-1.11-src.tar from http://www.apache.org/dyn/mirrors/mirrors.cgi/xalan/xalan-c/sources
+2. untar it ro a directory where developer tools are (like ~/devtools/xalan-c-1.11)
+3. Configure and compile the project, using the following commands
+	cd xalan-c-1.11
+	export XALANCROOT=~/devtools/xalan-c-1.11/c/
+	export XERCESCROOT=~/devtools/xerces-c_2_8_0-x86-macosx-gcc_4_0
+	export CFLAGS="-arch i386"
+	export CXXFLAGS="-arch i386"
+	export LDFLAGS="-arch i386"
+	./runConfigure -p macosx -b 32
+	make
+4. set/change the value of XALANCROOT in Makefile.OSX.incl located in top directory of UDM (example =~/devtools/xalan-c-1.11/c)
+
+	
+	

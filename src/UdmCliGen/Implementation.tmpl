@@ -1,0 +1,331 @@
+#from common import *
+
+namespace $namespace
+{
+    public class $c.name
+        : 
+#if $c.baseTypes
+        $fq_name($c.baseTypes[0])
+#else
+        global::Udm.Native.UdmCliObject
+#end if
+        , ${fq_iname($c)}
+    {
+        public ${c.name}(global::Udm.Native.UdmObject o) : base(o) { }
+
+        public ${c.name}(global::Udm.Native.ObjectImpl o) : base(o) { }
+
+## TODO: should be refactored into a factory class
+        public static ${c.name} Cast(global::Udm.Native.UdmObject o) {
+            global::Udm.Native.UdmCliObject.CheckCast(o, meta);
+            return new ${c.name}(o);
+        }
+
+        public static ${c.name} Cast(global::Udm.Native.UdmCliObject o) {
+            return Cast(o.backing);
+        }
+
+        public static ${c.name} Cast(global::Udm.IUdmObject o) {
+            return Cast(((global::Udm.Native.UdmCliObject)o).backing);
+        }
+
+        public static ${fq_iname($c)} ICast(global::Udm.IUdmObject o) {
+            return Cast(((global::Udm.Native.UdmCliObject)o).backing);
+        }
+
+        public static ${fq_iname($c)} ICreate(global::Udm.IUdmObject parent)
+        {
+            return Create(parent);
+        }
+
+        public static ${fq_iname($c)} ICreate(global::Udm.IUdmObject parent, global::Udm.Native.Uml.CompositionChildRole role)
+        {
+            return Create(parent, role);
+        }
+
+        public static ${c.name} Create(global::Udm.IUdmObject parent)
+        {
+            return Create(parent, null);
+        }
+
+        public static ${c.name} Create(global::Udm.IUdmObject parent, global::Udm.Native.Uml.CompositionChildRole role)
+        {
+            if (role == null)
+            {
+                role = global::Udm.Native.Udm.NULLCHILDROLE;
+            }
+            global::Udm.Native.UdmObject o = global::Udm.Native.UdmObject.Create(meta, ((global::Udm.Native.UdmCliObject)parent).backing, role);
+            return new ${c.name}(o);
+        }
+
+#for $suffix, $isderived in (('Instance', 'false'), ('Derived', 'true'))
+        public ${c.name} Create${suffix}(global::Udm.IUdmObject parent, global::Udm.Native.Uml.CompositionChildRole role = null)
+        {
+            if (role == null)
+            {
+                role = global::Udm.Native.Udm.NULLCHILDROLE;
+            }
+            global::Udm.Native.UdmObject o = global::Udm.Native.UdmObject.Create(meta, (global::Udm.Native.UdmObject)parent, role, this.backing.__impl(), $isderived);
+            return new ${c.name}(o);
+        }
+#end for
+
+        public struct Factory : global::Udm.ClassFactory<${fq_iname($c)}> {
+            public global::Udm.Native.Uml.Class meta { get { return ${fq_name($c)}.meta; } }
+
+            public global::System.Func<global::Udm.IUdmObject, ${fq_iname($c)}> ICast { get { return ${fq_name($c)}.ICast; } }
+
+            public global::System.Func<global::Udm.IUdmObject, ${fq_iname($c)}> ICreate { get { return ${fq_name($c)}.ICreate; } }
+
+            public global::System.Func<global::Udm.IUdmObject, global::Udm.Native.Uml.CompositionChildRole, ${fq_iname($c)}> ICreateWithRole { get { return ${fq_name($c)}.Create; } }
+        }
+
+## some debugging support
+        public ${fq_iname($c)} this_downcasted
+        {
+            get
+            {
+                $impl_namespace${root.name}Initialize.castDelegate<Udm.Native.UdmCliObject> cast;
+                if ($impl_namespace${root.name}Initialize.downcasts.TryGetValue(((IUdmObject)this).type, out cast))
+                {
+                    return (${fq_iname($c)})cast(this);
+                }
+                return null;
+            }
+        }
+
+
+        public static global::Udm.Native.Uml.Class meta;
+#for $attr in $c.children(child_type=$uml.Attribute)
+#set meta_name = role_metaname(attr)
+        public static global::Udm.Native.Uml.Attribute $meta_name;
+#end for
+#for $crole in $c.childRoles
+#set prole = crole.parent.parentRole_role_children[0]
+#set meta_name = role_metaname(prole)
+        public static global::Udm.Native.Uml.CompositionParentRole $meta_name;
+#end for
+#for $prole in $c.parentRoles
+#set crole = prole.parent.childRole_role_children[0]
+#set meta_name = role_metaname(crole)
+        public static global::Udm.Native.Uml.CompositionChildRole $meta_name;
+#end for
+#for $arole in $c.associationRoles
+#set orole = ($arole.parent.children()[1] if $arole != $arole.parent.children()[1] else $arole.parent.children()[0])
+#set meta_name = role_metaname(orole)
+        public static global::Udm.Native.Uml.AssociationRole $meta_name;
+#end for
+
+#def accessors($c)
+## "MgaObject" from GReAT's MetaGME2UML
+#if $c.name == "MgaObject"
+        public string GmeId { get { return global::Udm.Native.UdmGme.UdmGme.UdmId2GmeId(this.id); } }
+#end if
+
+        ${fq_iname($c)} ${fq_iname($c)}.archetype
+        {
+            get
+            {
+                global::Udm.Native.UdmObject o = backing.archetype();
+                if (o.uniqueId() == 0) return null;
+                return new ${c.name}(o);
+            }
+        }
+        global::System.Collections.Generic.IEnumerable<${fq_iname($c)}> ${fq_iname($c)}.instances
+        {
+            get
+            {
+                return global::System.Linq.Enumerable.ToList(
+                    global::System.Linq.Enumerable.Select<global::Udm.Native.UdmObject, ${fq_iname($c)}>
+                    (backing.instances(), o => new ${c.name}(o)));
+            }
+        }
+        global::System.Collections.Generic.IEnumerable<${fq_iname($c)}> ${fq_iname($c)}.derived
+        {
+            get
+            {
+                return global::System.Linq.Enumerable.ToList(
+                    global::System.Linq.Enumerable.Select<global::Udm.Native.UdmObject, ${fq_iname($c)}>
+                    (backing.derived(), o => new ${c.name}(o)));
+            }
+        }
+
+#for $attr in $c.children(child_type=$uml.Attribute)
+#set type = $attr_typemap[$attr.attr('type')]
+#set meta_name = $fq_name($c) + "." + role_metaname(attr)
+        public $type $attr.name
+        {
+## FIXME: need to handle arrays, access modifiers
+#if $type == "string"
+            get { return backing.getStringAttr($meta_name); }
+            set { backing.setStringAttr($meta_name, value); }
+#else if $type == "bool"
+            get { return backing.getBooleanAttr($meta_name); }
+            set { backing.setBooleanAttr($meta_name, value); }
+#else if $type == "double"
+            get { return backing.getRealAttr($meta_name); }
+            set { backing.setRealAttr($meta_name, value); }
+#else if $type == "long"
+            get { return backing.getIntegerAttr($meta_name); }
+            set { backing.setIntegerAttr($meta_name, value); }
+#else
+#error $type
+#end if
+        }
+
+#end for
+
+// Child roles
+#for $crole in $c.childRoles
+#set prole = crole.parent.parentRole_role_children[0]
+#set meta_name = $fq_name($c) + "." + role_metaname(prole)
+        $fq_iname(prole.target) $fq_iname($c).@$role_name(prole)
+        {
+            get
+            {
+                global::Udm.Native.ObjectImpl o = backing.__impl().getParent($meta_name);
+                if (o.uniqueId() == 0) return null;
+                return new $fq_name($prole.target)(o);
+            }
+            set
+            {
+                if (value == null) backing.__impl().setParent(Udm.Native.Udm._null.__impl(), $meta_name);
+                else backing.__impl().setParent((value as global::Udm.Native.UdmCliObject).backing.__impl(), $meta_name);
+            }
+        }
+
+#end for
+
+// Parent roles
+#for $prole in $c.parentRoles
+#set crole = prole.parent.childRole_role_children[0]
+#set meta_name = $fq_name($c) + "." + role_metaname(crole)
+#if crole.max == 1
+        $fq_iname(crole.target) $fq_iname($c).@$role_name(crole) {
+            get
+            {
+                global::Udm.Native.ObjectImpl_vector v = backing.__impl().getChildren($meta_name, ${fq_name(crole.target)}.meta);
+                foreach (Udm.Native.ObjectImpl impl in v)
+                {
+                    return new $fq_name(crole.target)(impl);
+                }
+                return null;
+            }
+## TODO
+            set {}
+        }
+#else
+        global::System.Collections.Generic.IEnumerable<$fq_iname(crole.target)> $fq_iname($c).@$role_name(crole) {
+            get
+            {
+                return global::System.Linq.Enumerable.ToList(
+                    global::System.Linq.Enumerable.Select<global::Udm.Native.ObjectImpl, $fq_iname(crole.target)>
+                    (backing.__impl().getChildren($meta_name, ${fq_name(crole.target)}.meta), o => new $fq_name(crole.target)(o)));
+            }
+## TODO
+            set {}
+        }
+
+#end if
+#end for
+
+// Association ends
+#for $arole in $c.associationRoles
+#set orole = ($arole.parent.children()[1] if $arole != $arole.parent.children()[1] else $arole.parent.children()[0])
+#set meta_name = $fq_name($c) + "." + role_metaname(orole)
+#def arolegen($propname, $retclass, $getAssocMode, $orole)
+#if $orole.max == 1
+        public $fq_iname($retclass) @$propname
+        { 
+            get
+            {
+                foreach (global::Udm.Native.UdmObject o in backing.getAssociation($meta_name, $getAssocMode))
+                {
+                    return new $fq_name($retclass)(o);
+                }
+                return null;
+            }
+## TODO: test this
+            set
+            {
+                Udm.Native.Object_set set = new Udm.Native.Object_set();
+                set.Add((value as global::Udm.Native.UdmCliObject).backing);
+                backing.setAssociation($meta_name, set, $getAssocMode);
+            }
+        }
+#else
+        public global::System.Collections.Generic.IEnumerable<$fq_iname($retclass)> @$propname
+        { 
+            get
+            {
+                return global::System.Linq.Enumerable.ToList(
+                    global::System.Linq.Enumerable.Select<global::Udm.Native.UdmObject, $fq_iname($retclass)>
+                    (backing.getAssociation($meta_name, $getAssocMode), o => new $fq_name($retclass)(o)));
+            }
+## TODO: test this
+            set
+            {
+                Udm.Native.Object_set set = new Udm.Native.Object_set();
+                foreach ($fq_iname($retclass) o in value)
+                {
+                    set.Add((o as global::Udm.Native.UdmCliObject).backing);
+                }
+                backing.setAssociation($meta_name, set, $getAssocMode);
+            }
+        }
+#end if
+#end def
+#if not $arole.parent.assocClass
+$arolegen($orole.name, $orole.target, "Udm.Native.Udm.TARGETFROMPEER", $orole)
+#else
+$arolegen($orole.name, $orole.parent.assocClass, "Udm.Native.Udm.CLASSFROMTARGET", $orole)
+$arolegen($orole.name + ("_target" if $orole.max == 1 else "_targets"), $orole.target, "Udm.Native.Udm.TARGETFROMPEER", $orole)
+
+#end if
+#end for
+#if $c.association
+#for $role in $c.association.children()
+#set orole = ($role.parent.children()[1] if $role != $role.parent.children()[1] else $role.parent.children()[0])
+#set meta_name = $fq_name($orole.target) + "." + role_metaname($role)
+        public $fq_iname($role.target) @$role.name {
+            get
+            {
+                foreach (global::Udm.Native.UdmObject o in backing.getAssociation($meta_name, Udm.Native.Udm.TARGETFROMCLASS))
+                {
+                    return new $fq_name($role.target)(o);
+                }
+                return null;
+            }
+            set
+            {
+                using (Udm.Native.Object_set set = new Udm.Native.Object_set()) {
+                    set.Add((value as global::Udm.Native.UdmCliObject).backing);
+                    backing.setAssociation($meta_name, set, Udm.Native.Udm.TARGETFROMCLASS);
+                }
+            }
+        }
+#end for
+#end if
+#end def
+##
+$accessors($c)
+##
+#if $c.baseTypes
+#set missing_classes = set()
+#import collections
+#set q = collections.deque()
+#silent q.extend($c.baseTypes[1:])
+#while q
+#set class_ = q.pop()
+#silent missing_classes.add(class_)
+#silent q.extend($class_.baseTypes)
+#end while
+##
+#for class_ in missing_classes
+// Accessors for $class_.name
+$accessors($class_)
+#end for
+#end if
+##
+    }
+}

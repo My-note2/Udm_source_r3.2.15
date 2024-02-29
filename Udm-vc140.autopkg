@@ -1,0 +1,69 @@
+configurations 
+{
+    // This node contains custom pivot information.
+    Toolset 
+    {
+        key : "PlatformToolset"; // this is CoApp pre-defined key
+        choices: { v140, v120, v110, v100 };
+    };
+//    Linkage {
+//        choices: { dynamic };
+//    }
+}
+nuget {
+    nuspec {
+        id = Udm-vc140;
+        version : 3.2.14.1;
+        title : Udm v140;
+        authors : Vanderbilt University;
+        owners : ksmyth;
+        licenseUrl : "http://repo.isis.vanderbilt.edu/UDM/license.txt";
+        projectUrl: "http://repo.isis.vanderbilt.edu/UDM/";
+        iconUrl: "http://repo.isis.vanderbilt.edu/GME/GME.ico";
+        requireLicenseAcceptance:false;
+        summary: Udm vc140 libraries;
+
+        description: @"Universal Data Model";
+        releaseNotes: "";
+        copyright: Copyright 2017;
+        tags: { native, cpp };
+    }
+    dependencies {
+        packages : {
+            Udm/3.2.14.1,
+        };
+    }
+
+
+    files {
+        #overlay : false;
+        vcpdb += {
+            // #flatten = true;
+            #destination = ${d_lib};
+        };
+
+        [x64,v140,release] { 
+            lib += Build\x64\v140\Release\UdmDll_v140_x64.lib;
+            bin += Build\x64\v140\Release\UdmDll_3_2_v140_x64.dll;
+            vcpdb += Build\x64\v140\Release\obj\src\UdmDllv110\UdmDll_3_2_v140_x64.pdb;
+        }
+
+        [x64,v140,debug] { 
+            lib += Build\x64\v140\Debug\UdmDll_v140_x64D.lib;
+            bin += Build\x64\v140\Debug\UdmDll_3_2_v140_x64D.dll;
+            vcpdb += Build\x64\v140\Debug\obj\src\UdmDllv110\UdmDll_3_2_v140_x64D.pdb;
+        }
+
+        [win32,v140,release] { 
+            lib += Build\Win32\v140\Release\UdmDll_v140_Win32.lib;
+            bin += Build\Win32\v140\Release\UdmDll_3_2_v140_Win32.dll;
+            vcpdb += Build\Win32\v140\Release\obj\src\UdmDllv110\UdmDll_3_2_v140_Win32.pdb;
+        }
+
+        [win32,v140,debug] { 
+            lib += Build\Win32\v140\Debug\UdmDll_v140_Win32D.lib;
+            bin += Build\Win32\v140\Debug\UdmDll_3_2_v140_Win32D.dll;
+            vcpdb += Build\Win32\v140\Debug\obj\src\UdmDllv110\UdmDll_3_2_v140_Win32D.pdb;
+        }
+    }
+}

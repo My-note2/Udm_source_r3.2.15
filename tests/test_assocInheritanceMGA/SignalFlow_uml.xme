@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "mga.dtd">
+
+<project guid="{00000000-0000-0000-0000-000000000000}" cdate="Thu Sep 16 10:43:22 2004" mdate="Thu Sep 16 10:45:06 2004" metaguid="{7AB97DAB-DEAD-BEEF-FEED-DAD000000001}" metaname="UML">
+	<name>SignalFlow</name>
+	<comment></comment>
+	<author></author>
+	<folder id="id-006a-00000001" relid="0x1" childrelidcntr="0x2" kind="RootFolder">
+		<name>SignalFlow</name>
+		<model id="id-0065-00000001" kind="Package" relid="0x2" childrelidcntr="0x1">
+			<name>SignalFlow</name>
+			<attribute kind="version" status="meta">
+				<value>1.00</value>
+			</attribute>
+			<model id="id-0065-00000002" kind="ClassDiagram" role="ClassDiagram" relid="0x1" childrelidcntr="0x2a">
+				<name>ParadigmSheet</name>
+				<atom id="id-0066-00000001" kind="Class" role="Class" relid="0x23">
+					<name>RootFolder</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>272,385</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype" status="meta">
+						<value></value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000002" kind="Class" role="Class" relid="0x4">
+					<name>CompoundComponent</name>
+					<regnode name="KindAspects" isopaque="yes">
+						<value></value>
+						<regnode name="C:C" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>Aspect</value>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent:CompoundComponent" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>Aspect</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="MetaRef" isopaque="yes">
+						<value>1011</value>
+						<regnode name="C" isopaque="yes">
+							<value></value>
+							<regnode name="C" isopaque="yes">
+								<value>1013</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1020</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent" isopaque="yes">
+							<value></value>
+							<regnode name="CompoundComponent" isopaque="yes">
+								<value>1038</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1045</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="Attributes" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>303,268</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>303,268</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>239,286</value>
+							</regnode>
+						</regnode>
+						<regnode name="Visualization" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>253,258</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PrimaryAspects" isopaque="yes">
+						<value></value>
+						<regnode name="C:C" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent:CompoundComponent" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes">
+						<value>
+</value>
+					</attribute>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype">
+						<value>Model</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000003" kind="Class" role="Class" relid="0x3">
+					<name>PrimitiveComponent</name>
+					<regnode name="KindAspects" isopaque="yes">
+						<value></value>
+						<regnode name="C:P" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>Aspect</value>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent:PrimitiveComponent" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>Aspect</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="MetaRef" isopaque="yes">
+						<value>1025</value>
+						<regnode name="C" isopaque="yes">
+							<value></value>
+							<regnode name="P" isopaque="yes">
+								<value>1017</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1021</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent" isopaque="yes">
+							<value></value>
+							<regnode name="PrimitiveComponent" isopaque="yes">
+								<value>1042</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1046</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="Attributes" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>121,268</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>121,268</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>37,293</value>
+							</regnode>
+						</regnode>
+						<regnode name="Visualization" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>99,258</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PrimaryAspects" isopaque="yes">
+						<value></value>
+						<regnode name="C:P" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent:PrimitiveComponent" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes">
+						<value>
+</value>
+					</attribute>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype">
+						<value>Model</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000004" kind="Inheritance" role="Inheritance" relid="0x2">
+					<name>Inheritance</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="Attributes" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>282,205</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>282,205</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>178,208</value>
+							</regnode>
+						</regnode>
+						<regnode name="Visualization" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>199,194</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</atom>
+				<atom id="id-0066-00000005" kind="Class" role="Class" relid="0x1">
+					<name>BaseComponent</name>
+					<regnode name="KindAspects" isopaque="yes">
+						<value></value>
+						<regnode name="C:B" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>Aspect</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="MetaRef" isopaque="yes">
+						<value>1005</value>
+						<regnode name="C" isopaque="yes">
+							<value></value>
+							<regnode name="B" isopaque="yes">
+								<value>1012</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1019</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="Attributes" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>254,100</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>254,100</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>128,110</value>
+							</regnode>
+						</regnode>
+						<regnode name="Visualization" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>169,90</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PrimaryAspects" isopaque="yes">
+						<value></value>
+						<regnode name="C:B" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes">
+						<value>name:String
+position:String[0..1]
+</value>
+					</attribute>
+					<attribute kind="IsAbstract">
+						<value>true</value>
+					</attribute>
+					<attribute kind="Stereotype">
+						<value>Model</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000006" kind="Connector" role="Connector" relid="0x17">
+					<name>Connector</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>649,68</value>
+							</regnode>
+						</regnode>
+						<regnode name="Visualization" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>557,67</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</atom>
+				<atom id="id-0066-00000007" kind="Class" role="Class" relid="0x16">
+					<name>Signal</name>
+					<regnode name="MetaRef" isopaque="yes">
+						<value>1004</value>
+						<regnode name="B" isopaque="yes">
+							<value></value>
+							<regnode name="D" isopaque="yes">
+								<value>1035</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1036</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="C" isopaque="yes">
+							<value></value>
+							<regnode name="D" isopaque="yes">
+								<value>1031</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1032</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent" isopaque="yes">
+							<value></value>
+							<regnode name="Signal" isopaque="yes">
+								<value>1043</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1050</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="P" isopaque="yes">
+							<value></value>
+							<regnode name="D" isopaque="yes">
+								<value>1033</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1034</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="PrimitiveComponent" isopaque="yes">
+							<value></value>
+							<regnode name="Signal" isopaque="yes">
+								<value>1053</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1057</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="Attributes" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>275,44</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>275,44</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>751,152</value>
+							</regnode>
+						</regnode>
+						<regnode name="Visualization" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>617,41</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PrimaryAspects" isopaque="yes">
+						<value></value>
+						<regnode name="B:D" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="C:D" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent:Signal" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="P:D" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="PrimitiveComponent:Signal" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes">
+						<value>name:String[0..1]
+position:String[0..1]
+</value>
+					</attribute>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype">
+						<value>Connection</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000008" kind="Class" role="Class" relid="0x11">
+					<name>LocalPort</name>
+					<regnode name="MetaRef" isopaque="yes">
+						<value>1002</value>
+						<regnode name="C" isopaque="yes">
+							<value></value>
+							<regnode name="L" isopaque="yes">
+								<value>1015</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1023</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent" isopaque="yes">
+							<value></value>
+							<regnode name="LocalPort" isopaque="yes">
+								<value>1040</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1048</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="Attributes" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>548,212</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>548,212</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>667,286</value>
+							</regnode>
+						</regnode>
+						<regnode name="Visualization" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>554,202</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PrimaryAspects" isopaque="yes">
+						<value></value>
+						<regnode name="C:L" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent:LocalPort" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes">
+						<value>
+</value>
+					</attribute>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype">
+						<value>Atom</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000009" kind="Class" role="Class" relid="0x10">
+					<name>OutputPort</name>
+					<regnode name="MetaRef" isopaque="yes">
+						<value>1003</value>
+						<regnode name="B" isopaque="yes">
+							<value></value>
+							<regnode name="O" isopaque="yes">
+								<value>1007</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1010</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="C" isopaque="yes">
+							<value></value>
+							<regnode name="O" isopaque="yes">
+								<value>1016</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1024</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent" isopaque="yes">
+							<value></value>
+							<regnode name="OutputPort" isopaque="yes">
+								<value>1041</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1049</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="P" isopaque="yes">
+							<value></value>
+							<regnode name="O" isopaque="yes">
+								<value>1027</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1030</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="PrimitiveComponent" isopaque="yes">
+							<value></value>
+							<regnode name="OutputPort" isopaque="yes">
+								<value>1052</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1056</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="Attributes" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>457,212</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>457,212</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>526,230</value>
+							</regnode>
+						</regnode>
+						<regnode name="Visualization" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>449,202</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PrimaryAspects" isopaque="yes">
+						<value></value>
+						<regnode name="B:O" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="C:O" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent:OutputPort" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="P:O" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="PrimitiveComponent:OutputPort" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes">
+						<value>
+</value>
+					</attribute>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype">
+						<value>Atom</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-0000000a" kind="Class" role="Class" relid="0xf">
+					<name>InputPort</name>
+					<regnode name="MetaRef" isopaque="yes">
+						<value>1001</value>
+						<regnode name="B" isopaque="yes">
+							<value></value>
+							<regnode name="I" isopaque="yes">
+								<value>1006</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1009</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="C" isopaque="yes">
+							<value></value>
+							<regnode name="I" isopaque="yes">
+								<value>1014</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1022</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent" isopaque="yes">
+							<value></value>
+							<regnode name="InputPort" isopaque="yes">
+								<value>1039</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1047</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="P" isopaque="yes">
+							<value></value>
+							<regnode name="I" isopaque="yes">
+								<value>1026</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1029</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="PrimitiveComponent" isopaque="yes">
+							<value></value>
+							<regnode name="InputPort" isopaque="yes">
+								<value>1051</value>
+								<regnode name="Aspect" isopaque="yes">
+									<value>1055</value>
+								</regnode>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="Attributes" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>373,212</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>373,212</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>400,230</value>
+							</regnode>
+						</regnode>
+						<regnode name="Visualization" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>351,202</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="PrimaryAspects" isopaque="yes">
+						<value></value>
+						<regnode name="B:I" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="C:I" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="CompoundComponent:InputPort" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="P:I" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+						<regnode name="PrimitiveComponent:InputPort" isopaque="yes">
+							<value></value>
+							<regnode name="Aspect" isopaque="yes">
+								<value>yes</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes">
+						<value></value>
+					</attribute>
+					<attribute kind="IsAbstract" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="Stereotype">
+						<value>Atom</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-0000000b" kind="Class" role="Class" relid="0xe">
+					<name>PortBase</name>
+					<regnode name="MetaRef" isopaque="yes">
+						<value>1037</value>
+					</regnode>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="Attributes" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>436,37</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>436,37</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>499,54</value>
+							</regnode>
+						</regnode>
+						<regnode name="Visualization" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>449,48</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes">
+						<value>name:String
+position:String[0..1]
+
+</value>
+					</attribute>
+					<attribute kind="IsAbstract">
+						<value>true</value>
+					</attribute>
+					<attribute kind="Stereotype">
+						<value>Atom</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-0000000c" kind="Inheritance" role="Inheritance" relid="0xa">
+					<name>Inheritance</name>
+					<regnode name="PartRegs" isopaque="yes">
+						<value></value>
+						<regnode name="Attributes" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>471,149</value>
+							</regnode>
+						</regnode>
+						<regnode name="Constraints" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>471,149</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>549,159</value>
+							</regnode>
+						</regnode>
+						<regnode name="Visualization" isopaque="yes">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>472,145</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</atom>
+				<atom id="id-0066-0000000d" kind="Class" role="Class" relid="0x25">
+					<name>BaseSignal</name>
+					<regnode name="PartRegs">
+						<value></value>
+						<regnode name="Constraints">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>807,142</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>775,49</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Attributes" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="IsAbstract">
+						<value>true</value>
+					</attribute>
+					<attribute kind="Stereotype" status="meta">
+						<value></value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-0000000e" kind="Inheritance" role="Inheritance" relid="0x26">
+					<name>Inheritance</name>
+					<regnode name="PartRegs">
+						<value></value>
+						<regnode name="Constraints">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>807,107</value>
+							</regnode>
+						</regnode>
+						<regnode name="UML">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>801,110</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</atom>
+				<connection id="id-0068-00000001" kind="Composition" role="Composition" relid="0x24">
+					<name>Composition</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>Sn</value>
+					</regnode>
+					<attribute kind="Cardinality" status="meta">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="ChildRole" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ParentRole" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000001"/>
+					<connpoint role="src" target="id-0066-00000002"/>
+				</connection>
+				<connection id="id-0068-00000002" kind="Src" role="Src" relid="0x18">
+					<name>SourceToConnector</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>N</value>
+					</regnode>
+					<attribute kind="Cardinality" status="meta">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="srcRolename" status="meta">
+						<value>src</value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000006"/>
+					<connpoint role="src" target="id-0066-0000000b"/>
+				</connection>
+				<connection id="id-0068-00000003" kind="Sub" role="Sub" relid="0x15">
+					<name>DerivedInheritance</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>Sn</value>
+					</regnode>
+					<connpoint role="dst" target="id-0066-00000008"/>
+					<connpoint role="src" target="id-0066-0000000c"/>
+				</connection>
+				<connection id="id-0068-00000004" kind="Sub" role="Sub" relid="0x14">
+					<name>DerivedInheritance</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>Sn</value>
+					</regnode>
+					<connpoint role="dst" target="id-0066-00000009"/>
+					<connpoint role="src" target="id-0066-0000000c"/>
+				</connection>
+				<connection id="id-0068-00000005" kind="Sub" role="Sub" relid="0x13">
+					<name>DerivedInheritance</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>Sn</value>
+					</regnode>
+					<connpoint role="dst" target="id-0066-0000000a"/>
+					<connpoint role="src" target="id-0066-0000000c"/>
+				</connection>
+				<connection id="id-0068-00000006" kind="Base" role="Base" relid="0x12">
+					<name>BaseInheritance</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>Sn</value>
+					</regnode>
+					<connpoint role="src" target="id-0066-0000000b"/>
+					<connpoint role="dst" target="id-0066-0000000c"/>
+				</connection>
+				<connection id="id-0068-00000007" kind="Composition" role="Composition" relid="0x8">
+					<name>Containment</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>E</value>
+					</regnode>
+					<attribute kind="Cardinality" status="meta">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="ChildRole" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ParentRole" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000002"/>
+					<connpoint role="src" target="id-0066-00000005"/>
+				</connection>
+				<connection id="id-0068-00000008" kind="Sub" role="Sub" relid="0x7">
+					<name>DerivedInheritance</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>Sn</value>
+					</regnode>
+					<connpoint role="dst" target="id-0066-00000002"/>
+					<connpoint role="src" target="id-0066-00000004"/>
+				</connection>
+				<connection id="id-0068-00000009" kind="Sub" role="Sub" relid="0x6">
+					<name>DerivedInheritance</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>Sn</value>
+					</regnode>
+					<connpoint role="dst" target="id-0066-00000003"/>
+					<connpoint role="src" target="id-0066-00000004"/>
+				</connection>
+				<connection id="id-0068-0000000a" kind="Base" role="Base" relid="0x5">
+					<name>BaseInheritance</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>Sn</value>
+					</regnode>
+					<connpoint role="dst" target="id-0066-00000004"/>
+					<connpoint role="src" target="id-0066-00000005"/>
+				</connection>
+				<connection id="id-0068-0000000c" kind="Composition" role="Composition" relid="0x1e">
+					<name>Containment</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>We</value>
+					</regnode>
+					<attribute kind="Cardinality" status="meta">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="ChildRole" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ParentRole" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000002"/>
+					<connpoint role="src" target="id-0066-00000008"/>
+				</connection>
+				<connection id="id-0068-0000000d" kind="Composition" role="Composition" relid="0x1d">
+					<name>Containment</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>e</value>
+					</regnode>
+					<attribute kind="Cardinality" status="meta">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="ChildRole" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ParentRole" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000005"/>
+					<connpoint role="src" target="id-0066-00000009"/>
+				</connection>
+				<connection id="id-0068-0000000e" kind="Composition" role="Composition" relid="0x1b">
+					<name>Containment</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>We</value>
+					</regnode>
+					<attribute kind="Cardinality" status="meta">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="ChildRole" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ParentRole" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000005"/>
+					<connpoint role="src" target="id-0066-0000000a"/>
+				</connection>
+				<connection id="id-0068-00000010" kind="Dst" role="Dst" relid="0x19">
+					<name>ConnectorToDestination</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>e</value>
+					</regnode>
+					<attribute kind="Cardinality" status="meta">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="dstRolename" status="meta">
+						<value>dst</value>
+					</attribute>
+					<connpoint role="src" target="id-0066-00000006"/>
+					<connpoint role="dst" target="id-0066-0000000b"/>
+				</connection>
+				<connection id="id-0068-00000011" kind="AssociationClass" role="AssociationClass" relid="0x27">
+					<name>AssociationClass</name>
+					<connpoint role="src" target="id-0066-00000006"/>
+					<connpoint role="dst" target="id-0066-0000000d"/>
+				</connection>
+				<connection id="id-0068-00000012" kind="Composition" role="Composition" relid="0x28">
+					<name>Composition</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>Nn</value>
+					</regnode>
+					<attribute kind="Cardinality" status="meta">
+						<value>0..*</value>
+					</attribute>
+					<attribute kind="ChildRole" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ParentRole" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0066-00000005"/>
+					<connpoint role="src" target="id-0066-0000000d"/>
+				</connection>
+				<connection id="id-0068-00000013" kind="Base" role="Base" relid="0x29">
+					<name>Base</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>Sn</value>
+					</regnode>
+					<connpoint role="src" target="id-0066-0000000d"/>
+					<connpoint role="dst" target="id-0066-0000000e"/>
+				</connection>
+				<connection id="id-0068-00000014" kind="Sub" role="Sub" relid="0x2a">
+					<name>Sub</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>Sn</value>
+					</regnode>
+					<connpoint role="dst" target="id-0066-00000007"/>
+					<connpoint role="src" target="id-0066-0000000e"/>
+				</connection>
+			</model>
+		</model>
+	</folder>
+</project>

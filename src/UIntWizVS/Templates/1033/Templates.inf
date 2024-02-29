@@ -1,0 +1,17 @@
+UdmConfig.h
+UdmApp.cpp
+UdmApp.h
+string_utils.h
+UdmConsole.cpp
+UdmConsole.h
+UdmFormatter.cpp
+UdmFormatter.h
+RawComponent.cpp
+RawComponent.h
+CompIcon.ico
+Component.def
+Component.rc
+ComponentConfig.h
+Resource.h
+StdAfx.cpp
+StdAfx.h

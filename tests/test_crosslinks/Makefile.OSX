@@ -1,0 +1,22 @@
+include ../../Makefile.OSX.incl
+
+BUILT_SOURCES=CL.cpp CLPackage.cpp Package1.cpp Package2.cpp
+SOURCES=$(BUILT_SOURCES) CrossLinkTester.cpp test_CrossLinks.cpp 
+CLEAN_FILES=$(BUILT_SOURCES) CLPackage.h CLPackage.xsd Package1.cpp Package1.h Package1.xsd Package2.cpp Package2.h Package2.xsd CL.h CL.xsd Package2_NSp.xsd Package2_NSp_NSc.xsd
+OBJECTS=$(SOURCES:.cpp=.o)
+
+all: $(SOURCES) $(OBJECTS) test_crosslinks
+
+$(BUILT_SOURCES):CL_udm.udm ../../bin/Udm
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ../../bin/Udm $< -v -d ../../etc -T
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDE) -I $(CPPUNIT)/include $< -o $@
+
+test_crosslinks: $(OBJECTS)
+	$(CC) $(BCFLAGS) $(OBJECTS) -o test_crosslinks  -lUdm -L../../lib -lcppunit -L $(CPPUNITLIBS)
+
+test:test_crosslinks
+	DYLD_LIBRARY_PATH=$(DYLDLIBRARYPATH) ./test_crosslinks
+
+clean: 
+	rm -f *.o  test_crosslinks $(CLEAN_FILES)

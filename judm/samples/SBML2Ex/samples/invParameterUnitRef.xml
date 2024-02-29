@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2"
+      xmlns:sbml="http://www.sbml.org/sbml/level2"
+      xmlns:math="http://www.w3.org/1998/Math/MathML"
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sbml.org/sbml/level2
+                            file:///home/jwebb/lib/xml/sbml/sbml-l2v1.xsd"
+
+      version="1" level="2">
+<model id="invParameterUnitRef" name="invParameterUnitRef">
+
+<!--
+  - we assume the notes element corresponds to the html element in a
+  - normal html page.
+  -->
+
+<sbml:notes xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Invalid Parameter Unit Reference</title>
+</head>
+<body>
+<h1>Invalid Parameter Unit Reference</h1>
+<p>
+A parameter references a unit which is not defined.
+</p>
+</body>
+</sbml:notes>
+
+<listOfUnitDefinitions>
+  <unitDefinition id="c">
+    <listOfUnits>
+      <unit kind="mole" exponent="1" />
+      <unit kind="litre" exponent="-1" />
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition id="s">
+    <listOfUnits>
+      <unit kind="mole" scale="-3" />
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition id="v">
+    <listOfUnits>
+      <unit kind="litre" scale="-3" />
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition id="rate">
+    <listOfUnits>
+      <unit kind="mole" scale="-1" />
+      <unit kind="second" scale="-1" />
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions>
+
+<listOfCompartments>
+<compartment id="global" units="v" size="1.0" />
+</listOfCompartments>
+
+<listOfSpecies>
+  <species id="A" compartment="global" substanceUnits="s"
+    spatialSizeUnits="v" initialConcentration="1.0" />
+  <species id="B" compartment="global" substanceUnits="s"
+    spatialSizeUnits="v" initialConcentration="1.0" />
+  <species id="C" compartment="global" substanceUnits="s"
+    spatialSizeUnits="v" initialConcentration="1.0" />
+</listOfSpecies>
+
+<listOfParameters>
+  <parameter id="p1" value="1.0" units="c" />
+  <parameter id="p2" value="1.0" units="foo" />
+</listOfParameters>
+
+<listOfReactions>
+  <reaction id="r1" reversible="true">
+    <listOfReactants>
+      <speciesReference species="A" stoichiometry="1" />
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="B" stoichiometry="1" />
+      <speciesReference species="C" stoichiometry="1" />
+    </listOfProducts>
+    <kineticLaw>
+      <math:math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus />
+          <apply>
+            <times />
+            <ci>kf</ci>
+            <ci>A</ci>
+            <ci>global</ci>
+          </apply>
+          <apply>
+            <times />
+            <ci>kr</ci>
+            <ci>B</ci>
+            <ci>global</ci>
+            <ci>C</ci>
+            <ci>global</ci>
+          </apply>
+        </apply>
+      </math:math>
+      <listOfParameters>
+        <parameter id="kf" value="1.0" units="bar" />
+        <parameter id="kr" value="1.0" units="rate" />
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+
+</model>
+</sbml>

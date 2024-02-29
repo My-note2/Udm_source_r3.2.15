@@ -1,0 +1,33 @@
+<sbml:sbml level="2" version="1" xmlns:bc="http://www.sbml.org/2001/ns/biocharon" xmlns:jd="http://www.isis.vanderbilt.edu/2004/schemas/jd" xmlns:dbi="http://www.dbi.tju.edu/xmlns/dbi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ignore="http://www.isis.vanderbilt.edu/2004/schemas/ignore" xmlns:jigcell="http://mpf.biol.vt.edu/ns" xmlns:unigene="http://www.dbi.tju.edu/xmlns/unigene" xsi:schemaLocation="http://www.sbml.org/2001/ns/biocharon SBML2Ex_bc.xsd http://www.dbi.tju.edu/xmlns/dbi SBML2Ex_dbi.xsd http://www.isis.vanderbilt.edu/2004/schemas/ignore SBML2Ex_ignore.xsd http://www.isis.vanderbilt.edu/2004/schemas/jd SBML2Ex_jd.xsd http://mpf.biol.vt.edu/ns SBML2Ex_jigcell.xsd http://www.w3.org/1998/Math/MathML SBML2Ex_math.xsd http://www.sbml.org/sbml/level2 SBML2Ex_sbml.xsd http://www.dbi.tju.edu/xmlns/unigene SBML2Ex_unigene.xsd http://www.w3.org/1999/xhtml SBML2Ex_xhtml.xsd">
+	<sbml:annotation>
+		<sbml:dialect name="unigene"/>
+	</sbml:annotation>
+	<sbml:model>
+		<sbml:listOfFunctionDefinitions>
+			<sbml:functionDefinition>
+				<math:math>
+					<math:apply>
+						<math:cn type="a">
+							cn1
+							cn2
+						</math:cn>
+					</math:apply>
+				</math:math>
+			</sbml:functionDefinition>
+		</sbml:listOfFunctionDefinitions>
+		<sbml:listOfSpecies>
+			<sbml:species id="species0" constant="false" boundaryCondition="false" hasOnlySubstanceUnits="false">
+				<sbml:annotation>
+					<unigene:acc value="AA017353"/>
+					<jigcell:blankline/>
+					<unigene:cluster_id value="Hs.11806"/>
+					<unigene:gene value="DHCR7"/>
+					<unigene:title value="7-dehydrocholesterol reductase"/>
+				</sbml:annotation>
+			</sbml:species>
+			<sbml:species constant="false" boundaryCondition="false" hasOnlySubstanceUnits="false"/>
+		</sbml:listOfSpecies>
+	</sbml:model>
+</sbml:sbml>
+
+
